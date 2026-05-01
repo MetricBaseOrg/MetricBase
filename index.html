@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MetricBase — Data > Noise</title>
   <meta name="description" content="5 Signals Smart Money Uses Before a Pump. Free guide for traders, energy professionals, and macro investors." />
-  <meta name="google-adsense-account" content="ca-pub-6244083942838780">
+  <meta name="google-adsense-account" content="ca-pub-6244083942838780" />
+  <meta name="robots" content="index, follow" />
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,19 +15,18 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --black:   #0a0a0a;
-      --dark:    #111111;
-      --mid:     #1a1a1a;
-      --border:  #222222;
-      --muted:   #555555;
-      --subtle:  #888888;
-      --light:   #cccccc;
-      --white:   #f5f5f5;
-      --accent:  #e8e0d0;
-      --gold:    #c9a84c;
-      --serif:   'Georgia', serif;
-      --sans:    'Inter', sans-serif;
-      --nav-h:   64px;
+      --black:  #0a0a0a;
+      --dark:   #111111;
+      --mid:    #1a1a1a;
+      --border: #222222;
+      --muted:  #555555;
+      --subtle: #888888;
+      --light:  #cccccc;
+      --white:  #f5f5f5;
+      --accent: #e8e0d0;
+      --gold:   #c9a84c;
+      --red:    #c0392b;
+      --sans:   'Inter', sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -41,164 +41,278 @@
       overflow-x: hidden;
     }
 
-    /* ─── PROGRESS BAR ───────────────────────────────── */
-    #progress-bar {
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ─── NAV ────────────────────────────────────────── */
+    #mb-nav {
       position: fixed;
-      top: 0; left: 0;
-      height: 2px;
-      width: 0%;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(10,10,10,0.94);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      height: 58px;
+      display: flex;
+      align-items: center;
+      padding: 0 32px;
+      justify-content: space-between;
+    }
+
+    .mb-nav-left {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .mb-logo {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .mb-logo span { color: var(--gold); }
+
+    .mb-nav-divider {
+      width: 1px;
+      height: 18px;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+
+    .mb-nav-section {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .mb-nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .mb-nav-links a {
+      font-size: 13px;
+      color: var(--subtle);
+      letter-spacing: 0.03em;
+      transition: color 0.18s;
+    }
+
+    .mb-nav-links a:hover { color: var(--white); }
+
+    .mb-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .mb-nav-cta {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--black);
       background: var(--gold);
-      z-index: 9999;
+      padding: 8px 18px;
+      border-radius: 2px;
+      transition: background 0.18s;
+      white-space: nowrap;
+    }
+
+    .mb-nav-cta:hover { background: #d4b460; }
+
+    .mb-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .mb-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--light);
+      border-radius: 1px;
+      transition: 0.25s;
+      transform-origin: center;
+    }
+
+    .mb-hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .mb-hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .mb-hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ─── PROGRESS BAR ───────────────────────────────── */
+    #mb-progress {
+      position: fixed;
+      top: 58px;
+      left: 0;
+      height: 2px;
+      background: var(--gold);
+      width: 0%;
+      z-index: 195;
       transition: width 0.1s linear;
     }
 
+    /* ─── SIDE DRAWER ────────────────────────────────── */
+    #mb-drawer-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 180;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    #mb-drawer-overlay.open { display: block; }
+
+    #mb-drawer {
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      width: min(300px, 85vw);
+      background: var(--dark);
+      border-right: 1px solid var(--border);
+      z-index: 190;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(-100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+    }
+
+    #mb-drawer.open { transform: translateX(0); }
+
+    .mb-drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 20px 16px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .mb-drawer-logo {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .mb-drawer-logo span { color: var(--gold); }
+
+    .mb-drawer-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      color: var(--subtle);
+      font-size: 20px;
+      line-height: 1;
+      transition: color 0.2s;
+      font-family: var(--sans);
+    }
+
+    .mb-drawer-close:hover { color: var(--white); }
+
+    .mb-drawer-section {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mb-drawer-label {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 8px 20px 4px;
+      display: block;
+    }
+
+    .mb-drawer-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      font-size: 15px;
+      color: var(--light);
+      transition: background 0.15s, color 0.15s;
+      min-height: 48px;
+    }
+
+    .mb-drawer-link:hover, .mb-drawer-link:active {
+      background: var(--mid);
+      color: var(--white);
+    }
+
+    .mb-drawer-link span { font-size: 14px; color: var(--gold); }
+
+    .mb-drawer-cta {
+      margin: 16px 20px;
+      display: block;
+      background: var(--gold);
+      color: var(--black);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 14px;
+      border-radius: 2px;
+      transition: background 0.18s;
+      margin-top: auto;
+    }
+
+    .mb-drawer-cta:hover { background: #d4b460; }
+
     /* ─── LAYOUT ─────────────────────────────────────── */
+    .mb-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
     .container {
       max-width: 760px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    section { padding: 96px 0; }
-
-    /* ─── NAV ────────────────────────────────────────── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: var(--nav-h);
-      z-index: 500;
-      background: rgba(10,10,10,0.95);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    #mb-body {
+      margin-top: 58px;
     }
 
-    .nav-logo {
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--white);
-      text-decoration: none;
-      z-index: 2;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 13px;
-      color: var(--subtle);
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      transition: color 0.2s;
-      padding: 4px 0;
-    }
-
-    .nav-links a:hover { color: var(--white); }
-
-    /* hamburger */
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      width: 36px;
-      height: 36px;
-      cursor: pointer;
-      z-index: 2;
-      background: none;
-      border: none;
-      padding: 4px;
-    }
-
-    .nav-hamburger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--light);
-      border-radius: 1px;
-      transition: transform 0.3s, opacity 0.3s;
-      transform-origin: center;
-    }
-
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* mobile drawer */
-    .nav-drawer {
-      display: none;
-      position: fixed;
-      top: var(--nav-h);
-      left: 0; right: 0;
-      background: rgba(10,10,10,0.98);
-      border-bottom: 1px solid var(--border);
-      padding: 24px;
-      z-index: 400;
-      transform: translateY(-8px);
-      opacity: 0;
-      transition: transform 0.25s ease, opacity 0.25s ease;
-      pointer-events: none;
-    }
-
-    .nav-drawer.open {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .nav-drawer ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .nav-drawer a {
-      display: block;
-      font-size: 15px;
-      color: var(--subtle);
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-      transition: color 0.2s;
-    }
-
-    .nav-drawer a:hover { color: var(--white); }
-    .nav-drawer li:last-child a { border-bottom: none; }
+    section { padding: 88px 0; }
 
     /* ─── SCROLL ANIMATIONS ──────────────────────────── */
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(22px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
     }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
 
     /* ─── HERO ───────────────────────────────────────── */
     #hero {
-      padding-top: calc(var(--nav-h) + 100px);
-      padding-bottom: 100px;
+      padding-top: 80px;
+      padding-bottom: 88px;
       text-align: center;
-      position: relative;
     }
 
     .hero-eyebrow {
@@ -216,11 +330,11 @@
 
     @keyframes pulse-border {
       0%, 100% { border-color: rgba(201,168,76,0.35); }
-      50% { border-color: rgba(201,168,76,0.7); }
+      50%       { border-color: rgba(201,168,76,0.7); }
     }
 
     h1 {
-      font-size: clamp(32px, 6vw, 64px);
+      font-size: clamp(30px, 5.5vw, 62px);
       font-weight: 700;
       line-height: 1.1;
       color: var(--white);
@@ -229,12 +343,12 @@
     }
 
     .hero-sub {
-      font-size: clamp(15px, 2.2vw, 20px);
+      font-size: clamp(15px, 2vw, 19px);
       color: var(--subtle);
-      max-width: 560px;
+      max-width: 540px;
       margin: 0 auto 16px;
       font-weight: 400;
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     .hero-offer {
@@ -251,7 +365,7 @@
       max-width: 460px;
       margin: 0 auto;
       border: 1px solid var(--border);
-      border-radius: 4px;
+      border-radius: 3px;
       overflow: hidden;
       transition: border-color 0.2s;
     }
@@ -262,8 +376,8 @@
       flex: 1;
       background: var(--mid);
       border: none;
-      padding: 16px 20px;
-      font-size: 15px;
+      padding: 15px 18px;
+      font-size: 14px;
       color: var(--white);
       font-family: var(--sans);
       outline: none;
@@ -276,15 +390,15 @@
       display: inline-block;
       background: var(--white);
       color: var(--black);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 16px 24px;
+      padding: 15px 22px;
       border: none;
       cursor: pointer;
       font-family: var(--sans);
-      transition: background 0.2s, color 0.2s, transform 0.1s;
+      transition: background 0.18s, transform 0.1s;
       white-space: nowrap;
       -webkit-tap-highlight-color: transparent;
     }
@@ -292,30 +406,25 @@
     .btn:hover { background: var(--accent); }
     .btn:active { transform: scale(0.97); }
 
-    .btn-gold {
-      background: var(--gold);
-      color: var(--black);
-    }
-
+    .btn-gold { background: var(--gold); color: var(--black); }
     .btn-gold:hover { background: #d4b460; }
 
     .fine-print {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--muted);
-      margin-top: 14px;
+      margin-top: 12px;
       text-align: center;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .fine-print a { color: var(--muted); text-decoration: underline; }
 
     /* ─── CREDIBILITY STRIP ──────────────────────────── */
     #strip {
-      padding: 28px 0;
+      padding: 26px 0;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       background: var(--dark);
-      overflow: hidden;
     }
 
     .strip-inner {
@@ -349,12 +458,23 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 20px;
-      display: block;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 2px;
+      background: var(--gold);
+      flex-shrink: 0;
     }
 
     h2 {
-      font-size: clamp(24px, 4vw, 40px);
+      font-size: clamp(22px, 3.8vw, 38px);
       font-weight: 700;
       color: var(--white);
       line-height: 1.15;
@@ -363,7 +483,7 @@
     }
 
     h3 {
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 600;
       color: var(--white);
       margin-bottom: 12px;
@@ -372,8 +492,8 @@
     p {
       color: var(--subtle);
       margin-bottom: 16px;
-      font-size: 16px;
-      line-height: 1.65;
+      font-size: 15px;
+      line-height: 1.7;
     }
 
     p:last-child { margin-bottom: 0; }
@@ -384,9 +504,9 @@
     .lead-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 20px;
       align-items: start;
-      margin-top: 48px;
+      margin-top: 44px;
     }
 
     .lead-card {
@@ -394,25 +514,25 @@
       border: 1px solid var(--border);
       border-radius: 4px;
       padding: 28px;
-      transition: border-color 0.25s;
+      transition: border-color 0.22s;
     }
 
     .lead-card:hover { border-color: rgba(201,168,76,0.4); }
 
     .lead-card .card-title {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .checklist {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 13px;
     }
 
     .checklist li {
@@ -437,13 +557,13 @@
     #pain { background: var(--black); }
 
     .pain-statement {
-      font-size: clamp(17px, 2.8vw, 26px);
+      font-size: clamp(16px, 2.6vw, 24px);
       color: var(--white);
       font-weight: 500;
-      line-height: 1.4;
+      line-height: 1.45;
       border-left: 3px solid var(--gold);
       padding-left: 24px;
-      margin: 36px 0;
+      margin: 32px 0;
     }
 
     /* ─── SOLUTION SECTION ───────────────────────────── */
@@ -457,45 +577,44 @@
       border: 1px solid var(--border);
       border-radius: 4px;
       overflow: hidden;
-      margin-top: 48px;
+      margin-top: 44px;
     }
 
     .pillar {
       background: var(--mid);
       padding: 28px 22px;
-      transition: background 0.2s;
+      transition: background 0.18s;
     }
 
     .pillar:hover { background: #1f1f1f; }
 
     .pillar-label {
-      font-size: 11px;
-      letter-spacing: 0.14em;
+      font-size: 10px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 10px;
       display: block;
     }
 
-    .pillar h3 { font-size: 20px; margin-bottom: 8px; }
-    .pillar p { font-size: 13px; color: var(--muted); margin: 0; }
+    .pillar h3 { font-size: 19px; margin-bottom: 8px; }
+    .pillar p  { font-size: 13px; color: var(--muted); margin: 0; }
 
     .blogs {
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-top: 40px;
+      margin-top: 36px;
     }
 
     .blog-link {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 20px;
+      padding: 15px 20px;
       background: var(--mid);
       border: 1px solid var(--border);
       border-radius: 4px;
-      text-decoration: none;
       transition: border-color 0.2s, background 0.2s;
       -webkit-tap-highlight-color: transparent;
     }
@@ -503,19 +622,8 @@
     .blog-link:hover { border-color: var(--gold); background: #1f1f1f; }
     .blog-link:active { background: #222; }
 
-    .blog-link-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--white);
-      letter-spacing: 0.04em;
-    }
-
-    .blog-link-url {
-      font-size: 12px;
-      color: var(--muted);
-      font-style: italic;
-    }
-
+    .blog-link-label { font-size: 13px; font-weight: 600; color: var(--white); letter-spacing: 0.04em; }
+    .blog-link-url   { font-size: 12px; color: var(--muted); font-style: italic; }
     .blog-link-arrow { font-size: 14px; color: var(--gold); }
 
     /* ─── BULLETS SECTION ────────────────────────────── */
@@ -525,8 +633,8 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      margin-top: 40px;
+      gap: 12px;
+      margin-top: 36px;
     }
 
     .bullet-list li {
@@ -534,7 +642,7 @@
       grid-template-columns: 32px 1fr;
       gap: 16px;
       align-items: start;
-      padding: 20px;
+      padding: 18px 20px;
       border: 1px solid var(--border);
       border-radius: 4px;
       background: var(--dark);
@@ -543,26 +651,14 @@
 
     .bullet-list li:hover { border-color: rgba(201,168,76,0.3); }
 
-    .bullet-num {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.1em;
-      padding-top: 2px;
-    }
-
-    .bullet-text {
-      font-size: 15px;
-      color: var(--light);
-      line-height: 1.55;
-    }
+    .bullet-num  { font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; padding-top: 2px; }
+    .bullet-text { font-size: 14px; color: var(--light); line-height: 1.6; }
 
     .bullet-note {
-      margin-top: 28px;
-      font-size: 14px;
+      margin-top: 24px;
+      font-size: 13px;
       color: var(--muted);
       font-style: italic;
-      padding-left: 48px;
     }
 
     /* ─── BRAND SECTION ──────────────────────────────── */
@@ -571,9 +667,8 @@
     .brand-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      align-items: stretch;
-      margin-top: 48px;
+      gap: 16px;
+      margin-top: 44px;
     }
 
     .brand-stat {
@@ -587,22 +682,8 @@
 
     .brand-stat:hover { border-color: rgba(201,168,76,0.3); }
 
-    .stat-value {
-      font-size: 40px;
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: -0.02em;
-      display: block;
-    }
-
-    .stat-label {
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-top: 8px;
-      display: block;
-    }
+    .stat-value { font-size: 40px; font-weight: 700; color: var(--white); letter-spacing: -0.02em; display: block; }
+    .stat-label { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 8px; display: block; }
 
     /* ─── FINAL CTA ──────────────────────────────────── */
     #cta-final {
@@ -611,97 +692,184 @@
       border-top: 1px solid var(--border);
     }
 
-    #cta-final h2 { max-width: 600px; margin: 0 auto 16px; }
+    #cta-final h2 { max-width: 580px; margin: 0 auto 16px; }
     #cta-final .hero-sub { margin-bottom: 40px; }
 
+    /* ─── DIVIDER ────────────────────────────────────── */
+    .divider { width: 40px; height: 2px; background: var(--gold); margin: 24px 0; }
+
     /* ─── FOOTER ─────────────────────────────────────── */
-    footer {
-      padding: 48px 24px 32px;
-      border-top: 1px solid var(--border);
-      text-align: center;
+    #mb-footer {
       background: var(--dark);
+      border-top: 1px solid var(--border);
     }
 
-    .footer-logo {
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
+    .mb-footer-nl {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .mb-footer-nl-text h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+
+    .mb-footer-nl-text p { font-size: 13px; color: var(--muted); margin: 0; }
+
+    .mb-footer-nl-form {
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      flex-shrink: 0;
+      min-width: 300px;
+      transition: border-color 0.2s;
+    }
+
+    .mb-footer-nl-form:focus-within { border-color: var(--gold); }
+
+    .mb-footer-nl-form input[type="email"] {
+      flex: 1;
+      background: var(--mid);
+      border: none;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--white);
+      font-family: var(--sans);
+      outline: none;
+    }
+
+    .mb-footer-nl-form input[type="email"]::placeholder { color: var(--muted); }
+
+    .mb-footer-nl-form button {
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      padding: 12px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-family: var(--sans);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.18s;
+    }
+
+    .mb-footer-nl-form button:hover { background: #d4b460; }
+
+    .mb-footer-main { padding: 44px 0 28px; }
+
+    .mb-footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 36px;
+    }
+
+    .mb-footer-brand .brand-name {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--white);
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 12px;
-    }
+    .mb-footer-brand p { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
 
-    .footer-links a {
-      font-size: 12px;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-      padding: 4px 0;
-    }
-
-    .footer-links a:hover { color: var(--white); }
-
-    .footer-divider {
-      width: 1px;
-      height: 12px;
-      background: var(--border);
+    .mb-footer-tagline {
       display: inline-block;
-      vertical-align: middle;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 5px 10px;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 2px;
     }
 
-    .footer-copy {
-      font-size: 11px;
+    .mb-footer-col-head {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: default;
+    }
+
+    .mb-footer-col-head .toggle-icon { display: none; }
+
+    .mb-footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .mb-footer-col li a {
+      font-size: 13px;
       color: var(--muted);
-      margin-top: 20px;
-      line-height: 1.8;
+      transition: color 0.18s, padding-left 0.18s;
+      display: inline-block;
     }
 
-    /* ─── DIVIDER ────────────────────────────────────── */
-    .divider {
-      width: 40px;
-      height: 2px;
-      background: var(--gold);
-      margin: 28px 0;
-    }
+    .mb-footer-col li a:hover { color: var(--white); padding-left: 4px; }
 
-    .divider-center { margin: 28px auto; }
-
-    /* ─── DISCLAIMER STRIP ──────────────────────────── */
-    .disclaimer-strip {
-      background: #0d0d0d;
+    .mb-footer-bottom {
+      padding: 20px 0;
       border-top: 1px solid var(--border);
-      padding: 20px 24px;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
-    .disclaimer-strip p {
+    .mb-footer-copy { font-size: 12px; color: var(--muted); }
+
+    .mb-footer-legal { display: flex; gap: 20px; flex-wrap: wrap; }
+
+    .mb-footer-legal a { font-size: 12px; color: var(--muted); transition: color 0.18s; }
+    .mb-footer-legal a:hover { color: var(--subtle); }
+
+    /* ─── DISCLAIMER ─────────────────────────────────── */
+    #mb-disclaimer {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      padding: 16px 0;
+    }
+
+    #mb-disclaimer p {
       font-size: 11px;
       color: var(--muted);
       line-height: 1.65;
-      max-width: 760px;
-      margin: 0 auto;
+      text-align: center;
     }
 
-    .disclaimer-strip a { color: var(--subtle); text-decoration: underline; }
+    #mb-disclaimer a { color: var(--gold); border-bottom: 1px solid rgba(201,168,76,0.3); }
 
     /* ─── COOKIE BANNER ──────────────────────────────── */
-    #cookie-banner {
+    #mb-cookie {
       position: fixed;
       bottom: 0; left: 0; right: 0;
-      z-index: 9998;
-      background: rgba(17,17,17,0.98);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      z-index: 999;
+      background: var(--mid);
       border-top: 1px solid var(--border);
-      padding: 18px 24px;
+      padding: 16px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -711,502 +879,604 @@
       transition: transform 0.3s ease;
     }
 
-    #cookie-banner.hidden { transform: translateY(100%); }
+    #mb-cookie.hidden { transform: translateY(100%); }
 
-    #cookie-banner p {
+    #mb-cookie p {
       font-size: 13px;
       color: var(--subtle);
       margin: 0;
       flex: 1;
-      min-width: 220px;
+      min-width: 240px;
     }
 
-    #cookie-banner a { color: var(--light); text-decoration: underline; }
+    #mb-cookie a { color: var(--gold); border-bottom: 1px solid rgba(201,168,76,0.3); }
 
-    .cookie-actions {
-      display: flex;
-      gap: 10px;
-      flex-shrink: 0;
-    }
+    .mb-cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
 
-    .cookie-btn {
+    .mb-cookie-accept {
       font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 10px 18px;
-      border: 1px solid var(--border);
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      padding: 9px 20px;
+      border-radius: 2px;
       cursor: pointer;
       font-family: var(--sans);
-      border-radius: 2px;
-      transition: background 0.2s, color 0.2s;
+      transition: background 0.18s;
       -webkit-tap-highlight-color: transparent;
     }
 
-    .cookie-btn-accept {
-      background: var(--white);
-      color: var(--black);
-      border-color: var(--white);
-    }
+    .mb-cookie-accept:hover { background: #d4b460; }
 
-    .cookie-btn-accept:hover { background: var(--accent); }
-
-    .cookie-btn-reject {
+    .mb-cookie-reject {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       background: transparent;
-      color: var(--subtle);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 9px 16px;
+      border-radius: 2px;
+      cursor: pointer;
+      font-family: var(--sans);
+      transition: color 0.18s, border-color 0.18s;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .cookie-btn-reject:hover { color: var(--white); }
+    .mb-cookie-reject:hover { color: var(--subtle); border-color: var(--subtle); }
 
     /* ─── BACK TO TOP ────────────────────────────────── */
-    #back-top {
+    #mb-back-top {
       position: fixed;
       bottom: 28px;
       right: 24px;
-      z-index: 300;
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       background: var(--mid);
       border: 1px solid var(--border);
-      border-radius: 2px;
-      cursor: pointer;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+      font-size: 18px;
+      color: var(--subtle);
+      z-index: 150;
       opacity: 0;
       transform: translateY(12px);
-      transition: opacity 0.3s, transform 0.3s, background 0.2s, border-color 0.2s;
-      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s, border-color 0.2s, color 0.2s;
+      text-decoration: none;
       -webkit-tap-highlight-color: transparent;
     }
 
-    #back-top.visible {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
+    #mb-back-top.visible { opacity: 1; transform: translateY(0); }
+    #mb-back-top:hover { border-color: var(--gold); color: var(--gold); }
 
-    #back-top:hover { background: #222; border-color: var(--gold); }
-
-    #back-top svg { stroke: var(--gold); }
-
-    /* ─── RESPONSIVE ─────────────────────────────────── */
+    /* ─── TABLET ─────────────────────────────────────── */
     @media (max-width: 900px) {
       .lead-grid { grid-template-columns: 1fr; gap: 16px; }
+      .mb-footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .mb-footer-nl { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .mb-footer-nl-form { min-width: unset; width: 100%; }
     }
 
+    /* ─── MOBILE ─────────────────────────────────────── */
     @media (max-width: 640px) {
-      :root { --nav-h: 58px; }
+      .mb-nav-links { display: none; }
+      .mb-nav-cta   { display: none; }
+      .mb-hamburger { display: flex; }
+      .mb-nav-section { display: none; }
+      .mb-nav-divider { display: none; }
 
-      section { padding: 64px 0; }
+      #mb-progress { top: 58px; }
 
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
-      .nav-drawer { display: block; }
+      section { padding: 60px 0; }
 
-      #hero {
-        padding-top: calc(var(--nav-h) + 64px);
-        padding-bottom: 72px;
-      }
+      .container  { padding: 0 16px; }
+      .mb-container { padding: 0 16px; }
 
-      .strip-inner { gap: 20px; }
+      #hero { padding-top: 56px; padding-bottom: 64px; }
 
-      .pillars { grid-template-columns: 1fr; gap: 1px; }
-
-      .brand-grid { grid-template-columns: 1fr; gap: 16px; }
+      .strip-inner { gap: 18px; }
+      .pillars { grid-template-columns: 1fr; }
+      .brand-grid { grid-template-columns: 1fr; gap: 12px; }
 
       .cta-form {
         flex-direction: column;
         border: none;
-        gap: 10px;
+        gap: 8px;
       }
 
       .cta-form input[type="email"] {
         border: 1px solid var(--border);
-        border-radius: 4px;
-        padding: 15px 18px;
-        font-size: 16px; /* prevents iOS zoom */
+        border-radius: 3px;
+        padding: 14px 16px;
+        font-size: 16px;
       }
 
       .cta-form:focus-within { border: none; }
 
       .btn {
-        border-radius: 4px;
+        border-radius: 3px;
         text-align: center;
         width: 100%;
-        padding: 16px;
-        font-size: 14px;
+        padding: 15px;
       }
 
       .blog-link-url { display: none; }
+      .bullet-note   { padding-left: 0; }
 
-      .bullet-note { padding-left: 0; }
+      .mb-footer-grid   { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .mb-footer-main   { padding: 28px 0 20px; }
+      .mb-footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .mb-footer-legal  { flex-wrap: wrap; gap: 10px; }
+      .mb-footer-nl     { padding: 28px 0; }
+      .mb-footer-nl-form {
+        flex-direction: column;
+        border: none;
+        gap: 8px;
+      }
+      .mb-footer-nl-form input[type="email"] {
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 12px 14px;
+        font-size: 16px;
+      }
+      .mb-footer-nl-form button { border-radius: 3px; padding: 13px; text-align: center; }
 
-      #back-top { bottom: 20px; right: 16px; }
+      .mb-footer-col-head { cursor: pointer; margin-bottom: 0; padding-bottom: 14px; }
+      .mb-footer-col-head .toggle-icon { display: block; color: var(--gold); font-size: 14px; transition: transform 0.25s; }
+      .mb-footer-col-head.open .toggle-icon { transform: rotate(45deg); }
+      .mb-footer-col ul { overflow: hidden; max-height: 0; transition: max-height 0.3s ease; margin-top: 0; }
+      .mb-footer-col ul.open { max-height: 260px; margin-bottom: 4px; }
 
-      .footer-links { gap: 14px; }
-      .footer-divider { display: none; }
+      #mb-cookie { flex-direction: column; gap: 12px; padding: 16px; }
+      #mb-cookie p { font-size: 12px; min-width: unset; }
+      .mb-cookie-btns { width: 100%; }
+      .mb-cookie-accept, .mb-cookie-reject { flex: 1; text-align: center; }
 
-      .cookie-actions { width: 100%; }
-      .cookie-btn { flex: 1; text-align: center; }
+      #mb-back-top { bottom: 20px; right: 16px; }
     }
 
     @media (max-width: 390px) {
-      .container { padding: 0 16px; }
-      section { padding: 52px 0; }
-      h1 { font-size: 28px; }
-      h2 { font-size: 22px; }
+      h1  { font-size: 26px; }
+      h2  { font-size: 20px; }
       .hero-eyebrow { font-size: 10px; }
+    }
+
+    @media (hover: none) {
+      .lead-card:hover,
+      .blog-link:hover,
+      .pillar:hover,
+      .bullet-list li:hover,
+      .brand-stat:hover { border-color: var(--border); background: initial; }
+      .mb-footer-col li a:hover { padding-left: 0; }
     }
   </style>
 </head>
 <body>
 
-  <!-- READING PROGRESS -->
-  <div id="progress-bar"></div>
-
-  <!-- NAV -->
-  <nav>
-    <a href="https://metricbase.org" class="nav-logo">MetricBase</a>
-    <ul class="nav-links">
-      <li><a href="https://chain.metricbase.org">Crypto</a></li>
-      <li><a href="https://energy.metricbase.org">Energy</a></li>
-      <li><a href="https://saham.metricbase.org">Stocks</a></li>
-    </ul>
-    <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+  <!-- ─── NAV ──────────────────────────────────────── -->
+  <nav id="mb-nav">
+    <div class="mb-nav-left">
+      <a class="mb-logo" href="https://metricbase.org">Metric<span>Base</span></a>
+      <div class="mb-nav-divider"></div>
+      <span class="mb-nav-section">Home</span>
+      <ul class="mb-nav-links">
+        <li><a href="https://energy.metricbase.org">Energy</a></li>
+        <li><a href="https://chain.metricbase.org">Crypto</a></li>
+        <li><a href="https://saham.metricbase.org">Stocks</a></li>
+      </ul>
+    </div>
+    <div class="mb-nav-right">
+      <a class="mb-nav-cta" href="#hero">Get Free Guide</a>
+      <button id="mb-hamburger-btn" class="mb-hamburger" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
-  <!-- MOBILE DRAWER -->
-  <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
-    <ul>
-      <li><a href="https://chain.metricbase.org">Crypto</a></li>
-      <li><a href="https://energy.metricbase.org">Energy</a></li>
-      <li><a href="https://saham.metricbase.org">Stocks</a></li>
-      <li><a href="https://energy.metricbase.org/p/blog-page.html">Privacy Policy</a></li>
-      <li><a href="https://energy.metricbase.org/p/contact.html">Contact</a></li>
-    </ul>
+  <!-- ─── SIDE DRAWER ───────────────────────────────── -->
+  <div id="mb-drawer-overlay" onclick="closeDrawer()"></div>
+  <nav id="mb-drawer">
+    <div class="mb-drawer-header">
+      <span class="mb-drawer-logo">Metric<span>Base</span></span>
+      <button class="mb-drawer-close" aria-label="Close menu" onclick="closeDrawer()">&#215;</button>
+    </div>
+    <div class="mb-drawer-section">
+      <span class="mb-drawer-label">You are here</span>
+      <a class="mb-drawer-link" href="https://metricbase.org">Main Site <span>&#8599;</span></a>
+    </div>
+    <div class="mb-drawer-section">
+      <span class="mb-drawer-label">Our Blogs</span>
+      <a class="mb-drawer-link" href="https://energy.metricbase.org">Energy Markets <span>&#8599;</span></a>
+      <a class="mb-drawer-link" href="https://chain.metricbase.org">Crypto <span>&#8599;</span></a>
+      <a class="mb-drawer-link" href="https://saham.metricbase.org">Stocks &amp; Macro <span>&#8599;</span></a>
+    </div>
+    <div class="mb-drawer-section">
+      <span class="mb-drawer-label">Legal</span>
+      <a class="mb-drawer-link" href="https://energy.metricbase.org/p/blog-page.html">Privacy Policy</a>
+      <a class="mb-drawer-link" href="https://energy.metricbase.org/p/industri-migas-web-site-agreement.html">Disclaimer</a>
+      <a class="mb-drawer-link" href="https://energy.metricbase.org/p/contact.html">Contact</a>
+    </div>
+    <a class="mb-drawer-cta" href="#hero" onclick="closeDrawer()">Get Free Guide</a>
+  </nav>
+
+  <!-- ─── PROGRESS BAR ──────────────────────────────── -->
+  <div id="mb-progress"></div>
+
+  <!-- ─── BACK TO TOP ───────────────────────────────── -->
+  <a id="mb-back-top" href="#" aria-label="Back to top" onclick="scrollToTop(event)">&#8593;</a>
+
+  <!-- ─── COOKIE BANNER ────────────────────────────── -->
+  <div id="mb-cookie" class="hidden">
+    <p>We use cookies to personalise content and to analyse our traffic. By clicking "Accept" you consent to our use of cookies in accordance with our <a href="https://energy.metricbase.org/p/blog-page.html">Privacy Policy</a>. You may withdraw consent at any time.</p>
+    <div class="mb-cookie-btns">
+      <button class="mb-cookie-reject" id="cookie-reject">Reject</button>
+      <button class="mb-cookie-accept" id="cookie-accept">Accept All</button>
+    </div>
   </div>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="container">
-      <span class="hero-eyebrow reveal">Free Guide — Limited Distribution</span>
-      <h1 class="reveal reveal-delay-1">Most traders are<br>the last to know.</h1>
-      <p class="hero-sub reveal reveal-delay-2">Smart money doesn't predict — it reads signals. We track the ones that move markets before the crowd catches on.</p>
-      <p class="hero-offer reveal reveal-delay-3">Get the free guide: <em>5 Signals Smart Money Uses Before a Pump</em></p>
-      <div class="reveal reveal-delay-4">
-        <form class="cta-form" action="https://app.kit.com/forms/9390641/subscriptions" method="POST" target="_blank">
+  <!-- ─── MAIN BODY ────────────────────────────────── -->
+  <div id="mb-body">
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="container" style="text-align:center;">
+        <span class="hero-eyebrow reveal">Free Guide — Limited Distribution</span>
+        <h1 class="reveal reveal-delay-1">Most traders are<br>the last to know.</h1>
+        <p class="hero-sub reveal reveal-delay-2">Smart money doesn't predict — it reads signals. We track the ones that move markets before the crowd catches on.</p>
+        <p class="hero-offer reveal reveal-delay-3">Get the free guide: <em>5 Signals Smart Money Uses Before a Pump</em></p>
+        <div class="reveal reveal-delay-4">
+          <form class="cta-form" action="https://app.kit.com/forms/9390641/subscriptions" method="POST" target="_blank">
+            <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" />
+            <button type="submit" class="btn">Send Me the 5 Signals</button>
+          </form>
+          <p class="fine-print">No spam. One email. Unsubscribe anytime. By subscribing, you agree to our <a href="https://energy.metricbase.org/p/blog-page.html">Privacy Policy</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDIBILITY STRIP -->
+    <div id="strip">
+      <div class="container">
+        <div class="strip-inner">
+          <span class="strip-item"><span class="strip-dot"></span>Data-first analysis</span>
+          <span class="strip-item"><span class="strip-dot"></span>Crypto + Energy + Macro</span>
+          <span class="strip-item"><span class="strip-dot"></span>No sponsors. No bags to shill.</span>
+          <span class="strip-item"><span class="strip-dot"></span>Tracking what actually moves markets</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEAD MAGNET -->
+    <section id="lead">
+      <div class="container">
+        <span class="section-label reveal">The Free Guide</span>
+        <h2 class="reveal reveal-delay-1">The 5 Signals. Free. No catch.</h2>
+        <p class="reveal reveal-delay-2">Before a significant move, the same patterns appear. On-chain accumulation. Derivatives divergence. Macro positioning shifts.</p>
+        <p class="reveal reveal-delay-3">Most traders see the price move after. We show you what to look for before.</p>
+
+        <div class="lead-grid">
+          <div class="lead-card reveal">
+            <div class="card-title">Inside the guide</div>
+            <ul class="checklist">
+              <li>The 5 signals institutional players use to front-run retail</li>
+              <li>How to read each one — no expensive terminals needed</li>
+              <li>Real examples from crypto and energy markets</li>
+              <li>The one mistake that turns prepared traders into exit liquidity</li>
+            </ul>
+          </div>
+          <div class="lead-card reveal reveal-delay-1">
+            <div class="card-title">Who this is for</div>
+            <ul class="checklist">
+              <li>Crypto traders tired of chasing pumps</li>
+              <li>Oil &amp; gas professionals tracking market structure</li>
+              <li>Macro investors looking for positioning edges</li>
+              <li>Anyone who suspects they keep being the exit</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top: 44px;" class="reveal">
+          <form class="cta-form" style="margin: 0 auto;" action="https://app.kit.com/forms/9390641/subscriptions" method="POST" target="_blank">
+            <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" />
+            <button type="submit" class="btn btn-gold">Download the Free Guide</button>
+          </form>
+          <p class="fine-print" style="margin-top: 10px;">One email. No sequences. No upsells. By subscribing, you agree to our <a href="https://energy.metricbase.org/p/blog-page.html">Privacy Policy</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAIN -->
+    <section id="pain">
+      <div class="container">
+        <span class="section-label reveal">The Problem</span>
+        <h2 class="reveal reveal-delay-1">You're not losing because of bad luck.</h2>
+
+        <div class="divider reveal reveal-delay-2"></div>
+
+        <p class="reveal reveal-delay-2">You're losing because you're reacting to information that was priced in three days ago.</p>
+        <p class="reveal reveal-delay-3">By the time it hits Twitter, Telegram, or your news feed — it's done. The move happened. You're the exit.</p>
+
+        <div class="pain-statement reveal">
+          Most retail traders don't lack conviction.<br>They lack timing. And timing comes from reading the right signals first.
+        </div>
+
+        <p class="reveal">The market is not random. Positioning leaves tracks. Capital flow leaves footprints. The question is whether you know how to read them — or whether you're waiting for confirmation that arrives too late.</p>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section id="solution">
+      <div class="container">
+        <span class="section-label reveal">The MetricBase Approach</span>
+        <h2 class="reveal reveal-delay-1">We track what matters.<br>Before it matters to everyone else.</h2>
+
+        <div class="divider reveal reveal-delay-2"></div>
+
+        <p class="reveal reveal-delay-2">We don't forecast. We don't give buy signals. We don't hype.</p>
+        <p class="reveal reveal-delay-3">We track market structure, positioning data, on-chain flows, and macro indicators — and distill it into clear, actionable intelligence.</p>
+
+        <div class="pillars reveal">
+          <div class="pillar">
+            <span class="pillar-label">Principle 01</span>
+            <h3>Data > Noise</h3>
+            <p>Everything we publish is anchored in measurable data. No narratives without evidence.</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-label">Principle 02</span>
+            <h3>Positioning > Prediction</h3>
+            <p>Knowing where capital is positioned tells you more than any price target ever will.</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-label">Principle 03</span>
+            <h3>We Track What Matters</h3>
+            <p>Not every signal is worth your attention. We filter ruthlessly so you don't have to.</p>
+          </div>
+        </div>
+
+        <div class="blogs">
+          <a href="https://energy.metricbase.org" class="blog-link reveal" target="_blank" rel="noopener">
+            <span class="blog-link-label">Oil &amp; Gas / Energy</span>
+            <span class="blog-link-url">energy.metricbase.org</span>
+            <span class="blog-link-arrow">&#8599;</span>
+          </a>
+          <a href="https://chain.metricbase.org" class="blog-link reveal reveal-delay-1" target="_blank" rel="noopener">
+            <span class="blog-link-label">Crypto Markets</span>
+            <span class="blog-link-url">chain.metricbase.org</span>
+            <span class="blog-link-arrow">&#8599;</span>
+          </a>
+          <a href="https://saham.metricbase.org" class="blog-link reveal reveal-delay-2" target="_blank" rel="noopener">
+            <span class="blog-link-label">Stocks &amp; Macro</span>
+            <span class="blog-link-url">saham.metricbase.org</span>
+            <span class="blog-link-arrow">&#8599;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BULLETS -->
+    <section id="bullets">
+      <div class="container">
+        <span class="section-label reveal">What You'll Walk Away With</span>
+        <h2 class="reveal reveal-delay-1">A thinking system.<br>Not a one-time tip.</h2>
+
+        <ul class="bullet-list">
+          <li class="reveal">
+            <span class="bullet-num">01</span>
+            <span class="bullet-text">A framework for identifying accumulation before a pump — in both crypto and commodities</span>
+          </li>
+          <li class="reveal reveal-delay-1">
+            <span class="bullet-num">02</span>
+            <span class="bullet-text">The difference between real volume and manufactured momentum — and how to tell them apart in real time</span>
+          </li>
+          <li class="reveal reveal-delay-2">
+            <span class="bullet-num">03</span>
+            <span class="bullet-text">How to use derivatives data to see where smart money is positioned before the move</span>
+          </li>
+          <li class="reveal reveal-delay-3">
+            <span class="bullet-num">04</span>
+            <span class="bullet-text">Why energy market flows often telegraph risk-on and risk-off moves in crypto — and how to use that cross-market edge</span>
+          </li>
+          <li class="reveal reveal-delay-4">
+            <span class="bullet-num">05</span>
+            <span class="bullet-text">A repeatable process you can apply to the next cycle — not a trade recommendation that expires in 48 hours</span>
+          </li>
+        </ul>
+
+        <p class="bullet-note reveal">This is not a trading signal. It's a thinking system.</p>
+      </div>
+    </section>
+
+    <!-- BRAND -->
+    <section id="brand">
+      <div class="container">
+        <span class="section-label reveal">Who Is MetricBase</span>
+        <h2 class="reveal reveal-delay-1">Independent. Data-first.<br>No agenda.</h2>
+
+        <div class="divider reveal reveal-delay-2"></div>
+
+        <p class="reveal reveal-delay-2">MetricBase is an independent research brand built for traders, energy professionals, and macro investors who want signal, not noise.</p>
+        <p class="reveal reveal-delay-3">No sponsors. No token bags to shill. No affiliate-driven calls. Just data, tracked consistently, explained clearly — across crypto, oil &amp; gas, and macro, because markets don't move in silos.</p>
+
+        <div class="brand-grid">
+          <div class="brand-stat reveal">
+            <span class="stat-value">3</span>
+            <span class="stat-label">Coverage verticals</span>
+          </div>
+          <div class="brand-stat reveal reveal-delay-1">
+            <span class="stat-value">0</span>
+            <span class="stat-label">Sponsors or bags to shill</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="cta-final" style="text-align:center;">
+      <div class="container">
+        <h2 class="reveal">You can wait for the next move<br>to confirm on-chain.</h2>
+        <p class="hero-sub reveal reveal-delay-1">Or you can be positioned before it does. Get the guide. Understand the 5 signals. Stop being the last to know.</p>
+        <div class="reveal reveal-delay-2">
+          <form class="cta-form" style="margin: 0 auto;" action="https://app.kit.com/forms/9390641/subscriptions" method="POST" target="_blank">
+            <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" />
+            <button type="submit" class="btn btn-gold">Get the 5 Signals Now</button>
+          </form>
+          <p class="fine-print" style="margin-top: 12px;">No spam. One email when the guide lands in your inbox. By subscribing, you agree to our <a href="https://energy.metricbase.org/p/blog-page.html">Privacy Policy</a>.</p>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#mb-body -->
+
+  <!-- ─── FOOTER ────────────────────────────────────── -->
+  <footer id="mb-footer">
+    <div class="mb-container">
+
+      <div class="mb-footer-nl">
+        <div class="mb-footer-nl-text">
+          <h3>Stay ahead of the market.</h3>
+          <p>Crypto signals, energy flows, and macro positioning — straight to your inbox.</p>
+        </div>
+        <form class="mb-footer-nl-form" action="https://app.kit.com/forms/9390641/subscriptions" method="POST" target="_blank">
           <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" />
-          <button type="submit" class="btn">Send Me the 5 Signals</button>
+          <button type="submit">Subscribe</button>
         </form>
-        <p class="fine-print">No spam. One email. Unsubscribe anytime. By subscribing, you agree to our <a href="https://energy.metricbase.org/p/blog-page.html">Privacy Policy</a>.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- CREDIBILITY STRIP -->
-  <div id="strip">
-    <div class="container">
-      <div class="strip-inner">
-        <span class="strip-item"><span class="strip-dot"></span>Data-first analysis</span>
-        <span class="strip-item"><span class="strip-dot"></span>Crypto + Energy + Macro</span>
-        <span class="strip-item"><span class="strip-dot"></span>No sponsors. No bags to shill.</span>
-        <span class="strip-item"><span class="strip-dot"></span>Tracking what actually moves markets</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- LEAD MAGNET -->
-  <section id="lead">
-    <div class="container">
-      <span class="section-label reveal">The Free Guide</span>
-      <h2 class="reveal reveal-delay-1">The 5 Signals. Free. No catch.</h2>
-      <p class="reveal reveal-delay-2">Before a significant move, the same patterns appear. On-chain accumulation. Derivatives divergence. Macro positioning shifts.</p>
-      <p class="reveal reveal-delay-3">Most traders see the price move after. We show you what to look for before.</p>
-
-      <div class="lead-grid">
-        <div class="lead-card reveal">
-          <div class="card-title">Inside the guide</div>
-          <ul class="checklist">
-            <li>The 5 signals institutional players use to front-run retail</li>
-            <li>How to read each one — no expensive terminals needed</li>
-            <li>Real examples from crypto and energy markets</li>
-            <li>The one mistake that turns prepared traders into exit liquidity</li>
-          </ul>
+      <div class="mb-footer-main">
+        <div class="mb-footer-grid">
+          <div class="mb-footer-brand">
+            <div class="brand-name">MetricBase</div>
+            <p>Data-first analysis across energy, crypto, and macro markets. We track what moves markets — before it moves yours.</p>
+            <span class="mb-footer-tagline">Data &gt; Noise</span>
+          </div>
+          <div class="mb-footer-col">
+            <div class="mb-footer-col-head" onclick="toggleFooterCol(this)">Coverage <span class="toggle-icon">+</span></div>
+            <ul>
+              <li><a href="https://energy.metricbase.org">Energy Markets</a></li>
+              <li><a href="https://chain.metricbase.org">Crypto</a></li>
+              <li><a href="https://saham.metricbase.org">Stocks &amp; Macro</a></li>
+            </ul>
+          </div>
+          <div class="mb-footer-col">
+            <div class="mb-footer-col-head" onclick="toggleFooterCol(this)">Resources <span class="toggle-icon">+</span></div>
+            <ul>
+              <li><a href="#lead">Free Guide</a></li>
+              <li><a href="#solution">Our Approach</a></li>
+              <li><a href="#bullets">What You'll Learn</a></li>
+            </ul>
+          </div>
+          <div class="mb-footer-col">
+            <div class="mb-footer-col-head" onclick="toggleFooterCol(this)">MetricBase <span class="toggle-icon">+</span></div>
+            <ul>
+              <li><a href="https://metricbase.org">Main Site</a></li>
+              <li><a href="https://energy.metricbase.org/p/blog-page.html">Privacy Policy</a></li>
+              <li><a href="https://energy.metricbase.org/p/industri-migas-web-site-agreement.html">Disclaimer</a></li>
+              <li><a href="https://energy.metricbase.org/p/contact.html">Contact</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="lead-card reveal reveal-delay-1">
-          <div class="card-title">Who this is for</div>
-          <ul class="checklist">
-            <li>Crypto traders tired of chasing pumps</li>
-            <li>Oil &amp; gas professionals tracking market structure</li>
-            <li>Macro investors looking for positioning edges</li>
-            <li>Anyone who suspects they keep being the exit</li>
-          </ul>
-        </div>
-      </div>
 
-      <div style="text-align:center; margin-top: 48px;" class="reveal">
-        <form class="cta-form" style="margin: 0 auto;" action="https://app.kit.com/forms/9390641/subscriptions" method="POST" target="_blank">
-          <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" />
-          <button type="submit" class="btn btn-gold">Download the Free Guide</button>
-        </form>
-        <p class="fine-print" style="margin-top: 12px;">One email. No sequences. No upsells. By subscribing, you agree to our <a href="https://energy.metricbase.org/p/blog-page.html">Privacy Policy</a>.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PAIN -->
-  <section id="pain">
-    <div class="container">
-      <span class="section-label reveal">The Problem</span>
-      <h2 class="reveal reveal-delay-1">You're not losing because of bad luck.</h2>
-
-      <div class="divider reveal reveal-delay-2"></div>
-
-      <p class="reveal reveal-delay-2">You're losing because you're reacting to information that was priced in three days ago.</p>
-      <p class="reveal reveal-delay-3">By the time it hits Twitter, Telegram, or your news feed — it's done. The move happened. You're the exit.</p>
-
-      <div class="pain-statement reveal">
-        Most retail traders don't lack conviction.<br>They lack timing. And timing comes from reading the right signals first.
-      </div>
-
-      <p class="reveal">The market is not random. Positioning leaves tracks. Capital flow leaves footprints. The question is whether you know how to read them — or whether you're waiting for confirmation that arrives too late.</p>
-    </div>
-  </section>
-
-  <!-- SOLUTION -->
-  <section id="solution">
-    <div class="container">
-      <span class="section-label reveal">The MetricBase Approach</span>
-      <h2 class="reveal reveal-delay-1">We track what matters.<br>Before it matters to everyone else.</h2>
-
-      <div class="divider reveal reveal-delay-2"></div>
-
-      <p class="reveal reveal-delay-2">We don't forecast. We don't give buy signals. We don't hype.</p>
-      <p class="reveal reveal-delay-3">We track market structure, positioning data, on-chain flows, and macro indicators — and distill it into clear, actionable intelligence.</p>
-
-      <div class="pillars reveal">
-        <div class="pillar">
-          <span class="pillar-label">Principle 01</span>
-          <h3>Data > Noise</h3>
-          <p>Everything we publish is anchored in measurable data. No narratives without evidence.</p>
-        </div>
-        <div class="pillar">
-          <span class="pillar-label">Principle 02</span>
-          <h3>Positioning > Prediction</h3>
-          <p>Knowing where capital is positioned tells you more than any price target ever will.</p>
-        </div>
-        <div class="pillar">
-          <span class="pillar-label">Principle 03</span>
-          <h3>We Track What Matters</h3>
-          <p>Not every signal is worth your attention. We filter ruthlessly so you don't have to.</p>
+        <div class="mb-footer-bottom">
+          <span class="mb-footer-copy">&#169; 2025 MetricBase &#8212; metricbase.org</span>
+          <div class="mb-footer-legal">
+            <a href="https://energy.metricbase.org/p/blog-page.html">Privacy Policy</a>
+            <a href="https://energy.metricbase.org/p/industri-migas-web-site-agreement.html">Disclaimer</a>
+            <a href="https://energy.metricbase.org/p/contact.html">Contact</a>
+          </div>
         </div>
       </div>
 
-      <div class="blogs">
-        <a href="https://chain.metricbase.org" class="blog-link reveal" target="_blank" rel="noopener">
-          <span class="blog-link-label">Crypto Markets</span>
-          <span class="blog-link-url">chain.metricbase.org</span>
-          <span class="blog-link-arrow">&#8599;</span>
-        </a>
-        <a href="https://energy.metricbase.org" class="blog-link reveal reveal-delay-1" target="_blank" rel="noopener">
-          <span class="blog-link-label">Oil &amp; Gas / Energy</span>
-          <span class="blog-link-url">energy.metricbase.org</span>
-          <span class="blog-link-arrow">&#8599;</span>
-        </a>
-        <a href="https://saham.metricbase.org" class="blog-link reveal reveal-delay-2" target="_blank" rel="noopener">
-          <span class="blog-link-label">Stocks &amp; Macro</span>
-          <span class="blog-link-url">saham.metricbase.org</span>
-          <span class="blog-link-arrow">&#8599;</span>
-        </a>
-      </div>
     </div>
-  </section>
-
-  <!-- BULLETS -->
-  <section id="bullets">
-    <div class="container">
-      <span class="section-label reveal">What You'll Walk Away With</span>
-      <h2 class="reveal reveal-delay-1">A thinking system.<br>Not a one-time tip.</h2>
-
-      <ul class="bullet-list">
-        <li class="reveal">
-          <span class="bullet-num">01</span>
-          <span class="bullet-text">A framework for identifying accumulation before a pump — in both crypto and commodities</span>
-        </li>
-        <li class="reveal reveal-delay-1">
-          <span class="bullet-num">02</span>
-          <span class="bullet-text">The difference between real volume and manufactured momentum — and how to tell them apart in real time</span>
-        </li>
-        <li class="reveal reveal-delay-2">
-          <span class="bullet-num">03</span>
-          <span class="bullet-text">How to use derivatives data to see where smart money is positioned before the move</span>
-        </li>
-        <li class="reveal reveal-delay-3">
-          <span class="bullet-num">04</span>
-          <span class="bullet-text">Why energy market flows often telegraph risk-on and risk-off moves in crypto — and how to use that cross-market edge</span>
-        </li>
-        <li class="reveal reveal-delay-4">
-          <span class="bullet-num">05</span>
-          <span class="bullet-text">A repeatable process you can apply to the next cycle — not a trade recommendation that expires in 48 hours</span>
-        </li>
-      </ul>
-
-      <p class="bullet-note reveal">This is not a trading signal. It's a thinking system.</p>
-    </div>
-  </section>
-
-  <!-- BRAND -->
-  <section id="brand">
-    <div class="container">
-      <span class="section-label reveal">Who Is MetricBase</span>
-      <h2 class="reveal reveal-delay-1">Independent. Data-first.<br>No agenda.</h2>
-
-      <div class="divider reveal reveal-delay-2"></div>
-
-      <p class="reveal reveal-delay-2">MetricBase is an independent research brand built for traders, energy professionals, and macro investors who want signal, not noise.</p>
-      <p class="reveal reveal-delay-3">No sponsors. No token bags to shill. No affiliate-driven calls. Just data, tracked consistently, explained clearly — across crypto, oil &amp; gas, and macro, because markets don't move in silos.</p>
-
-      <div class="brand-grid">
-        <div class="brand-stat reveal">
-          <span class="stat-value">3</span>
-          <span class="stat-label">Coverage verticals</span>
-        </div>
-        <div class="brand-stat reveal reveal-delay-1">
-          <span class="stat-value">0</span>
-          <span class="stat-label">Sponsors or bags to shill</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section id="cta-final">
-    <div class="container">
-      <h2 class="reveal">You can wait for the next move<br>to confirm on-chain.</h2>
-      <p class="hero-sub reveal reveal-delay-1">Or you can be positioned before it does. Get the guide. Understand the 5 signals. Stop being the last to know.</p>
-
-      <div class="reveal reveal-delay-2">
-        <form class="cta-form" style="margin: 0 auto;" action="https://app.kit.com/forms/9390641/subscriptions" method="POST" target="_blank">
-          <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" />
-          <button type="submit" class="btn btn-gold">Get the 5 Signals Now</button>
-        </form>
-        <p class="fine-print" style="margin-top: 14px;">No spam. One email when the guide lands in your inbox. By subscribing, you agree to our <a href="https://energy.metricbase.org/p/blog-page.html">Privacy Policy</a>.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- DISCLAIMER STRIP -->
-  <div class="disclaimer-strip">
-    <p><strong>Financial Disclaimer:</strong> Content published on MetricBase is for informational and educational purposes only. Nothing on this site constitutes financial, investment, legal, or tax advice. Market analysis, signals, and commentary are opinions based on publicly available data and do not represent recommendations to buy or sell any asset. Past performance does not guarantee future results. All investments carry risk. You are solely responsible for your own financial decisions. <a href="https://energy.metricbase.org/p/industri-migas-web-site-agreement.html">Full Disclaimer</a>.</p>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">MetricBase</div>
-    <div class="footer-links">
-      <a href="https://metricbase.org">Home</a>
-      <span class="footer-divider"></span>
-      <a href="https://chain.metricbase.org">Crypto</a>
-      <span class="footer-divider"></span>
-      <a href="https://energy.metricbase.org">Energy</a>
-      <span class="footer-divider"></span>
-      <a href="https://saham.metricbase.org">Stocks</a>
-      <span class="footer-divider"></span>
-      <a href="https://energy.metricbase.org/p/blog-page.html">Privacy Policy</a>
-      <span class="footer-divider"></span>
-      <a href="https://energy.metricbase.org/p/industri-migas-web-site-agreement.html">Disclaimer</a>
-      <span class="footer-divider"></span>
-      <a href="https://energy.metricbase.org/p/contact.html">Contact</a>
-    </div>
-    <p class="footer-copy">metricbase.org &mdash; Data > Noise<br>&copy; 2025 MetricBase. All rights reserved.</p>
   </footer>
 
-  <!-- COOKIE CONSENT BANNER -->
-  <div id="cookie-banner" class="hidden">
-    <p>We use cookies to improve your experience and serve relevant content. <a href="https://energy.metricbase.org/p/blog-page.html">Privacy Policy</a>.</p>
-    <div class="cookie-actions">
-      <button class="cookie-btn cookie-btn-reject" id="cookie-reject">Reject</button>
-      <button class="cookie-btn cookie-btn-accept" id="cookie-accept">Accept</button>
+  <!-- ─── DISCLAIMER STRIP ──────────────────────────── -->
+  <div id="mb-disclaimer">
+    <div class="mb-container">
+      <p>
+        MetricBase is for informational and educational purposes only. Nothing published here constitutes financial, investment, legal, or tax advice.
+        Market analysis and signals are opinions based on publicly available data. Past performance does not guarantee future results. All investments carry risk.
+        &#183; <a href="https://energy.metricbase.org/p/blog-page.html">Privacy Policy</a>
+        &#183; <a href="https://energy.metricbase.org/p/industri-migas-web-site-agreement.html">Full Disclaimer</a>
+      </p>
     </div>
   </div>
 
-  <!-- BACK TO TOP -->
-  <button id="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="2,9 7,4 12,9"/>
-    </svg>
-  </button>
-
   <script>
-    // ── Progress bar
-    var progressBar = document.getElementById('progress-bar');
-    function updateProgress() {
-      var doc = document.documentElement;
-      var scrolled = doc.scrollTop || document.body.scrollTop;
-      var total = doc.scrollHeight - doc.clientHeight;
-      progressBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+    /* ── Drawer ───────────────────────────────────────── */
+    function openDrawer() {
+      document.getElementById('mb-drawer').classList.add('open');
+      document.getElementById('mb-drawer-overlay').classList.add('open');
+      document.getElementById('mb-hamburger-btn').classList.add('active');
+      document.getElementById('mb-hamburger-btn').setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
     }
 
-    // ── Back to top
-    var backTop = document.getElementById('back-top');
-    function updateBackTop() {
-      var scrolled = document.documentElement.scrollTop || document.body.scrollTop;
-      if (scrolled > 400) backTop.classList.add('visible');
-      else backTop.classList.remove('visible');
+    function closeDrawer() {
+      document.getElementById('mb-drawer').classList.remove('open');
+      document.getElementById('mb-drawer-overlay').classList.remove('open');
+      document.getElementById('mb-hamburger-btn').classList.remove('active');
+      document.getElementById('mb-hamburger-btn').setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     }
+
+    function toggleMenu() {
+      document.getElementById('mb-drawer').classList.contains('open') ? closeDrawer() : openDrawer();
+    }
+
+    /* ── Footer accordion (mobile) ───────────────────── */
+    function toggleFooterCol(head) {
+      if (window.innerWidth > 640) return;
+      var ul     = head.nextElementSibling;
+      var isOpen = head.classList.contains('open');
+      head.classList.toggle('open', !isOpen);
+      ul.classList.toggle('open', !isOpen);
+    }
+
+    /* ── Back to top ─────────────────────────────────── */
+    function scrollToTop(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ── Scroll handlers ─────────────────────────────── */
+    var progress = document.getElementById('mb-progress');
+    var backTop  = document.getElementById('mb-back-top');
 
     window.addEventListener('scroll', function() {
-      updateProgress();
-      updateBackTop();
+      var doc     = document.documentElement;
+      var scrolled = doc.scrollTop || document.body.scrollTop;
+      var total   = doc.scrollHeight - doc.clientHeight;
+      progress.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+      backTop.classList.toggle('visible', scrolled > 400);
     }, { passive: true });
 
-    // ── Hamburger menu
-    var hamburger = document.getElementById('hamburger');
-    var drawer = document.getElementById('nav-drawer');
-
-    hamburger.addEventListener('click', function() {
-      var open = hamburger.classList.toggle('open');
-      drawer.classList.toggle('open', open);
-      hamburger.setAttribute('aria-expanded', open);
-      drawer.setAttribute('aria-hidden', !open);
-    });
-
-    // close drawer on link tap
-    drawer.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() {
-        hamburger.classList.remove('open');
-        drawer.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        drawer.setAttribute('aria-hidden', 'true');
-      });
-    });
-
-    // ── Scroll reveal
-    var reveals = document.querySelectorAll('.reveal');
+    /* ── Scroll reveal ───────────────────────────────── */
     var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
 
-    reveals.forEach(function(el) { observer.observe(el); });
+    document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
 
-    // hero elements visible immediately
-    document.querySelectorAll('#hero .reveal').forEach(function(el) {
-      el.classList.add('visible');
-    });
+    /* hero visible immediately */
+    document.querySelectorAll('#hero .reveal').forEach(function(el) { el.classList.add('visible'); });
 
-    // ── Cookie consent
+    /* ── Cookie consent ──────────────────────────────── */
     (function() {
-      var banner = document.getElementById('cookie-banner');
+      var banner = document.getElementById('mb-cookie');
       if (!localStorage.getItem('mb_cookie_consent')) {
-        setTimeout(function() { banner.classList.remove('hidden'); }, 800);
+        setTimeout(function() { banner.classList.remove('hidden'); }, 900);
       }
       document.getElementById('cookie-accept').addEventListener('click', function() {
         localStorage.setItem('mb_cookie_consent', 'accepted');
