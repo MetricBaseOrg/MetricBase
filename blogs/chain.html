@@ -25,16 +25,16 @@
 
   <!-- AdSense: only push ads after user consent -->
   <meta content='index, follow' name='robots'/>
-  <meta content='cryptocurrency, crypto, Bitcoin, Ethereum, BTC, ETH, DeFi, blockchain, crypto trading, digital assets' name='keywords'/>
+  <meta content='stock market, saham, IDX, Jakarta Stock Exchange, Indonesian stocks, equity market, macro, investing' name='keywords'/>
 
   <!-- Open Graph -->
   <meta expr:content='data:blog.pageTitle' property='og:title'/>
   <meta expr:content='data:blog.metaDescription' property='og:description'/>
   <meta content='article' property='og:type'/>
   <meta expr:content='data:blog.url' property='og:url'/>
-  <meta content='MetricBase Chain' property='og:site_name'/>
+  <meta content='MetricBase Saham' property='og:site_name'/>
   <b:if cond='data:blog.postImageThumbnailUrl'>
-    <meta expr:content='data:blog.postImageThumbnailUrl' property='og:image'/>
+    <meta expr:content='data:blog.postImageThumbnailUrl.replace("/s72-c/","/s1200/").replace("/s72/","/s1200/").replace("/s400/","/s1200/")' property='og:image'/>
   <b:else/>
     <meta content='https://metricbase.org/assets/MetricBase.png' property='og:image'/>
   </b:if>
@@ -43,6 +43,11 @@
   <meta content='@MetricBase' name='twitter:site'/>
   <meta expr:content='data:blog.pageTitle' name='twitter:title'/>
   <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+  <b:if cond='data:blog.postImageThumbnailUrl'>
+    <meta expr:content='data:blog.postImageThumbnailUrl.replace("/s72-c/","/s1200/").replace("/s72/","/s1200/").replace("/s400/","/s1200/")' name='twitter:image'/>
+  <b:else/>
+    <meta content='https://metricbase.org/assets/MetricBase.png' name='twitter:image'/>
+  </b:if>
 
   <b:skin><![CDATA[
     /* ─── RESET ─────────────────────────────────────── */
@@ -1622,8 +1627,8 @@
     <div class='mb-nav-left'>
       <a class='mb-logo' href='https://metricbase.org'>Metric<span>Base</span></a>
       <div class='mb-nav-divider'/>
-      <span class='mb-nav-section'>Crypto</span>
-            <ul class='mb-nav-links'>
+      <span class='mb-nav-section'>Stocks &amp; Macro</span>
+      <ul class='mb-nav-links'>
         <li><a href='https://energy.metricbase.org'>Energy</a></li>
         <li><a href='https://chain.metricbase.org'>Crypto</a></li>
         <li><a href='https://saham.metricbase.org'>Stocks</a></li>
@@ -1637,29 +1642,30 @@
 
   <!-- &#9472;&#9472;&#9472; TICKER &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; -->
   <div id='mb-ticker'>
-  <!-- TradingView Ticker Tape BEGIN -->
-  <div class='tradingview-widget-container' style='width:100%;height:46px;overflow:hidden;'>
-    <div class='tradingview-widget-container__widget'/>
-    <script async='async' src='https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js' type='text/javascript'>
-    {
-      &quot;symbols&quot;: [
-        {&quot;proName&quot;:&quot;BINANCE:BTCUSDT&quot;,&quot;title&quot;:&quot;BTC&quot;},
-        {&quot;proName&quot;:&quot;BINANCE:ETHUSDT&quot;,&quot;title&quot;:&quot;ETH&quot;},
-        {&quot;proName&quot;:&quot;BINANCE:BNBUSDT&quot;,&quot;title&quot;:&quot;BNB&quot;},
-        {&quot;proName&quot;:&quot;BINANCE:SOLUSDT&quot;,&quot;title&quot;:&quot;SOL&quot;},
-        {&quot;proName&quot;:&quot;CRYPTOCAP:TOTAL&quot;,&quot;title&quot;:&quot;Total MCap&quot;},
-        {&quot;proName&quot;:&quot;CRYPTOCAP:BTC.D&quot;,&quot;title&quot;:&quot;BTC Dom.&quot;},
-        {&quot;proName&quot;:&quot;TVC:DXY&quot;,&quot;title&quot;:&quot;DXY&quot;}
-      ],
-      &quot;showSymbolLogo&quot;: false,
-      &quot;colorTheme&quot;: &quot;dark&quot;,
-      &quot;isTransparent&quot;: true,
-      &quot;displayMode&quot;: &quot;adaptive&quot;,
-      &quot;locale&quot;: &quot;en&quot;
-    }
-    </script>
+    <!-- TradingView Ticker Tape BEGIN -->
+    <div class='tradingview-widget-container' style='width:100%;height:46px;overflow:hidden;'>
+      <div class='tradingview-widget-container__widget'/>
+      <script async='async' src='https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js' type='text/javascript'>
+      {
+        &quot;symbols&quot;: [
+          {&quot;proName&quot;:&quot;IDX:COMPOSITE&quot;,&quot;title&quot;:&quot;IHSG&quot;},
+          {&quot;proName&quot;:&quot;IDX:LQ45&quot;,&quot;title&quot;:&quot;LQ45&quot;},
+          {&quot;proName&quot;:&quot;IDX:IDX30&quot;,&quot;title&quot;:&quot;IDX30&quot;},
+          {&quot;proName&quot;:&quot;FOREXCOM:USDIDR&quot;,&quot;title&quot;:&quot;USD/IDR&quot;},
+          {&quot;proName&quot;:&quot;TVC:DXY&quot;,&quot;title&quot;:&quot;DXY&quot;},
+          {&quot;proName&quot;:&quot;TVC:US10Y&quot;,&quot;title&quot;:&quot;10Y Yield&quot;},
+          {&quot;proName&quot;:&quot;TVC:GOLD&quot;,&quot;title&quot;:&quot;Gold&quot;}
+        ],
+        &quot;showSymbolLogo&quot;: false,
+        &quot;colorTheme&quot;: &quot;dark&quot;,
+        &quot;isTransparent&quot;: true,
+        &quot;displayMode&quot;: &quot;adaptive&quot;,
+        &quot;locale&quot;: &quot;en&quot;
+      }
+      </script>
+    </div>
+    <!-- TradingView Ticker Tape END -->
   </div>
-  <!-- TradingView Ticker Tape END -->  </div>
 
   <!-- &#9472;&#9472;&#9472; MOBILE DRAWER &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; -->
   <div id='mb-drawer-overlay' onclick='closeDrawer()'/>
@@ -1670,21 +1676,21 @@
     </div>
     <div class='mb-drawer-section'>
       <span class='mb-drawer-label'>You are reading</span>
-      <a class='mb-drawer-link' href='https://chain.metricbase.org'>Crypto &amp; Blockchain <span>&#8599;</span></a>
+      <a class='mb-drawer-link' href='https://saham.metricbase.org'>Stocks &amp; Macro <span>&#8599;</span></a>
     </div>
     <div class='mb-drawer-section'>
       <span class='mb-drawer-label'>More from MetricBase</span>
-      <a class='mb-drawer-link' href='https://energy.metricbase.org'>Energy Markets <span>&#8599;</span></a>
-      <a class='mb-drawer-link' href='https://saham.metricbase.org'>Stocks &amp; Macro <span>&#8599;</span></a>
+      <a class='mb-drawer-link' href='https://chain.metricbase.org'>Crypto <span>&#8599;</span></a>
+      <a class='mb-drawer-link' href='https://energy.metricbase.org'>Energy <span>&#8599;</span></a>
       <a class='mb-drawer-link' href='https://metricbase.org'>Main Site <span>&#8599;</span></a>
     </div>
     <div class='mb-drawer-section'>
       <span class='mb-drawer-label'>Topics</span>
-      <a class='mb-drawer-link' href='https://chain.metricbase.org/search/label/Bitcoin'>Bitcoin</a>
-      <a class='mb-drawer-link' href='https://chain.metricbase.org/search/label/Ethereum'>Ethereum</a>
-      <a class='mb-drawer-link' href='https://chain.metricbase.org/search/label/DeFi'>DeFi</a>
-      <a class='mb-drawer-link' href='https://chain.metricbase.org/search/label/OnChain'>On-Chain</a>
-      <a class='mb-drawer-link' href='https://chain.metricbase.org/search/label/Macro'>Macro</a>
+      <a class='mb-drawer-link' href='https://saham.metricbase.org/search/label/IDX'>IDX Stocks</a>
+      <a class='mb-drawer-link' href='https://saham.metricbase.org/search/label/Macro'>Macro</a>
+      <a class='mb-drawer-link' href='https://saham.metricbase.org/search/label/Earnings'>Earnings</a>
+      <a class='mb-drawer-link' href='https://saham.metricbase.org/search/label/Fundamental'>Fundamental</a>
+      <a class='mb-drawer-link' href='https://saham.metricbase.org/search/label/Technical'>Technical</a>
     </div>
     <a class='mb-drawer-cta' href='https://metricbase.org'>Get Free Guide</a>
   </nav>
@@ -1717,9 +1723,9 @@
       <b:if cond='data:blog.pageType == &quot;index&quot;'>
         <header id='mb-page-header'>
           <div class='mb-page-header-inner'>
-            <div class='mb-page-eyebrow'>Crypto &amp; Blockchain</div>
-            <h1>Crypto &amp; Blockchain Intelligence</h1>
-            <p>Tracking Bitcoin flows, on-chain data, macro positioning, and structural shifts in global crypto markets. No noise. No forecasts. Just signal.</p>
+            <div class='mb-page-eyebrow'>Stocks &amp; Macro</div>
+            <h1>Stocks, Macro &amp; Market Intelligence</h1>
+            <p>Tracking IDX equities, macro flows, earnings, and structural shifts in global stock markets. No noise. No forecasts. Just signal.</p>
           </div>
         </header>
 
@@ -1739,29 +1745,27 @@
         <main id='mb-main'>
 
           <b:section class='main' id='main' maxwidgets='1' showaddelement='no'>
-            <b:widget id='Blog1' locked='true' title='Postingan Blog' type='Blog' version='2' visible='true'>
+            <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
               <b:widget-settings>
                 <b:widget-setting name='showDateHeader'>false</b:widget-setting>
                 <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
-                <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+                <b:widget-setting name='showShareButtons'>false</b:widget-setting>
                 <b:widget-setting name='showCommentLink'>true</b:widget-setting>
                 <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
                 <b:widget-setting name='showAuthor'>false</b:widget-setting>
                 <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
                 <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
                 <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
-                <b:widget-setting name='timestampLabel'/>
                 <b:widget-setting name='reactionsLabel'/>
                 <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
                 <b:widget-setting name='style.layout'>1x1</b:widget-setting>
                 <b:widget-setting name='showLabels'>true</b:widget-setting>
-                <b:widget-setting name='showLocation'>true</b:widget-setting>
-                <b:widget-setting name='postLabelsLabel'/>
+                <b:widget-setting name='showLocation'>false</b:widget-setting>
                 <b:widget-setting name='showTimestamp'>true</b:widget-setting>
                 <b:widget-setting name='postsPerAd'>1</b:widget-setting>
                 <b:widget-setting name='showBacklinks'>false</b:widget-setting>
                 <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
-                <b:widget-setting name='showInlineAds'>false</b:widget-setting>
+                <b:widget-setting name='showInlineAds'>true</b:widget-setting>
                 <b:widget-setting name='showReactions'>false</b:widget-setting>
               </b:widget-settings>
               <b:includable id='main' var='top'>
@@ -2386,7 +2390,7 @@
           <div class='mb-widget'>
             <div class='mb-widget-head'>About</div>
             <div class='mb-widget-body'>
-              <p class='mb-about-text'>MetricBase Chain tracks Bitcoin, Ethereum, on-chain data, DeFi flows, and positioning signals for crypto traders and blockchain investors.</p>
+              <p class='mb-about-text'>MetricBase Stocks tracks IDX equities, macro flows, earnings signals, and positioning data for Indonesian stock market investors.</p>
               <div class='mb-about-links'>
                 <a class='mb-about-link' href='https://chain.metricbase.org'>Crypto <span>&#8599;</span></a>
                 <a class='mb-about-link' href='https://saham.metricbase.org'>Stocks <span>&#8599;</span></a>
@@ -2423,10 +2427,10 @@
           <b:section class='sidebar' id='sidebar-popular' preferred='false' showaddelement='yes'>
             <b:widget id='PopularPosts1' locked='false' title='Popular Posts' type='PopularPosts' version='2' visible='true'>
               <b:widget-settings>
-                <b:widget-setting name='numItemsToShow'>10</b:widget-setting>
+                <b:widget-setting name='numItemsToShow'>4</b:widget-setting>
                 <b:widget-setting name='showThumbnails'>true</b:widget-setting>
                 <b:widget-setting name='showSnippets'>true</b:widget-setting>
-                <b:widget-setting name='timeRange'>LAST_YEAR</b:widget-setting>
+                <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
               </b:widget-settings>
               <b:includable id='main' var='top'>
                 <div class='mb-widget'>
@@ -2525,7 +2529,7 @@
       <div class='mb-footer-nl'>
         <div class='mb-footer-nl-text'>
           <h3>Stay ahead of the market.</h3>
-          <p>EIA data, crude positioning, and macro signals &#8212; straight to your inbox.</p>
+          <p>IDX equity data, macro signals, and positioning alerts &#8212; straight to your inbox.</p>
         </div>
         <form action='https://app.kit.com/forms/9390641/subscriptions' class='mb-footer-nl-form' method='POST' target='_blank'>
           <input autocomplete='email' name='email_address' placeholder='your@email.com' required='' type='email'/>
@@ -2538,7 +2542,7 @@
         <div class='mb-footer-grid'>
           <div class='mb-footer-brand'>
             <div class='brand-name'>MetricBase</div>
-            <p>Data-first analysis across energy, crypto, and macro markets. We track what moves markets &#8212; before it moves yours.</p>
+            <p>Data-first analysis across stocks, crypto, and macro markets. We track what moves markets &#8212; before it moves yours.</p>
             <span class='mb-footer-tagline'>Data &gt; Noise</span>
             <div style='display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;'>
               <a href='https://x.com/MetricBase' rel='noopener' style='font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);padding:5px 10px;border:1px solid var(--border);border-radius:2px;' target='_blank'>X / Twitter</a>
@@ -2551,21 +2555,21 @@
               Coverage <span class='toggle-icon'>+</span>
             </div>
             <ul>
-              <li><a href='https://chain.metricbase.org'>Crypto &amp; Blockchain</a></li>
+              <li><a href='https://energy.metricbase.org'>Energy Markets</a></li>
               <li><a href='https://chain.metricbase.org'>Crypto</a></li>
               <li><a href='https://saham.metricbase.org'>Stocks &amp; Macro</a></li>
             </ul>
           </div>
           <div class='mb-footer-col'>
             <div class='mb-footer-col-head' onclick='toggleFooterCol(this)'>
-              Crypto Topics <span class='toggle-icon'>+</span>
+              Stock Topics <span class='toggle-icon'>+</span>
             </div>
             <ul>
-              <li><a href='https://chain.metricbase.org/search/label/Bitcoin'>Bitcoin</a></li>
-              <li><a href='https://chain.metricbase.org/search/label/Ethereum'>Ethereum</a></li>
-              <li><a href='https://chain.metricbase.org/search/label/DeFi'>DeFi</a></li>
-              <li><a href='https://chain.metricbase.org/search/label/OnChain'>On-Chain</a></li>
-              <li><a href='https://chain.metricbase.org/search/label/Macro'>Macro</a></li>
+              <li><a href='https://saham.metricbase.org/search/label/IDX'>IDX Stocks</a></li>
+              <li><a href='https://saham.metricbase.org/search/label/Macro'>Macro</a></li>
+              <li><a href='https://saham.metricbase.org/search/label/Earnings'>Earnings</a></li>
+              <li><a href='https://saham.metricbase.org/search/label/Fundamental'>Fundamental</a></li>
+              <li><a href='https://saham.metricbase.org/search/label/Technical'>Technical</a></li>
             </ul>
           </div>
           <div class='mb-footer-col'>
@@ -2582,7 +2586,7 @@
         </div>
 
         <div class='mb-footer-bottom'>
-          <span class='mb-footer-copy'>&#169; 2026 MetricBase &#8212; chain.metricbase.org</span>
+          <span class='mb-footer-copy'>&#169; 2026 MetricBase &#8212; saham.metricbase.org</span>
           <div class='mb-footer-legal'>
             <a href='https://energy.metricbase.org/p/blog-page.html'>Privacy Policy</a>
             <a href='https://energy.metricbase.org/p/disclaimer.html'>Disclaimer</a>
@@ -2598,10 +2602,10 @@
   <div id='mb-disclaimer'>
     <div class='mb-container'>
       <p>
-        MetricBase Chain is for informational purposes only. Nothing published here constitutes financial,
-        investment, or trading advice. Cryptocurrency markets involve significant risk, including total loss of capital.
+        MetricBase Stocks is for informational purposes only. Nothing published here constitutes financial,
+        investment, or trading advice. Stock markets involve significant risk.
         Always conduct your own research and consult a qualified professional before making any investment decision.
-        MetricBase Chain may display third-party advertisements via Google AdSense.
+        MetricBase Stocks may display third-party advertisements via Google AdSense.
         <a href='https://energy.metricbase.org/p/blog-page.html' style='color:var(--gold)'>Privacy Policy</a>
         &#183;
         <a href='https://energy.metricbase.org/p/disclaimer.html' style='color:var(--gold)'>Full Disclaimer</a>
