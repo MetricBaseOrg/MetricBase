@@ -26,6 +26,22 @@
   <!-- AdSense: only push ads after user consent -->
   <meta content='index, follow' name='robots'/>
   <meta content='stock market, saham, IDX, Jakarta Stock Exchange, Indonesian stocks, equity market, macro, investing' name='keywords'/>
+  <!-- Open Graph -->
+  <meta expr:content='data:blog.pageTitle' property='og:title'/>
+  <meta expr:content='data:blog.metaDescription' property='og:description'/>
+  <meta property='og:type' content='article'/>
+  <meta expr:content='data:blog.url' property='og:url'/>
+  <meta property='og:site_name' content='MetricBase Saham'/>
+  <b:if cond='data:blog.postImageThumbnailUrl'>
+    <meta expr:content='data:blog.postImageThumbnailUrl' property='og:image'/>
+  <b:else/>
+    <meta content='https://metricbase.org/assets/MetricBase.png' property='og:image'/>
+  </b:if>
+  <!-- Twitter Card -->
+  <meta content='summary_large_image' name='twitter:card'/>
+  <meta content='@MetricBase' name='twitter:site'/>
+  <meta expr:content='data:blog.pageTitle' name='twitter:title'/>
+  <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
 
   <b:skin><![CDATA[
     /* ─── RESET ─────────────────────────────────────── */
@@ -2522,6 +2538,11 @@
             <div class='brand-name'>MetricBase</div>
             <p>Data-first analysis across stocks, crypto, and macro markets. We track what moves markets &#8212; before it moves yours.</p>
             <span class='mb-footer-tagline'>Data &gt; Noise</span>
+            <div style='display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;'>
+              <a href='https://x.com/MetricBase' rel='noopener' style='font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);padding:5px 10px;border:1px solid var(--border);border-radius:2px;' target='_blank'>X / Twitter</a>
+              <a href='https://instagram.com/MetricBase' rel='noopener' style='font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);padding:5px 10px;border:1px solid var(--border);border-radius:2px;' target='_blank'>Instagram</a>
+              <a href='https://tiktok.com/@MetricBase' rel='noopener' style='font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);padding:5px 10px;border:1px solid var(--border);border-radius:2px;' target='_blank'>TikTok</a>
+            </div>
           </div>
           <div class='mb-footer-col'>
             <div class='mb-footer-col-head' onclick='toggleFooterCol(this)'>
@@ -2559,7 +2580,7 @@
         </div>
 
         <div class='mb-footer-bottom'>
-          <span class='mb-footer-copy'>&#169; 2025 MetricBase &#8212; saham.metricbase.org</span>
+          <span class='mb-footer-copy'>&#169; 2026 MetricBase &#8212; saham.metricbase.org</span>
           <div class='mb-footer-legal'>
             <a href='https://energy.metricbase.org/p/blog-page.html'>Privacy Policy</a>
             <a href='https://energy.metricbase.org/p/disclaimer.html'>Disclaimer</a>

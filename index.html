@@ -7,10 +7,38 @@
   <meta name="description" content="MetricBase connects data infrastructure with digital logic systems, enabling seamless integration between raw information and automated decision-making.​" />
   <meta name="google-adsense-account" content="ca-pub-6244083942838780" />
   <meta name="robots" content="index, follow" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://metricbase.org/" />
+  <meta property="og:site_name" content="MetricBase" />
+  <meta property="og:title" content="MetricBase — Bridging Data and Digital Logic" />
+  <meta property="og:description" content="Smart money doesn't predict — it reads signals. Get the free guide: 5 signals institutional traders use before entering the market." />
+  <meta property="og:image" content="https://metricbase.org/assets/MetricBase.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@MetricBase" />
+  <meta name="twitter:title" content="MetricBase — Bridging Data and Digital Logic" />
+  <meta name="twitter:description" content="Smart money doesn't predict — it reads signals. We track what moves markets before the crowd catches on." />
+  <meta name="twitter:image" content="https://metricbase.org/assets/MetricBase.png" />
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MetricBase",
+    "url": "https://metricbase.org",
+    "logo": "https://metricbase.org/assets/MetricBase.png",
+    "description": "Data-first analysis across energy, crypto, and macro markets. Bridging data and digital logic.",
+    "sameAs": [
+      "https://x.com/MetricBase",
+      "https://instagram.com/MetricBase",
+      "https://tiktok.com/@MetricBase"
+    ]
+  }
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -771,7 +799,7 @@
 
     .mb-footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
       gap: 40px;
       margin-bottom: 36px;
     }
@@ -959,7 +987,7 @@
     /* ─── TABLET ─────────────────────────────────────── */
     @media (max-width: 900px) {
       .lead-grid { grid-template-columns: 1fr; gap: 16px; }
-      .mb-footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .mb-footer-grid { grid-template-columns: 1fr 1fr 1fr; gap: 28px; }
       .mb-footer-nl { flex-direction: column; align-items: flex-start; gap: 20px; }
       .mb-footer-nl-form { min-width: unset; width: 100%; }
     }
@@ -1128,7 +1156,7 @@
     <section id="hero">
       <div class="container" style="text-align:center;">
         <span class="hero-eyebrow reveal">Free Guide — Limited Distribution</span>
-        <h1 class="reveal reveal-delay-1">Most peoples are<br>the last to know.</h1>
+        <h1 class="reveal reveal-delay-1">Most people are<br>the last to know.</h1>
         <p class="hero-sub reveal reveal-delay-2">Smart money doesn't predict — it reads signals. We track the ones that move markets before the crowd catches on.</p>
         <p class="hero-offer reveal reveal-delay-3">Get the free guide: <em>Signals Smart Money Uses Before Entering The Market</em></p>
         <div class="reveal reveal-delay-4">
@@ -1355,6 +1383,11 @@
             <div class="brand-name">MetricBase</div>
             <p>Data-first analysis across energy, crypto, and macro markets. We track what moves markets — before it moves yours.</p>
             <span class="mb-footer-tagline">Data &gt; Noise</span>
+            <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+              <a href="https://x.com/MetricBase" target="_blank" rel="noopener" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);padding:5px 10px;border:1px solid var(--border);border-radius:2px;transition:color 0.18s,border-color 0.18s;" onmouseover="this.style.color='var(--white)';this.style.borderColor='var(--subtle)';" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--border)';">X / Twitter</a>
+              <a href="https://instagram.com/MetricBase" target="_blank" rel="noopener" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);padding:5px 10px;border:1px solid var(--border);border-radius:2px;transition:color 0.18s,border-color 0.18s;" onmouseover="this.style.color='var(--white)';this.style.borderColor='var(--subtle)';" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--border)';">Instagram</a>
+              <a href="https://tiktok.com/@MetricBase" target="_blank" rel="noopener" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);padding:5px 10px;border:1px solid var(--border);border-radius:2px;transition:color 0.18s,border-color 0.18s;" onmouseover="this.style.color='var(--white)';this.style.borderColor='var(--subtle)';" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--border)';">TikTok</a>
+            </div>
           </div>
           <div class="mb-footer-col">
             <div class="mb-footer-col-head" onclick="toggleFooterCol(this)">Coverage <span class="toggle-icon">+</span></div>
@@ -1373,6 +1406,15 @@
             </ul>
           </div>
           <div class="mb-footer-col">
+            <div class="mb-footer-col-head" onclick="toggleFooterCol(this)">Follow <span class="toggle-icon">+</span></div>
+            <ul>
+              <li><a href="https://x.com/MetricBase" target="_blank" rel="noopener">X / Twitter</a></li>
+              <li><a href="https://instagram.com/MetricBase" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="https://tiktok.com/@MetricBase" target="_blank" rel="noopener">TikTok</a></li>
+              <li><a href="https://subs.metricbase.org" target="_blank" rel="noopener">Email List</a></li>
+            </ul>
+          </div>
+          <div class="mb-footer-col">
             <div class="mb-footer-col-head" onclick="toggleFooterCol(this)">MetricBase <span class="toggle-icon">+</span></div>
             <ul>
               <li><a href="https://metricbase.org">Main Site</a></li>
@@ -1384,7 +1426,7 @@
         </div>
 
         <div class="mb-footer-bottom">
-          <span class="mb-footer-copy">&#169; 2025 MetricBase &#8212; metricbase.org</span>
+          <span class="mb-footer-copy">&#169; 2026 MetricBase &#8212; metricbase.org</span>
           <div class="mb-footer-legal">
             <a href="https://energy.metricbase.org/p/blog-page.html">Privacy Policy</a>
             <a href="https://energy.metricbase.org/p/industri-migas-web-site-agreement.html">Disclaimer</a>
