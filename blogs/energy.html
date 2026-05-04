@@ -33,7 +33,7 @@
   <meta expr:content='data:blog.url' property='og:url'/>
   <meta content='MetricBase Energy' property='og:site_name'/>
   <b:if cond='data:blog.postImageThumbnailUrl'>
-    <meta expr:content='data:blog.postImageThumbnailUrl' property='og:image'/>
+    <meta expr:content='data:blog.postImageThumbnailUrl.replace("/s72-c/","/s1200/").replace("/s72/","/s1200/").replace("/s400/","/s1200/")' property='og:image'/>
   <b:else/>
     <meta content='https://metricbase.org/assets/MetricBase.png' property='og:image'/>
   </b:if>
@@ -42,6 +42,11 @@
   <meta content='@MetricBase' name='twitter:site'/>
   <meta expr:content='data:blog.pageTitle' name='twitter:title'/>
   <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+  <b:if cond='data:blog.postImageThumbnailUrl'>
+    <meta expr:content='data:blog.postImageThumbnailUrl.replace("/s72-c/","/s1200/").replace("/s72/","/s1200/").replace("/s400/","/s1200/")' name='twitter:image'/>
+  <b:else/>
+    <meta content='https://metricbase.org/assets/MetricBase.png' name='twitter:image'/>
+  </b:if>
 
   <b:skin><![CDATA[
     /* ─── RESET ─────────────────────────────────────── */
