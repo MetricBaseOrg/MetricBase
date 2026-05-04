@@ -1,60 +1,35 @@
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-You are a high-level conversion copywriter and landing page strategist.
-Your task is to create a SEO friendly and high-converting landing page and blogger templates for a brand called "MetricBase".
 
 ## Project Overview
 
-- MetricBase is a data-driven brand focused on content creations.
-- The audience is tech entusiast, professionals, students, traders and investors (mostly male, 25–34) who want informative and solutive contents.
-- Tone: sharp, intelligent, slightly contrarian, no hype, no fluff.
-- Positioning: “Bridging data and digital logic”
+MetricBase is a data-driven content brand. The site is a content portal linking visitors to three blog verticals and four social platforms.
 
-## Goal
-
-Convert visitors to become loyal MetricBase's content consumers.
+- **Audience:** Tech enthusiasts, professionals, students, traders, and investors (mostly male, 25–34) who want informative, data-driven content.
+- **Tone:** Sharp, intelligent, slightly contrarian. No hype. No fluff.
+- **Positioning:** "Bridging data and digital logic"
+- **Tagline:** "Precision growth. No wasted motion."
 
 ## Content Platforms
 
-- X <https://x.com/MetricBase>
-- Instagram <https://instagram.com/MetricBase>
-- TikTok <https://tiktok.com/@MetricBase>
-- Blogger, niche: Energy <https://energy.metricbase.org>
-- Blogger, niche: Crypto & Technology <https://chain.metricbase.org>
-- Blogger, niche: Pasar Saham Indonesia <https://saham.metricbase.org>
-- Email Subscription <https://subs.metricbase.org>
+| Platform | URL |
+|---|---|
+| X / Twitter | https://x.com/MetricBase |
+| Instagram | https://instagram.com/MetricBase |
+| TikTok | https://tiktok.com/@MetricBase |
+| Email Subscription | https://subs.metricbase.org |
+| Blog — Energy | https://energy.metricbase.org |
+| Blog — Crypto & Technology | https://chain.metricbase.org |
+| Blog — Pasar Saham Indonesia | https://saham.metricbase.org |
 
-## Instructions
+## Style Guidelines
 
-1. Write the FULL landing page copy with the following sections:
-    - Hero section
-    - Credibility/positioning strip
-    - Lead magnet section (what they get)
-    - Pain section (why most traders lose)
-    - Solution section (MetricBase approach)
-    - Bullet value section (what they will learn)
-    - Minimal founder/brand section
-    - Final CTA section
-2. Copywriting requirements:
-    - Use short, punchy sentences
-    - Avoid generic phrases like “maximize your potential”
-    - Make it feel premium and insider
-    - Use psychological triggers: fear of being late, missing out, being exit liquidity
-    - Focus on clarity and conversion, not creativity
-3. Style guidelines:
-    - Dark, modern, minimal brand
-    - No emojis
-    - No corporate tone
-    - No long paragraphs (max 2–3 lines each)
-    - Following `assets/branding-style.md` guiderails
-4. Write the blogger templates
-5. Output format:
-    - Clean, structured sections
-    - Ready to paste into a blog builder (blogger)
-
-> ⚠️ Important: Do NOT over-explain. Do NOT sound like marketing fluff. Write like a sharp operator talking to another operator. 100% Google Adsense Policy complied.
-> ℹ️ Make it feel like: “There are Valuable Informations inside this page contents, don't miss it.”
+- Dark, modern, minimal brand — following `assets/branding-style.md`
+- No emojis. No corporate tone. No long paragraphs (max 2–3 lines).
+- Strict color palette: `#0a0a0a` background, `#c9a84c` gold accents, white for contrast
+- CSS class prefix `mb-` for component namespacing
+- Write like a sharp operator talking to another operator. 100% Google AdSense Policy compliant.
 
 ## Deployment
 
@@ -64,21 +39,38 @@ There are no tests and no linters configured.
 
 ## Architecture
 
-The landing page lives in a single file: `index.html` (~1500 lines of HTML, CSS, and JavaScript). There is no build system, no package manager, and no external CSS or JS files. All styles use CSS custom properties defined at the top of the `<style>` block.
+### `index.html` — Content Portal (~1200 lines)
+
+Single-file HTML/CSS/JS content portal. No build system, no package manager, no external CSS or JS files. All styles use CSS custom properties defined at the top of the `<style>` block.
+
+**Page sections (in order):**
+1. `#portal-hero` — MetricBase brand mark, tagline, sub-copy, pill links to verticals
+2. `#strip` — Credibility strip with four positioning statements
+3. `#verticals` — Three content vertical cards (Energy, Crypto, Stocks)
+4. `#social` — Four social platform cards (X, Instagram, TikTok, Email)
+5. `#subscribe` — Email capture form via Kit.com
 
 **JavaScript (~80 lines, inline):** handles mobile drawer toggle, footer accordion, back-to-top scroll, scroll-progress bar, Intersection Observer for `.reveal` animations, and localStorage-based cookie consent.
 
-**External service integrations:**
+### Blog Templates — Blogger XML
 
-- **Kit.com** — email form submissions (form action URLs embedded in HTML)
+`blogs/energy.html`, `blogs/chain.html`, `blogs/saham.html` are Blogger XML templates using Blogger's template syntax (`<b:if>`, `<b:loop>`, `data:blog.*` variables, `<b:skin><![CDATA[...]]></b:skin>`).
+
+Each blog template includes:
+- OG + Twitter Card meta tags
+- TradingView ticker widget
+- Navigation drawer linking to all three verticals
+- Footer with social links and copyright
+
+## External Service Integrations
+
+- **Kit.com** — email form submissions (`https://app.kit.com/forms/9390641/subscriptions`)
 - **Google AdSense** — `pub-6244083942838780` (configured in `ads.txt`)
-- **Subdomain blogs** — energy.metricbase.org, chain.metricbase.org, saham.metricbase.org
-
-The blogs live in `energy.html`, `chain.html`, and `saham.html`.
+- **TradingView** — ticker widget embedded in all three blog templates
 
 ## Key Conventions
 
-- CSS class prefix `mb-` is used for component namespacing.
 - Mobile-first responsive design; breakpoints at 640px and 900px.
-- Scroll-triggered animations are applied by adding class `reveal` to elements — the Intersection Observer adds `visible` on entry.
+- Scroll-triggered animations: add class `reveal` (and optionally `reveal-delay-1` through `reveal-delay-4`) to elements — the Intersection Observer adds `visible` on entry.
 - The site must include a financial disclaimer (non-financial advice) and cookie consent — do not remove these.
+- Use `mb-container` for section-level containers in `index.html`.
