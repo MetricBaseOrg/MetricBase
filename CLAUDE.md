@@ -23,54 +23,59 @@ MetricBase is a data-driven content brand. The site is a content portal linking 
 | Blog — Crypto & Technology | https://chain.metricbase.org |
 | Blog — Pasar Saham Indonesia | https://saham.metricbase.org |
 
-## Style Guidelines
-
-- Dark, modern, minimal brand — following `assets/branding-style.md`
-- No emojis. No corporate tone. No long paragraphs (max 2–3 lines).
-- Strict color palette: `#0a0a0a` background, `#c9a84c` gold accents, white for contrast
-- CSS class prefix `mb-` for component namespacing
-- Write like a sharp operator talking to another operator. 100% Google AdSense Policy compliant.
-
 ## Deployment
 
-Pushing to `main` automatically triggers GitHub Actions (`.github/workflows/jekyll-gh-pages.yml`), which builds with Jekyll and deploys to GitHub Pages (metricbase.org).
+No build system, package manager, tests, or linters. Development is editing files directly.
 
-There are no tests and no linters configured.
+Pushing to `main` triggers `.github/workflows/jekyll-gh-pages.yml`, which builds with Jekyll and deploys to GitHub Pages at metricbase.org. Jekyll only serves static files here — there is no `_config.yml`, no Liquid templates, and no Jekyll-specific features in use. The workflow treats the repo root as the source.
+
+To preview locally: open `index.html` directly in a browser. Blog templates (`blogs/*.html`) are Blogger XML and must be uploaded to the Blogger admin panel — they cannot be previewed locally.
 
 ## Architecture
 
 ### `index.html` — Content Portal (~1200 lines)
 
-Single-file HTML/CSS/JS content portal. No build system, no package manager, no external CSS or JS files. All styles use CSS custom properties defined at the top of the `<style>` block.
+Single-file HTML/CSS/JS. All styles are inline in a `<style>` block; all JS is inline before `</body>`. No external CSS or JS files.
+
+CSS custom properties are defined once at the top of the `<style>` block under `:root` and must be used for all color/typography values — never hardcode hex values outside `:root`.
 
 **Page sections (in order):**
-1. `#portal-hero` — MetricBase brand mark, tagline, sub-copy, pill links to verticals
-2. `#strip` — Credibility strip with four positioning statements
-3. `#verticals` — Three content vertical cards (Energy, Crypto, Stocks)
-4. `#social` — Four social platform cards (X, Instagram, TikTok, Email)
-5. `#subscribe` — Email capture form via Kit.com
+1. `#portal-hero` — brand mark, tagline, sub-copy, pill links to verticals
+2. `#strip` — credibility strip with four positioning statements
+3. `#verticals` — three content vertical cards (Energy, Crypto, Stocks)
+4. `#social` — four social platform cards (X, Instagram, TikTok, Email)
+5. `#subscribe` — Kit.com email capture form
 
-**JavaScript (~80 lines, inline):** handles mobile drawer toggle, footer accordion, back-to-top scroll, scroll-progress bar, Intersection Observer for `.reveal` animations, and localStorage-based cookie consent.
+**JavaScript responsibilities (inline, ~80 lines):** mobile drawer toggle, footer accordion, back-to-top scroll, scroll-progress bar, Intersection Observer for `.reveal` animations, localStorage-based cookie consent.
 
 ### Blog Templates — Blogger XML
 
-`blogs/energy.html`, `blogs/chain.html`, `blogs/saham.html` are Blogger XML templates using Blogger's template syntax (`<b:if>`, `<b:loop>`, `data:blog.*` variables, `<b:skin><![CDATA[...]]></b:skin>`).
+`blogs/energy.html`, `blogs/chain.html`, `blogs/saham.html` are Blogger XML templates. They use Blogger template syntax: `<b:if>`, `<b:loop>`, `data:blog.*` variables, and `<b:skin><![CDATA[...]]></b:skin>` for styles.
 
-Each blog template includes:
-- OG + Twitter Card meta tags
-- TradingView ticker widget
-- Navigation drawer linking to all three verticals
-- Footer with social links and copyright
+Each template shares the same structure: OG + Twitter Card meta, TradingView ticker widget, navigation drawer linking to all three verticals, and footer with social links. CSS inside `<b:skin>` uses the same `:root` custom properties as `index.html`.
 
-## External Service Integrations
+OG image falls back to `https://metricbase.org/assets/MetricBase.png` when no post thumbnail is available — this pattern is consistent across all three templates.
 
-- **Kit.com** — email form submissions (`https://app.kit.com/forms/9390641/subscriptions`)
-- **Google AdSense** — `pub-6244083942838780` (configured in `ads.txt`)
-- **TradingView** — ticker widget embedded in all three blog templates
+## Style Guidelines
+
+See `assets/branding-style.md` for the full brand spec.
+
+- Strict color palette (no additions): `#0a0a0a` background, `#c9a84c` gold accents, white (`#f5f5f5`) for contrast, subtle grays (`#111`, `#1a1a1a`, `#222`, `#555`, `#888`, `#ccc`)
+- Font: Inter (Google Fonts), weights 300/400/500/600/700
+- CSS class prefix `mb-` for all component classes in `index.html`
+- No emojis. No corporate tone. Max 2–3 lines per paragraph.
+- Mobile-first; breakpoints at 640px and 900px
 
 ## Key Conventions
 
-- Mobile-first responsive design; breakpoints at 640px and 900px.
-- Scroll-triggered animations: add class `reveal` (and optionally `reveal-delay-1` through `reveal-delay-4`) to elements — the Intersection Observer adds `visible` on entry.
-- The site must include a financial disclaimer (non-financial advice) and cookie consent — do not remove these.
-- Use `mb-container` for section-level containers in `index.html`.
+- **Scroll animations:** Add class `reveal` to any element. Optionally add `reveal-delay-1` through `reveal-delay-4` for staggered entry. The Intersection Observer adds `visible` on viewport entry. Never trigger animations via JS directly — always use this class pattern.
+- **Section containers:** Use `<div class="mb-container">` inside every `<section>` in `index.html`.
+- **Financial disclaimer and cookie consent** are legally required — do not remove them.
+- **Google Analytics** ID: `G-HQ2SCQZ3KT` (in `index.html` head)
+- **AdSense** publisher ID: `pub-6244083942838780` (in `index.html`, blog templates, and `ads.txt`)
+- **Kit.com** form endpoint: `https://app.kit.com/forms/9390641/subscriptions`
+- **TradingView** ticker widget is embedded in all three blog templates
+
+## Brand Character
+
+The mascot is "Bun" — a chibi anthropomorphic penguin with a manbun and white-frame 3D glasses (red/blue lenses). Character assets are in `assets/`. Use these for thumbnails and social content. Every visual must derive from the brand's dark-fintech aesthetic: think Bloomberg terminal, not lifestyle blog.
