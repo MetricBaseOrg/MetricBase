@@ -49,6 +49,60 @@
     <meta content='https://metricbase.org/assets/MetricBase.png' name='twitter:image'/>
   </b:if>
 
+  <!-- Schema.org -->
+  <b:if cond='data:blog.pageType == &quot;item&quot;'>
+  <script type='application/ld+json'>
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "<data:blog.pageTitle/>",
+    "description": "<data:blog.metaDescription/>",
+    "url": "<data:blog.url/>",
+    "image": "<b:if cond='data:blog.postImageThumbnailUrl'><data:blog.postImageThumbnailUrl/><b:else/>https://metricbase.org/assets/MetricBase.png</b:if>",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://metricbase.org/#organization",
+      "name": "MetricBase",
+      "url": "https://metricbase.org/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://metricbase.org/#organization",
+      "name": "MetricBase",
+      "url": "https://metricbase.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://metricbase.org/assets/MetricBase.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "<data:blog.url/>"
+    }
+  }
+  </script>
+  <b:else/>
+  <script type='application/ld+json'>
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "MetricBase Saham",
+    "url": "https://saham.metricbase.org/",
+    "description": "Data-first analysis of Indonesian stocks, IDX-listed equities, and regional market macro.",
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://metricbase.org/#organization",
+      "name": "MetricBase",
+      "url": "https://metricbase.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://metricbase.org/assets/MetricBase.png"
+      }
+    }
+  }
+  </script>
+  </b:if>
+
   <b:skin><![CDATA[
     /* ─── RESET ─────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
