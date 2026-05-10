@@ -2041,7 +2041,7 @@
 </b:includable>
               <b:includable id='commentAuthorAvatar'>
   <div class='avatar-image-container'>
-    <img class='author-avatar' expr:src='data:comment.authorAvatarSrc' height='35' width='35'/>
+    <img class='author-avatar' decoding='async' expr:src='data:comment.authorAvatarSrc' height='35' loading='lazy' width='35'/>
   </div>
 </b:includable>
               <b:includable id='commentDeleteIcon' var='comment'>
@@ -2297,7 +2297,7 @@
   <b:if cond='data:post.author.aboutMe and data:view.isPost'>
     <div class='author-profile'>
       <b:if cond='data:post.author.authorPhoto.url'>
-        <img class='author-image' expr:src='data:post.author.authorPhoto.url' width='50px'/>
+        <img class='author-image' decoding='async' expr:src='data:post.author.authorPhoto.url' loading='lazy' width='50px'/>
         <div class='author-about'>
           <b:include data='post' name='aboutPostAuthor'/>
         </div>
@@ -2812,6 +2812,16 @@
       document.getElementById('cookie-reject').addEventListener('click', function() {
         localStorage.setItem('mb_cookie_consent', 'rejected');
         banner.style.display = 'none';
+      });
+
+      /* ── Post body image optimisation ──────────────── */
+      document.querySelectorAll('.mb-post-body img').forEach(function(img) {
+        if (!img.getAttribute('loading')) img.setAttribute('loading', 'lazy');
+        img.setAttribute('decoding', 'async');
+        var src = img.getAttribute('src') || '';
+        if (src.indexOf('blogger.googleusercontent.com') !== -1) {
+          img.setAttribute('src', src.replace(/(\/s\d+)(-c)?(\/)/g, '$1$2-rw$3'));
+        }
       });
 
       /* ── Staggered card animation ───────────────────── */
