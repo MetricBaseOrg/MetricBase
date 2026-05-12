@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookie Policy · MetricBase</title>
+<meta name="description" content="MetricBase cookie policy. How we use cookies and similar tracking technologies across metricbase.org and its subdomains.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://metricbase.org/cookie-policy">
+<meta property="og:title" content="Cookie Policy · MetricBase">
+<meta property="og:description" content="How MetricBase uses cookies and tracking technologies across its properties.">
+<meta property="og:url" content="https://metricbase.org/cookie-policy">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0A0A;
+    --bg-elev: #131313;
+    --bg-card: #161616;
+    --gold: #C9A84C;
+    --gold-bright: #E5C168;
+    --gold-dim: #8a7434;
+    --white: #ffffff;
+    --gray-1: #e5e5e5;
+    --gray-2: #999999;
+    --gray-3: #555555;
+    --gray-4: #2a2a2a;
+    --line: rgba(255,255,255,0.06);
+    --line-strong: rgba(201, 168, 76, 0.3);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--gray-1); font-family: 'Manrope', sans-serif; font-weight: 400; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  body {
+    background:
+      radial-gradient(ellipse 800px 600px at 20% 0%, rgba(201, 168, 76, 0.05), transparent 60%),
+      radial-gradient(ellipse 600px 400px at 80% 100%, rgba(201, 168, 76, 0.03), transparent 70%),
+      var(--bg);
+    min-height: 100vh;
+    padding: 32px 24px 80px;
+  }
+  .grid-bg { position: fixed; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; z-index: 0; }
+  .container { max-width: 1240px; margin: 0 auto; position: relative; z-index: 1; }
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); transition: all 0.15s; }
+  a:hover { color: var(--gold-bright); border-bottom-style: solid; }
+
+  /* HEADER */
+  header.app-header { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; padding-bottom: 28px; border-bottom: 1px solid var(--line); margin-bottom: 56px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand-mark { width: 38px; height: 38px; border: 1.5px solid var(--gold); transform: rotate(45deg); display: grid; place-items: center; position: relative; }
+  .brand-mark::after { content: ''; position: absolute; inset: 6px; background: var(--gold); opacity: 0.4; }
+  .brand-text { display: flex; flex-direction: column; }
+  .brand-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: 0.02em; line-height: 1; color: var(--white); border: none; }
+  .brand-name:hover { color: var(--white); }
+  .brand-name .gold { color: var(--gold); }
+  .brand-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gray-2); margin-top: 4px; }
+  .nav-links { display: flex; gap: 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; }
+  .nav-links a { color: var(--gray-2); border: none; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a.active { color: var(--gold); }
+
+  /* HERO */
+  .doc-hero { margin-bottom: 56px; max-width: 880px; }
+  .doc-id { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.22em; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+  .doc-id::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  h1.doc-title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: clamp(40px, 6vw, 68px); line-height: 1.02; letter-spacing: -0.025em; margin-bottom: 22px; color: var(--white); }
+  h1.doc-title .accent { color: var(--gold); }
+  .doc-meta { display: flex; gap: 28px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding-top: 22px; border-top: 1px dashed var(--gray-4); }
+  .doc-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .doc-meta-lbl { color: var(--gray-3); text-transform: uppercase; letter-spacing: 0.18em; font-size: 9px; }
+  .doc-meta-val { color: var(--white); font-weight: 500; }
+
+  /* LAYOUT */
+  .doc-layout { display: grid; grid-template-columns: 260px 1fr; gap: 64px; align-items: flex-start; }
+
+  /* TOC */
+  .toc { position: sticky; top: 32px; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .toc-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gray-3); margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; padding: 6px 0; }
+  .toc a { display: flex; gap: 12px; color: var(--gray-2); border: none; line-height: 1.5; }
+  .toc a::before { content: counter(toc, decimal-leading-zero); color: var(--gray-3); flex-shrink: 0; }
+  .toc a:hover { color: var(--gold); }
+  .toc a.active { color: var(--gold); }
+  .toc a.active::before { color: var(--gold); }
+
+  /* CONTENT */
+  .doc-body { max-width: 720px; }
+  .doc-body section { margin-bottom: 56px; }
+  .section-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.22em; margin-bottom: 12px; display: block; }
+  .doc-body h2 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.2; letter-spacing: -0.015em; color: var(--white); margin-bottom: 20px; }
+  .doc-body h3 { font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 16px; line-height: 1.3; color: var(--white); margin: 28px 0 12px; }
+  .doc-body p { font-size: 15px; color: var(--gray-1); margin-bottom: 16px; }
+  .doc-body p:last-child { margin-bottom: 0; }
+  .doc-body strong { color: var(--gold-bright); font-weight: 600; }
+  .doc-body ul, .doc-body ol { padding-left: 22px; margin: 12px 0 20px; }
+  .doc-body li { font-size: 15px; color: var(--gray-1); margin-bottom: 8px; line-height: 1.65; }
+  .doc-body li::marker { color: var(--gold-dim); }
+
+  /* TABLE */
+  .data-table { width: 100%; margin: 20px 0; border-collapse: collapse; font-size: 13px; }
+  .data-table th { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--line-strong); background: var(--bg-elev); font-weight: 500; }
+  .data-table td { padding: 14px; border-bottom: 1px solid var(--line); color: var(--gray-1); vertical-align: top; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: rgba(201, 168, 76, 0.03); }
+  .badge { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; padding: 3px 8px; }
+  .badge.essential { background: rgba(95, 168, 108, 0.12); color: #5fa86c; border: 1px solid rgba(95, 168, 108, 0.25); }
+  .badge.analytics { background: rgba(201, 168, 76, 0.12); color: var(--gold); border: 1px solid rgba(201, 168, 76, 0.25); }
+  .badge.advertising { background: rgba(216, 80, 80, 0.1); color: #e85a6a; border: 1px solid rgba(216, 80, 80, 0.2); }
+
+  /* CALLOUT */
+  .callout { background: var(--bg-elev); border: 1px solid var(--line); border-left: 2px solid var(--gold); padding: 20px 24px; margin: 24px 0; }
+  .callout p { margin-bottom: 8px; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 10px; display: block; }
+
+  /* FOOTER */
+  footer.doc-footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--line); }
+  .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+  .footer-col h4 { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 14px; font-weight: 500; }
+  .footer-col ul { list-style: none; padding: 0; }
+  .footer-col li { margin-bottom: 8px; }
+  .footer-col a { color: var(--gray-2); font-size: 13px; border: none; }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom { padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .doc-layout { grid-template-columns: 1fr; gap: 32px; }
+    .toc { position: relative; top: 0; padding: 20px; background: var(--bg-elev); border: 1px solid var(--line); }
+    .nav-links { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    body { padding: 20px 14px 60px; }
+    h1.doc-title { font-size: 36px; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <a href="https://metricbase.org" class="brand-name" style="display: flex; align-items: center; gap: 14px;">
+      <span class="brand-mark"></span>
+      <span class="brand-text">
+        <span class="brand-name">Metric<span class="gold">BASE</span></span>
+        <span class="brand-tag">Precision growth · No wasted motion</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="https://metricbase.org/privacy">Privacy</a>
+      <a href="https://metricbase.org/terms">Terms</a>
+      <a href="https://metricbase.org/disclaimer">Disclaimer</a>
+      <a href="https://metricbase.org/cookie-policy" class="active">Cookies</a>
+      <a href="https://metricbase.org/contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="doc-hero">
+    <div class="doc-id">DOCUMENT · COOK-001 · V1.0</div>
+    <h1 class="doc-title">Cookie <span class="accent">Policy.</span></h1>
+    <div class="doc-meta">
+      <div class="doc-meta-item">
+        <span class="doc-meta-lbl">Effective</span>
+        <span class="doc-meta-val">12 May 2026</span>
+      </div>
+      <div class="doc-meta-item">
+        <span class="doc-meta-lbl">Last Updated</span>
+        <span class="doc-meta-val">12 May 2026</span>
+      </div>
+      <div class="doc-meta-item">
+        <span class="doc-meta-lbl">Applies To</span>
+        <span class="doc-meta-val">metricbase.org &amp; subdomains</span>
+      </div>
+      <div class="doc-meta-item">
+        <span class="doc-meta-lbl">Governing Law</span>
+        <span class="doc-meta-val">Republic of Indonesia</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAYOUT -->
+  <div class="doc-layout">
+
+    <!-- TOC -->
+    <aside class="toc">
+      <div class="toc-title">Table of Contents</div>
+      <ol>
+        <li><a href="#s1">What are cookies</a></li>
+        <li><a href="#s2">Cookies we use</a></li>
+        <li><a href="#s3">Essential cookies</a></li>
+        <li><a href="#s4">Analytics cookies</a></li>
+        <li><a href="#s5">Advertising cookies</a></li>
+        <li><a href="#s6">Third-party cookies</a></li>
+        <li><a href="#s7">Managing cookies</a></li>
+        <li><a href="#s8">Do Not Track</a></li>
+        <li><a href="#s9">Changes to this policy</a></li>
+        <li><a href="#s10">Contact us</a></li>
+      </ol>
+    </aside>
+
+    <!-- CONTENT -->
+    <article class="doc-body">
+
+      <section id="s1">
+        <span class="section-num">SECTION 01</span>
+        <h2>What are cookies</h2>
+        <p>Cookies are small text files that websites place on your device (computer, phone, or tablet) when you visit. They are widely used to make websites work efficiently, remember your preferences, and provide information to site operators about how the site is being used.</p>
+        <p>This policy covers cookies and similar tracking technologies (including local storage, pixel tags, and web beacons) used across MetricBase properties:</p>
+        <ul>
+          <li><strong>metricbase.org</strong> — the root portal and Journal</li>
+          <li><strong>energy.metricbase.org</strong> — Energy Markets vertical</li>
+          <li><strong>chain.metricbase.org</strong> — Crypto &amp; Technology vertical</li>
+          <li><strong>saham.metricbase.org</strong> — Pasar Saham Indonesia vertical</li>
+          <li><strong>subs.metricbase.org</strong> — newsletter subscription</li>
+        </ul>
+        <p>This Cookie Policy should be read alongside our <a href="https://metricbase.org/privacy">Privacy Policy</a>, which provides broader context about how we handle personal data.</p>
+      </section>
+
+      <section id="s2">
+        <span class="section-num">SECTION 02</span>
+        <h2>Cookies we use</h2>
+        <p>We use cookies in three categories: <strong>Essential</strong> (required for basic site function), <strong>Analytics</strong> (performance and usage measurement), and <strong>Advertising</strong> (served by Google AdSense, subject to your consent). The full inventory is listed in Sections 3–5.</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Examples</th>
+              <th>Consent required</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge essential">Essential</span></td>
+              <td>Cookie consent preference, Blogger session</td>
+              <td>No — strictly necessary</td>
+              <td>Session or up to 1 year</td>
+            </tr>
+            <tr>
+              <td><span class="badge analytics">Analytics</span></td>
+              <td>Google Analytics (_ga, _gid)</td>
+              <td>Yes — on consent banner accept</td>
+              <td>Up to 2 years</td>
+            </tr>
+            <tr>
+              <td><span class="badge advertising">Advertising</span></td>
+              <td>Google AdSense (IDE, ANID)</td>
+              <td>Yes — on consent banner accept</td>
+              <td>Up to 13 months</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="s3">
+        <span class="section-num">SECTION 03</span>
+        <h2>Essential cookies</h2>
+        <p>Essential cookies are necessary for the site to function. They do not identify you personally and cannot be switched off without breaking core site features. We do not require consent to set these cookies.</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Cookie name</th>
+              <th>Provider</th>
+              <th>Purpose</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>mb_cookie_consent</code></td>
+              <td>metricbase.org</td>
+              <td>Stores your cookie consent decision so the banner is not shown on every page visit.</td>
+              <td>365 days</td>
+            </tr>
+            <tr>
+              <td>Blogger session cookies</td>
+              <td>blogger.com / Google</td>
+              <td>Required by the Blogger platform to serve pages on energy, chain, and saham subdomains.</td>
+              <td>Session</td>
+            </tr>
+            <tr>
+              <td>GitHub Pages cache headers</td>
+              <td>github.io / Fastly CDN</td>
+              <td>CDN edge cache validation for static assets on metricbase.org. No personal data stored.</td>
+              <td>Session</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="s4">
+        <span class="section-num">SECTION 04</span>
+        <h2>Analytics cookies</h2>
+        <p>We use <strong>Google Analytics 4 (GA4)</strong> to understand how visitors interact with our properties — which articles get read, what traffic sources drive visits, and where people leave. This data is aggregated and used solely to improve editorial content and site performance.</p>
+        <p>Analytics cookies are only set after you accept the cookie consent banner. If you decline or close the banner without accepting, no analytics cookies will be placed.</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Cookie name</th>
+              <th>Provider</th>
+              <th>Purpose</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>_ga</code></td>
+              <td>Google Analytics</td>
+              <td>Distinguishes unique users by assigning a randomly generated number as a client identifier.</td>
+              <td>2 years</td>
+            </tr>
+            <tr>
+              <td><code>_gid</code></td>
+              <td>Google Analytics</td>
+              <td>Distinguishes users within a shorter session window. Used to throttle request rates.</td>
+              <td>24 hours</td>
+            </tr>
+            <tr>
+              <td><code>_ga_*</code></td>
+              <td>Google Analytics 4</td>
+              <td>Maintains session state for GA4 measurement ID(s) associated with MetricBase properties.</td>
+              <td>2 years</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Google Analytics data is processed under Google's privacy infrastructure. IP addresses are anonymized by default in GA4. For more information, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+      </section>
+
+      <section id="s5">
+        <span class="section-num">SECTION 05</span>
+        <h2>Advertising cookies</h2>
+        <p>MetricBase has applied for Google AdSense to display advertisements on our properties. If approved, Google AdSense will place advertising cookies to serve relevant ads and measure their performance.</p>
+        <p>Advertising cookies are only active after you accept the cookie consent banner. You can withdraw consent at any time by clearing cookies in your browser or using the controls in Section 7.</p>
+
+        <div class="callout">
+          <span class="callout-label">Important note</span>
+          <p>Advertising cookies may be used to build a profile of your interests and show you relevant ads on other sites. We do not control the data Google processes for ad personalization purposes. Refer to Google's <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Advertising Policy</a> for full details.</p>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Cookie name</th>
+              <th>Provider</th>
+              <th>Purpose</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>IDE</code></td>
+              <td>Google DoubleClick</td>
+              <td>Used by Google DoubleClick to register and report user actions after seeing or clicking an ad.</td>
+              <td>13 months</td>
+            </tr>
+            <tr>
+              <td><code>ANID</code></td>
+              <td>Google</td>
+              <td>Used for ad targeting based on your browsing history and preferences across the Google network.</td>
+              <td>13 months</td>
+            </tr>
+            <tr>
+              <td><code>NID</code></td>
+              <td>Google</td>
+              <td>Stores preferences and other information for Google services, used to tailor ads.</td>
+              <td>6 months</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="s6">
+        <span class="section-num">SECTION 06</span>
+        <h2>Third-party cookies</h2>
+        <p>Some pages on MetricBase properties embed content or tools from third-party services. These services may set their own cookies, which are governed by their respective privacy policies. Third-party cookies we are aware of include:</p>
+        <ul>
+          <li><strong>Google Fonts</strong> — fonts loaded from Google's CDN. Google may log your IP address for CDN routing purposes.</li>
+          <li><strong>Blogger / Google</strong> — subdomains are hosted on Google's Blogger platform. Blogger may set session and preference cookies.</li>
+          <li><strong>Beehiiv / subs.metricbase.org</strong> — the newsletter subscription form may set cookies related to form validation and email delivery preferences.</li>
+          <li><strong>Social media embeds</strong> — if we embed a post from X (Twitter), Instagram, or TikTok, those platforms may set tracking cookies when the embed loads.</li>
+        </ul>
+        <p>We recommend reviewing the privacy policies of these third-party services for full details on their data practices.</p>
+      </section>
+
+      <section id="s7">
+        <span class="section-num">SECTION 07</span>
+        <h2>Managing cookies</h2>
+        <h3>7.1 — Cookie consent banner</h3>
+        <p>When you first visit metricbase.org, a cookie consent banner is displayed. You can:</p>
+        <ul>
+          <li><strong>Accept all cookies</strong> — enables essential, analytics, and advertising cookies</li>
+          <li><strong>Decline / close</strong> — only essential cookies will be set</li>
+        </ul>
+        <p>Your choice is saved for 365 days. You can reset it by clearing your browser cookies for metricbase.org.</p>
+
+        <h3>7.2 — Browser cookie controls</h3>
+        <p>Every major browser allows you to view, manage, block, or delete cookies. Links to instructions for the most common browsers:</p>
+        <ul>
+          <li>Google Chrome — Settings → Privacy and security → Cookies</li>
+          <li>Mozilla Firefox — Settings → Privacy &amp; Security → Cookies</li>
+          <li>Safari — Preferences → Privacy → Manage Website Data</li>
+          <li>Microsoft Edge — Settings → Cookies and site permissions</li>
+        </ul>
+        <p>Note: blocking all cookies will prevent certain features (including analytics and ads) but should not break core content on most MetricBase pages.</p>
+
+        <h3>7.3 — Google Analytics opt-out</h3>
+        <p>To opt out of Google Analytics tracking across all websites, install the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+
+        <h3>7.4 — Google ad personalization</h3>
+        <p>To control how Google uses your data for ad personalization, visit <a href="https://adssettings.google.com" target="_blank" rel="noopener">My Ad Center</a>. You can opt out of interest-based advertising while still seeing non-personalized ads.</p>
+      </section>
+
+      <section id="s8">
+        <span class="section-num">SECTION 08</span>
+        <h2>Do Not Track</h2>
+        <p>Some browsers transmit a "Do Not Track" (DNT) signal to websites. Currently there is no universally agreed-upon standard for how websites must respond to DNT signals. MetricBase does not alter cookie behavior based on DNT signals at this time. We will revisit this position if a binding standard is adopted.</p>
+        <p>For effective opt-out, we recommend using the browser controls and opt-out tools described in Section 7.</p>
+      </section>
+
+      <section id="s9">
+        <span class="section-num">SECTION 09</span>
+        <h2>Changes to this policy</h2>
+        <p>We may update this Cookie Policy from time to time as our technology stack changes, as third-party services change their cookie use, or as regulatory requirements evolve. When we make significant changes we will:</p>
+        <ul>
+          <li>Update the "Last Updated" date at the top of this document</li>
+          <li>Where appropriate, re-prompt consent via the cookie banner</li>
+        </ul>
+        <p>We encourage you to review this policy periodically. Continued use of our properties after an update constitutes acceptance of the revised policy.</p>
+      </section>
+
+      <section id="s10">
+        <span class="section-num">SECTION 10</span>
+        <h2>Contact us</h2>
+        <div class="callout">
+          <span class="callout-label">Cookie inquiries</span>
+          <p>For any questions about our use of cookies or to exercise your data rights:</p>
+          <p><strong>Email:</strong> <a href="mailto:support@metricbase.org">support@metricbase.org</a></p>
+          <p><strong>Form:</strong> <a href="https://metricbase.org/contact">metricbase.org/contact</a> — select "Privacy &amp; Cookies" in the subject dropdown</p>
+        </div>
+        <p>For broader privacy rights inquiries, see our <a href="https://metricbase.org/privacy">Privacy Policy</a>, Section 9.</p>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://metricbase.org/privacy">Privacy Policy</a></li>
+          <li><a href="https://metricbase.org/terms">Terms of Service</a></li>
+          <li><a href="https://metricbase.org/disclaimer">Disclaimer</a></li>
+          <li><a href="https://metricbase.org/cookie-policy">Cookie Policy</a></li>
+          <li><a href="https://metricbase.org/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Verticals</h4>
+        <ul>
+          <li><a href="https://energy.metricbase.org">Energy Markets</a></li>
+          <li><a href="https://chain.metricbase.org">Crypto &amp; Tech</a></li>
+          <li><a href="https://saham.metricbase.org">Pasar Saham</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://x.com/MetricBase">X / Twitter</a></li>
+          <li><a href="https://instagram.com/MetricBase">Instagram</a></li>
+          <li><a href="https://tiktok.com/@MetricBase">TikTok</a></li>
+          <li><a href="https://subs.metricbase.org">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 MetricBase · Precision growth · No wasted motion</div>
+      <div>Cookie Policy · COOK-001 · v1.0</div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const sections = document.querySelectorAll('.doc-body section[id]');
+  const tocLinks = document.querySelectorAll('.toc a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tocLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

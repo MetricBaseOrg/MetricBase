@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editorial Standards · MetricBase</title>
+<meta name="description" content="How MetricBase researches, writes, fact-checks, and publishes content across energy, crypto, and Indonesian equities.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://metricbase.org/editorial-standards">
+<meta property="og:title" content="Editorial Standards · MetricBase">
+<meta property="og:description" content="MetricBase editorial process: sourcing, fact-checking, corrections, AI disclosure, and conflict-of-interest policy.">
+<meta property="og:url" content="https://metricbase.org/editorial-standards">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0A0A;
+    --bg-elev: #131313;
+    --bg-card: #161616;
+    --gold: #C9A84C;
+    --gold-bright: #E5C168;
+    --gold-dim: #8a7434;
+    --white: #ffffff;
+    --gray-1: #e5e5e5;
+    --gray-2: #999999;
+    --gray-3: #555555;
+    --gray-4: #2a2a2a;
+    --line: rgba(255,255,255,0.06);
+    --line-strong: rgba(201, 168, 76, 0.3);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--gray-1); font-family: 'Manrope', sans-serif; font-weight: 400; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  body {
+    background:
+      radial-gradient(ellipse 800px 600px at 20% 0%, rgba(201, 168, 76, 0.05), transparent 60%),
+      radial-gradient(ellipse 600px 400px at 80% 100%, rgba(201, 168, 76, 0.03), transparent 70%),
+      var(--bg);
+    min-height: 100vh;
+    padding: 32px 24px 80px;
+  }
+  .grid-bg { position: fixed; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; z-index: 0; }
+  .container { max-width: 1240px; margin: 0 auto; position: relative; z-index: 1; }
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); transition: all 0.15s; }
+  a:hover { color: var(--gold-bright); border-bottom-style: solid; }
+
+  /* HEADER */
+  header.app-header { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; padding-bottom: 28px; border-bottom: 1px solid var(--line); margin-bottom: 56px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand-mark { width: 38px; height: 38px; border: 1.5px solid var(--gold); transform: rotate(45deg); display: grid; place-items: center; position: relative; }
+  .brand-mark::after { content: ''; position: absolute; inset: 6px; background: var(--gold); opacity: 0.4; }
+  .brand-text { display: flex; flex-direction: column; }
+  .brand-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: 0.02em; line-height: 1; color: var(--white); border: none; }
+  .brand-name:hover { color: var(--white); }
+  .brand-name .gold { color: var(--gold); }
+  .brand-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gray-2); margin-top: 4px; }
+  .nav-links { display: flex; gap: 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; }
+  .nav-links a { color: var(--gray-2); border: none; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a.active { color: var(--gold); }
+
+  /* HERO */
+  .doc-hero { margin-bottom: 56px; max-width: 880px; }
+  .doc-id { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.22em; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+  .doc-id::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  h1.doc-title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: clamp(40px, 6vw, 68px); line-height: 1.02; letter-spacing: -0.025em; margin-bottom: 22px; color: var(--white); }
+  h1.doc-title .accent { color: var(--gold); }
+  .doc-meta { display: flex; gap: 28px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding-top: 22px; border-top: 1px dashed var(--gray-4); }
+  .doc-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .doc-meta-lbl { color: var(--gray-3); text-transform: uppercase; letter-spacing: 0.18em; font-size: 9px; }
+  .doc-meta-val { color: var(--white); font-weight: 500; }
+
+  /* LAYOUT */
+  .doc-layout { display: grid; grid-template-columns: 260px 1fr; gap: 64px; align-items: flex-start; }
+
+  /* TOC */
+  .toc { position: sticky; top: 32px; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .toc-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gray-3); margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; padding: 6px 0; }
+  .toc a { display: flex; gap: 12px; color: var(--gray-2); border: none; line-height: 1.5; }
+  .toc a::before { content: counter(toc, decimal-leading-zero); color: var(--gray-3); flex-shrink: 0; }
+  .toc a:hover { color: var(--gold); }
+  .toc a.active { color: var(--gold); }
+  .toc a.active::before { color: var(--gold); }
+
+  /* CONTENT */
+  .doc-body { max-width: 720px; }
+  .doc-body section { margin-bottom: 56px; }
+  .section-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.22em; margin-bottom: 12px; display: block; }
+  .doc-body h2 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.2; letter-spacing: -0.015em; color: var(--white); margin-bottom: 20px; }
+  .doc-body h3 { font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 16px; line-height: 1.3; color: var(--white); margin: 28px 0 12px; }
+  .doc-body p { font-size: 15px; color: var(--gray-1); margin-bottom: 16px; }
+  .doc-body p:last-child { margin-bottom: 0; }
+  .doc-body strong { color: var(--gold-bright); font-weight: 600; }
+  .doc-body ul, .doc-body ol { padding-left: 22px; margin: 12px 0 20px; }
+  .doc-body li { font-size: 15px; color: var(--gray-1); margin-bottom: 8px; line-height: 1.65; }
+  .doc-body li::marker { color: var(--gold-dim); }
+
+  /* CALLOUT */
+  .callout { background: var(--bg-elev); border: 1px solid var(--line); border-left: 2px solid var(--gold); padding: 20px 24px; margin: 24px 0; }
+  .callout p { margin-bottom: 8px; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 10px; display: block; }
+
+  /* PRINCIPLE CARDS */
+  .principle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+  .principle-card { background: var(--bg-elev); border: 1px solid var(--line); padding: 20px; }
+  .principle-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 0.2em; margin-bottom: 8px; display: block; }
+  .principle-title { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 14px; color: var(--white); margin-bottom: 8px; }
+  .principle-text { font-size: 13px; color: var(--gray-2); line-height: 1.65; }
+
+  /* FOOTER */
+  footer.doc-footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--line); }
+  .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+  .footer-col h4 { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 14px; font-weight: 500; }
+  .footer-col ul { list-style: none; padding: 0; }
+  .footer-col li { margin-bottom: 8px; }
+  .footer-col a { color: var(--gray-2); font-size: 13px; border: none; }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom { padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .doc-layout { grid-template-columns: 1fr; gap: 32px; }
+    .toc { position: relative; top: 0; padding: 20px; background: var(--bg-elev); border: 1px solid var(--line); }
+    .nav-links { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .principle-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    body { padding: 20px 14px 60px; }
+    h1.doc-title { font-size: 36px; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <a href="https://metricbase.org" class="brand-name" style="display: flex; align-items: center; gap: 14px;">
+      <span class="brand-mark"></span>
+      <span class="brand-text">
+        <span class="brand-name">Metric<span class="gold">BASE</span></span>
+        <span class="brand-tag">Precision growth · No wasted motion</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="https://metricbase.org/about">About</a>
+      <a href="https://metricbase.org/journal">Journal</a>
+      <a href="https://metricbase.org/editorial-standards" class="active">Editorial</a>
+      <a href="https://metricbase.org/contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="doc-hero">
+    <div class="doc-id">DOCUMENT · EDIT-001 · V1.0</div>
+    <h1 class="doc-title">Editorial <span class="accent">Standards.</span></h1>
+    <div class="doc-meta">
+      <div class="doc-meta-item">
+        <span class="doc-meta-lbl">Effective</span>
+        <span class="doc-meta-val">12 May 2026</span>
+      </div>
+      <div class="doc-meta-item">
+        <span class="doc-meta-lbl">Last Updated</span>
+        <span class="doc-meta-val">12 May 2026</span>
+      </div>
+      <div class="doc-meta-item">
+        <span class="doc-meta-lbl">Applies To</span>
+        <span class="doc-meta-val">All MetricBase publications</span>
+      </div>
+      <div class="doc-meta-item">
+        <span class="doc-meta-lbl">Maintained by</span>
+        <span class="doc-meta-val">Bun · Lead Analyst</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAYOUT -->
+  <div class="doc-layout">
+
+    <!-- TOC -->
+    <aside class="toc">
+      <div class="toc-title">Table of Contents</div>
+      <ol>
+        <li><a href="#s1">Mission &amp; scope</a></li>
+        <li><a href="#s2">Editorial principles</a></li>
+        <li><a href="#s3">Research &amp; sourcing</a></li>
+        <li><a href="#s4">Fact-checking process</a></li>
+        <li><a href="#s5">Financial disclaimer</a></li>
+        <li><a href="#s6">AI disclosure</a></li>
+        <li><a href="#s7">Conflicts of interest</a></li>
+        <li><a href="#s8">Corrections policy</a></li>
+        <li><a href="#s9">Content types</a></li>
+        <li><a href="#s10">Contact the editorial team</a></li>
+      </ol>
+    </aside>
+
+    <!-- CONTENT -->
+    <article class="doc-body">
+
+      <section id="s1">
+        <span class="section-num">SECTION 01</span>
+        <h2>Mission &amp; scope</h2>
+        <p>MetricBase publishes data-first analysis and education across three market verticals: global energy markets, cryptocurrency and blockchain technology, and Indonesian equities (Pasar Saham). Our mission is to give independent retail investors access to the same quality of analysis that institutional desks take for granted — written in clear language, grounded in real data, and free of promotional agenda.</p>
+        <p>This document applies to all editorial content published on:</p>
+        <ul>
+          <li><strong>metricbase.org/journal</strong> — Weekly Briefs, Research Reports, and Editorials</li>
+          <li><strong>energy.metricbase.org</strong> — Energy Markets vertical</li>
+          <li><strong>chain.metricbase.org</strong> — Crypto &amp; Technology vertical</li>
+          <li><strong>saham.metricbase.org</strong> — Pasar Saham Indonesia vertical</li>
+        </ul>
+        <p>These standards are public. If you believe a piece of our content violates them, we want to hear from you — see Section 10.</p>
+      </section>
+
+      <section id="s2">
+        <span class="section-num">SECTION 02</span>
+        <h2>Editorial principles</h2>
+        <p>Every piece of MetricBase content is evaluated against six core principles:</p>
+
+        <div class="principle-grid">
+          <div class="principle-card">
+            <span class="principle-num">01 — ACCURACY</span>
+            <div class="principle-title">Facts first, narrative second</div>
+            <p class="principle-text">All quantitative claims must be traceable to a primary source. We do not publish figures we cannot verify.</p>
+          </div>
+          <div class="principle-card">
+            <span class="principle-num">02 — INDEPENDENCE</span>
+            <div class="principle-title">No sponsored analysis</div>
+            <p class="principle-text">We do not accept payment to write favorably about any asset, project, or company. Advertiser relationships are disclosed and do not influence editorial judgment.</p>
+          </div>
+          <div class="principle-card">
+            <span class="principle-num">03 — TRANSPARENCY</span>
+            <div class="principle-title">Show your work</div>
+            <p class="principle-text">Sources, data sets, and methodology are cited in every article. When we use models or assumptions, we state them explicitly.</p>
+          </div>
+          <div class="principle-card">
+            <span class="principle-num">04 — FAIRNESS</span>
+            <div class="principle-title">Represent multiple views</div>
+            <p class="principle-text">On contested questions — policy, valuation, macro direction — we present the bull and bear case. We do not disguise opinion as consensus.</p>
+          </div>
+          <div class="principle-card">
+            <span class="principle-num">05 — TIMELINESS</span>
+            <div class="principle-title">Date everything</div>
+            <p class="principle-text">Every article carries a publish date and a last-updated date. Market conditions change; our analysis is only valid as of the date shown.</p>
+          </div>
+          <div class="principle-card">
+            <span class="principle-num">06 — ACCOUNTABILITY</span>
+            <div class="principle-title">Corrections are a feature</div>
+            <p class="principle-text">Errors happen. We fix them promptly, transparently, and without hiding the correction history. See Section 8.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="s3">
+        <span class="section-num">SECTION 03</span>
+        <h2>Research &amp; sourcing</h2>
+        <h3>3.1 — Primary sources we use</h3>
+        <p>MetricBase content is built from primary and secondary sources in the following tiers, in order of preference:</p>
+        <ol>
+          <li><strong>Tier 1 — Primary data:</strong> Official government statistics (BPS, OJK, BI, EIA, IEA), exchange data (IDX, CME, Coinbase, Binance), on-chain data (Glassnode, Dune Analytics), regulatory filings (SEC, OJK), and central bank publications.</li>
+          <li><strong>Tier 2 — Institutional research:</strong> IMF, World Bank, BIS, OPEC, IEA reports; publicly accessible research from major investment banks; academic papers with DOIs.</li>
+          <li><strong>Tier 3 — Quality financial journalism:</strong> Reuters, Bloomberg, Financial Times, The Block, CoinDesk, Bisnis Indonesia, Kontan — cited directly with original URLs and access dates.</li>
+          <li><strong>Tier 4 — Secondary aggregators:</strong> TradingView, CoinMarketCap, TradingEconomics — used for price/chart reference, not for macro conclusions.</li>
+        </ol>
+        <p>We do not cite anonymous social media posts, press releases without verification, or unaudited project claims as factual evidence.</p>
+
+        <h3>3.2 — Data handling</h3>
+        <p>When we produce original charts or tables, the underlying data source is cited in the caption or footnote. For time-series data, we specify the date range and provider. If we adjust or reindex data (e.g., normalizing to a base date), we explain the transformation.</p>
+      </section>
+
+      <section id="s4">
+        <span class="section-num">SECTION 04</span>
+        <h2>Fact-checking process</h2>
+        <p>Before publication, every article goes through a structured checklist:</p>
+        <ol>
+          <li><strong>Data verification:</strong> Each quantitative claim is traced back to its original source URL. If the original source has changed or been removed, we note this explicitly.</li>
+          <li><strong>Date-sensitivity check:</strong> Any figure that can change over time (prices, rates, rankings) is flagged with the date it was accurate.</li>
+          <li><strong>Quote accuracy:</strong> Quoted statements from third parties are checked against original transcripts, filings, or reports. Paraphrases are labeled as such.</li>
+          <li><strong>Terminology review:</strong> Technical terms are used in their correct financial or technical sense. We do not use jargon loosely to sound authoritative.</li>
+          <li><strong>Legal review:</strong> Articles on individual stocks, crypto assets, or specific investment strategies are reviewed against the financial disclaimer in Section 5 before publishing.</li>
+        </ol>
+
+        <div class="callout">
+          <span class="callout-label">YMYL note</span>
+          <p>MetricBase covers financial markets, which Google classifies as Your Money or Your Life (YMYL) content. We take this responsibility seriously. Every claim that could influence a financial decision is held to a higher evidentiary standard than general news commentary.</p>
+        </div>
+      </section>
+
+      <section id="s5">
+        <span class="section-num">SECTION 05</span>
+        <h2>Financial disclaimer</h2>
+        <p>All MetricBase content — including Weekly Briefs, Research Reports, Editorials, and blog articles on all subdomains — is published for <strong>informational and educational purposes only</strong>. Nothing on any MetricBase property constitutes financial advice, investment advice, trading advice, or a recommendation to buy or sell any security, commodity, cryptocurrency, or other financial instrument.</p>
+        <p>MetricBase analysts, including Bun, may hold positions in assets discussed. Any such positions are disclosed in the relevant article. Past performance of any asset discussed is not indicative of future results. All investments carry risk; you may lose some or all of your capital.</p>
+        <p>For the full disclaimer, see our <a href="https://metricbase.org/disclaimer">Disclaimer page</a>.</p>
+      </section>
+
+      <section id="s6">
+        <span class="section-num">SECTION 06</span>
+        <h2>AI disclosure</h2>
+        <p>MetricBase uses AI language models as part of its research and writing workflow. We believe in transparency about this practice:</p>
+
+        <h3>6.1 — How we use AI</h3>
+        <ul>
+          <li><strong>Research assistance:</strong> AI tools help summarize large bodies of source material, surface related data points, and draft initial outlines. All final analysis and conclusions are human-reviewed and verified.</li>
+          <li><strong>Writing assistance:</strong> AI may contribute to first drafts of article text. All published text is reviewed, edited, and approved by the lead analyst before publication.</li>
+          <li><strong>Visual content:</strong> Some article illustrations, cover images, and mascot visuals are generated with AI image tools. These are always clearly branded as MetricBase original graphics.</li>
+        </ul>
+
+        <h3>6.2 — What AI does not replace</h3>
+        <ul>
+          <li>Primary source verification — we check every data point against its original source</li>
+          <li>Editorial judgment — the angle, framing, and conclusion of every piece is determined by the human analyst</li>
+          <li>Financial analysis — all models, valuations, and market interpretations are human-authored</li>
+        </ul>
+
+        <h3>6.3 — AI disclosure label</h3>
+        <p>Articles that made significant use of AI assistance in drafting carry an "AI-assisted" label in the article metadata. Articles where AI was used only for research summarization or image generation are not separately labeled, as these are industry-standard workflow tools comparable to using a spreadsheet or a stock photo library.</p>
+      </section>
+
+      <section id="s7">
+        <span class="section-num">SECTION 07</span>
+        <h2>Conflicts of interest</h2>
+        <h3>7.1 — Position disclosure</h3>
+        <p>If a MetricBase analyst holds a long or short position in an asset covered in an article, this is disclosed at the bottom of that article with the text: <em>"Disclosure: [analyst] holds a position in [asset] as of [date of publication]."</em></p>
+
+        <h3>7.2 — No paid placements</h3>
+        <p>MetricBase does not accept payment from projects, companies, or funds in exchange for editorial coverage — positive or neutral. We do not publish sponsored articles disguised as editorial content. If we ever introduce clearly labeled sponsored content, it will be marked prominently as "Sponsored" and separated from editorial analysis.</p>
+
+        <h3>7.3 — Affiliate links</h3>
+        <p>Some links on MetricBase properties may be affiliate links that earn a commission when you sign up or make a transaction via the link. These links are labeled with "(affiliate)" or "↗ affiliate" next to the link text. Affiliate relationships do not influence our editorial recommendations.</p>
+
+        <h3>7.4 — Advertising</h3>
+        <p>Display advertising (including Google AdSense, if approved) is served based on site content and visitor interests. Advertisers have no input into or access to editorial content before or after publication.</p>
+      </section>
+
+      <section id="s8">
+        <span class="section-num">SECTION 08</span>
+        <h2>Corrections policy</h2>
+        <p>We get things wrong sometimes. When we do, we correct them transparently.</p>
+
+        <h3>8.1 — Minor corrections</h3>
+        <p>Typographical errors, formatting issues, or minor factual errors that do not affect the article's conclusions are corrected silently. The article's "Last Updated" date is updated to reflect the edit.</p>
+
+        <h3>8.2 — Material corrections</h3>
+        <p>If an error materially affects a claim, figure, conclusion, or recommendation in an article, we:</p>
+        <ol>
+          <li>Add a clearly visible correction notice at the top of the article</li>
+          <li>Describe what was wrong and what the correct information is</li>
+          <li>Update the "Last Updated" date</li>
+          <li>If the article was shared widely on social media, post a correction notice on those platforms as well</li>
+        </ol>
+        <p>We do not delete articles to hide errors. If an article is so fundamentally flawed that it cannot be corrected, it is retracted with a notice explaining why.</p>
+
+        <h3>8.3 — How to report an error</h3>
+        <p>If you spot an error, please contact us at <a href="mailto:support@metricbase.org">support@metricbase.org</a> with the subject line "Correction: [article title]." We aim to review all correction requests within 3 business days.</p>
+      </section>
+
+      <section id="s9">
+        <span class="section-num">SECTION 09</span>
+        <h2>Content types</h2>
+        <p>MetricBase publishes four distinct content types. Understanding the difference helps you calibrate how to use each piece:</p>
+
+        <h3>Weekly Brief</h3>
+        <p>A cross-vertical market wrap published weekly on the Journal. Covers key price action, macro catalysts, and positioning signals across energy, crypto, and Indonesian equities. Analysis reflects conditions as of the Friday close of the covered week. Not a trading recommendation.</p>
+
+        <h3>Research Report</h3>
+        <p>A long-form, data-intensive analysis on a single topic — typically 3,000–6,000 words. Includes original data analysis, proprietary charts, and a structured conclusion. Research Reports take the longest to produce and carry the highest evidentiary standard. Best used as background research, not a real-time trading signal.</p>
+
+        <h3>Editorial</h3>
+        <p>An opinion piece that takes a clear position on a market, policy, or structural trend. Editorials are clearly labeled as opinion. They represent the view of the named analyst, not a neutral consensus.</p>
+
+        <h3>Explainer / Education</h3>
+        <p>A deep-dive into a concept, mechanism, or instrument — how DeFi lending works, what drives crude oil spreads, how margin trading on the IDX operates. Evergreen content that is updated when the underlying mechanics change. Not time-sensitive.</p>
+      </section>
+
+      <section id="s10">
+        <span class="section-num">SECTION 10</span>
+        <h2>Contact the editorial team</h2>
+        <div class="callout">
+          <span class="callout-label">Editorial inquiries</span>
+          <p>For correction requests, factual disputes, sourcing questions, or editorial feedback:</p>
+          <p><strong>Email:</strong> <a href="mailto:support@metricbase.org">support@metricbase.org</a> — subject line: "Editorial: [topic]"</p>
+          <p><strong>Form:</strong> <a href="https://metricbase.org/contact">metricbase.org/contact</a> — select "Editorial" in the subject dropdown</p>
+        </div>
+        <p>We read every message. Response time for editorial inquiries is typically 3–5 business days.</p>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://metricbase.org/privacy">Privacy Policy</a></li>
+          <li><a href="https://metricbase.org/terms">Terms of Service</a></li>
+          <li><a href="https://metricbase.org/disclaimer">Disclaimer</a></li>
+          <li><a href="https://metricbase.org/cookie-policy">Cookie Policy</a></li>
+          <li><a href="https://metricbase.org/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Verticals</h4>
+        <ul>
+          <li><a href="https://energy.metricbase.org">Energy Markets</a></li>
+          <li><a href="https://chain.metricbase.org">Crypto &amp; Tech</a></li>
+          <li><a href="https://saham.metricbase.org">Pasar Saham</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://x.com/MetricBase">X / Twitter</a></li>
+          <li><a href="https://instagram.com/MetricBase">Instagram</a></li>
+          <li><a href="https://tiktok.com/@MetricBase">TikTok</a></li>
+          <li><a href="https://subs.metricbase.org">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 MetricBase · Precision growth · No wasted motion</div>
+      <div>Editorial Standards · EDIT-001 · v1.0</div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const sections = document.querySelectorAll('.doc-body section[id]');
+  const tocLinks = document.querySelectorAll('.toc a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tocLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
