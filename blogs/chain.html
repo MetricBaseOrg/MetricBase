@@ -15,7 +15,9 @@
   <link expr:href='data:blog.url' rel='canonical'/>
 
   <!-- Fonts -->
-  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap' rel='stylesheet'/>
+  <link rel='preconnect' href='https://fonts.googleapis.com'/>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin='crossorigin'/>
+  <link href='https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap' rel='stylesheet'/>
 
   <!-- Favicon -->
   <link href='https://raw.githubusercontent.com/MetricBaseOrg/MetricBase/refs/heads/main/assets/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -108,29 +110,47 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --black:  #0a0a0a;
-      --dark:   #111111;
-      --mid:    #1a1a1a;
-      --border: #222222;
-      --muted:  #555555;
-      --subtle: #888888;
-      --light:  #cccccc;
-      --white:  #f5f5f5;
-      --accent: #e8e0d0;
-      --gold:   #c9a84c;
-      --red:    #c0392b;
-      --sans:   'Inter', sans-serif;
+      --black:      #0a0a0a;
+      --dark:       #131313;
+      --mid:        #161616;
+      --border:     rgba(255,255,255,0.06);
+      --border-str: rgba(201,168,76,0.3);
+      --muted:      #555555;
+      --subtle:     #999999;
+      --light:      #e5e5e5;
+      --white:      #ffffff;
+      --accent:     #e5e5e5;
+      --gold:       #C9A84C;
+      --gold-bright:#E5C168;
+      --gold-dim:   #8a7434;
+      --red:        #e85a4f;
+      --green:      #5fa86c;
+      --amber:      #d9a441;
+      --sans:       'Manrope', sans-serif;
+      --mono:       'JetBrains Mono', monospace;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: var(--sans);
-      background: var(--black);
+      background:
+        radial-gradient(ellipse 900px 600px at 20% 0%, rgba(201,168,76,0.05), transparent 60%),
+        radial-gradient(ellipse 600px 400px at 80% 100%, rgba(201,168,76,0.03), transparent 70%),
+        var(--black);
       color: var(--light);
       font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+    }
+
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -141,76 +161,106 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 200;
-      background: rgba(10,10,10,0.94);
-      backdrop-filter: blur(10px);
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      height: 58px;
       display: flex;
-      align-items: center;
-      padding: 0 32px;
-      justify-content: space-between;
+      flex-direction: column;
     }
 
-    .mb-nav-left {
+    .mb-nav-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 32px;
+      width: 100%;
+      height: 64px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 32px;
     }
 
     .mb-logo {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .mb-brand-mark {
+      width: 32px;
+      height: 32px;
+      border: 1.5px solid var(--gold);
+      transform: rotate(45deg);
+      display: grid;
+      place-items: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .mb-brand-mark::after {
+      content: '';
+      position: absolute;
+      inset: 5px;
+      background: var(--gold);
+      opacity: 0.4;
+    }
+
+    .mb-brand-text { display: flex; flex-direction: column; }
+
+    .mb-brand-name {
+      font-family: var(--sans);
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: 0.02em;
       color: var(--white);
+      line-height: 1;
     }
 
-    .mb-logo span {
-      color: var(--gold);
-    }
+    .mb-brand-name span { color: var(--gold); }
 
-    .mb-nav-divider {
-      width: 1px;
-      height: 18px;
-      background: var(--border);
-    }
-
-    .mb-nav-section {
-      font-size: 11px;
-      letter-spacing: 0.16em;
+    .mb-brand-section {
+      font-family: var(--mono);
+      font-size: 9px;
       text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;
+      letter-spacing: 0.2em;
+      color: var(--subtle);
+      margin-top: 4px;
     }
 
     .mb-nav-links {
       display: flex;
       gap: 24px;
       list-style: none;
+      align-items: center;
     }
 
     .mb-nav-links a {
-      font-size: 13px;
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
       color: var(--subtle);
-      letter-spacing: 0.03em;
-      transition: color 0.18s;
+      transition: color 0.15s;
     }
 
-    .mb-nav-links a:hover { color: var(--white); }
+    .mb-nav-links a:hover { color: var(--gold); }
 
     .mb-nav-cta {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--black);
-      background: var(--gold);
-      padding: 8px 18px;
-      border-radius: 2px;
-      transition: background 0.18s;
+      color: var(--gold);
+      padding: 8px 16px;
+      border: 1px solid var(--border-str);
+      transition: background 0.15s, color 0.15s;
     }
 
-    .mb-nav-cta:hover { background: #d4b460; color: var(--black); }
+    .mb-nav-cta:hover { background: rgba(201,168,76,0.1); color: var(--gold-bright); }
 
     .mb-hamburger {
       display: none;
@@ -220,6 +270,7 @@
       background: none;
       border: none;
       padding: 4px;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .mb-hamburger span {
@@ -227,14 +278,37 @@
       width: 22px;
       height: 2px;
       background: var(--light);
-      border-radius: 1px;
-      transition: 0.2s;
+      transition: 0.22s;
+      transform-origin: center;
     }
+
+    .mb-nav-mobile {
+      display: none;
+      flex-direction: column;
+      border-top: 1px solid var(--border);
+      background: rgba(19,19,19,0.98);
+    }
+
+    .mb-nav-mobile.open { display: flex; }
+
+    .mb-nav-mobile a {
+      font-family: var(--mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--subtle);
+      padding: 14px 32px;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .mb-nav-mobile a:hover { color: var(--gold); background: rgba(201,168,76,0.04); }
+    .mb-nav-mobile a:last-child { border-bottom: none; }
 
     /* ─── TICKER STRIP ───────────────────────────────── */
     #mb-ticker {
       position: fixed;
-      top: 58px;
+      top: 64px;
       left: 0; right: 0;
       z-index: 190;
       background: var(--dark);
@@ -296,7 +370,7 @@
 
     /* ─── LAYOUT ─────────────────────────────────────── */
     #mb-body {
-      margin-top: 104px; /* nav + ticker */
+      margin-top: 110px; /* nav + ticker */
       min-height: 100vh;
     }
 
@@ -1482,7 +1556,7 @@
     /* ─── READING PROGRESS BAR ───────────────────────── */
     #mb-progress {
       position: fixed;
-      top: 58px;
+      top: 64px;
       left: 0;
       height: 2px;
       background: var(--gold);
@@ -1496,11 +1570,11 @@
       position: fixed;
       bottom: 28px;
       right: 24px;
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       background: var(--mid);
       border: 1px solid var(--border);
-      border-radius: 50%;
+      border-radius: 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1563,7 +1637,7 @@
     /* ─── MOBILE (max 640px) ─────────────────────────── */
     @media (max-width: 640px) {
       /* Nav */
-      #mb-nav { padding: 0 16px; }
+      .mb-nav-inner { padding: 0 16px; }
       .mb-nav-links { display: none; }
       .mb-nav-cta { display: none; }
       .mb-hamburger { display: flex; }
@@ -1669,29 +1743,80 @@
       .mb-featured-card:hover { box-shadow: none; }
       .mb-post-card:active { border-color: rgba(201,168,76,0.4); }
     }
+
+    /* ─── DESIGN SYSTEM OVERRIDES ────────────────────── */
+    /* Sharp corners throughout */
+    .mb-featured-card, .mb-post-card, .mb-widget, .mb-pagination a,
+    .mb-tag, .mb-share-btn, .mb-about-link, .mb-footer-tagline,
+    .mb-cookie-accept, .mb-cookie-reject, .mb-drawer-cta,
+    .mb-nl-form input, .mb-nl-form button,
+    .mb-footer-nl-form, .mb-footer-nl-form input, .mb-footer-nl-form button,
+    .mb-list-thumb, .mb-recent-thumb, .mb-featured-img, .mb-post-card-img,
+    .mb-post-hero, .comment-body { border-radius: 0 !important; }
+
+    /* Mono font on labels, tags, dates, meta */
+    .mb-page-eyebrow, .mb-post-badge, .mb-posts-label, .mb-widget-head,
+    .mb-footer-col-head, .mb-tag, .mb-read-more, .mb-share-label,
+    .mb-share-btn, .mb-pagination a, .mb-drawer-label, .ticker-label,
+    .mb-post-meta, .mb-recent-date, .mb-footer-copy, .mb-footer-legal a,
+    .mb-nl-fine, .mb-footer-tagline, .mb-cookie-accept, .mb-cookie-reject,
+    .mb-ad-label { font-family: var(--mono); }
+
+    /* Manrope for headings */
+    #mb-page-header h1, .mb-featured-body h2, .mb-post-card-body h3,
+    .mb-list-body h3, .mb-post-title, .mb-post-body h2, .mb-post-body h3,
+    .mb-footer-nl-text h3 { font-family: var(--sans); }
+    .mb-widget-head { font-family: var(--mono); }
+
+    /* Footer dark bg consistent with design system */
+    #mb-footer { background: var(--dark); }
+    .mb-footer-nl-form { background: var(--mid); }
+
+    /* Sidebar widget */
+    .mb-sidebar { top: 118px; }
+
+    /* Cookie banner sharp */
+    #mb-cookie { background: var(--mid); }
+
+    /* Post hover: flat instead of lift */
+    .mb-post-card:hover { transform: none; border-color: var(--border-str); }
   ]]></b:skin>
 
 </head>
 
 <body>
 
+  <div class='grid-bg'/>
 
   <!-- &#9472;&#9472;&#9472; NAV &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; -->
   <nav id='mb-nav'>
-    <div class='mb-nav-left'>
-      <a class='mb-logo' href='https://metricbase.org'>Metric<span>Base</span></a>
-      <div class='mb-nav-divider'/>
-      <span class='mb-nav-section'>Stocks &amp; Macro</span>
+    <div class='mb-nav-inner'>
+      <a class='mb-logo' href='https://metricbase.org'>
+        <span class='mb-brand-mark'/>
+        <span class='mb-brand-text'>
+          <span class='mb-brand-name'>Metric<span>BASE</span></span>
+          <span class='mb-brand-section'>Crypto &amp; Tech</span>
+        </span>
+      </a>
       <ul class='mb-nav-links'>
         <li><a href='https://energy.metricbase.org'>Energy</a></li>
         <li><a href='https://chain.metricbase.org'>Crypto</a></li>
         <li><a href='https://saham.metricbase.org'>Stocks</a></li>
+        <li><a href='https://metricbase.org/journal'>Journal</a></li>
+        <li><a href='https://metricbase.org'>metricbase.org ↗</a></li>
       </ul>
+      <button type='button' aria-label='Menu' aria-expanded='false' class='mb-hamburger' id='mb-ham-btn' onclick='toggleMobileNav()'>
+        <span/><span/><span/>
+      </button>
     </div>
-    <a class='mb-nav-cta' href='https://metricbase.org'>Get Free Guide</a>
-    <button aria-label='Menu' class='mb-hamburger' onclick='toggleMenu()'>
-      <span/><span/><span/>
-    </button>
+    <div class='mb-nav-mobile' id='mb-nav-mobile'>
+      <a href='https://energy.metricbase.org'>Energy Markets</a>
+      <a href='https://chain.metricbase.org'>Crypto &amp; Tech</a>
+      <a href='https://saham.metricbase.org'>Pasar Saham</a>
+      <a href='https://metricbase.org/journal'>Journal</a>
+      <a href='https://metricbase.org/about'>About</a>
+      <a href='https://metricbase.org'>metricbase.org ↗</a>
+    </div>
   </nav>
 
   <!-- &#9472;&#9472;&#9472; TICKER &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; -->
@@ -1721,34 +1846,6 @@
     <!-- TradingView Ticker Tape END -->
   </div>
 
-  <!-- &#9472;&#9472;&#9472; MOBILE DRAWER &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; -->
-  <div id='mb-drawer-overlay' onclick='closeDrawer()'/>
-  <nav id='mb-drawer'>
-    <div class='mb-drawer-header'>
-      <span class='mb-drawer-logo'>Metric<span>Base</span></span>
-      <button aria-label='Close menu' class='mb-drawer-close' onclick='closeDrawer()'>&#215;</button>
-    </div>
-    <div class='mb-drawer-section'>
-      <span class='mb-drawer-label'>You are reading</span>
-      <a class='mb-drawer-link' href='https://saham.metricbase.org'>Stocks &amp; Macro <span>&#8599;</span></a>
-    </div>
-    <div class='mb-drawer-section'>
-      <span class='mb-drawer-label'>More from MetricBase</span>
-      <a class='mb-drawer-link' href='https://chain.metricbase.org'>Crypto <span>&#8599;</span></a>
-      <a class='mb-drawer-link' href='https://energy.metricbase.org'>Energy <span>&#8599;</span></a>
-      <a class='mb-drawer-link' href='https://metricbase.org'>Main Site <span>&#8599;</span></a>
-    </div>
-    <div class='mb-drawer-section'>
-      <span class='mb-drawer-label'>Topics</span>
-      <a class='mb-drawer-link' href='https://saham.metricbase.org/search/label/IDX'>IDX Stocks</a>
-      <a class='mb-drawer-link' href='https://saham.metricbase.org/search/label/Macro'>Macro</a>
-      <a class='mb-drawer-link' href='https://saham.metricbase.org/search/label/Earnings'>Earnings</a>
-      <a class='mb-drawer-link' href='https://saham.metricbase.org/search/label/Fundamental'>Fundamental</a>
-      <a class='mb-drawer-link' href='https://saham.metricbase.org/search/label/Technical'>Technical</a>
-    </div>
-    <a class='mb-drawer-cta' href='https://metricbase.org'>Get Free Guide</a>
-  </nav>
-
   <!-- &#9472;&#9472;&#9472; READING PROGRESS BAR &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; -->
   <div id='mb-progress'/>
 
@@ -1760,7 +1857,7 @@
     <p>
       We use cookies to personalise content and ads, to provide social media features and to analyse our traffic.
       By clicking &#8220;Accept&#8221; you consent to our use of cookies in accordance with our
-      <a href='https://energy.metricbase.org/p/blog-page.html'>Privacy Policy</a>.
+      <a href='https://metricbase.org/privacy'>Privacy Policy</a>.
       You may withdraw consent at any time.
     </p>
     <div class='mb-cookie-btns'>
@@ -1777,7 +1874,7 @@
       <b:if cond='data:blog.pageType == &quot;index&quot;'>
         <header id='mb-page-header'>
           <div class='mb-page-header-inner'>
-            <div class='mb-page-eyebrow'>Stocks &amp; Macro</div>
+            <div class='mb-page-eyebrow'>Crypto &amp; Tech</div>
             <h1>Stocks, Macro &amp; Market Intelligence</h1>
             <p>Tracking IDX equities, macro flows, earnings, and structural shifts in global stock markets. No noise. No forecasts. Just signal.</p>
           </div>
@@ -2642,7 +2739,7 @@
         <div class='mb-footer-bottom'>
           <span class='mb-footer-copy'>&#169; 2026 MetricBase &#8212; saham.metricbase.org</span>
           <div class='mb-footer-legal'>
-            <a href='https://energy.metricbase.org/p/blog-page.html'>Privacy Policy</a>
+            <a href='https://metricbase.org/privacy'>Privacy Policy</a>
             <a href='https://energy.metricbase.org/p/disclaimer.html'>Disclaimer</a>
             <a href='https://energy.metricbase.org/p/contact.html'>Contact</a>
           </div>
@@ -2669,25 +2766,24 @@
 
   <script>//<![CDATA[
 
-    /* ── Drawer ───────────────────────────────────────── */
-    function openDrawer() {
-      document.getElementById('mb-drawer').classList.add('open');
-      document.getElementById('mb-drawer-overlay').classList.add('open');
-      document.getElementById('mb-hamburger-btn').classList.add('active');
-      document.body.style.overflow = 'hidden';
+    /* ── Mobile nav dropdown ─────────────────────────── */
+    function toggleMobileNav() {
+      var btn = document.getElementById('mb-ham-btn');
+      var nav = document.getElementById('mb-nav-mobile');
+      var isOpen = nav.classList.contains('open');
+      nav.classList.toggle('open', !isOpen);
+      btn.classList.toggle('active', !isOpen);
+      btn.setAttribute('aria-expanded', String(!isOpen));
     }
 
-    function closeDrawer() {
-      document.getElementById('mb-drawer').classList.remove('open');
-      document.getElementById('mb-drawer-overlay').classList.remove('open');
-      document.getElementById('mb-hamburger-btn').classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    function toggleMenu() {
-      var drawer = document.getElementById('mb-drawer');
-      drawer.classList.contains('open') ? closeDrawer() : openDrawer();
-    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#mb-nav')) {
+        var nav = document.getElementById('mb-nav-mobile');
+        var btn = document.getElementById('mb-ham-btn');
+        if (nav) nav.classList.remove('open');
+        if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded', 'false'); }
+      }
+    });
 
     /* ── Footer accordion (mobile) ───────────────────── */
     function toggleFooterCol(head) {
@@ -2734,18 +2830,19 @@
     /* ── DOMContentLoaded ─────────────────────────────── */
     document.addEventListener('DOMContentLoaded', function() {
 
-      /* Hamburger button id for toggling active class */
-      var hamburgerBtn = document.querySelector('.mb-hamburger');
-      if (hamburgerBtn) hamburgerBtn.id = 'mb-hamburger-btn';
-
-      /* Close drawer on Escape key */
+      /* Close mobile nav on Escape key */
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeDrawer();
+        if (e.key === 'Escape') {
+          var nav = document.getElementById('mb-nav-mobile');
+          var btn = document.getElementById('mb-ham-btn');
+          if (nav) nav.classList.remove('open');
+          if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded', 'false'); }
+        }
       });
 
       /* Active nav link highlight */
       var host = window.location.hostname;
-      document.querySelectorAll('.mb-nav-links a, .mb-drawer-link').forEach(function(link) {
+      document.querySelectorAll('.mb-nav-links a, .mb-nav-mobile a').forEach(function(link) {
         try {
           if (new URL(link.href).hostname === host) link.style.color = '#f5f5f5';
         } catch(e) {}

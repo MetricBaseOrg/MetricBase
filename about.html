@@ -44,6 +44,7 @@
     --gray-2: #999999;
     --gray-3: #555555;
     --gray-4: #2a2a2a;
+    --bg-hover: #1c1c1c;
     --line: rgba(255,255,255,0.06);
     --line-strong: rgba(201, 168, 76, 0.3);
   }
@@ -68,6 +69,16 @@
   .nav-links a { color: var(--gray-2); border: none; }
   .nav-links a:hover { color: var(--gold); }
   .nav-links a.active { color: var(--gold); }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; -webkit-tap-highlight-color: transparent; }
+  .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--gray-1); transition: 0.22s; transform-origin: center; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-mobile { display: none; flex-direction: column; margin: 0 -24px; border-top: 1px solid var(--line); background: var(--bg-elev); position: relative; z-index: 9; }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gray-2); padding: 14px 24px; border-bottom: 1px solid var(--line); transition: color 0.15s; border-right: none; border-left: none; }
+  .nav-mobile a:hover { color: var(--gold); }
+  .nav-mobile a:last-child { border-bottom: none; }
 
   /* HERO */
   .doc-hero { margin-bottom: 64px; max-width: 880px; }
@@ -105,7 +116,7 @@
     align-items: flex-start;
     position: relative;
   }
-  .author-card::before { content: 'FOUNDER · EDITOR-IN-CHIEF'; position: absolute; top: -8px; left: 24px; background: var(--bg); padding: 0 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; color: var(--gold); font-weight: 500; }
+  .author-card::before { content: 'MASCOT · LEAD ANALYST'; position: absolute; top: -8px; left: 24px; background: var(--bg); padding: 0 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; color: var(--gold); font-weight: 500; }
   .author-photo {
     width: 120px;
     height: 120px;
@@ -204,6 +215,7 @@
     .author-photo { width: 80px; height: 80px; }
     .verticals-grid { grid-template-columns: 1fr; gap: 0; }
     .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 600px) {
@@ -233,7 +245,15 @@
       <a href="https://metricbase.org/about" class="active">About</a>
       <a href="https://metricbase.org/contact">Contact</a>
     </nav>
+    <button type="button" class="nav-hamburger" id="nav-hamburger-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="https://metricbase.org/journal">Journal</a>
+    <a href="https://metricbase.org/about">About</a>
+    <a href="https://metricbase.org/contact">Contact</a>
+  </nav>
 
   <section class="doc-hero">
     <div class="doc-id">DOCUMENT · ABOUT-001 · WHO WE ARE</div>
@@ -274,13 +294,13 @@
     <span class="section-label">Behind the brand</span>
     <div class="author-card">
       <div class="author-photo">
-        <div class="author-photo-placeholder">PHOTO<br>PENDING</div>
+        <div class="author-photo-placeholder">BUN<br>🐧</div>
       </div>
       <div>
-        <div class="author-name">Arief Dermawan</div>
-        <span class="author-handle">@MetricBase · Founder &amp; Editor-in-Chief</span>
-        <p class="author-bio">Indonesian-based analyst and independent researcher with a background spanning energy commodity markets and digital asset infrastructure. Founded MetricBase to build the kind of cross-vertical financial content that didn't exist in the Indonesian language market — and to publish it in English for readers who think across borders.</p>
-        <p class="author-bio">Every article published under the MetricBase banner is reviewed, edited, and either authored or approved by a named human. The mascot is Bun. The work is real.</p>
+        <div class="author-name">Bun</div>
+        <span class="author-handle">@MetricBase · Lead Analyst</span>
+        <p class="author-bio">MetricBase's chibi penguin mascot and lead analyst. Bun covers energy commodity markets, digital assets, and IDX equities — curious by nature, reactive to data, and unafraid to call a divergence when the numbers demand it.</p>
+        <p class="author-bio">Built to represent the emotional retail trader: always watching the chart, always one EIA surprise away from recalibrating the entire thesis. Every brief and research piece published under the Bun byline is grounded in original data and honest framing.</p>
         <div class="author-credentials">
           <span class="credential-tag">Energy Markets</span>
           <span class="credential-tag">Crypto / DeFi</span>
@@ -404,5 +424,22 @@
   </footer>
 
 </div>
+<script>
+  function toggleMobileNav() {
+    var btn = document.getElementById('nav-hamburger-btn');
+    var nav = document.getElementById('nav-mobile');
+    var isOpen = nav.classList.contains('open');
+    nav.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  }
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.app-header') && !e.target.closest('.nav-mobile')) {
+      document.getElementById('nav-mobile').classList.remove('open');
+      document.getElementById('nav-hamburger-btn').classList.remove('open');
+      document.getElementById('nav-hamburger-btn').setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
 </body>
 </html>

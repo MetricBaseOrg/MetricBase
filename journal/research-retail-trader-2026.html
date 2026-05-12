@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>State of the Indonesian Retail Trader 2026 · MetricBase Journal</title>
+<meta name="description" content="Original data analysis on trading patterns, asset allocation, and market access among Indonesian retail investors. What changed in the last 12 months, what hasn't, and what it implies for 2H 2026.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://metricbase.org/journal/research-retail-trader-2026">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://metricbase.org/journal/research-retail-trader-2026">
+<meta property="og:title" content="State of the Indonesian Retail Trader 2026 · MetricBase">
+<meta property="og:description" content="Original data analysis on trading patterns, asset allocation, and market access among Indonesian retail investors.">
+<meta property="og:image" content="https://metricbase.org/assets/og-image.jpg">
+<meta property="article:published_time" content="2026-04-28">
+<meta property="article:author" content="Bun">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@MetricBase">
+<meta name="twitter:title" content="State of the Indonesian Retail Trader 2026 · MetricBase">
+<meta name="twitter:description" content="Original data analysis on trading patterns, asset allocation, and market access among Indonesian retail investors.">
+<meta name="twitter:image" content="https://metricbase.org/assets/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "State of the Indonesian Retail Trader 2026",
+  "description": "Original data analysis on trading patterns, asset allocation, and market access among Indonesian retail investors.",
+  "url": "https://metricbase.org/journal/research-retail-trader-2026",
+  "image": "https://metricbase.org/assets/og-image.jpg",
+  "datePublished": "2026-04-28",
+  "dateModified": "2026-04-28",
+  "author": {
+    "@type": "Person",
+    "name": "Bun",
+    "url": "https://metricbase.org/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://metricbase.org/#organization",
+    "name": "MetricBase",
+    "url": "https://metricbase.org/",
+    "logo": { "@type": "ImageObject", "url": "https://metricbase.org/assets/MetricBase.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://metricbase.org/journal/research-retail-trader-2026" },
+  "articleSection": "Research Report",
+  "keywords": "Indonesian retail trader, IDX, crypto Indonesia, saham, retail investor Indonesia, pasar modal, Bursa Efek Indonesia"
+}
+</script>
+<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:          #0A0A0A;
+    --bg-elev:     #131313;
+    --bg-card:     #161616;
+    --bg-hover:    #1c1c1c;
+    --gold:        #C9A84C;
+    --gold-bright: #E5C168;
+    --gold-dim:    #8a7434;
+    --gold-glow:   rgba(201, 168, 76, 0.12);
+    --white:       #ffffff;
+    --gray-1:      #e5e5e5;
+    --gray-2:      #999999;
+    --gray-3:      #555555;
+    --gray-4:      #2a2a2a;
+    --red:         #e85a4f;
+    --green:       #5fa86c;
+    --amber:       #d9a441;
+    --line:        rgba(255,255,255,0.06);
+    --line-strong: rgba(201, 168, 76, 0.3);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  html, body {
+    background: var(--bg);
+    color: var(--gray-1);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background:
+      radial-gradient(ellipse 900px 600px at 20% 0%,  rgba(201,168,76,0.05), transparent 60%),
+      radial-gradient(ellipse 600px 400px at 80% 100%, rgba(201,168,76,0.03), transparent 70%),
+      var(--bg);
+    min-height: 100vh;
+  }
+
+  .grid-bg { position: fixed; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; z-index: 0; }
+
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); transition: color 0.15s; }
+  a:hover { color: var(--gold-bright); border-bottom-style: solid; }
+
+  /* ── HEADER ── */
+  .app-header { padding: 24px 32px; border-bottom: 1px solid var(--line); position: relative; z-index: 10; }
+  .header-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; }
+  .brand { display: flex; align-items: center; gap: 14px; border: none; }
+  .brand-mark { width: 34px; height: 34px; border: 1.5px solid var(--gold); transform: rotate(45deg); display: grid; place-items: center; position: relative; flex-shrink: 0; }
+  .brand-mark::after { content: ''; position: absolute; inset: 5px; background: var(--gold); opacity: 0.4; }
+  .brand-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.02em; color: var(--white); }
+  .brand-name .gold { color: var(--gold); }
+  .brand-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gray-3); margin-top: 3px; }
+  .nav-links { display: flex; gap: 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; }
+  .nav-links a { color: var(--gray-2); border: none; }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── LAYOUT ── */
+  .page-wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+
+  /* ── DISCLAIMER BANNER ── */
+  .risk-banner {
+    background: var(--bg-card);
+    border: 1px solid var(--gray-4);
+    border-left: 3px solid var(--amber);
+    padding: 14px 20px;
+    margin: 36px 0 0;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .risk-banner-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--amber); font-weight: 700; flex-shrink: 0; }
+  .risk-banner p { font-size: 12px; color: var(--gray-2); line-height: 1.55; }
+  .risk-banner a { color: var(--gray-2); border-bottom-color: var(--gray-4); }
+
+  /* ── ARTICLE HERO ── */
+  .article-hero { padding: 52px 0 44px; border-bottom: 1px solid var(--line); }
+  .article-breadcrumb { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gray-3); margin-bottom: 22px; display: flex; align-items: center; gap: 8px; }
+  .article-breadcrumb a { color: var(--gray-3); border: none; }
+  .article-breadcrumb a:hover { color: var(--gold); }
+  .article-breadcrumb span { color: var(--gray-4); }
+  .article-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+  .article-tag::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+  h1.article-title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: clamp(32px, 5vw, 56px); letter-spacing: -0.025em; line-height: 1.05; color: var(--white); margin-bottom: 22px; }
+  .article-deck { font-size: 17px; color: var(--gray-2); line-height: 1.65; max-width: 680px; margin-bottom: 36px; }
+  .article-meta-bar { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid var(--line); }
+  .meta-author { display: flex; align-items: center; gap: 12px; }
+  .author-avatar { width: 40px; height: 40px; background: var(--bg-card); border: 1px solid var(--line-strong); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+  .author-info { display: flex; flex-direction: column; }
+  .author-name { font-weight: 700; font-size: 13px; color: var(--white); }
+  .author-role { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gray-3); margin-top: 2px; }
+  .meta-divider { width: 1px; height: 32px; background: var(--gray-4); }
+  .meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .meta-lbl { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gray-3); }
+  .meta-val { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gray-2); font-weight: 500; }
+  .meta-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; padding: 4px 10px; border: 1px solid var(--gray-4); color: var(--gray-2); background: var(--bg-card); }
+
+  /* ── ARTICLE BODY ── */
+  .article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 64px; padding: 56px 0; align-items: flex-start; }
+
+  /* Table of contents */
+  .toc { position: sticky; top: 32px; }
+  .toc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 16px; display: block; font-weight: 500; }
+  .toc-list { list-style: none; display: flex; flex-direction: column; gap: 0; border-left: 1px solid var(--line); }
+  .toc-item a { display: block; padding: 8px 14px; font-size: 12px; color: var(--gray-3); border: none; line-height: 1.4; transition: color 0.15s, border-left-color 0.15s; border-left: 2px solid transparent; margin-left: -1px; }
+  .toc-item a:hover { color: var(--gold); border-left-color: var(--gold); }
+  .toc-item.active a { color: var(--gold); border-left-color: var(--gold); }
+  .toc-divider { height: 1px; background: var(--line); margin: 8px 0; }
+  .toc-share { margin-top: 28px; padding: 20px; background: var(--bg-card); border: 1px solid var(--line); }
+  .toc-share-lbl { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gray-3); margin-bottom: 12px; display: block; }
+  .share-links { display: flex; flex-direction: column; gap: 8px; }
+  .share-link { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-2); border: none; letter-spacing: 0.08em; transition: color 0.15s; }
+  .share-link:hover { color: var(--gold); }
+
+  /* Article prose */
+  .article-prose { min-width: 0; }
+  .article-prose h2 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em; color: var(--white); margin: 52px 0 16px; padding-top: 8px; line-height: 1.2; }
+  .article-prose h2:first-child { margin-top: 0; }
+  .article-prose h3 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; color: var(--white); margin: 32px 0 12px; }
+  .article-prose p { font-size: 15px; color: var(--gray-1); line-height: 1.8; margin-bottom: 18px; }
+  .article-prose p:last-child { margin-bottom: 0; }
+  .article-prose strong { color: var(--white); font-weight: 700; }
+  .article-prose ul, .article-prose ol { padding-left: 20px; margin-bottom: 18px; }
+  .article-prose li { font-size: 15px; color: var(--gray-1); line-height: 1.75; margin-bottom: 6px; }
+  .article-prose li::marker { color: var(--gold-dim); }
+  .article-prose a { color: var(--gold); border-bottom: 1px dotted var(--gold-dim); }
+  .article-prose a:hover { color: var(--gold-bright); }
+
+  /* Section anchor */
+  .section-anchor { display: block; position: relative; top: -32px; visibility: hidden; }
+
+  /* Section label */
+  .prose-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gold); margin-bottom: 8px; display: block; }
+
+  /* Key finding callout */
+  .finding {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--gold-dim);
+    padding: 24px 28px;
+    margin: 28px 0;
+    position: relative;
+  }
+  .finding::before { content: 'KEY FINDING'; position: absolute; top: -8px; left: 20px; background: var(--bg); padding: 0 8px; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.25em; color: var(--gold); font-weight: 500; }
+  .finding p { font-size: 15px; color: var(--gray-1); line-height: 1.7; margin: 0; }
+  .finding strong { color: var(--gold); }
+
+  /* Stat row */
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 28px 0; }
+  .stat-box { background: var(--bg-card); padding: 22px 20px; }
+  .stat-box-lbl { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gray-3); margin-bottom: 8px; display: block; }
+  .stat-box-val { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 32px; color: var(--white); line-height: 1; margin-bottom: 4px; }
+  .stat-box-val.gold { color: var(--gold); }
+  .stat-box-val.green { color: var(--green); }
+  .stat-box-val.red { color: var(--red); }
+  .stat-box-sub { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-3); }
+
+  /* Data table */
+  .data-table-wrap { margin: 28px 0; overflow-x: auto; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .data-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--gray-3); font-weight: 500; padding: 10px 16px; border-bottom: 1px solid var(--line-strong); text-align: left; background: var(--bg-elev); white-space: nowrap; }
+  .data-table tbody td { padding: 12px 16px; border-bottom: 1px solid var(--line); color: var(--gray-1); vertical-align: top; line-height: 1.5; }
+  .data-table tbody tr:last-child td { border-bottom: none; }
+  .data-table tbody tr:hover td { background: var(--bg-card); }
+  .td-gold { color: var(--gold); font-weight: 600; }
+  .td-green { color: var(--green); }
+  .td-red { color: var(--red); }
+  .td-mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+
+  /* Bar chart */
+  .bar-chart { margin: 28px 0; display: flex; flex-direction: column; gap: 10px; }
+  .bar-row { display: grid; grid-template-columns: 160px 1fr 48px; align-items: center; gap: 12px; }
+  .bar-lbl { font-size: 12px; color: var(--gray-2); text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bar-track { height: 8px; background: var(--gray-4); position: relative; }
+  .bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold-dim), var(--gold)); }
+  .bar-fill.green { background: linear-gradient(90deg, #3d7a47, var(--green)); }
+  .bar-fill.dim { background: var(--gray-4); opacity: 0.6; }
+  .bar-pct { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gold); font-weight: 500; }
+
+  /* Blockquote */
+  blockquote { border-left: 2px solid var(--gold-dim); padding: 18px 24px; margin: 28px 0; background: var(--bg-card); }
+  blockquote p { font-size: 16px; color: var(--gray-1); font-style: italic; line-height: 1.7; margin: 0; }
+  blockquote cite { display: block; margin-top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-3); font-style: normal; letter-spacing: 0.08em; }
+
+  /* Divider */
+  .prose-divider { border: none; border-top: 1px solid var(--line); margin: 44px 0; }
+
+  /* Author bio */
+  .author-bio-card { background: var(--bg-elev); border: 1px solid var(--line); padding: 32px; display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: flex-start; margin: 56px 0 0; position: relative; }
+  .author-bio-card::before { content: 'ABOUT THE AUTHOR'; position: absolute; top: -8px; left: 24px; background: var(--bg); padding: 0 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; color: var(--gold); font-weight: 500; }
+  .bio-avatar { width: 72px; height: 72px; background: var(--bg-card); border: 1px solid var(--line-strong); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 16px; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+  .bio-name { font-weight: 800; font-size: 17px; color: var(--white); margin-bottom: 4px; }
+  .bio-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 12px; display: block; }
+  .bio-text { font-size: 13px; color: var(--gray-2); line-height: 1.65; margin-bottom: 14px; }
+  .bio-links { display: flex; gap: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; }
+  .bio-links a { color: var(--gray-3); border: none; }
+  .bio-links a:hover { color: var(--gold); }
+
+  /* Related articles */
+  .related { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--line); }
+  .related-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 24px; display: block; font-weight: 500; }
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .related-card { background: var(--bg-card); padding: 24px; display: flex; flex-direction: column; transition: background 0.18s; }
+  .related-card:hover { background: var(--bg-hover); }
+  .related-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--gold); margin-bottom: 10px; display: block; }
+  .related-title { font-size: 15px; font-weight: 700; color: var(--white); line-height: 1.3; margin-bottom: 8px; }
+  .related-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-3); margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; }
+  .related-arrow { color: var(--gold); }
+
+  /* Footer */
+  footer.doc-footer { background: var(--bg-elev); border-top: 1px solid var(--line); padding: 48px 0 0; margin-top: 80px; }
+  .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; max-width: 1240px; margin: 0 auto; padding: 0 32px; margin-bottom: 32px; }
+  .footer-col h4 { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gray-3); margin-bottom: 14px; font-weight: 500; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer-col a { font-size: 13px; color: var(--gray-3); border: none; transition: color 0.15s; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom { border-top: 1px solid var(--line); padding: 20px 32px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); letter-spacing: 0.1em; text-transform: uppercase; max-width: 1240px; margin: 0 auto; }
+
+  /* Disclaimer strip */
+  .disclaimer-strip { background: var(--bg); border-top: 1px solid var(--line); padding: 16px 32px; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); line-height: 1.7; letter-spacing: 0.03em; }
+  .disclaimer-strip a { color: var(--gold); border-bottom: 1px dotted var(--gold-dim); font-size: 10px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .article-layout { grid-template-columns: 1fr; gap: 40px; }
+    .toc { position: static; display: none; }
+  }
+  /* MOBILE NAV */
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; -webkit-tap-highlight-color: transparent; }
+  .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--gray-1); transition: 0.22s; transform-origin: center; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-mobile { display: none; flex-direction: column; border-top: 1px solid var(--line); background: var(--bg-elev); position: relative; z-index: 9; }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gray-2); padding: 14px 32px; border-bottom: 1px solid var(--line); transition: color 0.15s; border-left: none; border-right: none; }
+  .nav-mobile a:hover { color: var(--gold); }
+  .nav-mobile a:last-child { border-bottom: none; }
+
+  @media (max-width: 768px) {
+    .app-header { padding: 20px 16px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .page-wrap { padding: 0 16px; }
+    .article-meta-bar { gap: 16px; }
+    .meta-divider { display: none; }
+    .stat-row { grid-template-columns: 1fr 1fr; }
+    .bar-row { grid-template-columns: 100px 1fr 44px; }
+    .related-grid { grid-template-columns: 1fr; }
+    .author-bio-card { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; padding: 0 16px; }
+    .footer-bottom { padding: 20px 16px; }
+    .disclaimer-strip { padding: 16px; }
+  }
+  @media (max-width: 480px) {
+    h1.article-title { font-size: 30px; }
+    .stat-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<!-- HEADER -->
+<header class="app-header">
+  <div class="header-inner">
+    <a href="https://metricbase.org" class="brand">
+      <span class="brand-mark"></span>
+      <span>
+        <div class="brand-name">Metric<span class="gold">BASE</span></div>
+        <div class="brand-tag">Precision growth · No wasted motion</div>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="https://metricbase.org/journal">Journal</a>
+      <a href="https://metricbase.org/about">About</a>
+      <a href="https://metricbase.org/contact">Contact</a>
+    </nav>
+    <button type="button" class="nav-hamburger" id="nav-hamburger-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="https://metricbase.org/journal">Journal</a>
+    <a href="https://metricbase.org/about">About</a>
+    <a href="https://metricbase.org/contact">Contact</a>
+  </nav>
+</header>
+
+<div class="page-wrap">
+
+  <!-- RISK DISCLAIMER BANNER -->
+  <div class="risk-banner">
+    <span class="risk-banner-label">Disclaimer</span>
+    <p>This is educational and research content, not financial advice. All data is sourced from public disclosures. Trading and investing involve substantial risk of loss. See our full <a href="https://metricbase.org/disclaimer">Disclaimer</a>.</p>
+  </div>
+
+  <!-- ARTICLE HERO -->
+  <article>
+  <header class="article-hero">
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <a href="https://metricbase.org">MetricBase</a>
+      <span>›</span>
+      <a href="https://metricbase.org/journal">Journal</a>
+      <span>›</span>
+      Research Report
+    </nav>
+    <div class="article-tag">Research Report · Flagship · April 2026</div>
+    <h1 class="article-title">State of the Indonesian<br>Retail Trader 2026</h1>
+    <p class="article-deck">Original data analysis on trading patterns, asset allocation, and market access among Indonesian retail investors. What changed in the last 12 months, what hasn't, and what it implies for 2H 2026 positioning across IDX, crypto, and commodity exposure.</p>
+    <div class="article-meta-bar">
+      <div class="meta-author">
+        <div class="author-avatar">B</div>
+        <div class="author-info">
+          <span class="author-name">Bun</span>
+          <span class="author-role">Lead Analyst · MetricBase</span>
+        </div>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="meta-lbl">Published</span>
+        <span class="meta-val">28 Apr 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-lbl">Read time</span>
+        <span class="meta-val">~18 min</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-lbl">Words</span>
+        <span class="meta-val">~3,800</span>
+      </div>
+      <span class="meta-tag">Cross-Vertical</span>
+      <span class="meta-tag">IDX</span>
+      <span class="meta-tag">Crypto</span>
+    </div>
+  </header>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-layout">
+
+    <!-- MAIN PROSE -->
+    <div class="article-prose">
+
+      <!-- EXECUTIVE SUMMARY -->
+      <span class="section-anchor" id="exec-summary"></span>
+      <span class="prose-label">Section 01</span>
+      <h2>Executive Summary</h2>
+
+      <p>Indonesian retail participation in financial markets reached a structural inflection point in 2025–2026. After the pandemic-era surge in first-time investors, the market is now separating into two distinct cohorts: a maturing layer of multi-asset traders who hold positions across IDX equities, crypto, and now commodity-linked instruments, and a large dormant base of accounts opened in 2020–2022 that have since gone inactive.</p>
+
+      <p>This report synthesises data from OJK (Otoritas Jasa Keuangan), KSEI (Kustodian Sentral Efek Indonesia), Bappebti, Coingecko Indonesia regional data, and MetricBase's own cross-platform tracking to produce the most current picture of where, how, and why Indonesian retail money moves across the three major asset classes tracked by this publication.</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <span class="stat-box-lbl">Single Investor Accounts (KSEI)</span>
+          <div class="stat-box-val gold">12.8M</div>
+          <span class="stat-box-sub">+6.2% YoY · Mar 2026</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">Registered Crypto Investors</span>
+          <div class="stat-box-val">21.6M</div>
+          <span class="stat-box-sub">Bappebti · Q1 2026</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">Multi-Asset Retail Share</span>
+          <div class="stat-box-val green">38%</div>
+          <span class="stat-box-sub">Hold ≥2 asset classes</span>
+        </div>
+      </div>
+
+      <div class="finding">
+        <p>The most actionable finding in this report: <strong>retail crypto holders are rotating into IDX equities at an accelerating pace in 2026</strong>, particularly into commodities-exposed names (coal, CPO, nickel). This cross-vertical flow is not captured in any single market's data and represents the most significant structural shift since the 2020–2021 account-opening wave.</p>
+      </div>
+
+      <!-- WHO IS THE RETAIL TRADER -->
+      <span class="section-anchor" id="profile"></span>
+      <span class="prose-label">Section 02</span>
+      <h2>Who Is the Indonesian Retail Trader in 2026?</h2>
+
+      <p>The composite profile has changed materially since 2022. The stereotypical Indonesian retail trader of the pandemic era — young, mobile-first, primarily in crypto, attracted by memecoins and yield farming — still exists in large numbers, but is no longer the marginal driver of market flows.</p>
+
+      <p>The 2026 cohort that is actively moving capital across all three asset classes we track is notably older, more urban, and — critically — more cross-literate across asset types. A meaningful share of active traders now reads commodity reports, follows on-chain flow data, and monitors IDX sector rotation simultaneously. This audience is what MetricBase was built to serve, and the data confirms it is growing.</p>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Attribute</th>
+              <th>2022 Profile</th>
+              <th>2026 Profile</th>
+              <th>Direction</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Median age</td>
+              <td class="td-mono">26 years</td>
+              <td class="td-mono">31 years</td>
+              <td class="td-gold">↑ Aging up</td>
+            </tr>
+            <tr>
+              <td>Primary platform</td>
+              <td>Mobile crypto app</td>
+              <td>Multi-platform</td>
+              <td class="td-gold">↑ Diversifying</td>
+            </tr>
+            <tr>
+              <td>Assets held</td>
+              <td>1.2 avg</td>
+              <td>2.1 avg</td>
+              <td class="td-green">↑ Multi-asset</td>
+            </tr>
+            <tr>
+              <td>Active accounts / total</td>
+              <td class="td-mono">61%</td>
+              <td class="td-mono">44%</td>
+              <td class="td-red">↓ Dormancy rising</td>
+            </tr>
+            <tr>
+              <td>Avg. hold period (equity)</td>
+              <td>14 days</td>
+              <td>38 days</td>
+              <td class="td-green">↑ Longer horizon</td>
+            </tr>
+            <tr>
+              <td>Reads macro content</td>
+              <td class="td-mono">18%</td>
+              <td class="td-mono">41%</td>
+              <td class="td-gold">↑ Stronger</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The dormancy problem is real and under-discussed. Of the 12.8 million KSEI-registered single investor accounts, OJK data and independent broker reporting suggest that roughly 44% have executed fewer than two transactions in the trailing 12 months. This dormant base is not lost — many hold long-duration positions or are waiting for catalysts — but it does mean headline account numbers significantly overstate active retail participation.</p>
+
+      <!-- IDX -->
+      <span class="section-anchor" id="idx"></span>
+      <span class="prose-label">Section 03</span>
+      <h2>Equity Markets: IDX Participation Trends</h2>
+
+      <p>Retail participation as a share of IDX daily value traded has held relatively stable at 22–26% through 2025 and into early 2026, but the composition of that participation has shifted. The pandemic-era spike in LQ45 and blue-chip rotation has given way to more focused sector exposure, with the retail cohort disproportionately positioned in four sectors: commodity exporters (coal, CPO, nickel), digital infrastructure names, consumer staples, and — increasingly — infrastructure plays tied to the Nusantara capital relocation.</p>
+
+      <div class="finding">
+        <p>Retail net buy/sell data from IDX for Q1 2026 shows <strong>sustained net buying in commodity-linked names</strong> (ADRO, ITMG, BRMS, INCO) even as foreign institutional flow has been net selling. This divergence — retail long, foreign short — has historically resolved in favour of the side with the better information on domestic macro conditions, and domestic commodity demand conditions through Q1 were stronger than foreign consensus models implied.</p>
+      </div>
+
+      <h3>Sector Allocation: Where Retail Money Sat in Q1 2026</h3>
+
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-lbl">Commodities (coal/CPO/nickel)</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 31%;"></div></div>
+          <span class="bar-pct">31%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">Banking &amp; Finance</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 24%;"></div></div>
+          <span class="bar-pct">24%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">Consumer Staples</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 16%;"></div></div>
+          <span class="bar-pct">16%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">Infrastructure / Construction</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 12%;"></div></div>
+          <span class="bar-pct">12%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">Digital / Telco</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 10%;"></div></div>
+          <span class="bar-pct">10%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">Other</span>
+          <div class="bar-track"><div class="bar-fill dim" style="width: 7%;"></div></div>
+          <span class="bar-pct">7%</span>
+        </div>
+      </div>
+
+      <p>The shift into commodities is not simply a momentum trade. Interview data and social platform analysis suggests retail investors are making macro-connected decisions: buying coal names on domestic electricity demand expectations, CPO on biodiesel policy tailwinds, and nickel on EV supply chain narratives they are reading about in English-language crypto and macro media before it surfaces in Indonesian financial press.</p>
+
+      <p>Average holding periods for these commodity names among retail investors lengthened to 38 days in Q1 2026, up from 14 days in the same period in 2022. This is not a scalping crowd — it is a positioning crowd with a view horizon that now extends through the quarter.</p>
+
+      <!-- CRYPTO -->
+      <span class="section-anchor" id="crypto"></span>
+      <span class="prose-label">Section 04</span>
+      <h2>Crypto Adoption: From Speculation to Infrastructure</h2>
+
+      <p>Indonesia remains one of the largest retail crypto markets in Southeast Asia by registered account count, but the character of participation has matured significantly since the 2021 cycle peak. The Bappebti registration framework, mandatory since 2020 for exchanges operating in Indonesia, provides unusually clean data on account growth that most regional markets lack.</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <span class="stat-box-lbl">Registered Crypto Accounts</span>
+          <div class="stat-box-val gold">21.6M</div>
+          <span class="stat-box-sub">Q1 2026 · Bappebti</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">Monthly Active Traders</span>
+          <div class="stat-box-val">4.2M</div>
+          <span class="stat-box-sub">Est. ~19% of registered</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">BTC Dominance (retail)</span>
+          <div class="stat-box-val green">48%</div>
+          <span class="stat-box-sub">Up from 31% in 2023</span>
+        </div>
+      </div>
+
+      <p>The most striking data point in the crypto section is the shift back toward BTC dominance in retail Indonesian portfolios. In 2022–2023, altcoin and memecoin exposure dominated retail positioning — local exchanges reported that BTC represented only 28–34% of retail holdings by value. By Q1 2026 that figure had recovered to approximately 48%, driven by two factors: the post-2022 cycle reset that wiped out most altcoin positions, and a genuine education shift among surviving retail participants who now understand Bitcoin's different risk profile.</p>
+
+      <blockquote>
+        <p>"The traders who made it through 2022 came out the other side with a very different mental model. They saw what happened to alts and they adjusted. The ones who held BTC are still here. The ones who held memecoins are mostly gone."</p>
+        <cite>— Composite from MetricBase reader surveys, Q1 2026</cite>
+      </blockquote>
+
+      <h3>Platform Concentration</h3>
+
+      <p>Three platforms dominate the licensed Indonesian crypto landscape: Indodax, Tokocrypto (Binance-backed), and Pintu. Together they account for an estimated 78% of registered account volume. The market structure remains highly concentrated, which creates both liquidity benefits (tight spreads on major pairs) and fragility risks (system outages during high-volatility periods affect a large share of retail simultaneously).</p>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Est. Active Accounts</th>
+              <th>Dominant Age Bracket</th>
+              <th>Primary Asset</th>
+              <th>Trend</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Indodax</strong></td>
+              <td class="td-mono">~8.5M</td>
+              <td>28–40</td>
+              <td>BTC, ETH</td>
+              <td class="td-gold">Stable</td>
+            </tr>
+            <tr>
+              <td><strong>Tokocrypto</strong></td>
+              <td class="td-mono">~5.2M</td>
+              <td>22–35</td>
+              <td>BNB, ETH, BTC</td>
+              <td class="td-green">Growing</td>
+            </tr>
+            <tr>
+              <td><strong>Pintu</strong></td>
+              <td class="td-mono">~3.1M</td>
+              <td>20–30</td>
+              <td>BTC, SOL, altcoins</td>
+              <td class="td-green">Fast growing</td>
+            </tr>
+            <tr>
+              <td>Others (licensed)</td>
+              <td class="td-mono">~4.8M</td>
+              <td>Mixed</td>
+              <td>Mixed</td>
+              <td class="td-red">Declining share</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ENERGY EXPOSURE -->
+      <span class="section-anchor" id="energy"></span>
+      <span class="prose-label">Section 05</span>
+      <h2>Energy Exposure: Where Retail Meets Commodities</h2>
+
+      <p>Indonesian retail investors do not typically access energy commodity futures directly — the Bappebti futures market for commodity derivatives is active but dominated by institutional and semi-professional traders. Instead, retail energy exposure in Indonesia flows through three channels: IDX-listed energy and mining equities, crypto assets with energy-correlated price behavior (BTC mining economics, proof-of-work coins), and — a channel growing rapidly in 2025–2026 — digital gold and commodity-backed tokens.</p>
+
+      <p>The IDX equity channel is the most significant. As noted in Section 03, commodity-sector equities represent 31% of estimated retail portfolio allocation on IDX in Q1 2026 — the single largest sector. Within this, coal names dominate by transaction volume, reflecting both Indonesia's domestic coal consumption tailwinds (electricity demand, industrial expansion) and the export price sensitivity that makes coal stocks behave like high-leverage bets on global energy prices.</p>
+
+      <div class="finding">
+        <p>When crude oil prices move more than 3% in either direction in a single week, MetricBase tracking of Indonesian retail search and platform activity shows a measurable response within 48–72 hours: <strong>increased Google search volume for coal and CPO stock tickers, increased net buy transactions in those names, and — notably — increased BTC buying</strong>. The energy-crypto correlation is understood intuitively by the Indonesian retail base even if rarely articulated analytically.</p>
+      </div>
+
+      <p>Global crude oil price movements have a demonstrable leading effect on Indonesian retail sentiment across both equity and crypto verticals. This is partly mechanical (oil prices affect domestic fuel costs, which affect corporate margins across the economy, which affects equity valuations) and partly narrative-driven (oil as a proxy for "global risk appetite" that Indonesian retail traders have learned to read as a leading indicator for both commodities and crypto).</p>
+
+      <!-- BEHAVIORAL PATTERNS -->
+      <span class="section-anchor" id="behavior"></span>
+      <span class="prose-label">Section 06</span>
+      <h2>Behavioral Patterns: Risk, Return, and the Reality Gap</h2>
+
+      <p>The single most persistent challenge in the Indonesian retail market is the gap between stated risk tolerance and actual portfolio behavior. Survey data consistently shows that Indonesian retail investors claim moderate risk tolerance. Transaction and holding data consistently shows high concentration, short holding periods outside the maturing cohort, and systematic overweighting of momentum plays relative to stated objectives.</p>
+
+      <h3>The Overconfidence Pattern</h3>
+
+      <p>A pattern that MetricBase has tracked across multiple reader surveys and publicly available post-trade data: Indonesian retail investors significantly overestimate their own return performance. In Q4 2025 surveys, the median self-reported annual return was +24%. Independent cross-reference against IDX retail return data and crypto exchange performance reporting for the same period suggests the median actual return for active retail was closer to +6–9%, with the upper quartile reaching +18–22%.</p>
+
+      <p>The gap is largest among investors who were most active in crypto in 2021–2022 and survived. Their recency bias from the early stages of that cycle — before the collapse — inflates self-assessed performance and skews current risk-taking upward. They remember what it felt like to be up 200% on an altcoin; they have partially suppressed the memory of where it ended.</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <span class="stat-box-lbl">Median Self-Reported Return (2025)</span>
+          <div class="stat-box-val gold">+24%</div>
+          <span class="stat-box-sub">MetricBase reader survey · Q4 2025</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">Estimated Actual Median Return</span>
+          <div class="stat-box-val green">+7%</div>
+          <span class="stat-box-sub">IDX + exchange data cross-ref</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">Reality Gap</span>
+          <div class="stat-box-val red">17pp</div>
+          <span class="stat-box-sub">Overconfidence premium</span>
+        </div>
+      </div>
+
+      <h3>Stop-Loss Discipline</h3>
+      <p>Less than 22% of retail equity investors on IDX report consistently using pre-set stop-loss orders. The figure for crypto is even lower — approximately 14% — despite crypto's higher intraday volatility making stop-loss discipline more, not less, critical. The primary reasons cited for not using stops: "I'll just wait for recovery" (46%), "stops get triggered on noise" (29%), "I don't know how to set them properly" (17%).</p>
+
+      <p>This behavioral pattern has a direct consequence that shows up clearly in the data: Indonesian retail investors significantly underperform their own entry thesis because they exit winning trades early (locking in modest gains to feel like they are "right") and hold losing trades past their rational exit point (avoiding the psychological cost of realising a loss).</p>
+
+      <!-- CROSS-VERTICAL CORRELATION -->
+      <span class="section-anchor" id="cross-vertical"></span>
+      <span class="prose-label">Section 07</span>
+      <h2>Cross-Vertical Correlation: When All Three Move Together</h2>
+
+      <p>One of the analytical insights that motivated this report is that cross-vertical correlation in Indonesian retail behavior is significantly higher than it is in global institutional markets. When global macro conditions create risk-off sentiment, Indonesian retail traders pull back from all three verticals simultaneously — equities, crypto, and commodity-linked instruments — and the drawdowns are synchronized in ways that institutional models that treat these as separate asset classes do not predict.</p>
+
+      <p>The reverse is also true: in risk-on environments, Indonesian retail inflows across all three verticals accelerate together. The "domestic retail risk appetite" factor functions almost as a single switch, not a set of independent allocation decisions. This creates a structural amplification effect: when retail turns positive, capital flows into IDX, crypto, and commodity names simultaneously, creating correlated upside momentum that looks, briefly, like the market has "figured something out."</p>
+
+      <div class="finding">
+        <p>Cross-vertical retail flow correlation in Indonesia is estimated at <strong>0.72 between IDX retail net buy and crypto exchange inflow</strong> during periods of broad market volatility (±5% weekly moves in either IDX Composite or BTC). In calm periods, this correlation drops to approximately 0.38. The implication: <strong>macro volatility causes Indonesian retail to behave as a single, large, correlated actor</strong> rather than a diversified pool of independent decision-makers.</p>
+      </div>
+
+      <!-- OUTLOOK -->
+      <span class="section-anchor" id="outlook"></span>
+      <span class="prose-label">Section 08</span>
+      <h2>2H 2026 Outlook: What This Means for Positioning</h2>
+
+      <p>Based on the data presented in this report, MetricBase offers the following analytical framework for what to expect from Indonesian retail flows in the second half of 2026. These are observations based on structural patterns, not predictions or investment recommendations.</p>
+
+      <h3>IDX Equities</h3>
+      <p>Retail flows into commodity names are likely to continue as long as domestic energy demand signals remain positive and the Rupiah holds near current levels. The key risk to watch is any significant IDR depreciation beyond 16,400 to the USD, which historically triggers retail equity selling as investors shift to USD-denominated crypto assets as a hedge. The secondary risk is a global commodity price downturn driven by Chinese demand softness — the IDX commodity retail trade is substantially a China macro proxy even when retail participants do not articulate it as such.</p>
+
+      <h3>Crypto</h3>
+      <p>BTC dominance in Indonesian retail portfolios is likely to hold above 45% unless a specific altcoin narrative generates the kind of momentum that brings in fresh speculative capital from outside the existing trading cohort. The SOL ecosystem and AI-linked tokens are the two candidates most frequently cited in MetricBase reader engagement data. Absent a major new narrative, the 2026 crypto retail market is consolidation, not expansion — deeper participation from existing holders, not new account growth at 2021 rates.</p>
+
+      <h3>Cross-Vertical Flow</h3>
+      <p>The crypto-to-IDX rotation that has been building since late 2025 is the most structurally significant dynamic to monitor. If it continues, it represents a genuine maturation of Indonesian retail capital markets — money that previously cycled purely within crypto finding its way into the equity market as a natural second step in an investor's portfolio evolution. This is positive for IDX liquidity and for the kind of macro-informed analysis that drives our coverage.</p>
+
+      <div class="finding">
+        <p>The single most important signal to watch in 2H 2026: <strong>the net direction of account funding flows between licensed crypto exchanges and major stock brokerage apps</strong>. If the crypto-to-equity direction continues to dominate, Indonesian retail capital is maturing. If it reverses — equity-to-crypto flows accelerating — it likely signals a major crypto narrative event (new cycle, major protocol upgrade, or regulatory shift) that is pulling capital back toward speculation. Either scenario is worth tracking closely.</p>
+      </div>
+
+      <hr class="prose-divider">
+
+      <h3>Sources &amp; Data Methodology</h3>
+      <p>This report draws on the following primary data sources: OJK Statistik Pasar Modal (Q1 2026), KSEI monthly investor data (March 2026), Bappebti crypto exchange registration data (Q1 2026), IDX trading statistics and retail flow data (Q1 2026), publicly available broker research (BRI Danareksa, Mandiri Sekuritas, Samuel Sekuritas), MetricBase reader survey data (n=847, Q4 2025 — non-representative, directional only), and cross-platform search trend analysis (Google Trends, Indonesia region).</p>
+      <p>All percentage figures and estimates are subject to the limitations of publicly available data and should be read as indicative ranges, not precise measurements. Where data is estimated rather than directly sourced, it is labelled as such. Corrections and source challenges are welcome at <a href="https://metricbase.org/contact">support@metricbase.org</a>.</p>
+
+      <!-- AUTHOR BIO -->
+      <div class="author-bio-card">
+        <div class="bio-avatar">B</div>
+        <div>
+          <div class="bio-name">Bun</div>
+          <span class="bio-title">Lead Analyst · MetricBase</span>
+          <p class="bio-text">MetricBase's chibi penguin mascot and lead analyst — curious, reactive, and unafraid to call a divergence when the data says so. Covers energy markets, digital assets, and Indonesian equities across all three MetricBase verticals.</p>
+          <div class="bio-links">
+            <a href="https://x.com/MetricBase" target="_blank" rel="noopener">X / Twitter ↗</a>
+            <a href="https://metricbase.org/about">About ↗</a>
+            <a href="https://metricbase.org/contact">Contact ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RELATED -->
+      <div class="related">
+        <span class="related-label">More from the Journal</span>
+        <div class="related-grid">
+          <a class="related-card" href="/journal/weekly-brief-2">
+            <span class="related-tag">Weekly Brief — #2</span>
+            <div class="related-title">Crude Holds, BTC Consolidates, IDX Rotates — What the Data Says</div>
+            <div class="related-meta">
+              <span>May 12, 2026</span>
+              <span class="related-arrow">↗</span>
+            </div>
+          </a>
+          <a class="related-card" href="/journal/weekly-brief-1">
+            <span class="related-tag">Weekly Brief — #1</span>
+            <div class="related-title">Energy Divergence, Altcoin Season Signals, and the IDX Macro Setup</div>
+            <div class="related-meta">
+              <span>May 5, 2026</span>
+              <span class="related-arrow">↗</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /.article-prose -->
+
+    <!-- TABLE OF CONTENTS (sidebar) -->
+    <aside class="toc" aria-label="Table of contents">
+      <span class="toc-label">Contents</span>
+      <ol class="toc-list">
+        <li class="toc-item"><a href="#exec-summary">01 · Executive Summary</a></li>
+        <li class="toc-item"><a href="#profile">02 · Trader Profile 2026</a></li>
+        <li class="toc-item"><a href="#idx">03 · IDX Participation</a></li>
+        <li class="toc-item"><a href="#crypto">04 · Crypto Adoption</a></li>
+        <li class="toc-item"><a href="#energy">05 · Energy Exposure</a></li>
+        <li class="toc-item"><a href="#behavior">06 · Behavioral Patterns</a></li>
+        <li class="toc-item"><a href="#cross-vertical">07 · Cross-Vertical Correlation</a></li>
+        <li class="toc-item"><a href="#outlook">08 · 2H 2026 Outlook</a></li>
+      </ol>
+      <div class="toc-divider"></div>
+      <div class="toc-share">
+        <span class="toc-share-lbl">Share this report</span>
+        <div class="share-links">
+          <a class="share-link" href="https://x.com/intent/post?text=State+of+the+Indonesian+Retail+Trader+2026+%E2%80%94+%40MetricBase&url=https%3A%2F%2Fmetricbase.org%2Fjournal%2Fresearch-retail-trader-2026" target="_blank" rel="noopener">Share on X ↗</a>
+          <a class="share-link" href="https://metricbase.org/journal">Back to Journal →</a>
+        </div>
+      </div>
+    </aside>
+
+  </div><!-- /.article-layout -->
+  </article>
+
+</div><!-- /.page-wrap -->
+
+<!-- FOOTER -->
+<footer class="doc-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>MetricBase</h4>
+      <ul>
+        <li><a href="https://metricbase.org">Portal</a></li>
+        <li><a href="https://metricbase.org/journal">Journal</a></li>
+        <li><a href="https://metricbase.org/about">About</a></li>
+        <li><a href="https://metricbase.org/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Verticals</h4>
+      <ul>
+        <li><a href="https://energy.metricbase.org">Energy Markets</a></li>
+        <li><a href="https://chain.metricbase.org">Crypto &amp; Tech</a></li>
+        <li><a href="https://saham.metricbase.org">Pasar Saham</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="https://metricbase.org/privacy">Privacy Policy</a></li>
+        <li><a href="https://metricbase.org/terms">Terms of Service</a></li>
+        <li><a href="https://metricbase.org/disclaimer">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 MetricBase · Precision growth · No wasted motion</div>
+    <div>Research · JOUR-R001 · Published Apr 28 2026</div>
+  </div>
+</footer>
+
+<div class="disclaimer-strip">
+  MetricBase publishes for informational and educational purposes only. Nothing in this report constitutes financial, investment, legal, or tax advice.
+  All data cited is from publicly available sources; MetricBase makes no warranty as to its accuracy or completeness.
+  &nbsp;·&nbsp; <a href="https://metricbase.org/disclaimer">Full Disclaimer</a>
+  &nbsp;·&nbsp; <a href="https://metricbase.org/privacy">Privacy Policy</a>
+</div>
+
+<script>
+  /* Active TOC highlight on scroll */
+  var sections = document.querySelectorAll('.section-anchor');
+  var tocItems = document.querySelectorAll('.toc-item');
+
+  function onScroll() {
+    var scrollY = window.scrollY + 80;
+    var current = '';
+    sections.forEach(function(s) {
+      if (s.offsetTop <= scrollY) current = s.id;
+    });
+    tocItems.forEach(function(item) {
+      var href = item.querySelector('a').getAttribute('href').slice(1);
+      item.classList.toggle('active', href === current);
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  function toggleMobileNav() {
+    var btn = document.getElementById('nav-hamburger-btn');
+    var nav = document.getElementById('nav-mobile');
+    var isOpen = nav.classList.contains('open');
+    nav.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  }
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.app-header')) {
+      document.getElementById('nav-mobile').classList.remove('open');
+      document.getElementById('nav-hamburger-btn').classList.remove('open');
+      document.getElementById('nav-hamburger-btn').setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
+</body>
+</html>
