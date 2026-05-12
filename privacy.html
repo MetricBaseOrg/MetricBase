@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy · MetricBase</title>
+<meta name="description" content="MetricBase privacy policy. How we collect, use, and protect personal information across metricbase.org and its subdomains.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://metricbase.org/privacy">
+<meta property="og:title" content="Privacy Policy · MetricBase">
+<meta property="og:description" content="How MetricBase collects, uses, and protects personal information.">
+<meta property="og:url" content="https://metricbase.org/privacy">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0A0A;
+    --bg-elev: #131313;
+    --bg-card: #161616;
+    --gold: #C9A84C;
+    --gold-bright: #E5C168;
+    --gold-dim: #8a7434;
+    --white: #ffffff;
+    --gray-1: #e5e5e5;
+    --gray-2: #999999;
+    --gray-3: #555555;
+    --gray-4: #2a2a2a;
+    --line: rgba(255,255,255,0.06);
+    --line-strong: rgba(201, 168, 76, 0.3);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--gray-1); font-family: 'Manrope', sans-serif; font-weight: 400; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  body {
+    background:
+      radial-gradient(ellipse 800px 600px at 20% 0%, rgba(201, 168, 76, 0.05), transparent 60%),
+      radial-gradient(ellipse 600px 400px at 80% 100%, rgba(201, 168, 76, 0.03), transparent 70%),
+      var(--bg);
+    min-height: 100vh;
+    padding: 32px 24px 80px;
+  }
+  .grid-bg { position: fixed; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; z-index: 0; }
+  .container { max-width: 1240px; margin: 0 auto; position: relative; z-index: 1; }
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); transition: all 0.15s; }
+  a:hover { color: var(--gold-bright); border-bottom-style: solid; }
+
+  /* HEADER */
+  header.app-header { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; padding-bottom: 28px; border-bottom: 1px solid var(--line); margin-bottom: 56px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand-mark { width: 38px; height: 38px; border: 1.5px solid var(--gold); transform: rotate(45deg); display: grid; place-items: center; position: relative; }
+  .brand-mark::after { content: ''; position: absolute; inset: 6px; background: var(--gold); opacity: 0.4; }
+  .brand-text { display: flex; flex-direction: column; }
+  .brand-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: 0.02em; line-height: 1; color: var(--white); border: none; }
+  .brand-name:hover { color: var(--white); }
+  .brand-name .gold { color: var(--gold); }
+  .brand-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gray-2); margin-top: 4px; }
+  .nav-links { display: flex; gap: 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; }
+  .nav-links a { color: var(--gray-2); border: none; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a.active { color: var(--gold); }
+
+  /* HERO */
+  .doc-hero { margin-bottom: 56px; max-width: 880px; }
+  .doc-id { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.22em; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+  .doc-id::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  h1.doc-title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: clamp(40px, 6vw, 68px); line-height: 1.02; letter-spacing: -0.025em; margin-bottom: 22px; color: var(--white); }
+  h1.doc-title .accent { color: var(--gold); }
+  .doc-meta { display: flex; gap: 28px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding-top: 22px; border-top: 1px dashed var(--gray-4); }
+  .doc-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .doc-meta-lbl { color: var(--gray-3); text-transform: uppercase; letter-spacing: 0.18em; font-size: 9px; }
+  .doc-meta-val { color: var(--white); font-weight: 500; }
+
+  /* LAYOUT */
+  .doc-layout { display: grid; grid-template-columns: 260px 1fr; gap: 64px; align-items: flex-start; }
+
+  /* TOC */
+  .toc { position: sticky; top: 32px; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .toc-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gray-3); margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; padding: 6px 0; }
+  .toc a { display: flex; gap: 12px; color: var(--gray-2); border: none; line-height: 1.5; }
+  .toc a::before { content: counter(toc, decimal-leading-zero); color: var(--gray-3); flex-shrink: 0; }
+  .toc a:hover { color: var(--gold); }
+  .toc a.active { color: var(--gold); }
+  .toc a.active::before { color: var(--gold); }
+
+  /* CONTENT */
+  .doc-body { max-width: 720px; }
+  .doc-body section { margin-bottom: 56px; }
+  .section-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.22em; margin-bottom: 12px; display: block; }
+  .doc-body h2 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.2; letter-spacing: -0.015em; color: var(--white); margin-bottom: 20px; }
+  .doc-body h3 { font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 16px; line-height: 1.3; color: var(--white); margin: 28px 0 12px; }
+  .doc-body p { font-size: 15px; color: var(--gray-1); margin-bottom: 16px; }
+  .doc-body p:last-child { margin-bottom: 0; }
+  .doc-body strong { color: var(--gold-bright); font-weight: 600; }
+  .doc-body ul, .doc-body ol { padding-left: 22px; margin: 12px 0 20px; }
+  .doc-body li { font-size: 15px; color: var(--gray-1); margin-bottom: 8px; line-height: 1.65; }
+  .doc-body li::marker { color: var(--gold-dim); }
+
+  /* TABLE */
+  .data-table { width: 100%; margin: 20px 0; border-collapse: collapse; font-size: 13px; }
+  .data-table th { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--line-strong); background: var(--bg-elev); font-weight: 500; }
+  .data-table td { padding: 14px; border-bottom: 1px solid var(--line); color: var(--gray-1); vertical-align: top; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: rgba(201, 168, 76, 0.03); }
+
+  /* CALLOUT */
+  .callout { background: var(--bg-elev); border: 1px solid var(--line); border-left: 2px solid var(--gold); padding: 20px 24px; margin: 24px 0; }
+  .callout p { margin-bottom: 8px; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 10px; display: block; }
+
+  /* FOOTER */
+  footer.doc-footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--line); }
+  .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+  .footer-col h4 { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 14px; font-weight: 500; }
+  .footer-col ul { list-style: none; padding: 0; }
+  .footer-col li { margin-bottom: 8px; }
+  .footer-col a { color: var(--gray-2); font-size: 13px; border: none; }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom { padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .doc-layout { grid-template-columns: 1fr; gap: 32px; }
+    .toc { position: relative; top: 0; padding: 20px; background: var(--bg-elev); border: 1px solid var(--line); }
+    .nav-links { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    body { padding: 20px 14px 60px; }
+    h1.doc-title { font-size: 36px; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <a href="https://metricbase.org" class="brand-name" style="display: flex; align-items: center; gap: 14px;">
+      <span class="brand-mark"></span>
+      <span class="brand-text">
+        <span class="brand-name">Metric<span class="gold">BASE</span></span>
+        <span class="brand-tag">Precision growth · No wasted motion</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="https://metricbase.org/privacy" class="active">Privacy</a>
+      <a href="https://metricbase.org/terms">Terms</a>
+      <a href="https://metricbase.org/disclaimer">Disclaimer</a>
+      <a href="https://metricbase.org/contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="doc-hero">
+    <div class="doc-id">DOCUMENT · PRIV-001 · V1.0</div>
+    <h1 class="doc-title">Privacy <span class="accent">Policy.</span></h1>
+    <div class="doc-meta">
+      <div class="doc-meta-item">
+        <span class="doc-meta-lbl">Effective</span>
+        <span class="doc-meta-val">12 May 2026</span>
+      </div>
+      <div class="doc-meta-item">
+        <span class="doc-meta-lbl">Last Updated</span>
+        <span class="doc-meta-val">12 May 2026</span>
+      </div>
+      <div class="doc-meta-item">
+        <span class="doc-meta-lbl">Applies To</span>
+        <span class="doc-meta-val">metricbase.org &amp; subdomains</span>
+      </div>
+      <div class="doc-meta-item">
+        <span class="doc-meta-lbl">Governing Law</span>
+        <span class="doc-meta-val">Republic of Indonesia</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAYOUT -->
+  <div class="doc-layout">
+
+    <!-- TOC -->
+    <aside class="toc">
+      <div class="toc-title">Table of Contents</div>
+      <ol>
+        <li><a href="#s1">Who we are</a></li>
+        <li><a href="#s2">Information we collect</a></li>
+        <li><a href="#s3">How we use information</a></li>
+        <li><a href="#s4">Cookies &amp; tracking</a></li>
+        <li><a href="#s5">Third-party services</a></li>
+        <li><a href="#s6">Sharing &amp; disclosure</a></li>
+        <li><a href="#s7">Data retention</a></li>
+        <li><a href="#s8">International transfers</a></li>
+        <li><a href="#s9">Your rights</a></li>
+        <li><a href="#s10">Children's privacy</a></li>
+        <li><a href="#s11">Security</a></li>
+        <li><a href="#s12">Changes to this policy</a></li>
+        <li><a href="#s13">Contact us</a></li>
+      </ol>
+    </aside>
+
+    <!-- CONTENT -->
+    <article class="doc-body">
+
+      <section id="s1">
+        <span class="section-num">SECTION 01</span>
+        <h2>Who we are</h2>
+        <p>MetricBase is a data-first content brand publishing analysis and education across three editorial verticals: energy markets, cryptocurrency and blockchain, and Indonesian equities. The portal at <a href="https://metricbase.org">metricbase.org</a> is the root property; editorial content is published across the subdomains listed below.</p>
+        <p>For the purposes of this Privacy Policy, <strong>"MetricBase," "we," "us,"</strong> and <strong>"our"</strong> refer to the operator of metricbase.org and its subdomains, acting as the data controller for personal information collected through these properties. To exercise any rights described in Section 9, contact us using the methods in Section 13.</p>
+        <p>This policy applies to all of the following properties:</p>
+        <ul>
+          <li><strong>metricbase.org</strong> — the content portal and root domain</li>
+          <li><strong>energy.metricbase.org</strong> — Energy Markets vertical</li>
+          <li><strong>chain.metricbase.org</strong> — Crypto &amp; Technology vertical</li>
+          <li><strong>saham.metricbase.org</strong> — Pasar Saham Indonesia vertical</li>
+          <li><strong>subs.metricbase.org</strong> — newsletter subscription</li>
+          <li><strong>og.metricbase.org</strong> — utility tools</li>
+        </ul>
+      </section>
+
+      <section id="s2">
+        <span class="section-num">SECTION 02</span>
+        <h2>Information we collect</h2>
+        <h3>2.1 — Information you provide directly</h3>
+        <p>We collect information you choose to provide, including:</p>
+        <ul>
+          <li>Your email address when you subscribe to the MetricBase newsletter</li>
+          <li>Your name and email address when you submit the contact form</li>
+          <li>Comments or content you submit on articles where commenting is enabled</li>
+          <li>Any other information you voluntarily include in correspondence with us</li>
+        </ul>
+        <h3>2.2 — Information collected automatically</h3>
+        <p>When you visit any of our properties, our hosting infrastructure and analytics tools automatically collect:</p>
+        <ul>
+          <li>IP address (often partially anonymized by analytics processors)</li>
+          <li>Browser type, version, and language settings</li>
+          <li>Operating system and device type</li>
+          <li>Referring URL (the page you came from)</li>
+          <li>Pages visited, time spent, and navigation paths within the site</li>
+          <li>Approximate geographic location at the country or region level, derived from IP address</li>
+        </ul>
+        <h3>2.3 — Information from cookies and similar technologies</h3>
+        <p>See <a href="#s4">Section 4</a> for a full description of cookie and tracking technology use.</p>
+      </section>
+
+      <section id="s3">
+        <span class="section-num">SECTION 03</span>
+        <h2>How we use information</h2>
+        <p>We process personal information for the following purposes, each under a corresponding lawful basis (consent, contractual necessity, or legitimate interest, as applicable):</p>
+        <ul>
+          <li>Delivering the newsletter you subscribed to</li>
+          <li>Responding to contact form inquiries and other correspondence</li>
+          <li>Operating, maintaining, securing, and improving our properties</li>
+          <li>Analyzing aggregate site traffic and content performance to inform editorial decisions</li>
+          <li>Detecting and preventing fraud, abuse, security incidents, and technical malfunctions</li>
+          <li>Complying with legal obligations under Indonesian and applicable foreign law</li>
+          <li>Serving, measuring, and reporting on advertisements when Google AdSense or comparable advertising services are active</li>
+        </ul>
+        <p>We do not sell personal information to third parties. We do not conduct cross-context behavioral advertising of our own; third-party advertising networks that may serve ads on our properties operate under their own published privacy practices.</p>
+      </section>
+
+      <section id="s4">
+        <span class="section-num">SECTION 04</span>
+        <h2>Cookies &amp; tracking technologies</h2>
+        <p>Our properties use cookies and similar technologies (web beacons, local storage, pixel tags). By using the site and accepting the cookie consent banner, you consent to these uses as described below.</p>
+        <h3>4.1 — Essential cookies</h3>
+        <p>Required for core site functionality, including remembering your cookie consent state, securing form submissions against cross-site request forgery, and maintaining basic session continuity. These cookies do not require consent under most regulatory frameworks but are documented here for transparency.</p>
+        <h3>4.2 — Analytics cookies</h3>
+        <p>We use Google Analytics to understand how visitors engage with our content. Google Analytics may set cookies including <strong>_ga</strong> and <strong>_gid</strong>. Data is processed by Google LLC under its published terms. For Google's privacy disclosures, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</p>
+        <h3>4.3 — Advertising cookies</h3>
+        <p>When Google AdSense or comparable advertising networks are active on our properties, Google and its advertising partners may place cookies to serve, target, and measure advertisements. You can opt out of personalized advertising:</p>
+        <ul>
+          <li>Through Google's Ads Settings at <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">google.com/settings/ads</a></li>
+          <li>Through the Digital Advertising Alliance at <a href="http://www.aboutads.info/choices" target="_blank" rel="noopener noreferrer">aboutads.info/choices</a></li>
+          <li>Through the Network Advertising Initiative at <a href="http://optout.networkadvertising.org" target="_blank" rel="noopener noreferrer">optout.networkadvertising.org</a></li>
+        </ul>
+      </section>
+
+      <section id="s5">
+        <span class="section-num">SECTION 05</span>
+        <h2>Third-party services</h2>
+        <p>We rely on the following third-party processors and service providers. Each operates under its own privacy practices, and we have selected them based on stated compliance and security commitments.</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Purpose</th>
+              <th>Data shared</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Google Analytics</td><td>Traffic and behavior analytics</td><td>IP, device info, page views</td></tr>
+            <tr><td>Google AdSense (when active)</td><td>Advertising delivery and measurement</td><td>IP, ad interaction cookies</td></tr>
+            <tr><td>Google / Blogger</td><td>Site hosting infrastructure</td><td>Server logs, content</td></tr>
+            <tr><td>Newsletter platform</td><td>Email delivery</td><td>Subscriber email, send activity</td></tr>
+            <tr><td>Contact form service</td><td>Receiving form submissions</td><td>Form field contents</td></tr>
+            <tr><td>Cloudflare</td><td>DNS, caching, security</td><td>Connection metadata</td></tr>
+          </tbody>
+        </table>
+        <p>We require these processors to maintain appropriate security and to process data only for the purposes we have engaged them for. We do not authorize them to use your personal information for their own marketing purposes.</p>
+      </section>
+
+      <section id="s6">
+        <span class="section-num">SECTION 06</span>
+        <h2>Sharing &amp; disclosure</h2>
+        <p>We share personal information only in the following limited circumstances:</p>
+        <ul>
+          <li><strong>Service providers</strong> as listed in Section 5, operating under our instructions</li>
+          <li><strong>Legal requirements</strong> — when required by law, court order, regulatory request, or governmental authority</li>
+          <li><strong>Rights and safety</strong> — to protect our rights, property, or safety, or that of users or others</li>
+          <li><strong>Business transfers</strong> — in connection with a merger, acquisition, financing, or sale of assets, with reasonable notice to affected users</li>
+          <li><strong>With your consent</strong> — for any other disclosure not covered above</li>
+        </ul>
+        <p>We do not sell personal information.</p>
+      </section>
+
+      <section id="s7">
+        <span class="section-num">SECTION 07</span>
+        <h2>Data retention</h2>
+        <p>We retain personal information only as long as necessary for the purposes described in this policy or as required by applicable law:</p>
+        <ul>
+          <li><strong>Newsletter subscribers</strong> — until you unsubscribe, plus up to 30 days to process the unsubscribe</li>
+          <li><strong>Contact form submissions</strong> — up to 24 months after the inquiry is resolved</li>
+          <li><strong>Analytics data</strong> — per Google Analytics defaults, typically 14 months for user-level data</li>
+          <li><strong>Server access logs</strong> — typically 30 to 90 days, depending on provider</li>
+          <li><strong>Cookie consent records</strong> — 12 months from grant of consent, after which we re-prompt</li>
+        </ul>
+        <p>Where law requires longer retention (tax records, regulatory obligations), we retain only what is required, for only as long as required.</p>
+      </section>
+
+      <section id="s8">
+        <span class="section-num">SECTION 08</span>
+        <h2>International data transfers</h2>
+        <p>MetricBase is operated from the Republic of Indonesia. Several of our processors — most notably Google — transfer and process data in other jurisdictions, including the United States and the European Union.</p>
+        <p>Where these transfers occur, we rely on the safeguards published by the respective processors, including Standard Contractual Clauses, Data Privacy Framework participation where applicable, or equivalent transfer mechanisms recognized under the destination jurisdiction's law.</p>
+      </section>
+
+      <section id="s9">
+        <span class="section-num">SECTION 09</span>
+        <h2>Your rights</h2>
+        <p>Depending on your jurisdiction, you may have the following rights with respect to your personal information. Indonesian residents have rights under <strong>UU 27/2022</strong> (Personal Data Protection Law / UU PDP). Residents of the European Union and United Kingdom have rights under <strong>GDPR / UK GDPR</strong>. California residents have rights under <strong>CCPA / CPRA</strong>. Other jurisdictions may grant similar rights.</p>
+        <p>These rights typically include:</p>
+        <ul>
+          <li>The right to <strong>access</strong> information we hold about you</li>
+          <li>The right to <strong>correct</strong> inaccurate or incomplete information</li>
+          <li>The right to <strong>delete</strong> your information, subject to legal limitations</li>
+          <li>The right to <strong>restrict or object</strong> to certain processing</li>
+          <li>The right to <strong>data portability</strong> in a structured, machine-readable format</li>
+          <li>The right to <strong>withdraw consent</strong> at any time where processing is based on consent</li>
+          <li>The right not to be subject to fully automated decisions with significant effect</li>
+          <li>The right to lodge a <strong>complaint</strong> with the supervisory authority in your jurisdiction</li>
+        </ul>
+        <p>To exercise any right, contact us using the methods in Section 13. We will respond within 30 days, though complex requests may require additional time, in which case we will advise you accordingly.</p>
+      </section>
+
+      <section id="s10">
+        <span class="section-num">SECTION 10</span>
+        <h2>Children's privacy</h2>
+        <p>Our properties are intended for adult users with an interest in financial markets and related topics. We do not knowingly collect personal information from anyone under 16 years of age. If you believe we have inadvertently collected information from a minor, please contact us using the methods in Section 13 and we will delete it promptly.</p>
+      </section>
+
+      <section id="s11">
+        <span class="section-num">SECTION 11</span>
+        <h2>Security</h2>
+        <p>We implement reasonable technical and organizational measures designed to protect personal information against unauthorized access, alteration, disclosure, or destruction. These measures include TLS encryption in transit, access controls, audit logging, and processor due diligence.</p>
+        <p>No system is fully impervious. We cannot guarantee absolute security, but we maintain practices appropriate to the sensitivity of the data we process and the risk profile of the activities we operate.</p>
+      </section>
+
+      <section id="s12">
+        <span class="section-num">SECTION 12</span>
+        <h2>Changes to this policy</h2>
+        <p>We may update this Privacy Policy from time to time. Material changes will be communicated by:</p>
+        <ul>
+          <li>Posting the revised policy at this URL with a new "Last updated" date</li>
+          <li>Where appropriate, sending direct notification to active newsletter subscribers</li>
+          <li>For changes that materially affect consent, re-prompting consent through the cookie banner</li>
+        </ul>
+        <p>Continued use of our properties after changes take effect constitutes acceptance of the updated policy.</p>
+      </section>
+
+      <section id="s13">
+        <span class="section-num">SECTION 13</span>
+        <h2>Contact us</h2>
+        <div class="callout">
+          <span class="callout-label">Privacy Inquiries</span>
+          <p>For any privacy-related question, request, or complaint:</p>
+          <p><strong>Email:</strong> <a href="mailto:privacy@metricbase.org">privacy@metricbase.org</a></p>
+          <p><strong>Form:</strong> <a href="https://metricbase.org/contact">metricbase.org/contact</a> — select "Privacy" in the subject dropdown</p>
+        </div>
+        <p>If we are unable to resolve your concern, you may also contact the Indonesian Ministry of Communication and Information Technology (Kominfo) or the supervisory authority in your jurisdiction.</p>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://metricbase.org/privacy">Privacy Policy</a></li>
+          <li><a href="https://metricbase.org/terms">Terms of Service</a></li>
+          <li><a href="https://metricbase.org/disclaimer">Disclaimer</a></li>
+          <li><a href="https://metricbase.org/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Verticals</h4>
+        <ul>
+          <li><a href="https://energy.metricbase.org">Energy Markets</a></li>
+          <li><a href="https://chain.metricbase.org">Crypto &amp; Tech</a></li>
+          <li><a href="https://saham.metricbase.org">Pasar Saham</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://x.com/MetricBase">X / Twitter</a></li>
+          <li><a href="https://instagram.com/MetricBase">Instagram</a></li>
+          <li><a href="https://tiktok.com/@MetricBase">TikTok</a></li>
+          <li><a href="https://subs.metricbase.org">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 MetricBase · Precision growth · No wasted motion</div>
+      <div>Privacy Policy · PRIV-001 · v1.0</div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Highlight active section in TOC on scroll
+  const sections = document.querySelectorAll('.doc-body section[id]');
+  const tocLinks = document.querySelectorAll('.toc a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tocLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

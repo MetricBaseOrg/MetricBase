@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service · MetricBase</title>
+<meta name="description" content="MetricBase Terms of Service. Rules and conditions governing use of metricbase.org and its subdomains.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://metricbase.org/terms">
+<meta property="og:title" content="Terms of Service · MetricBase">
+<meta property="og:description" content="Rules and conditions governing use of MetricBase properties.">
+<meta property="og:url" content="https://metricbase.org/terms">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0A0A;
+    --bg-elev: #131313;
+    --bg-card: #161616;
+    --gold: #C9A84C;
+    --gold-bright: #E5C168;
+    --gold-dim: #8a7434;
+    --white: #ffffff;
+    --gray-1: #e5e5e5;
+    --gray-2: #999999;
+    --gray-3: #555555;
+    --gray-4: #2a2a2a;
+    --line: rgba(255,255,255,0.06);
+    --line-strong: rgba(201, 168, 76, 0.3);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--gray-1); font-family: 'Manrope', sans-serif; font-weight: 400; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  body { background: radial-gradient(ellipse 800px 600px at 20% 0%, rgba(201, 168, 76, 0.05), transparent 60%), radial-gradient(ellipse 600px 400px at 80% 100%, rgba(201, 168, 76, 0.03), transparent 70%), var(--bg); min-height: 100vh; padding: 32px 24px 80px; }
+  .grid-bg { position: fixed; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; z-index: 0; }
+  .container { max-width: 1240px; margin: 0 auto; position: relative; z-index: 1; }
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); transition: all 0.15s; }
+  a:hover { color: var(--gold-bright); border-bottom-style: solid; }
+  header.app-header { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; padding-bottom: 28px; border-bottom: 1px solid var(--line); margin-bottom: 56px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand-mark { width: 38px; height: 38px; border: 1.5px solid var(--gold); transform: rotate(45deg); display: grid; place-items: center; position: relative; }
+  .brand-mark::after { content: ''; position: absolute; inset: 6px; background: var(--gold); opacity: 0.4; }
+  .brand-text { display: flex; flex-direction: column; }
+  .brand-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: 0.02em; line-height: 1; color: var(--white); border: none; }
+  .brand-name:hover { color: var(--white); }
+  .brand-name .gold { color: var(--gold); }
+  .brand-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gray-2); margin-top: 4px; }
+  .nav-links { display: flex; gap: 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; }
+  .nav-links a { color: var(--gray-2); border: none; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a.active { color: var(--gold); }
+  .doc-hero { margin-bottom: 56px; max-width: 880px; }
+  .doc-id { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.22em; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+  .doc-id::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  h1.doc-title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: clamp(40px, 6vw, 68px); line-height: 1.02; letter-spacing: -0.025em; margin-bottom: 22px; color: var(--white); }
+  h1.doc-title .accent { color: var(--gold); }
+  .doc-meta { display: flex; gap: 28px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding-top: 22px; border-top: 1px dashed var(--gray-4); }
+  .doc-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .doc-meta-lbl { color: var(--gray-3); text-transform: uppercase; letter-spacing: 0.18em; font-size: 9px; }
+  .doc-meta-val { color: var(--white); font-weight: 500; }
+  .doc-layout { display: grid; grid-template-columns: 260px 1fr; gap: 64px; align-items: flex-start; }
+  .toc { position: sticky; top: 32px; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .toc-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gray-3); margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; padding: 6px 0; }
+  .toc a { display: flex; gap: 12px; color: var(--gray-2); border: none; line-height: 1.5; }
+  .toc a::before { content: counter(toc, decimal-leading-zero); color: var(--gray-3); flex-shrink: 0; }
+  .toc a:hover { color: var(--gold); }
+  .toc a.active { color: var(--gold); }
+  .toc a.active::before { color: var(--gold); }
+  .doc-body { max-width: 720px; }
+  .doc-body section { margin-bottom: 56px; }
+  .section-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.22em; margin-bottom: 12px; display: block; }
+  .doc-body h2 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.2; letter-spacing: -0.015em; color: var(--white); margin-bottom: 20px; }
+  .doc-body h3 { font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 16px; line-height: 1.3; color: var(--white); margin: 28px 0 12px; }
+  .doc-body p { font-size: 15px; color: var(--gray-1); margin-bottom: 16px; }
+  .doc-body p:last-child { margin-bottom: 0; }
+  .doc-body strong { color: var(--gold-bright); font-weight: 600; }
+  .doc-body ul, .doc-body ol { padding-left: 22px; margin: 12px 0 20px; }
+  .doc-body li { font-size: 15px; color: var(--gray-1); margin-bottom: 8px; line-height: 1.65; }
+  .doc-body li::marker { color: var(--gold-dim); }
+  .doc-body .uppercase-block { font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.7; padding: 18px 22px; background: var(--bg-elev); border: 1px solid var(--line); border-left: 2px solid var(--gold); margin: 20px 0; color: var(--gray-1); }
+  .callout { background: var(--bg-elev); border: 1px solid var(--line); border-left: 2px solid var(--gold); padding: 20px 24px; margin: 24px 0; }
+  .callout p { margin-bottom: 8px; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 10px; display: block; }
+  footer.doc-footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--line); }
+  .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+  .footer-col h4 { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 14px; font-weight: 500; }
+  .footer-col ul { list-style: none; padding: 0; }
+  .footer-col li { margin-bottom: 8px; }
+  .footer-col a { color: var(--gray-2); font-size: 13px; border: none; }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom { padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); letter-spacing: 0.1em; text-transform: uppercase; }
+  @media (max-width: 900px) {
+    .doc-layout { grid-template-columns: 1fr; gap: 32px; }
+    .toc { position: relative; top: 0; padding: 20px; background: var(--bg-elev); border: 1px solid var(--line); }
+    .nav-links { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    body { padding: 20px 14px 60px; }
+    h1.doc-title { font-size: 36px; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<div class="container">
+
+  <header class="app-header">
+    <a href="https://metricbase.org" class="brand-name" style="display: flex; align-items: center; gap: 14px;">
+      <span class="brand-mark"></span>
+      <span class="brand-text">
+        <span class="brand-name">Metric<span class="gold">BASE</span></span>
+        <span class="brand-tag">Precision growth · No wasted motion</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="https://metricbase.org/privacy">Privacy</a>
+      <a href="https://metricbase.org/terms" class="active">Terms</a>
+      <a href="https://metricbase.org/disclaimer">Disclaimer</a>
+      <a href="https://metricbase.org/contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="doc-hero">
+    <div class="doc-id">DOCUMENT · TERMS-001 · V1.0</div>
+    <h1 class="doc-title">Terms of <span class="accent">Service.</span></h1>
+    <div class="doc-meta">
+      <div class="doc-meta-item"><span class="doc-meta-lbl">Effective</span><span class="doc-meta-val">12 May 2026</span></div>
+      <div class="doc-meta-item"><span class="doc-meta-lbl">Last Updated</span><span class="doc-meta-val">12 May 2026</span></div>
+      <div class="doc-meta-item"><span class="doc-meta-lbl">Applies To</span><span class="doc-meta-val">metricbase.org &amp; subdomains</span></div>
+      <div class="doc-meta-item"><span class="doc-meta-lbl">Governing Law</span><span class="doc-meta-val">Republic of Indonesia</span></div>
+    </div>
+  </section>
+
+  <div class="doc-layout">
+
+    <aside class="toc">
+      <div class="toc-title">Table of Contents</div>
+      <ol>
+        <li><a href="#s1">Acceptance of terms</a></li>
+        <li><a href="#s2">About MetricBase</a></li>
+        <li><a href="#s3">Eligibility</a></li>
+        <li><a href="#s4">Intellectual property</a></li>
+        <li><a href="#s5">Acceptable use</a></li>
+        <li><a href="#s6">Prohibited activities</a></li>
+        <li><a href="#s7">Third-party links</a></li>
+        <li><a href="#s8">Disclaimers</a></li>
+        <li><a href="#s9">Limitation of liability</a></li>
+        <li><a href="#s10">Indemnification</a></li>
+        <li><a href="#s11">Termination</a></li>
+        <li><a href="#s12">Modifications</a></li>
+        <li><a href="#s13">Governing law</a></li>
+        <li><a href="#s14">Dispute resolution</a></li>
+        <li><a href="#s15">Severability</a></li>
+        <li><a href="#s16">Entire agreement</a></li>
+        <li><a href="#s17">Contact</a></li>
+      </ol>
+    </aside>
+
+    <article class="doc-body">
+
+      <section id="s1">
+        <span class="section-num">SECTION 01</span>
+        <h2>Acceptance of terms</h2>
+        <p>These Terms of Service ("<strong>Terms</strong>") govern your access to and use of <a href="https://metricbase.org">metricbase.org</a> and its subdomains, including all content, features, and services offered through them (collectively, the "<strong>Services</strong>").</p>
+        <p>By accessing or using the Services, you confirm that you have read, understood, and agreed to be bound by these Terms, together with our <a href="https://metricbase.org/privacy">Privacy Policy</a> and <a href="https://metricbase.org/disclaimer">Disclaimer</a>. If you do not agree, do not access or use the Services.</p>
+      </section>
+
+      <section id="s2">
+        <span class="section-num">SECTION 02</span>
+        <h2>About MetricBase</h2>
+        <p>MetricBase is a content brand publishing analysis, commentary, and education across three editorial verticals: energy markets, cryptocurrency and blockchain, and Indonesian equities. The Services include:</p>
+        <ul>
+          <li><strong>metricbase.org</strong> — root content portal and journal</li>
+          <li><strong>energy.metricbase.org</strong> — Energy Markets vertical</li>
+          <li><strong>chain.metricbase.org</strong> — Crypto &amp; Technology vertical</li>
+          <li><strong>saham.metricbase.org</strong> — Pasar Saham Indonesia vertical</li>
+          <li><strong>subs.metricbase.org</strong> — newsletter</li>
+          <li><strong>og.metricbase.org</strong> — tools</li>
+        </ul>
+        <p>References to "<strong>MetricBase</strong>," "<strong>we</strong>," "<strong>us</strong>," and "<strong>our</strong>" mean the operator of these properties. References to "<strong>you</strong>" and "<strong>your</strong>" mean any visitor, reader, subscriber, or other user of the Services.</p>
+      </section>
+
+      <section id="s3">
+        <span class="section-num">SECTION 03</span>
+        <h2>Eligibility</h2>
+        <p>By using the Services, you represent that:</p>
+        <ul>
+          <li>You are at least 18 years of age, or the age of majority in your jurisdiction, whichever is greater</li>
+          <li>You have the legal capacity to enter into a binding agreement</li>
+          <li>You are not barred from receiving the Services under the laws of Indonesia or your jurisdiction</li>
+          <li>You will use the Services in compliance with these Terms and all applicable laws</li>
+        </ul>
+        <p>The Services are not directed to children. We do not knowingly permit minors to subscribe to the newsletter or submit content.</p>
+      </section>
+
+      <section id="s4">
+        <span class="section-num">SECTION 04</span>
+        <h2>Intellectual property</h2>
+        <h3>4.1 — Our content</h3>
+        <p>All content published on the Services — including articles, illustrations (notably the <strong>"Bun"</strong> mascot character and related artwork), charts, data visualizations, code, layouts, design elements, logos, and trademarks — is owned by MetricBase or licensed to MetricBase. All rights are reserved unless otherwise stated.</p>
+        <h3>4.2 — License to you</h3>
+        <p>We grant you a limited, non-exclusive, non-transferable, revocable license to access and use the Services for personal, non-commercial purposes only. This license does <strong>not</strong> permit you to:</p>
+        <ul>
+          <li>Reproduce, copy, mirror, or distribute content in whole or in substantial part</li>
+          <li>Republish our content on other websites, in print, or in derivative works</li>
+          <li>Use our content for commercial purposes, including training machine-learning models</li>
+          <li>Remove, alter, or obscure copyright, trademark, or other proprietary notices</li>
+          <li>Scrape, crawl, or systematically extract data without our prior written permission</li>
+          <li>Resell, sublicense, or commercially exploit access to the Services</li>
+        </ul>
+        <p>Brief quotations of our content, with proper attribution and a link to the original article, are permitted under standard fair-use and fair-dealing principles.</p>
+        <h3>4.3 — User content</h3>
+        <p>If you submit content to the Services — comments, replies, newsletter feedback, contact form submissions, or any other content — you grant MetricBase a perpetual, worldwide, royalty-free, sublicensable, non-exclusive license to use, reproduce, modify, adapt, publish, translate, distribute, and display that content in connection with the Services and our business activities.</p>
+        <p>You represent and warrant that:</p>
+        <ul>
+          <li>You own or have all necessary rights to the content you submit</li>
+          <li>Your content does not infringe the intellectual property, privacy, or other rights of any third party</li>
+          <li>Your content complies with these Terms, particularly Section 6</li>
+        </ul>
+      </section>
+
+      <section id="s5">
+        <span class="section-num">SECTION 05</span>
+        <h2>Acceptable use</h2>
+        <p>You agree to use the Services lawfully, respectfully, and in good faith. You will not use the Services in a manner that violates these Terms or any applicable law, regulation, or third-party right.</p>
+      </section>
+
+      <section id="s6">
+        <span class="section-num">SECTION 06</span>
+        <h2>Prohibited activities</h2>
+        <p>You may not, and you may not assist or encourage anyone else to:</p>
+        <ul>
+          <li>Use the Services in any way that violates applicable law, including Indonesian law (notably UU 19/2016 on Electronic Information and Transactions / ITE)</li>
+          <li>Impersonate any person or entity, or misrepresent your affiliation with any person or entity</li>
+          <li>Submit content that is defamatory, libelous, harassing, threatening, obscene, hateful, or otherwise objectionable</li>
+          <li>Submit content that promotes illegal activity, fraud, financial scams, or unregulated investment schemes</li>
+          <li>Use bots, scrapers, crawlers, or other automated systems to access the Services, except for publicly documented APIs and standard search engine indexing</li>
+          <li>Interfere with the operation of the Services or attempt to gain unauthorized access to any portion of them</li>
+          <li>Attempt to reverse engineer, decompile, disassemble, or otherwise extract source code from the Services</li>
+          <li>Introduce malware, viruses, ransomware, or any other harmful code</li>
+          <li>Engage in any activity that imposes an unreasonable load on our infrastructure or that of our processors</li>
+          <li>Use the Services to send unsolicited communications or to harvest personal information</li>
+          <li>Misuse our trademarks, logos, or the Bun character without prior written permission</li>
+        </ul>
+        <p>We reserve the right to remove content, suspend access, or take any other action we consider appropriate in response to violations of this section.</p>
+      </section>
+
+      <section id="s7">
+        <span class="section-num">SECTION 07</span>
+        <h2>Third-party links and services</h2>
+        <p>The Services contain links to third-party websites, applications, exchanges, data providers, and services that we do not own or control. We provide these links because we have found them informative or relevant. We do not endorse, control, or guarantee the accuracy, completeness, legality, or safety of any third-party content or service.</p>
+        <p>Your interactions with any third-party site or service are governed by that party's terms and privacy policy. We are not responsible for any loss or damage arising from your use of third-party links or services. You access them at your own risk.</p>
+      </section>
+
+      <section id="s8">
+        <span class="section-num">SECTION 08</span>
+        <h2>Disclaimers</h2>
+        <div class="uppercase-block"><strong>THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, AND NON-INFRINGEMENT.</strong></div>
+        <p>We do not warrant that the Services will be uninterrupted, timely, secure, or free of errors or viruses. We do not warrant that any results obtained from the use of the Services will be accurate or reliable.</p>
+        <p>None of the content published on the Services constitutes financial, investment, tax, accounting, or legal advice. See our full <a href="https://metricbase.org/disclaimer">Disclaimer</a> for detailed risk warnings and the limits of our editorial product.</p>
+      </section>
+
+      <section id="s9">
+        <span class="section-num">SECTION 09</span>
+        <h2>Limitation of liability</h2>
+        <div class="uppercase-block"><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW</strong>, MetricBase and its operators, contributors, officers, employees, agents, and licensors shall not be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages — including without limitation loss of profits, revenue, data, goodwill, or other intangible losses — arising out of or in connection with:</div>
+        <ul>
+          <li>Your use of, or inability to use, the Services</li>
+          <li>Any reliance you place on content published on the Services</li>
+          <li>Trading or investment decisions made on the basis of our content</li>
+          <li>Any unauthorized access to or alteration of your transmissions or data</li>
+          <li>Any third-party content, conduct, or service accessed through the Services</li>
+        </ul>
+        <p>In any case, our total aggregate liability to you for all claims arising out of or in connection with the Services shall not exceed the greater of (a) the amount you have paid to MetricBase in the twelve months preceding the claim, or (b) one hundred US dollars (USD 100).</p>
+        <p>This limitation applies regardless of the legal theory on which the claim is based. It does not apply to liability that cannot be limited under applicable law, such as liability for gross negligence, willful misconduct, or fraud.</p>
+      </section>
+
+      <section id="s10">
+        <span class="section-num">SECTION 10</span>
+        <h2>Indemnification</h2>
+        <p>You agree to defend, indemnify, and hold harmless MetricBase, its operators, contributors, officers, employees, and agents from and against any and all claims, damages, obligations, losses, liabilities, costs, debts, and expenses (including reasonable legal fees) arising from:</p>
+        <ul>
+          <li>Your use of and access to the Services</li>
+          <li>Your violation of any term of these Terms</li>
+          <li>Your violation of any third-party right, including intellectual property, privacy, or publicity</li>
+          <li>Any content you submit or transmit through the Services</li>
+          <li>Any willful misconduct on your part</li>
+        </ul>
+      </section>
+
+      <section id="s11">
+        <span class="section-num">SECTION 11</span>
+        <h2>Termination</h2>
+        <p>We may suspend or terminate your access to the Services, in whole or in part, at any time, with or without notice, for any reason — including breach of these Terms.</p>
+        <p>Sections that by their nature should survive termination — including those concerning intellectual property, user content licenses, disclaimers, limitation of liability, indemnification, governing law, and dispute resolution — will continue in effect after termination.</p>
+      </section>
+
+      <section id="s12">
+        <span class="section-num">SECTION 12</span>
+        <h2>Modifications</h2>
+        <p>We may modify these Terms at any time. Material changes will be reflected in a new "Last updated" date at the top of this page, and where significant, we may notify subscribers directly.</p>
+        <p>Your continued use of the Services after modifications take effect constitutes acceptance of the modified Terms. If you do not agree with the modified Terms, you must stop using the Services.</p>
+        <p>We may also modify or discontinue any feature, content, or aspect of the Services at any time, with or without notice.</p>
+      </section>
+
+      <section id="s13">
+        <span class="section-num">SECTION 13</span>
+        <h2>Governing law</h2>
+        <p>These Terms and any dispute arising out of or in connection with them are governed by the laws of the <strong>Republic of Indonesia</strong>, without regard to its conflict of law principles.</p>
+        <p>The following Indonesian laws are particularly relevant:</p>
+        <ul>
+          <li><strong>UU 28/2014</strong> — Hak Cipta (Copyright Law)</li>
+          <li><strong>UU 19/2016</strong> — Informasi dan Transaksi Elektronik (Electronic Information and Transactions / ITE Law)</li>
+          <li><strong>UU 27/2022</strong> — Pelindungan Data Pribadi (Personal Data Protection / UU PDP)</li>
+        </ul>
+      </section>
+
+      <section id="s14">
+        <span class="section-num">SECTION 14</span>
+        <h2>Dispute resolution</h2>
+        <p>Any dispute, controversy, or claim arising from or in connection with these Terms — including their existence, validity, or termination — shall be resolved as follows:</p>
+        <ol>
+          <li><strong>Good-faith negotiation.</strong> The parties will first attempt to resolve the dispute through good-faith negotiation, initiated by written notice from one party to the other.</li>
+          <li><strong>Arbitration.</strong> If unresolved within thirty (30) days, the dispute shall be submitted to the Indonesian National Arbitration Board (<strong>BANI</strong>) for binding arbitration in Jakarta, conducted in Indonesian and English, in accordance with the BANI rules then in effect. The arbitral award shall be final and binding.</li>
+          <li><strong>Costs.</strong> Each party shall bear its own legal costs unless the arbitrator orders otherwise.</li>
+        </ol>
+        <p>Nothing in this clause prevents either party from seeking interim relief in any court of competent jurisdiction. Consumers may also bring claims in the appropriate small-claims forum regardless of this clause.</p>
+      </section>
+
+      <section id="s15">
+        <span class="section-num">SECTION 15</span>
+        <h2>Severability</h2>
+        <p>If any provision of these Terms is found by a court or arbitrator to be invalid, illegal, or unenforceable, the remaining provisions will remain in full force and effect. The invalid provision will be interpreted, to the extent permitted by law, to reflect the original intent of the parties as closely as possible.</p>
+      </section>
+
+      <section id="s16">
+        <span class="section-num">SECTION 16</span>
+        <h2>Entire agreement</h2>
+        <p>These Terms, together with the <a href="https://metricbase.org/privacy">Privacy Policy</a> and <a href="https://metricbase.org/disclaimer">Disclaimer</a>, constitute the entire agreement between you and MetricBase concerning the Services and supersede all prior or contemporaneous communications, proposals, and agreements, whether oral or written.</p>
+        <p>No waiver of any term shall be deemed a further or continuing waiver of that term or any other term. Our failure to enforce any right or provision shall not constitute a waiver of that right or provision.</p>
+      </section>
+
+      <section id="s17">
+        <span class="section-num">SECTION 17</span>
+        <h2>Contact</h2>
+        <div class="callout">
+          <span class="callout-label">Legal Inquiries</span>
+          <p>For questions about these Terms, intellectual property claims, or legal correspondence:</p>
+          <p><strong>Email:</strong> <a href="mailto:legal@metricbase.org">legal@metricbase.org</a></p>
+          <p><strong>Form:</strong> <a href="https://metricbase.org/contact">metricbase.org/contact</a> — select "Legal" in the subject dropdown</p>
+        </div>
+      </section>
+
+    </article>
+  </div>
+
+  <footer class="doc-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://metricbase.org/privacy">Privacy Policy</a></li>
+          <li><a href="https://metricbase.org/terms">Terms of Service</a></li>
+          <li><a href="https://metricbase.org/disclaimer">Disclaimer</a></li>
+          <li><a href="https://metricbase.org/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Verticals</h4>
+        <ul>
+          <li><a href="https://energy.metricbase.org">Energy Markets</a></li>
+          <li><a href="https://chain.metricbase.org">Crypto &amp; Tech</a></li>
+          <li><a href="https://saham.metricbase.org">Pasar Saham</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://x.com/MetricBase">X / Twitter</a></li>
+          <li><a href="https://instagram.com/MetricBase">Instagram</a></li>
+          <li><a href="https://tiktok.com/@MetricBase">TikTok</a></li>
+          <li><a href="https://subs.metricbase.org">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 MetricBase · Precision growth · No wasted motion</div>
+      <div>Terms of Service · TERMS-001 · v1.0</div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const sections = document.querySelectorAll('.doc-body section[id]');
+  const tocLinks = document.querySelectorAll('.toc a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tocLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

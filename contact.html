@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · MetricBase</title>
+<meta name="description" content="Get in touch with MetricBase. Editorial inquiries, partnerships, press, privacy questions, and general feedback.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://metricbase.org/contact">
+<meta property="og:title" content="Contact · MetricBase">
+<meta property="og:description" content="Get in touch with the MetricBase team.">
+<meta property="og:url" content="https://metricbase.org/contact">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0A0A;
+    --bg-elev: #131313;
+    --bg-card: #161616;
+    --bg-input: #0f0f0f;
+    --gold: #C9A84C;
+    --gold-bright: #E5C168;
+    --gold-dim: #8a7434;
+    --white: #ffffff;
+    --gray-1: #e5e5e5;
+    --gray-2: #999999;
+    --gray-3: #555555;
+    --gray-4: #2a2a2a;
+    --green: #5fa86c;
+    --line: rgba(255,255,255,0.06);
+    --line-strong: rgba(201, 168, 76, 0.3);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--gray-1); font-family: 'Manrope', sans-serif; font-weight: 400; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  body { background: radial-gradient(ellipse 800px 600px at 20% 0%, rgba(201, 168, 76, 0.05), transparent 60%), radial-gradient(ellipse 600px 400px at 80% 100%, rgba(201, 168, 76, 0.03), transparent 70%), var(--bg); min-height: 100vh; padding: 32px 24px 80px; }
+  .grid-bg { position: fixed; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; z-index: 0; }
+  .container { max-width: 1240px; margin: 0 auto; position: relative; z-index: 1; }
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); transition: all 0.15s; }
+  a:hover { color: var(--gold-bright); border-bottom-style: solid; }
+
+  header.app-header { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; padding-bottom: 28px; border-bottom: 1px solid var(--line); margin-bottom: 56px; }
+  .brand-mark { width: 38px; height: 38px; border: 1.5px solid var(--gold); transform: rotate(45deg); display: grid; place-items: center; position: relative; }
+  .brand-mark::after { content: ''; position: absolute; inset: 6px; background: var(--gold); opacity: 0.4; }
+  .brand-text { display: flex; flex-direction: column; }
+  .brand-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: 0.02em; line-height: 1; color: var(--white); border: none; }
+  .brand-name:hover { color: var(--white); }
+  .brand-name .gold { color: var(--gold); }
+  .brand-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gray-2); margin-top: 4px; }
+  .nav-links { display: flex; gap: 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; }
+  .nav-links a { color: var(--gray-2); border: none; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a.active { color: var(--gold); }
+
+  /* HERO */
+  .doc-hero { margin-bottom: 56px; max-width: 880px; }
+  .doc-id { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.22em; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+  .doc-id::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  h1.doc-title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: clamp(40px, 6vw, 68px); line-height: 1.02; letter-spacing: -0.025em; margin-bottom: 22px; color: var(--white); }
+  h1.doc-title .accent { color: var(--gold); }
+  .doc-intro { color: var(--gray-1); font-size: 17px; line-height: 1.65; max-width: 640px; }
+
+  /* MAIN LAYOUT */
+  .contact-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: flex-start; }
+
+  /* LEFT — CHANNELS */
+  .channels { display: flex; flex-direction: column; gap: 28px; }
+  .channel-section h3 { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gold); margin-bottom: 18px; font-weight: 500; }
+  .email-list { display: flex; flex-direction: column; }
+  .email-row { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .email-row:last-child { border-bottom: none; }
+  .email-row .addr { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--white); font-weight: 500; }
+  .email-row .addr a { color: var(--white); border: none; }
+  .email-row .addr a:hover { color: var(--gold); }
+  .email-row .desc { font-size: 13px; color: var(--gray-2); line-height: 1.55; }
+
+  .response-card { background: var(--bg-elev); border: 1px solid var(--line); border-left: 2px solid var(--green); padding: 22px 26px; }
+  .response-card .lbl { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--green); margin-bottom: 12px; display: block; font-weight: 500; }
+  .response-card h4 { color: var(--white); font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+  .response-times { display: flex; flex-direction: column; gap: 10px; }
+  .response-row { display: grid; grid-template-columns: 1fr auto; gap: 16px; font-size: 13px; }
+  .response-row .what { color: var(--gray-1); }
+  .response-row .when { font-family: 'JetBrains Mono', monospace; color: var(--gold); font-size: 12px; }
+
+  .social-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .social-tile { padding: 14px 18px; background: var(--bg-card); border: 1px solid var(--line); display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--gray-1); transition: all 0.2s; border-bottom: 1px solid var(--line); }
+  .social-tile:hover { border-color: var(--line-strong); background: var(--bg-elev); color: var(--white); }
+  .social-tile .platform { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; }
+  .social-tile .handle { font-weight: 500; }
+
+  /* RIGHT — FORM */
+  .form-card { background: var(--bg-elev); border: 1px solid var(--line); padding: 36px; position: relative; }
+  .form-card::before { content: 'CONTACT FORM'; position: absolute; top: -8px; left: 24px; background: var(--bg); padding: 0 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; color: var(--gold); font-weight: 500; }
+  .form-intro { color: var(--gray-2); font-size: 13px; line-height: 1.6; margin-bottom: 28px; }
+  .field-group { margin-bottom: 20px; }
+  .field-label { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gray-2); margin-bottom: 8px; }
+  .field-label .req { color: var(--gold); margin-left: 4px; }
+  input[type="text"], input[type="email"], select, textarea {
+    width: 100%;
+    background: var(--bg-input);
+    border: 1px solid var(--gray-4);
+    color: var(--white);
+    padding: 12px 14px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    transition: all 0.15s;
+    outline: none;
+    border-radius: 0;
+  }
+  input:focus, select:focus, textarea:focus { border-color: var(--gold); background: var(--bg-card); }
+  textarea { resize: vertical; min-height: 140px; line-height: 1.55; font-family: 'Manrope', sans-serif; }
+  select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%), linear-gradient(135deg, var(--gold) 50%, transparent 50%); background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 38px; }
+  .submit-btn { width: 100%; background: var(--gold); color: var(--bg); border: none; padding: 14px 24px; font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; cursor: pointer; transition: all 0.15s; margin-top: 8px; }
+  .submit-btn:hover { background: var(--gold-bright); }
+  .submit-btn:active { transform: translateY(1px); }
+  .form-note { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); letter-spacing: 0.05em; line-height: 1.6; }
+
+  /* WHAT WE DON'T DO */
+  .what-not { margin-top: 80px; background: var(--bg-elev); border: 1px solid var(--line); padding: 32px 36px; position: relative; }
+  .what-not::before { content: 'PLEASE NOTE'; position: absolute; top: -8px; left: 24px; background: var(--bg); padding: 0 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; color: var(--gold); font-weight: 500; }
+  .what-not h3 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 22px; color: var(--white); margin-bottom: 16px; letter-spacing: -0.01em; }
+  .what-not p { color: var(--gray-1); font-size: 14px; line-height: 1.7; margin-bottom: 12px; }
+  .what-not p:last-child { margin-bottom: 0; }
+  .what-not ul { padding-left: 22px; margin: 12px 0; }
+  .what-not li { font-size: 14px; color: var(--gray-2); margin-bottom: 6px; line-height: 1.6; }
+  .what-not li::marker { color: var(--gold-dim); }
+
+  /* FOOTER */
+  footer.doc-footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--line); }
+  .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+  .footer-col h4 { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 14px; font-weight: 500; }
+  .footer-col ul { list-style: none; padding: 0; }
+  .footer-col li { margin-bottom: 8px; }
+  .footer-col a { color: var(--gray-2); font-size: 13px; border: none; }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom { padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+    .nav-links { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .email-row { grid-template-columns: 1fr; gap: 4px; }
+  }
+  @media (max-width: 600px) {
+    body { padding: 20px 14px 60px; }
+    h1.doc-title { font-size: 36px; }
+    .form-card { padding: 28px 22px; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<div class="container">
+
+  <header class="app-header">
+    <a href="https://metricbase.org" class="brand-name" style="display: flex; align-items: center; gap: 14px;">
+      <span class="brand-mark"></span>
+      <span class="brand-text">
+        <span class="brand-name">Metric<span class="gold">BASE</span></span>
+        <span class="brand-tag">Precision growth · No wasted motion</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="https://metricbase.org/privacy">Privacy</a>
+      <a href="https://metricbase.org/terms">Terms</a>
+      <a href="https://metricbase.org/disclaimer">Disclaimer</a>
+      <a href="https://metricbase.org/contact" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <section class="doc-hero">
+    <div class="doc-id">DOCUMENT · CONT-001 · GET IN TOUCH</div>
+    <h1 class="doc-title">Get in <span class="accent">touch.</span></h1>
+    <p class="doc-intro">We read every message. Genuine questions about our research, editorial corrections, partnership proposals, press requests, and constructive feedback — all welcome. Pick the channel that fits.</p>
+  </section>
+
+  <div class="contact-layout">
+
+    <!-- LEFT COLUMN -->
+    <div class="channels">
+
+      <div class="channel-section">
+        <h3>Direct Email</h3>
+        <div class="email-list">
+          <div class="email-row">
+            <div class="addr"><a href="mailto:hello@metricbase.org">hello@metricbase.org</a></div>
+            <div class="desc">General inquiries, reader feedback, or anything that doesn't fit another category</div>
+          </div>
+          <div class="email-row">
+            <div class="addr"><a href="mailto:editorial@metricbase.org">editorial@metricbase.org</a></div>
+            <div class="desc">Factual corrections, source disputes, or editorial concerns about published content</div>
+          </div>
+          <div class="email-row">
+            <div class="addr"><a href="mailto:privacy@metricbase.org">privacy@metricbase.org</a></div>
+            <div class="desc">Data access, deletion, or any privacy-related request under UU PDP, GDPR, or CCPA</div>
+          </div>
+          <div class="email-row">
+            <div class="addr"><a href="mailto:legal@metricbase.org">legal@metricbase.org</a></div>
+            <div class="desc">Legal correspondence, IP claims, partnership term sheets, formal notices</div>
+          </div>
+          <div class="email-row">
+            <div class="addr"><a href="mailto:press@metricbase.org">press@metricbase.org</a></div>
+            <div class="desc">Media requests, interview inquiries, citations of our research</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="channel-section">
+        <h3>Response Times</h3>
+        <div class="response-card">
+          <span class="lbl">SLA · Best Effort</span>
+          <h4>When to expect a reply</h4>
+          <div class="response-times">
+            <div class="response-row"><span class="what">Editorial corrections</span><span class="when">≤ 48 hours</span></div>
+            <div class="response-row"><span class="what">Privacy &amp; data requests</span><span class="when">≤ 30 days</span></div>
+            <div class="response-row"><span class="what">General inquiries</span><span class="when">3–5 business days</span></div>
+            <div class="response-row"><span class="what">Partnership &amp; press</span><span class="when">5–7 business days</span></div>
+            <div class="response-row"><span class="what">Legal notices</span><span class="when">Within statutory time</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="channel-section">
+        <h3>Public Channels</h3>
+        <div class="social-row">
+          <a href="https://x.com/MetricBase" class="social-tile" target="_blank" rel="noopener noreferrer">
+            <span class="platform">X / Twitter</span>
+            <span class="handle">@MetricBase</span>
+          </a>
+          <a href="https://instagram.com/MetricBase" class="social-tile" target="_blank" rel="noopener noreferrer">
+            <span class="platform">Instagram</span>
+            <span class="handle">@MetricBase</span>
+          </a>
+          <a href="https://tiktok.com/@MetricBase" class="social-tile" target="_blank" rel="noopener noreferrer">
+            <span class="platform">TikTok</span>
+            <span class="handle">@MetricBase</span>
+          </a>
+          <a href="https://subs.metricbase.org" class="social-tile" target="_blank" rel="noopener noreferrer">
+            <span class="platform">Newsletter</span>
+            <span class="handle">subs.metricbase.org</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN — FORM -->
+    <div>
+      <div class="form-card">
+        <p class="form-intro">Send a message and we'll route it to the right inbox. All fields marked with <span style="color: var(--gold);">·</span> are required.</p>
+
+        <!--
+          INTEGRATION NOTE:
+          Replace the form `action` attribute below with your form endpoint.
+          Recommended options:
+            • Formspree   → https://formspree.io/f/YOUR_FORM_ID
+            • Web3Forms   → https://api.web3forms.com/submit  (add hidden access_key field)
+            • Getform     → https://getform.io/f/YOUR_FORM_ID
+            • Basin       → https://usebasin.com/f/YOUR_FORM_ID
+          All four offer free tiers and require no backend code.
+        -->
+        <form action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
+
+          <div class="field-group">
+            <label class="field-label" for="name">Your name <span class="req">·</span></label>
+            <input type="text" id="name" name="name" required placeholder="Jane Trader">
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="email">Email address <span class="req">·</span></label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com">
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="subject">Subject <span class="req">·</span></label>
+            <select id="subject" name="subject" required>
+              <option value="">— Select a category —</option>
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="Editorial Correction">Editorial Correction</option>
+              <option value="Privacy / Data Request">Privacy / Data Request</option>
+              <option value="Legal">Legal</option>
+              <option value="Partnership Proposal">Partnership Proposal</option>
+              <option value="Press / Media">Press / Media</option>
+              <option value="Sponsorship Inquiry">Sponsorship Inquiry</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="message">Your message <span class="req">·</span></label>
+            <textarea id="message" name="message" required placeholder="Tell us what's on your mind. The more specific you are, the faster we can help."></textarea>
+          </div>
+
+          <!-- Honeypot anti-spam field (hidden from real users) -->
+          <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="submit-btn">Send Message →</button>
+
+          <div class="form-note">
+            By submitting, you agree to our <a href="https://metricbase.org/privacy">Privacy Policy</a>. Your information is used only to respond to your inquiry. We never share contact form submissions with third parties.
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WHAT WE DON'T DO -->
+  <section class="what-not">
+    <h3>What we can't help with</h3>
+    <p>We are an editorial brand, not a financial advisor or service provider. To set expectations clearly, here are the kinds of messages we cannot respond to in a useful way:</p>
+    <ul>
+      <li><strong style="color: var(--gold);">"Should I buy/sell [specific asset]?"</strong> — We do not provide personalized trading or investment advice. See our <a href="https://metricbase.org/disclaimer">Disclaimer</a> for the limits of our editorial product.</li>
+      <li><strong style="color: var(--gold);">Portfolio reviews or trade approval</strong> — We do not review individual portfolios or sign off on trade decisions.</li>
+      <li><strong style="color: var(--gold);">"Can you recover my lost crypto / hacked account?"</strong> — We are not a recovery service. Contact your exchange's support, then local authorities. Be wary of recovery scams.</li>
+      <li><strong style="color: var(--gold);">Tax or legal advice</strong> — Consult a licensed tax professional or lawyer in your jurisdiction.</li>
+      <li><strong style="color: var(--gold);">Shill requests for specific projects</strong> — We do not accept payment to cover specific assets. Sponsored content, where it exists, is clearly labeled within the article.</li>
+    </ul>
+    <p style="margin-top: 16px;">Questions in any of these categories will receive a polite redirect to our <a href="https://metricbase.org/disclaimer">Disclaimer</a> or to an appropriate qualified professional.</p>
+  </section>
+
+  <footer class="doc-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://metricbase.org/privacy">Privacy Policy</a></li>
+          <li><a href="https://metricbase.org/terms">Terms of Service</a></li>
+          <li><a href="https://metricbase.org/disclaimer">Disclaimer</a></li>
+          <li><a href="https://metricbase.org/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Verticals</h4>
+        <ul>
+          <li><a href="https://energy.metricbase.org">Energy Markets</a></li>
+          <li><a href="https://chain.metricbase.org">Crypto &amp; Tech</a></li>
+          <li><a href="https://saham.metricbase.org">Pasar Saham</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://x.com/MetricBase">X / Twitter</a></li>
+          <li><a href="https://instagram.com/MetricBase">Instagram</a></li>
+          <li><a href="https://tiktok.com/@MetricBase">TikTok</a></li>
+          <li><a href="https://subs.metricbase.org">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 MetricBase · Precision growth · No wasted motion</div>
+      <div>Contact · CONT-001 · v1.0</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
