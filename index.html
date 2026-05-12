@@ -763,6 +763,95 @@
   .fine-print a { color: var(--gray-3); border-bottom: 1px dotted var(--gray-4); }
   .fine-print a:hover { color: var(--gold); }
 
+  /* ── FEATURED BLOGS ───────────────────────────── */
+  #featured-blogs { padding: 80px 0; border-bottom: 1px solid var(--line); }
+
+  .featured-blogs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .featured-col {
+    background: var(--bg-card);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .featured-col-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .featured-col-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+  }
+
+  .featured-col-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--gray-3);
+    transition: color 0.15s;
+  }
+
+  .featured-col-link:hover { color: var(--gold); }
+
+  .featured-article {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background 0.18s;
+  }
+
+  .featured-article:last-child { border-bottom: none; }
+  .featured-article:hover { background: var(--bg-hover); }
+
+  .featured-article-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--gray-3);
+  }
+
+  .featured-article-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gray-1);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+    flex: 1;
+  }
+
+  .featured-article-arrow {
+    font-size: 12px;
+    color: var(--gold);
+    align-self: flex-end;
+    margin-top: 4px;
+    transition: transform 0.18s;
+  }
+
+  .featured-article:hover .featured-article-arrow { transform: translate(2px, -2px); }
+
+  @media (max-width: 900px) {
+    .featured-blogs-grid { grid-template-columns: 1fr; gap: 0; }
+  }
+
   /* ── FOOTER ────────────────────────────────────── */
   footer.doc-footer {
     border-top: 1px solid var(--line);
@@ -1262,6 +1351,88 @@
         </form>
         <p class="fine-print">By subscribing, you agree to our <a href="/privacy">Privacy Policy</a>.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURED BLOGS ─────────────────────────────────── -->
+<section id="featured-blogs">
+  <div class="container">
+    <span class="section-label reveal">From the Blogs</span>
+    <h2 class="section-title reveal reveal-d1">Start reading.<br>Pick a vertical.</h2>
+    <p class="section-sub reveal reveal-d2">Evergreen guides, market analysis, and technical explainers across all three domains — new to the site or looking for a specific topic.</p>
+
+    <div class="featured-blogs-grid reveal reveal-d3">
+
+      <!-- Energy column -->
+      <div class="featured-col">
+        <div class="featured-col-header">
+          <span class="featured-col-name">Energy Markets</span>
+          <a class="featured-col-link" href="https://energy.metricbase.org" target="_blank" rel="noopener">All posts ↗</a>
+        </div>
+        <a class="featured-article" href="https://energy.metricbase.org/2014/12/natural-gas-selling-price-is-determined.html" target="_blank" rel="noopener">
+          <span class="featured-article-tag">Natural Gas</span>
+          <div class="featured-article-title">How Natural Gas Selling Price Is Determined: A Complete Guide</div>
+          <span class="featured-article-arrow">↗</span>
+        </a>
+        <a class="featured-article" href="https://energy.metricbase.org/2026/05/crude-oil-lifting-explained-what-it-is.html" target="_blank" rel="noopener">
+          <span class="featured-article-tag">Crude Oil</span>
+          <div class="featured-article-title">Crude Oil Lifting Explained: What It Is and How It Works</div>
+          <span class="featured-article-arrow">↗</span>
+        </a>
+        <a class="featured-article" href="https://energy.metricbase.org/2026/05/indonesian-crude-price-icp-how.html" target="_blank" rel="noopener">
+          <span class="featured-article-tag">Benchmark</span>
+          <div class="featured-article-title">Indonesian Crude Price (ICP): How Indonesia's Oil Benchmark Is Set</div>
+          <span class="featured-article-arrow">↗</span>
+        </a>
+      </div>
+
+      <!-- Crypto column -->
+      <div class="featured-col">
+        <div class="featured-col-header">
+          <span class="featured-col-name">Crypto &amp; Tech</span>
+          <a class="featured-col-link" href="https://chain.metricbase.org" target="_blank" rel="noopener">All posts ↗</a>
+        </div>
+        <a class="featured-article" href="https://chain.metricbase.org/2026/05/solana-explained-how-fastest-layer-1.html" target="_blank" rel="noopener">
+          <span class="featured-article-tag">Blockchain</span>
+          <div class="featured-article-title">Solana Explained: How the Fastest Layer-1 Blockchain Actually Works</div>
+          <span class="featured-article-arrow">↗</span>
+        </a>
+        <a class="featured-article" href="https://chain.metricbase.org/2026/05/what-is-bonding-curve-how-pumpfun.html" target="_blank" rel="noopener">
+          <span class="featured-article-tag">DeFi Mechanics</span>
+          <div class="featured-article-title">What Is a Bonding Curve? How Pump.fun Prices Tokens Without an Order Book</div>
+          <span class="featured-article-arrow">↗</span>
+        </a>
+        <a class="featured-article" href="https://chain.metricbase.org/2026/05/the-memecoin-graveyard-why-95-of.html" target="_blank" rel="noopener">
+          <span class="featured-article-tag">Risk</span>
+          <div class="featured-article-title">The Memecoin Graveyard: Why 95% of Traders Lose Money</div>
+          <span class="featured-article-arrow">↗</span>
+        </a>
+      </div>
+
+      <!-- Saham column -->
+      <div class="featured-col">
+        <div class="featured-col-header">
+          <span class="featured-col-name">Pasar Saham</span>
+          <a class="featured-col-link" href="https://saham.metricbase.org" target="_blank" rel="noopener">All posts ↗</a>
+        </div>
+        <a class="featured-article" href="https://saham.metricbase.org/2020/09/cara-memulai-trading-investasi-saham.html" target="_blank" rel="noopener">
+          <span class="featured-article-tag">Pemula</span>
+          <div class="featured-article-title">Cara Memulai Trading / Investasi Saham</div>
+          <span class="featured-article-arrow">↗</span>
+        </a>
+        <a class="featured-article" href="https://saham.metricbase.org/2026/05/how-to-read-candlestick-charts-complete.html" target="_blank" rel="noopener">
+          <span class="featured-article-tag">Technical</span>
+          <div class="featured-article-title">How to Read Candlestick Charts: A Complete Guide for Stock Traders</div>
+          <span class="featured-article-arrow">↗</span>
+        </a>
+        <a class="featured-article" href="https://saham.metricbase.org/2020/09/cara-profit-konsisten-part-1-analisa.html" target="_blank" rel="noopener">
+          <span class="featured-article-tag">Analisis</span>
+          <div class="featured-article-title">Cara Profit Konsisten [Part #1] : Analisa</div>
+          <span class="featured-article-arrow">↗</span>
+        </a>
+      </div>
+
     </div>
   </div>
 </section>
