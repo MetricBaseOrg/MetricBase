@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About · MetricBase</title>
+<meta name="description" content="MetricBase is a data-first content brand covering energy markets, crypto, and Indonesian stocks. Learn who we are, how we work, and what we stand for.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://metricbase.org/about">
+<meta property="og:title" content="About · MetricBase">
+<meta property="og:description" content="Data-first content brand covering energy, crypto, and Indonesian equities. Precision growth. No wasted motion.">
+<meta property="og:url" content="https://metricbase.org/about">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://metricbase.org/assets/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "url": "https://metricbase.org/about",
+  "name": "About MetricBase",
+  "description": "MetricBase is a data-first content brand covering energy markets, crypto, and Indonesian stocks.",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://metricbase.org/#organization",
+    "name": "MetricBase",
+    "url": "https://metricbase.org/"
+  }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0A0A;
+    --bg-elev: #131313;
+    --bg-card: #161616;
+    --gold: #C9A84C;
+    --gold-bright: #E5C168;
+    --gold-dim: #8a7434;
+    --white: #ffffff;
+    --gray-1: #e5e5e5;
+    --gray-2: #999999;
+    --gray-3: #555555;
+    --gray-4: #2a2a2a;
+    --line: rgba(255,255,255,0.06);
+    --line-strong: rgba(201, 168, 76, 0.3);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--gray-1); font-family: 'Manrope', sans-serif; font-weight: 400; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  body { background: radial-gradient(ellipse 800px 600px at 20% 0%, rgba(201, 168, 76, 0.05), transparent 60%), radial-gradient(ellipse 600px 400px at 80% 100%, rgba(201, 168, 76, 0.03), transparent 70%), var(--bg); min-height: 100vh; padding: 32px 24px 80px; }
+  .grid-bg { position: fixed; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; z-index: 0; }
+  .container { max-width: 1240px; margin: 0 auto; position: relative; z-index: 1; }
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); transition: all 0.15s; }
+  a:hover { color: var(--gold-bright); border-bottom-style: solid; }
+
+  /* HEADER */
+  header.app-header { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; padding-bottom: 28px; border-bottom: 1px solid var(--line); margin-bottom: 56px; }
+  .brand-mark { width: 38px; height: 38px; border: 1.5px solid var(--gold); transform: rotate(45deg); display: grid; place-items: center; position: relative; }
+  .brand-mark::after { content: ''; position: absolute; inset: 6px; background: var(--gold); opacity: 0.4; }
+  .brand-text { display: flex; flex-direction: column; }
+  .brand-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: 0.02em; line-height: 1; color: var(--white); border: none; }
+  .brand-name:hover { color: var(--white); }
+  .brand-name .gold { color: var(--gold); }
+  .brand-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gray-2); margin-top: 4px; }
+  .nav-links { display: flex; gap: 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; }
+  .nav-links a { color: var(--gray-2); border: none; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a.active { color: var(--gold); }
+
+  /* HERO */
+  .doc-hero { margin-bottom: 64px; max-width: 880px; }
+  .doc-id { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.22em; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+  .doc-id::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  h1.doc-title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: clamp(40px, 6vw, 68px); line-height: 1.02; letter-spacing: -0.025em; margin-bottom: 22px; color: var(--white); }
+  h1.doc-title .accent { color: var(--gold); }
+  .doc-intro { color: var(--gray-1); font-size: 17px; line-height: 1.65; max-width: 640px; }
+
+  /* SECTION HEADINGS */
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gold); margin-bottom: 18px; display: block; font-weight: 500; }
+  h2.section-title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: clamp(22px, 3.5vw, 34px); letter-spacing: -0.02em; color: var(--white); line-height: 1.15; margin-bottom: 20px; }
+  .body-text { color: var(--gray-1); font-size: 15px; line-height: 1.75; margin-bottom: 16px; }
+  .body-text:last-child { margin-bottom: 0; }
+
+  /* MISSION BLOCK */
+  .mission-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: flex-start;
+    margin-bottom: 80px;
+  }
+
+  /* AUTHOR CARD */
+  .author-section { margin-bottom: 80px; }
+  .author-card {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-left: 2px solid var(--gold-dim);
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 36px;
+    align-items: flex-start;
+    position: relative;
+  }
+  .author-card::before { content: 'FOUNDER · EDITOR-IN-CHIEF'; position: absolute; top: -8px; left: 24px; background: var(--bg); padding: 0 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; color: var(--gold); font-weight: 500; }
+  .author-photo {
+    width: 120px;
+    height: 120px;
+    background: var(--bg-card);
+    border: 1px solid var(--line-strong);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .author-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .author-photo-placeholder { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); text-align: center; letter-spacing: 0.1em; padding: 12px; line-height: 1.5; }
+  .author-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.01em; color: var(--white); margin-bottom: 4px; }
+  .author-handle { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 18px; display: block; }
+  .author-bio { color: var(--gray-1); font-size: 14px; line-height: 1.7; margin-bottom: 16px; }
+  .author-credentials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .credential-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; padding: 5px 12px; border: 1px solid var(--gray-4); color: var(--gray-2); background: var(--bg); }
+  .author-links { display: flex; gap: 16px; margin-top: 20px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; }
+  .author-links a { color: var(--gray-2); border: none; }
+  .author-links a:hover { color: var(--gold); }
+
+  /* VERTICALS GRID */
+  .verticals-section { margin-bottom: 80px; }
+  .verticals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line-strong);
+    border: 1px solid var(--line-strong);
+    margin-top: 32px;
+  }
+  .vertical-tile {
+    background: var(--bg-card);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: background 0.15s;
+  }
+  .vertical-tile:hover { background: var(--bg-elev); }
+  .vertical-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 0.2em; margin-bottom: 12px; display: block; }
+  .vertical-name { font-weight: 800; font-size: 18px; color: var(--white); margin-bottom: 10px; letter-spacing: -0.01em; }
+  .vertical-domain { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold-dim); margin-bottom: 14px; display: block; }
+  .vertical-desc { font-size: 13px; color: var(--gray-2); line-height: 1.65; flex: 1; margin-bottom: 20px; }
+  .vertical-link { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gray-2); border: none; transition: color 0.15s; }
+  .vertical-tile:hover .vertical-link { color: var(--gold); }
+
+  /* PRINCIPLES GRID */
+  .principles-section { margin-bottom: 80px; }
+  .principles-panel {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    padding: 40px;
+    position: relative;
+  }
+  .principles-panel::before { content: 'EDITORIAL PRINCIPLES'; position: absolute; top: -8px; left: 24px; background: var(--bg); padding: 0 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; color: var(--gold); font-weight: 500; }
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    margin-top: 8px;
+  }
+  .principle { display: flex; flex-direction: column; gap: 8px; }
+  .principle-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.2em; }
+  .principle-title { font-weight: 700; font-size: 14px; color: var(--white); }
+  .principle-text { font-size: 13px; color: var(--gray-2); line-height: 1.65; }
+
+  /* AI DISCLOSURE */
+  .disclosure-card {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-left: 2px solid var(--gray-3);
+    padding: 28px 32px;
+    margin-bottom: 80px;
+    position: relative;
+  }
+  .disclosure-card::before { content: 'AI DISCLOSURE'; position: absolute; top: -8px; left: 24px; background: var(--bg); padding: 0 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; color: var(--gray-2); font-weight: 500; }
+  .disclosure-card p { color: var(--gray-1); font-size: 14px; line-height: 1.7; margin-bottom: 12px; }
+  .disclosure-card p:last-child { margin-bottom: 0; }
+  .disclosure-card strong { color: var(--white); font-weight: 600; }
+
+  /* FOOTER */
+  footer.doc-footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--line); }
+  .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+  .footer-col h4 { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 14px; font-weight: 500; }
+  .footer-col ul { list-style: none; padding: 0; }
+  .footer-col li { margin-bottom: 8px; }
+  .footer-col a { color: var(--gray-2); font-size: 13px; border: none; }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom { padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .mission-block { grid-template-columns: 1fr; gap: 40px; }
+    .author-card { grid-template-columns: 1fr; gap: 24px; }
+    .author-photo { width: 80px; height: 80px; }
+    .verticals-grid { grid-template-columns: 1fr; gap: 0; }
+    .nav-links { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    body { padding: 20px 14px 60px; }
+    h1.doc-title { font-size: 36px; }
+    .author-card { padding: 28px 22px; }
+    .principles-panel { padding: 28px 22px; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<div class="container">
+
+  <header class="app-header">
+    <a href="https://metricbase.org" style="display: flex; align-items: center; gap: 14px; border: none;">
+      <span class="brand-mark"></span>
+      <span class="brand-text">
+        <span class="brand-name">Metric<span class="gold">BASE</span></span>
+        <span class="brand-tag">Precision growth · No wasted motion</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="https://metricbase.org/journal">Journal</a>
+      <a href="https://metricbase.org/about" class="active">About</a>
+      <a href="https://metricbase.org/contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="doc-hero">
+    <div class="doc-id">DOCUMENT · ABOUT-001 · WHO WE ARE</div>
+    <h1 class="doc-title">Built to cut<br>through the <span class="accent">noise.</span></h1>
+    <p class="doc-intro">MetricBase is a data-first content brand covering energy markets, crypto, and Indonesian equities. Three verticals. One standard: original analysis, honest framing, no bags to shill.</p>
+  </section>
+
+  <!-- MISSION -->
+  <div class="mission-block">
+    <div>
+      <span class="section-label">Why MetricBase exists</span>
+      <h2 class="section-title">Most financial media is incentive-misaligned.</h2>
+      <p class="body-text">Sponsored token reviews. Paid "analysis" dressed as editorial. Traffic-optimised headlines that bury the actual signal. We started MetricBase because we got tired of reading it.</p>
+      <p class="body-text">The premise is simple: data-driven research published with honest framing should be the baseline, not the exception. That's what every article, chart, and weekly brief on this network is built around.</p>
+      <p class="body-text">We cover three verticals — energy, crypto, Indonesian equities — because each one intersects with the others in ways mainstream coverage misses. A crude oil supply shock touches BTC miners. An IDX sector rotation reflects global macro. We read across all three, so our readers don't have to.</p>
+    </div>
+    <div>
+      <span class="section-label">What we are not</span>
+      <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 8px;">
+        <div style="padding: 18px 22px; background: var(--bg-card); border: 1px solid var(--line);">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); margin-bottom: 8px;">Not a financial advisor</div>
+          <div style="font-size: 13px; color: var(--gray-2); line-height: 1.6;">Nothing we publish is personal investment advice. See our <a href="https://metricbase.org/disclaimer">Disclaimer</a>.</div>
+        </div>
+        <div style="padding: 18px 22px; background: var(--bg-card); border: 1px solid var(--line);">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); margin-bottom: 8px;">Not pay-to-play</div>
+          <div style="font-size: 13px; color: var(--gray-2); line-height: 1.6;">We do not accept payment to cover specific assets. Sponsored content, where it exists, is clearly labeled inside the article.</div>
+        </div>
+        <div style="padding: 18px 22px; background: var(--bg-card); border: 1px solid var(--line);">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); margin-bottom: 8px;">Not a trading signal service</div>
+          <div style="font-size: 13px; color: var(--gray-2); line-height: 1.6;">We publish analysis and context. How you trade on it is your decision, your risk.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOUNDER -->
+  <section class="author-section">
+    <span class="section-label">Behind the brand</span>
+    <div class="author-card">
+      <div class="author-photo">
+        <div class="author-photo-placeholder">PHOTO<br>PENDING</div>
+      </div>
+      <div>
+        <div class="author-name">Arief Dermawan</div>
+        <span class="author-handle">@MetricBase · Founder &amp; Editor-in-Chief</span>
+        <p class="author-bio">Indonesian-based analyst and independent researcher with a background spanning energy commodity markets and digital asset infrastructure. Founded MetricBase to build the kind of cross-vertical financial content that didn't exist in the Indonesian language market — and to publish it in English for readers who think across borders.</p>
+        <p class="author-bio">Every article published under the MetricBase banner is reviewed, edited, and either authored or approved by a named human. The mascot is Bun. The work is real.</p>
+        <div class="author-credentials">
+          <span class="credential-tag">Energy Markets</span>
+          <span class="credential-tag">Crypto / DeFi</span>
+          <span class="credential-tag">IDX Equities</span>
+          <span class="credential-tag">Macro Analysis</span>
+          <span class="credential-tag">Data Journalism</span>
+        </div>
+        <div class="author-links">
+          <a href="https://x.com/MetricBase" target="_blank" rel="noopener">X / Twitter ↗</a>
+          <a href="https://metricbase.org/contact">Contact ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERTICALS -->
+  <section class="verticals-section">
+    <span class="section-label">What we cover</span>
+    <h2 class="section-title">Three verticals.<br>One standard.</h2>
+    <div class="verticals-grid">
+      <div class="vertical-tile">
+        <span class="vertical-num">BLOG 01 — ENERGY</span>
+        <div class="vertical-name">Energy Markets</div>
+        <span class="vertical-domain">energy.metricbase.org</span>
+        <p class="vertical-desc">Oil, gas, and global energy flows. Market structure, EIA and OPEC data, positioning shifts, and the macro forces driving commodity prices. The original vertical — the one that started the brand.</p>
+        <a href="https://energy.metricbase.org" class="vertical-link" target="_blank" rel="noopener">Visit ↗</a>
+      </div>
+      <div class="vertical-tile">
+        <span class="vertical-num">BLOG 02 — CRYPTO</span>
+        <div class="vertical-name">Crypto &amp; Technology</div>
+        <span class="vertical-domain">chain.metricbase.org</span>
+        <p class="vertical-desc">Bitcoin, Ethereum, DeFi, and the on-chain signals that precede price action. Derivatives data, flow analysis, and blockchain infrastructure coverage without the hype.</p>
+        <a href="https://chain.metricbase.org" class="vertical-link" target="_blank" rel="noopener">Visit ↗</a>
+      </div>
+      <div class="vertical-tile">
+        <span class="vertical-num">BLOG 03 — SAHAM</span>
+        <div class="vertical-name">Pasar Saham Indonesia</div>
+        <span class="vertical-domain">saham.metricbase.org</span>
+        <p class="vertical-desc">IDX equities, sector rotation, and macro positioning for Indonesian markets. Data-driven analysis for traders and investors following the local market.</p>
+        <a href="https://saham.metricbase.org" class="vertical-link" target="_blank" rel="noopener">Visit ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL PRINCIPLES -->
+  <section class="principles-section">
+    <div class="principles-panel">
+      <div class="principles-grid">
+        <div class="principle">
+          <span class="principle-num">01</span>
+          <span class="principle-title">Data before narrative</span>
+          <span class="principle-text">Every claim is anchored to publicly verifiable data — EIA, OPEC, on-chain explorers, exchange APIs, or official IDX filings. We cite our sources. Always.</span>
+        </div>
+        <div class="principle">
+          <span class="principle-num">02</span>
+          <span class="principle-title">Risk is always disclosed</span>
+          <span class="principle-text">We cover YMYL topics. Every trading-related article carries a prominent risk disclaimer, not buried in the footer, before the article body.</span>
+        </div>
+        <div class="principle">
+          <span class="principle-num">03</span>
+          <span class="principle-title">Original work only</span>
+          <span class="principle-text">Republished press releases, summarised Twitter threads, and "hot take" rewrites are not MetricBase content. Every piece adds something that isn't already out there.</span>
+        </div>
+        <div class="principle">
+          <span class="principle-num">04</span>
+          <span class="principle-title">Corrections are public</span>
+          <span class="principle-text">If we publish something wrong, we correct it with a visible note on the article. No quiet edits. No deletions to bury errors. The record is the record.</span>
+        </div>
+        <div class="principle">
+          <span class="principle-num">05</span>
+          <span class="principle-title">No bags to shill</span>
+          <span class="principle-text">Authors disclose any position in covered assets. No payment to feature specific tokens, stocks, or projects. If coverage feels promotional, send us a correction request.</span>
+        </div>
+        <div class="principle">
+          <span class="principle-num">06</span>
+          <span class="principle-title">Named accountability</span>
+          <span class="principle-text">Every article carries a named byline. The author is reachable. Anonymous commentary dressed as analysis is not how we operate.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI DISCLOSURE -->
+  <div class="disclosure-card">
+    <p><strong>On the use of AI tools:</strong> Articles on MetricBase may be drafted with the assistance of AI writing tools. Every published piece is reviewed, edited, fact-checked against primary sources, and finalized by a named human author before publication. AI-generated text that we cannot verify is not published.</p>
+    <p>We treat AI as a drafting and research assistant, not as an author. The analysis, the sourcing decisions, and the editorial judgment on any given article are human. If you spot a factual error — AI-related or otherwise — use the <a href="https://metricbase.org/contact">editorial correction channel</a> and we will investigate.</p>
+  </div>
+
+  <footer class="doc-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>MetricBase</h4>
+        <ul>
+          <li><a href="https://metricbase.org">Portal</a></li>
+          <li><a href="https://metricbase.org/journal">Journal</a></li>
+          <li><a href="https://metricbase.org/about">About</a></li>
+          <li><a href="https://metricbase.org/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Verticals</h4>
+        <ul>
+          <li><a href="https://energy.metricbase.org">Energy Markets</a></li>
+          <li><a href="https://chain.metricbase.org">Crypto &amp; Tech</a></li>
+          <li><a href="https://saham.metricbase.org">Pasar Saham</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://metricbase.org/privacy">Privacy Policy</a></li>
+          <li><a href="https://metricbase.org/terms">Terms of Service</a></li>
+          <li><a href="https://metricbase.org/disclaimer">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 MetricBase · Precision growth · No wasted motion</div>
+      <div>About · ABOUT-001 · v1.0</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
