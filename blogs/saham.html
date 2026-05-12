@@ -62,10 +62,17 @@
     "url": "<data:blog.url/>",
     "image": "<b:if cond='data:blog.postImageThumbnailUrl'><data:blog.postImageThumbnailUrl/><b:else/>https://metricbase.org/assets/MetricBase.png</b:if>",
     "author": {
-      "@type": "Organization",
-      "@id": "https://metricbase.org/#organization",
-      "name": "MetricBase",
-      "url": "https://metricbase.org/"
+      "@type": "Person",
+      "@id": "https://metricbase.org/about#bun",
+      "name": "Bun",
+      "url": "https://metricbase.org/about",
+      "jobTitle": "Lead Analyst",
+      "image": "https://raw.githubusercontent.com/MetricBaseOrg/MetricBase/refs/heads/main/assets/pfp.png",
+      "worksFor": {
+        "@type": "Organization",
+        "@id": "https://metricbase.org/#organization",
+        "name": "MetricBase"
+      }
     },
     "publisher": {
       "@type": "Organization",
@@ -1780,6 +1787,72 @@
 
     /* Post hover: flat instead of lift */
     .mb-post-card:hover { transform: none; border-color: var(--border-str); }
+
+    /* ─── AUTHOR BYLINE ─────────────────────────────── */
+    .mb-byline {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 0 0;
+      margin-top: 12px;
+    }
+    .mb-byline-avatar {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border-str);
+      flex-shrink: 0;
+      overflow: hidden;
+      background: var(--mid);
+    }
+    .mb-byline-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none !important;
+      margin: 0 !important;
+    }
+    .mb-byline-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    .mb-byline-name a { color: var(--white); border: none; }
+    .mb-byline-name a:hover { color: var(--gold); }
+    .mb-byline-title {
+      font-family: var(--mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--subtle);
+      margin-top: 3px;
+    }
+
+    /* ─── RISK DISCLAIMER ───────────────────────────── */
+    .mb-risk-disclaimer {
+      border: 1px solid rgba(201,168,76,0.2);
+      background: rgba(201,168,76,0.04);
+      padding: 14px 18px;
+      margin: 32px 0;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .mb-risk-disclaimer-icon {
+      flex-shrink: 0;
+      color: var(--gold);
+      font-size: 15px;
+      margin-top: 1px;
+    }
+    .mb-risk-disclaimer p {
+      font-size: 12px !important;
+      color: var(--muted) !important;
+      line-height: 1.6 !important;
+      margin: 0 !important;
+    }
+    .mb-risk-disclaimer strong { color: var(--subtle); }
+    .mb-risk-disclaimer a { color: var(--gold); border-bottom: 1px solid rgba(201,168,76,0.3); }
   ]]></b:skin>
 
 </head>
@@ -2062,8 +2135,15 @@
                         <b:if cond='data:blog.pageType == &quot;item&quot;'>
                           <div class='mb-post-meta'>
                             <span class='meta-date'><data:post.dateHeader/></span>
-                            <span>&#8212;</span>
-                            <span><data:post.author.name/></span>
+                          </div>
+                          <div class='mb-byline'>
+                            <div class='mb-byline-avatar'>
+                              <img alt='Bun — Lead Analyst, MetricBase' loading='lazy' src='https://raw.githubusercontent.com/MetricBaseOrg/MetricBase/refs/heads/main/assets/pfp.png'/>
+                            </div>
+                            <div>
+                              <div class='mb-byline-name'><a href='https://metricbase.org/about'>Bun</a></div>
+                              <div class='mb-byline-title'>Lead Analyst · MetricBase</div>
+                            </div>
                           </div>
                         </b:if>
 
@@ -2075,6 +2155,13 @@
                             <img alt='' expr:src='data:post.featuredImage' loading='eager'/>
                           </div>
                         </b:if>
+                      </b:if>
+
+                      <b:if cond='data:blog.pageType == &quot;item&quot;'>
+                        <div class='mb-risk-disclaimer'>
+                          <span class='mb-risk-disclaimer-icon'>&#9888;</span>
+                          <p><strong>Financial Disclaimer:</strong> Content on MetricBase is for informational purposes only and does not constitute investment or trading advice. Stock markets involve risk. Always conduct your own research before making financial decisions. See our full <a href='https://metricbase.org/disclaimer'>Disclaimer</a> and <a href='https://metricbase.org/editorial-standards'>Editorial Standards</a>.</p>
+                        </div>
                       </b:if>
 
                       <div class='mb-post-body'>
