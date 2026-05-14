@@ -17,7 +17,8 @@
   <!-- Fonts -->
   <link rel='preconnect' href='https://fonts.googleapis.com'/>
   <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin='crossorigin'/>
-  <link href='https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap' rel='stylesheet'/>
+  <link rel='preload' as='style' href='https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap' onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href='https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap' rel='stylesheet'/></noscript>
 
   <!-- Favicon -->
   <link href='https://raw.githubusercontent.com/MetricBaseOrg/MetricBase/refs/heads/main/assets/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -38,7 +39,7 @@
   <b:if cond='data:blog.postImageThumbnailUrl'>
     <meta expr:content='data:blog.postImageThumbnailUrl.replace("/s72-c/","/s1200/").replace("/s72/","/s1200/").replace("/s400/","/s1200/")' property='og:image'/>
   <b:else/>
-    <meta content='https://metricbase.org/assets/MetricBase.png' property='og:image'/>
+    <meta content='https://metricbase.org/assets/MetricBase.webp' property='og:image'/>
   </b:if>
   <!-- Twitter Card -->
   <meta content='summary_large_image' name='twitter:card'/>
@@ -48,7 +49,7 @@
   <b:if cond='data:blog.postImageThumbnailUrl'>
     <meta expr:content='data:blog.postImageThumbnailUrl.replace("/s72-c/","/s1200/").replace("/s72/","/s1200/").replace("/s400/","/s1200/")' name='twitter:image'/>
   <b:else/>
-    <meta content='https://metricbase.org/assets/MetricBase.png' name='twitter:image'/>
+    <meta content='https://metricbase.org/assets/MetricBase.webp' name='twitter:image'/>
   </b:if>
 
   <!-- Schema.org -->
@@ -60,14 +61,14 @@
     "headline": "<data:blog.pageTitle/>",
     "description": "<data:blog.metaDescription/>",
     "url": "<data:blog.url/>",
-    "image": "<b:if cond='data:blog.postImageThumbnailUrl'><data:blog.postImageThumbnailUrl/><b:else/>https://metricbase.org/assets/MetricBase.png</b:if>",
+    "image": "<b:if cond='data:blog.postImageThumbnailUrl'><data:blog.postImageThumbnailUrl/><b:else/>https://metricbase.org/assets/MetricBase.webp</b:if>",
     "author": {
       "@type": "Person",
       "@id": "https://metricbase.org/about#bun",
       "name": "Bun",
       "url": "https://metricbase.org/about",
       "jobTitle": "Lead Analyst",
-      "image": "https://raw.githubusercontent.com/MetricBaseOrg/MetricBase/refs/heads/main/assets/pfp.png",
+      "image": "https://raw.githubusercontent.com/MetricBaseOrg/MetricBase/refs/heads/main/assets/pfp.webp",
       "worksFor": {
         "@type": "Organization",
         "@id": "https://metricbase.org/#organization",
@@ -81,7 +82,7 @@
       "url": "https://metricbase.org/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://metricbase.org/assets/MetricBase.png"
+        "url": "https://metricbase.org/assets/MetricBase.webp"
       }
     },
     "mainEntityOfPage": {
@@ -105,7 +106,7 @@
       "url": "https://metricbase.org/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://metricbase.org/assets/MetricBase.png"
+        "url": "https://metricbase.org/assets/MetricBase.webp"
       }
     }
   }
@@ -721,11 +722,15 @@
       border-radius: 4px;
       overflow: hidden;
       border: 1px solid var(--border);
+      aspect-ratio: 16 / 9;
+      background: var(--mid);
     }
 
     .mb-post-hero img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     /* ─── POST BODY ──────────────────────────────────── */
@@ -1244,6 +1249,7 @@
     .mb-ad-unit {
       width: 100%;
       margin: 28px 0;
+      min-height: 280px;
     }
 
     .mb-ad-label {
@@ -2138,7 +2144,7 @@
                           </div>
                           <div class='mb-byline'>
                             <div class='mb-byline-avatar'>
-                              <img alt='Bun — Lead Analyst, MetricBase' loading='lazy' src='https://raw.githubusercontent.com/MetricBaseOrg/MetricBase/refs/heads/main/assets/pfp.png'/>
+                              <img alt='Bun — Lead Analyst, MetricBase' loading='lazy' src='https://raw.githubusercontent.com/MetricBaseOrg/MetricBase/refs/heads/main/assets/pfp.webp'/>
                             </div>
                             <div>
                               <div class='mb-byline-name'><a href='https://metricbase.org/about'>Bun</a></div>
@@ -2152,7 +2158,7 @@
                       <b:if cond='data:post.featuredImage'>
                         <b:if cond='data:blog.pageType == &quot;item&quot;'>
                           <div class='mb-post-hero'>
-                            <img alt='' expr:src='data:post.featuredImage' loading='eager'/>
+                            <img alt='' decoding='async' expr:src='data:post.featuredImage' fetchpriority='high' loading='eager'/>
                           </div>
                         </b:if>
                       </b:if>
