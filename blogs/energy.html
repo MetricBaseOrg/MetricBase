@@ -2947,6 +2947,15 @@
       }
     });
 
+    /* ── Drawer (overlay / close buttons call this) ──── */
+    function closeDrawer() {
+      var drawer = document.getElementById('mb-drawer');
+      var overlay = document.getElementById('mb-drawer-overlay');
+      if (drawer) drawer.classList.remove('open');
+      if (overlay) overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
     /* ── Footer accordion (mobile) ───────────────────── */
     function toggleFooterCol(head) {
       if (window.innerWidth > 640) return;
@@ -2992,13 +3001,15 @@
     /* ── DOMContentLoaded ─────────────────────────────── */
     document.addEventListener('DOMContentLoaded', function() {
 
-      /* Hamburger button id for toggling active class */
-      var hamburgerBtn = document.querySelector('.mb-hamburger');
-      if (hamburgerBtn) hamburgerBtn.id = 'mb-hamburger-btn';
-
-      /* Close drawer on Escape key */
+      /* Escape: close drawer (if open) and mobile nav — keep mb-ham-btn id in sync with toggleMobileNav */
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeDrawer();
+        if (e.key === 'Escape') {
+          closeDrawer();
+          var nav = document.getElementById('mb-nav-mobile');
+          var btn = document.getElementById('mb-ham-btn');
+          if (nav) nav.classList.remove('open');
+          if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded', 'false'); }
+        }
       });
 
       /* Active nav link highlight */
