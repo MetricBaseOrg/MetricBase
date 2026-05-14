@@ -528,13 +528,31 @@
 
     .mb-post-meta {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 16px;
-      font-size: 12px;
-      color: var(--muted);
+      font-size: 13px;
+      color: var(--subtle);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 20px;
     }
 
-    .mb-post-meta .meta-date { color: var(--subtle); }
+    .mb-post-meta .meta-date {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--subtle);
+      font-family: var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 11px;
+    }
+
+    .mb-post-meta .meta-date strong {
+      color: var(--light);
+      font-weight: 700;
+    }
 
     .mb-read-more {
       font-size: 12px;
@@ -1749,28 +1767,31 @@
 
     /* ─── RISK DISCLAIMER ───────────────────────────── */
     .mb-risk-disclaimer {
-      border: 1px solid rgba(201,168,76,0.2);
-      background: rgba(201,168,76,0.04);
-      padding: 14px 18px;
+      border: 2px solid rgba(232,90,79,0.5);
+      background: rgba(232,90,79,0.08);
+      padding: 20px 24px;
       margin: 32px 0;
       display: flex;
-      gap: 12px;
+      gap: 16px;
       align-items: flex-start;
+      border-radius: 0;
     }
     .mb-risk-disclaimer-icon {
       flex-shrink: 0;
-      color: var(--gold);
-      font-size: 15px;
-      margin-top: 1px;
+      color: #e85a4f;
+      font-size: 20px;
+      margin-top: 2px;
+      font-weight: bold;
     }
     .mb-risk-disclaimer p {
-      font-size: 12px !important;
-      color: var(--muted) !important;
-      line-height: 1.6 !important;
+      font-size: 13px !important;
+      color: #e5e5e5 !important;
+      line-height: 1.65 !important;
       margin: 0 !important;
     }
-    .mb-risk-disclaimer strong { color: var(--subtle); }
-    .mb-risk-disclaimer a { color: var(--gold); border-bottom: 1px solid rgba(201,168,76,0.3); }
+    .mb-risk-disclaimer strong { color: #ffffff; font-weight: 700; }
+    .mb-risk-disclaimer a { color: #E5C168; border-bottom: 1px solid rgba(229,193,104,0.4); }
+    .mb-risk-disclaimer a:hover { border-bottom-color: rgba(229,193,104,1); }
   ]]></b:skin>
 
 </head>
@@ -2066,14 +2087,17 @@
 }
                           </script>
                           <div class='mb-post-meta'>
-                            <span class='meta-date'><data:post.dateHeader/></span>
+                            <span class='meta-date'><strong>Published</strong> <data:post.dateHeader/></span>
+                            <b:if cond='data:post.lastModified'>
+                              <span class='meta-date'><strong>Updated</strong> <data:post.lastModified format='MMM d, yyyy'/></span>
+                            </b:if>
                           </div>
                           <div class='mb-byline'>
                             <div class='mb-byline-avatar'>
                               <img alt='Bun — Lead Analyst, MetricBase' loading='lazy' src='https://raw.githubusercontent.com/MetricBaseOrg/MetricBase/refs/heads/main/assets/pfp.webp'/>
                             </div>
                             <div>
-                              <div class='mb-byline-name'><a href='https://metricbase.org/about'>Bun</a></div>
+                              <div class='mb-byline-name'><a href='https://metricbase.org/authors/bun'>Bun</a></div>
                               <div class='mb-byline-title'>Lead Analyst · MetricBase</div>
                             </div>
                           </div>
@@ -2091,8 +2115,11 @@
 
                       <b:if cond='data:blog.pageType == &quot;item&quot;'>
                         <div class='mb-risk-disclaimer'>
-                          <span class='mb-risk-disclaimer-icon'>&#9888;</span>
-                          <p><strong>Financial Disclaimer:</strong> Content on MetricBase is for informational purposes only and does not constitute investment or trading advice. Stock markets involve risk. Always conduct your own research before making financial decisions. See our full <a href='https://metricbase.org/disclaimer'>Disclaimer</a> and <a href='https://metricbase.org/editorial-standards'>Editorial Standards</a>.</p>
+                          <span class='mb-risk-disclaimer-icon'>⚠️</span>
+                          <div>
+                            <p><strong>RISK WARNING — EDUCATIONAL CONTENT ONLY</strong></p>
+                            <p>This article is educational content, not financial advice. Stock trading involves substantial risk of loss, including the potential loss of your entire investment. Past performance does not guarantee future results. Always conduct your own independent research and consult a licensed financial advisor before making trading decisions. MetricBase and its authors are not responsible for any losses incurred from trading or investment decisions based on this content. See our full <a href='https://metricbase.org/disclaimer'>Disclaimer</a> for details.</p>
+                          </div>
                         </div>
                       </b:if>
 

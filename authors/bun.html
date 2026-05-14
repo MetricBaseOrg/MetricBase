@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bun · MetricBase</title>
+<meta name="description" content="Bun is a Lead Analyst at MetricBase covering energy markets, crypto, and Indonesian equities. Read all articles and research by Bun.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://metricbase.org/authors/bun">
+<meta property="og:title" content="Bun · MetricBase">
+<meta property="og:description" content="Lead Analyst at MetricBase. Covering energy, crypto, and Indonesian equities with original data and honest framing.">
+<meta property="og:url" content="https://metricbase.org/authors/bun">
+<meta property="og:type" content="profile">
+<meta property="og:image" content="https://raw.githubusercontent.com/MetricBaseOrg/MetricBase/refs/heads/main/assets/pfp.webp">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://metricbase.org/authors/bun#person",
+  "name": "Bun",
+  "url": "https://metricbase.org/authors/bun",
+  "jobTitle": "Lead Analyst",
+  "image": "https://raw.githubusercontent.com/MetricBaseOrg/MetricBase/refs/heads/main/assets/pfp.webp",
+  "worksFor": {
+    "@type": "Organization",
+    "@id": "https://metricbase.org/#organization",
+    "name": "MetricBase",
+    "url": "https://metricbase.org/"
+  },
+  "description": "Lead Analyst at MetricBase covering energy markets, cryptocurrency, and Indonesian equities."
+}
+</script>
+<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+<style>
+  :root {
+    --bg: #0A0A0A;
+    --bg-elev: #131313;
+    --bg-card: #161616;
+    --gold: #C9A84C;
+    --gold-bright: #E5C168;
+    --gold-dim: #8a7434;
+    --white: #ffffff;
+    --gray-1: #e5e5e5;
+    --gray-2: #999999;
+    --gray-3: #555555;
+    --gray-4: #2a2a2a;
+    --bg-hover: #1c1c1c;
+    --line: rgba(255,255,255,0.06);
+    --line-strong: rgba(201, 168, 76, 0.3);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--gray-1); font-family: 'Manrope', sans-serif; font-weight: 400; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  body { background: radial-gradient(ellipse 800px 600px at 20% 0%, rgba(201, 168, 76, 0.05), transparent 60%), radial-gradient(ellipse 600px 400px at 80% 100%, rgba(201, 168, 76, 0.03), transparent 70%), var(--bg); min-height: 100vh; padding: 32px 24px 80px; }
+  .grid-bg { position: fixed; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; z-index: 0; }
+  .container { max-width: 1240px; margin: 0 auto; position: relative; z-index: 1; }
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); transition: all 0.15s; }
+  a:hover { color: var(--gold-bright); border-bottom-style: solid; }
+
+  /* HEADER */
+  header.app-header { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; padding-bottom: 28px; border-bottom: 1px solid var(--line); margin-bottom: 56px; }
+  .brand-mark { width: 38px; height: 38px; border: 1.5px solid var(--gold); transform: rotate(45deg); display: grid; place-items: center; position: relative; }
+  .brand-mark::after { content: ''; position: absolute; inset: 6px; background: var(--gold); opacity: 0.4; }
+  .brand-text { display: flex; flex-direction: column; }
+  .brand-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: 0.02em; line-height: 1; color: var(--white); border: none; }
+  .brand-name:hover { color: var(--white); }
+  .brand-name .gold { color: var(--gold); }
+  .brand-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gray-2); margin-top: 4px; }
+  .nav-links { display: flex; gap: 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; }
+  .nav-links a { color: var(--gray-2); border: none; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; -webkit-tap-highlight-color: transparent; }
+  .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--gray-1); transition: 0.22s; transform-origin: center; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-mobile { display: none; flex-direction: column; margin: 0 -24px; border-top: 1px solid var(--line); background: var(--bg-elev); position: relative; z-index: 9; }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gray-2); padding: 14px 24px; border-bottom: 1px solid var(--line); transition: color 0.15s; border-right: none; border-left: none; }
+  .nav-mobile a:hover { color: var(--gold); }
+  .nav-mobile a:last-child { border-bottom: none; }
+
+  /* AUTHOR HERO */
+  .author-hero { margin-bottom: 64px; max-width: 880px; }
+  .author-breadcrumb { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 20px; }
+  .author-breadcrumb a { color: var(--gray-2); border: none; font-size: 11px; }
+  .author-breadcrumb a:hover { color: var(--gold); }
+  .author-profile { display: grid; grid-template-columns: 160px 1fr; gap: 48px; align-items: flex-start; margin-bottom: 64px; }
+  .author-photo-large { width: 160px; height: 160px; background: var(--bg-card); border: 2px solid var(--line-strong); display: grid; place-items: center; overflow: hidden; flex-shrink: 0; }
+  .author-photo-large img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .author-info h1 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: clamp(36px, 5vw, 56px); line-height: 1.1; letter-spacing: -0.02em; color: var(--white); margin-bottom: 12px; }
+  .author-title { font-family: 'JetBrains Mono', monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 24px; font-weight: 500; }
+  .author-bio-text { color: var(--gray-1); font-size: 16px; line-height: 1.75; margin-bottom: 24px; }
+  .author-credentials { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
+  .credential-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; padding: 8px 16px; border: 1px solid var(--line); color: var(--gold); background: var(--bg-card); }
+  .author-social { display: flex; gap: 20px; }
+  .author-social a { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gray-2); border: none; }
+  .author-social a:hover { color: var(--gold); }
+
+  /* ARTICLES SECTION */
+  .articles-section { margin-bottom: 80px; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gold); margin-bottom: 18px; display: block; font-weight: 500; }
+  h2.section-title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: clamp(22px, 3.5vw, 34px); letter-spacing: -0.02em; color: var(--white); line-height: 1.15; margin-bottom: 32px; }
+
+  .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+  .article-card { background: var(--bg-elev); border: 1px solid var(--line); padding: 0; overflow: hidden; transition: border-color 0.15s, background 0.15s; }
+  .article-card:hover { background: var(--bg-card); border-color: var(--line-strong); }
+  .article-thumb { width: 100%; height: 180px; background: var(--bg-card); overflow: hidden; display: block; }
+  .article-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .article-content { padding: 24px; }
+  .article-badge { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 12px; display: block; }
+  .article-title { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 18px; line-height: 1.4; color: var(--white); margin-bottom: 12px; }
+  .article-date { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-3); letter-spacing: 0.08em; }
+  .article-card a { color: var(--gold); border: none; }
+  .article-card a:hover { color: var(--gold-bright); }
+
+  .no-articles { padding: 40px; text-align: center; color: var(--gray-2); background: var(--bg-elev); border: 1px solid var(--line); }
+
+  /* FOOTER */
+  footer.doc-footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--line); }
+  .footer-bottom { padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .author-profile { grid-template-columns: 1fr; gap: 32px; }
+    .author-photo-large { width: 120px; height: 120px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .articles-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    body { padding: 20px 14px 60px; }
+    .author-info h1 { font-size: 32px; }
+    .article-content { padding: 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<div class="container">
+
+  <header class="app-header">
+    <a href="https://metricbase.org" style="display: flex; align-items: center; gap: 14px; border: none;">
+      <span class="brand-mark"></span>
+      <span class="brand-text">
+        <span class="brand-name">Metric<span class="gold">BASE</span></span>
+        <span class="brand-tag">Precision growth · No wasted motion</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="https://metricbase.org/journal">Journal</a>
+      <a href="https://metricbase.org/about">About</a>
+      <a href="https://metricbase.org/contact">Contact</a>
+    </nav>
+    <button type="button" class="nav-hamburger" id="nav-hamburger-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="https://metricbase.org/journal">Journal</a>
+    <a href="https://metricbase.org/about">About</a>
+    <a href="https://metricbase.org/contact">Contact</a>
+  </nav>
+
+  <section class="author-hero">
+    <div class="author-breadcrumb">
+      <a href="https://metricbase.org/about">About</a> <span style="color: var(--gray-2);">→</span> Author Profile
+    </div>
+
+    <div class="author-profile">
+      <div class="author-photo-large">
+        <img src="../assets/pfp.webp" alt="Bun — MetricBase Lead Analyst" loading="eager" decoding="async">
+      </div>
+      <div class="author-info">
+        <h1>Bun</h1>
+        <div class="author-title">Lead Analyst · MetricBase</div>
+        <p class="author-bio-text">MetricBase's lead analyst and resident chibi penguin mascot. Bun covers energy commodity markets, digital assets, and Indonesian equities with original data analysis and honest framing.</p>
+        <p class="author-bio-text">Built to represent the emotional retail trader — always watching the chart, always one data point away from recalibrating the entire thesis. Every brief, research piece, and article published under the Bun byline is grounded in independent research and transparent methodology.</p>
+
+        <div class="author-credentials">
+          <span class="credential-tag">Energy Markets</span>
+          <span class="credential-tag">Crypto / DeFi</span>
+          <span class="credential-tag">IDX Equities</span>
+          <span class="credential-tag">Macro Analysis</span>
+          <span class="credential-tag">Data Journalism</span>
+        </div>
+
+        <div class="author-social">
+          <a href="https://x.com/MetricBase" target="_blank" rel="noopener">X / Twitter ↗</a>
+          <a href="https://metricbase.org/about">About MetricBase ↗</a>
+          <a href="https://metricbase.org/contact">Contact ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLES ACROSS ALL VERTICALS -->
+  <section class="articles-section">
+    <span class="section-label">Articles by Bun</span>
+    <h2 class="section-title">All Research & Analysis</h2>
+    <p style="color: var(--gray-2); margin-bottom: 32px;">Select articles and analysis published across MetricBase's three verticals. For the full archive, visit the individual blogs.</p>
+
+    <div style="display: grid; gap: 64px; margin-bottom: 32px;">
+      <!-- ENERGY VERTICAL -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold);">VERTICAL 01</span>
+          <h3 style="font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 20px; color: var(--white); margin: 0;">Energy Markets</h3>
+        </div>
+        <p style="color: var(--gray-2); margin-bottom: 24px; font-size: 14px;">Oil, gas, commodity flows, and the macro forces driving energy prices.</p>
+        <div class="articles-grid" style="margin-bottom: 24px;">
+          <!-- Articles will load from energy.metricbase.org -->
+        </div>
+        <a href="https://energy.metricbase.org" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; display: inline-block; padding: 12px 20px; border: 1px solid var(--line); color: var(--gray-2); border-bottom: none;">View all energy articles ↗</a>
+      </div>
+
+      <!-- CRYPTO VERTICAL -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold);">VERTICAL 02</span>
+          <h3 style="font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 20px; color: var(--white); margin: 0;">Crypto & Tech</h3>
+        </div>
+        <p style="color: var(--gray-2); margin-bottom: 24px; font-size: 14px;">Bitcoin, Ethereum, DeFi, on-chain signals, and blockchain infrastructure.</p>
+        <div class="articles-grid" style="margin-bottom: 24px;">
+          <!-- Articles will load from chain.metricbase.org -->
+        </div>
+        <a href="https://chain.metricbase.org" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; display: inline-block; padding: 12px 20px; border: 1px solid var(--line); color: var(--gray-2); border-bottom: none;">View all crypto articles ↗</a>
+      </div>
+
+      <!-- STOCKS VERTICAL -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold);">VERTICAL 03</span>
+          <h3 style="font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 20px; color: var(--white); margin: 0;">Pasar Saham</h3>
+        </div>
+        <p style="color: var(--gray-2); margin-bottom: 24px; font-size: 14px;">Indonesian stocks, IDX equities, and regional market macro analysis.</p>
+        <div class="articles-grid" style="margin-bottom: 24px;">
+          <!-- Articles will load from saham.metricbase.org -->
+        </div>
+        <a href="https://saham.metricbase.org" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; display: inline-block; padding: 12px 20px; border: 1px solid var(--line); color: var(--gray-2); border-bottom: none;">View all saham articles ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="doc-footer">
+    <div class="footer-bottom">
+      <div>© 2024–2026 MetricBase. All rights reserved.</div>
+      <div><a href="https://metricbase.org/privacy" style="color: var(--gray-3); border: none;">Privacy</a> · <a href="https://metricbase.org/disclaimer" style="color: var(--gray-3); border: none;">Disclaimer</a> · <a href="https://metricbase.org/editorial-standards" style="color: var(--gray-3); border: none;">Editorial Standards</a></div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+function toggleMobileNav() {
+  const btn = document.getElementById('nav-hamburger-btn');
+  const nav = document.getElementById('nav-mobile');
+  btn.classList.toggle('open');
+  nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', btn.classList.contains('open'));
+}
+</script>
+
+</body>
+</html>
