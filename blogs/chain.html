@@ -701,6 +701,33 @@
 
     .mb-pagination a:hover { border-color: var(--gold); color: var(--gold); }
 
+    /* ─── BREADCRUMB ─────────────────────────────────── */
+    .mb-breadcrumb {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin-bottom: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+    .mb-breadcrumb a {
+      color: var(--subtle);
+      text-decoration: none;
+    }
+    .mb-breadcrumb a:hover { color: var(--gold); }
+    .mb-breadcrumb .sep { color: var(--gold-dim); }
+    .mb-breadcrumb .current {
+      color: var(--light);
+      max-width: 320px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
     /* ─── SINGLE POST ────────────────────────────────── */
     .mb-post-header {
       padding: 48px 0 36px;
@@ -1937,7 +1964,7 @@
     <p>
       We use cookies to personalise content and ads, to provide social media features and to analyse our traffic.
       By clicking &#8220;Accept&#8221; you consent to our use of cookies in accordance with our
-      <a href='https://metricbase.org/privacy'>Privacy Policy</a>.
+      <a href='https://metricbase.org/cookie-policy'>Cookie Policy</a>. You may withdraw consent at any time on the <a href='https://metricbase.org/cookie-policy'>Cookie Policy</a> page.
       You may withdraw consent at any time.
     </p>
     <div class='mb-cookie-btns'>
@@ -1964,9 +1991,6 @@
         <div class='mb-ad-unit'>
           <div class='mb-ad-label'>Advertisement</div>
           <ins class='adsbygoogle' data-ad-client='ca-pub-6244083942838780' data-ad-format='auto' data-ad-slot='1093319921' data-full-width-responsive='true' style='display:block'/>
-          <script>//<![CDATA[
-            (adsbygoogle = window.adsbygoogle || []).push({});
-          //]]></script>
         </div>
       </b:if>
 
@@ -2040,9 +2064,6 @@
                   <div class='mb-ad-unit'>
                     <div class='mb-ad-label'>Advertisement</div>
                     <ins class='adsbygoogle' data-ad-client='ca-pub-6244083942838780' data-ad-format='auto' data-ad-slot='9281517276' data-full-width-responsive='true' style='display:block'/>
-                    <script>//<![CDATA[
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    //]]></script>
                   </div>
 
                   <!-- Post grid: posts 2-5 -->
@@ -2136,9 +2157,29 @@
                           </div>
                         </b:if>
 
+                        <b:if cond='data:blog.pageType == &quot;item&quot;'>
+                          <nav aria-label='Breadcrumb' class='mb-breadcrumb'>
+                            <a href='https://metricbase.org/'>MetricBase</a>
+                            <span class='sep'>&#8250;</span>
+                            <a href='https://chain.metricbase.org/'>Crypto and Tech</a>
+                            <span class='sep'>&#8250;</span>
+                            <span class='current'><data:post.title/></span>
+                          </nav>
+                        </b:if>
                         <h1 class='mb-post-title'><data:post.title/></h1>
 
                         <b:if cond='data:blog.pageType == &quot;item&quot;'>
+                          <script type='application/ld+json'>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "MetricBase", "item": "https://metricbase.org/" },
+    { "@type": "ListItem", "position": 2, "name": "Crypto and Tech", "item": "https://chain.metricbase.org/" },
+    { "@type": "ListItem", "position": 3, "name": "<data:post.title/>" }
+  ]
+}
+                          </script>
                           <div class='mb-post-meta'>
                             <span class='meta-date'><data:post.dateHeader/></span>
                           </div>
@@ -2180,9 +2221,6 @@
                         <div class='mb-ad-unit'>
                           <div class='mb-ad-label'>Advertisement</div>
                           <ins class='adsbygoogle' data-ad-client='ca-pub-6244083942838780' data-ad-format='fluid' data-ad-layout='in-article' data-ad-slot='3534366573' style='display:block; text-align:center'/>
-                          <script>//<![CDATA[
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                          //]]></script>
                         </div>
 
                         <b:if cond='data:post.labels'>
@@ -2649,9 +2687,6 @@
             <div class='mb-widget-head'>Advertisement</div>
             <div class='mb-widget-body' style='padding:12px; text-align:center'>
               <ins class='adsbygoogle mb-ad-sidebar' data-ad-client='ca-pub-6244083942838780' data-ad-format='rectangle' data-ad-slot='5968958222' data-full-width-responsive='true' style='display:block; width:100%; min-height:250px'/>
-              <script>//<![CDATA[
-                (adsbygoogle = window.adsbygoogle || []).push({});
-              //]]></script>
             </div>
           </div>
 

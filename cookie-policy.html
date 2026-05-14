@@ -209,6 +209,57 @@
     </div>
   </section>
 
+  <!-- CONSENT SETTINGS WIDGET -->
+  <section class="consent-widget" aria-label="Cookie consent preferences">
+    <div class="consent-widget-inner">
+      <div>
+        <h2>Your cookie preferences</h2>
+        <p id="consent-status">Loading current preference…</p>
+      </div>
+      <div class="consent-actions">
+        <button type="button" id="consent-accept-all">Accept all</button>
+        <button type="button" id="consent-reject-all">Reject non-essential</button>
+        <button type="button" id="consent-clear">Reset preferences</button>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .consent-widget { background: var(--bg-elev); border: 1px solid var(--gold-dim); padding: 24px 28px; margin: 0 0 40px; }
+    .consent-widget-inner { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+    .consent-widget h2 { font-family: 'Manrope', sans-serif; font-size: 16px; color: var(--gold); margin-bottom: 4px; letter-spacing: 0.02em; }
+    .consent-widget p { font-size: 13px; color: var(--gray-2); margin: 0; }
+    .consent-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .consent-actions button { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 8px 14px; border: 1px solid var(--gray-3); background: transparent; color: var(--gray-1); cursor: pointer; }
+    .consent-actions button:hover { border-color: var(--gold); color: var(--gold); }
+    @media (max-width: 700px) { .consent-widget-inner { grid-template-columns: 1fr; } }
+  </style>
+
+  <script>
+    (function() {
+      var statusEl = document.getElementById('consent-status');
+      function refresh() {
+        var c = localStorage.getItem('mb_cookie_consent');
+        if (c === 'accepted') statusEl.textContent = 'Status: All cookies accepted. Click "Reset" to revoke consent and re-trigger the banner.';
+        else if (c === 'rejected') statusEl.textContent = 'Status: Non-essential cookies rejected. Only essential cookies remain active.';
+        else statusEl.textContent = 'Status: No preference saved yet. The consent banner will appear on your next visit to metricbase.org.';
+      }
+      refresh();
+      document.getElementById('consent-accept-all').addEventListener('click', function() {
+        localStorage.setItem('mb_cookie_consent', 'accepted');
+        refresh();
+      });
+      document.getElementById('consent-reject-all').addEventListener('click', function() {
+        localStorage.setItem('mb_cookie_consent', 'rejected');
+        refresh();
+      });
+      document.getElementById('consent-clear').addEventListener('click', function() {
+        localStorage.removeItem('mb_cookie_consent');
+        refresh();
+      });
+    })();
+  </script>
+
   <!-- LAYOUT -->
   <div class="doc-layout">
 

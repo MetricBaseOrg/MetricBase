@@ -3,11 +3,36 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HQ2SCQZ3KT"></script>
+<!-- Google Consent Mode v2 — must run BEFORE gtag.js loads -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // Default: deny all storage until explicit consent
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'denied',
+    'personalization_storage': 'denied',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  // Restore previously granted consent (returning users)
+  if (localStorage.getItem('mb_cookie_consent') === 'accepted') {
+    gtag('consent', 'update', {
+      'ad_storage': 'granted',
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted',
+      'analytics_storage': 'granted',
+      'functionality_storage': 'granted',
+      'personalization_storage': 'granted'
+    });
+  }
+</script>
+<!-- Google tag (gtag.js) — respects consent state above -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HQ2SCQZ3KT"></script>
+<script>
   gtag('js', new Date());
   gtag('config', 'G-HQ2SCQZ3KT');
 </script>
@@ -1531,7 +1556,7 @@
 
 <!-- ── COOKIE BANNER ─────────────────────────────────── -->
 <div id="mb-cookie" class="hidden">
-  <p>We use cookies to personalise content and analyse our traffic. By clicking "Accept" you consent to our use of cookies in accordance with our <a href="/privacy">Privacy Policy</a>. You may withdraw consent at any time.</p>
+  <p>We use cookies to personalise content and analyse our traffic. By clicking "Accept" you consent to our use of cookies in accordance with our <a href="/cookie-policy">Cookie Policy</a>. You may withdraw consent at any time on the <a href="/cookie-policy">Cookie Policy</a> page.</p>
   <div class="cookie-btns">
     <button type="button" class="cookie-reject" id="cookie-reject">Reject</button>
     <button type="button" class="cookie-accept" id="cookie-accept">Accept All</button>
@@ -1604,10 +1629,21 @@
     }
     document.getElementById('cookie-accept').addEventListener('click', function() {
       localStorage.setItem('mb_cookie_consent', 'accepted');
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted',
+          'functionality_storage': 'granted',
+          'personalization_storage': 'granted'
+        });
+      }
       banner.classList.add('hidden');
     });
     document.getElementById('cookie-reject').addEventListener('click', function() {
       localStorage.setItem('mb_cookie_consent', 'rejected');
+      // Consent already denied by default — nothing to revoke
       banner.classList.add('hidden');
     });
   })();
