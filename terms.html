@@ -118,7 +118,7 @@
   @media (max-width: 900px) {
     .doc-layout { grid-template-columns: 1fr; gap: 32px; }
     .toc { position: relative; top: 0; padding: 20px; background: var(--bg-elev); border: 1px solid var(--line); }
-    .nav-links { display: none; }
+    .nav-links { display: none; } .nav-hamburger { display: flex; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 600px) {
@@ -141,24 +141,36 @@
         <span class="brand-tag">Precision growth · No wasted motion</span>
       </span>
     </a>
-        <nav class="nav-links">
-      <a href="https://metricbase.org/privacy">Privacy</a>
-      <a href="https://metricbase.org/terms" class="active">Terms</a>
-      <a href="https://metricbase.org/disclaimer">Disclaimer</a>
-      <a href="https://metricbase.org/cookie-policy">Cookies</a>
-      <a href="https://metricbase.org/editorial-standards">Editorial</a>
-      <a href="https://metricbase.org/contact">Contact</a>
+                <nav class="nav-links" aria-label="Primary">
+      <a href="https://energy.metricbase.org">Energy</a>
+      <a href="https://chain.metricbase.org">Crypto</a>
+      <a href="https://saham.metricbase.org">Saham</a>
+      <a href="https://metricbase.org/journal">Journal</a>
+      <a href="https://metricbase.org/about">About</a>
       <a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a>
+      <a href="https://metricbase.org/contact">Contact</a>
     </nav>
+    <button type="button" class="nav-hamburger" id="nav-hamburger-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="https://energy.metricbase.org">Energy Markets ↗</a>
+    <a href="https://chain.metricbase.org">Crypto &amp; Tech ↗</a>
+    <a href="https://saham.metricbase.org">Pasar Saham ↗</a>
+    <a href="https://metricbase.org/journal">Journal</a>
+    <a href="https://metricbase.org/about">About</a>
+    <a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a>
+    <a href="https://metricbase.org/contact">Contact</a>
+  </nav>
 
   <section class="doc-hero">
     <div class="doc-id">DOCUMENT · TERMS-001 · V1.0</div>
     <h1 class="doc-title">Terms of <span class="accent">Service.</span></h1>
     <div class="doc-meta">
-      <div class="doc-meta-item"><span class="doc-meta-lbl">Effective</span><span class="doc-meta-val">12 May 2026</span></div>
-      <div class="doc-meta-item"><span class="doc-meta-lbl">Last Updated</span><span class="doc-meta-val">12 May 2026</span></div>
-      <div class="doc-meta-item"><span class="doc-meta-lbl">Applies To</span><span class="doc-meta-val">metricbase.org &amp; subdomains</span></div>
+      <div class="doc-meta-item"><span class="doc-meta-lbl">Effective</span><span class="doc-meta-val">14 May 2026</span></div>
+      <div class="doc-meta-item"><span class="doc-meta-lbl">Last Updated</span><span class="doc-meta-val">14 May 2026</span></div>
+      <div class="doc-meta-item"><span class="doc-meta-lbl">Applies To</span><span class="doc-meta-val">metricbase.org, subdomains &amp; Apps</span></div>
       <div class="doc-meta-item"><span class="doc-meta-lbl">Governing Law</span><span class="doc-meta-val">Republic of Indonesia</span></div>
     </div>
   </section>
@@ -184,6 +196,7 @@
         <li><a href="#s14">Dispute resolution</a></li>
         <li><a href="#s15">Severability</a></li>
         <li><a href="#s16">Entire agreement</a></li>
+        <li><a href="#s16a">MetricBase Apps · Financial Tracker</a></li>
         <li><a href="#s17">Contact</a></li>
       </ol>
     </aside>
@@ -372,6 +385,24 @@
         <p>No waiver of any term shall be deemed a further or continuing waiver of that term or any other term. Our failure to enforce any right or provision shall not constitute a waiver of that right or provision.</p>
       </section>
 
+      <section id="s16a">
+        <span class="section-num">SECTION 16 · APPS</span>
+        <h2>MetricBase Apps · Financial Tracker</h2>
+        <p>This section applies in addition to the rest of these Terms when you use <strong>apps.metricbase.org</strong>, including the Financial Tracker SaaS. Where this section conflicts with the rest of these Terms, this section controls — but only with respect to apps.metricbase.org.</p>
+        <h3>16a.1 — Beta status</h3>
+        <p>The Financial Tracker is currently in open beta. Features, pricing, data model, and availability may change at any time without notice. You should not rely on the Financial Tracker as the sole system of record for any regulated, tax, or audit-critical workflow.</p>
+        <h3>16a.2 — Your account &amp; data</h3>
+        <p>You are responsible for the accuracy of any data you record (transactions, accounts, balances, FX overrides, budgets, categories). You retain ownership of the financial data you enter; we operate the storage and processing on your behalf. You are responsible for keeping your sign-in credentials confidential.</p>
+        <h3>16a.3 — Acceptable use</h3>
+        <p>You may use the Financial Tracker only for lawful, personal, or internal-business record-keeping. You may not use it to conceal proceeds of crime, evade tax or regulatory obligations, or process personal information of third parties without their consent or another lawful basis.</p>
+        <h3>16a.4 — No financial, tax, or accounting advice</h3>
+        <p>The Financial Tracker generates reports, charts, and category aggregates from the data you provide. Nothing it outputs is investment, tax, accounting, or legal advice. For statutory reporting, consult a licensed professional. See the <a href="https://metricbase.org/disclaimer">Disclaimer</a>.</p>
+        <h3>16a.5 — Service level &amp; availability</h3>
+        <p>The Financial Tracker is provided "as is" during the open beta. We do not commit to any uptime, recovery time, or data retention SLA. We take reasonable measures to protect your data (TLS, access controls, encrypted-at-rest storage), but we do not guarantee absence of outages, data loss, or unauthorized access. You should export your data periodically (CSV / PDF export is built in).</p>
+        <h3>16a.6 — Termination &amp; deletion</h3>
+        <p>You may close your account and request deletion of all associated data at any time by emailing <a href="mailto:support@metricbase.org">support@metricbase.org</a>. We may suspend or terminate access for violations of these Terms or for sustained inactivity in the open-beta period, with reasonable prior notice where practicable.</p>
+      </section>
+
       <section id="s17">
         <span class="section-num">SECTION 17</span>
         <h2>Contact</h2>
@@ -438,6 +469,16 @@
     });
   }, { rootMargin: '-30% 0px -60% 0px' });
   sections.forEach(s => observer.observe(s));
+</script>
+<script>
+  function toggleMobileNav() {
+    var btn = document.getElementById('nav-hamburger-btn');
+    var nav = document.getElementById('nav-mobile');
+    if (!btn || !nav) return;
+    var open = nav.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+  }
 </script>
 </body>
 </html>

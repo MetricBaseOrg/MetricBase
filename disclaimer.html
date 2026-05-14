@@ -128,7 +128,7 @@
   @media (max-width: 900px) {
     .doc-layout { grid-template-columns: 1fr; gap: 32px; }
     .toc { position: relative; top: 0; padding: 20px; background: var(--bg-elev); border: 1px solid var(--line); }
-    .nav-links { display: none; }
+    .nav-links { display: none; } .nav-hamburger { display: flex; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 600px) {
@@ -151,24 +151,36 @@
         <span class="brand-tag">Precision growth · No wasted motion</span>
       </span>
     </a>
-        <nav class="nav-links">
-      <a href="https://metricbase.org/privacy">Privacy</a>
-      <a href="https://metricbase.org/terms">Terms</a>
-      <a href="https://metricbase.org/disclaimer" class="active">Disclaimer</a>
-      <a href="https://metricbase.org/cookie-policy">Cookies</a>
-      <a href="https://metricbase.org/editorial-standards">Editorial</a>
-      <a href="https://metricbase.org/contact">Contact</a>
+                <nav class="nav-links" aria-label="Primary">
+      <a href="https://energy.metricbase.org">Energy</a>
+      <a href="https://chain.metricbase.org">Crypto</a>
+      <a href="https://saham.metricbase.org">Saham</a>
+      <a href="https://metricbase.org/journal">Journal</a>
+      <a href="https://metricbase.org/about">About</a>
       <a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a>
+      <a href="https://metricbase.org/contact">Contact</a>
     </nav>
+    <button type="button" class="nav-hamburger" id="nav-hamburger-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="https://energy.metricbase.org">Energy Markets ↗</a>
+    <a href="https://chain.metricbase.org">Crypto &amp; Tech ↗</a>
+    <a href="https://saham.metricbase.org">Pasar Saham ↗</a>
+    <a href="https://metricbase.org/journal">Journal</a>
+    <a href="https://metricbase.org/about">About</a>
+    <a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a>
+    <a href="https://metricbase.org/contact">Contact</a>
+  </nav>
 
   <section class="doc-hero">
     <div class="doc-id">DOCUMENT · DISC-001 · V1.0 · YMYL</div>
     <h1 class="doc-title"><span class="accent">Disclaimer.</span></h1>
     <div class="doc-meta">
-      <div class="doc-meta-item"><span class="doc-meta-lbl">Effective</span><span class="doc-meta-val">12 May 2026</span></div>
-      <div class="doc-meta-item"><span class="doc-meta-lbl">Last Updated</span><span class="doc-meta-val">12 May 2026</span></div>
-      <div class="doc-meta-item"><span class="doc-meta-lbl">Applies To</span><span class="doc-meta-val">All MetricBase content</span></div>
+      <div class="doc-meta-item"><span class="doc-meta-lbl">Effective</span><span class="doc-meta-val">14 May 2026</span></div>
+      <div class="doc-meta-item"><span class="doc-meta-lbl">Last Updated</span><span class="doc-meta-val">14 May 2026</span></div>
+      <div class="doc-meta-item"><span class="doc-meta-lbl">Applies To</span><span class="doc-meta-val">All MetricBase content &amp; Apps</span></div>
       <div class="doc-meta-item"><span class="doc-meta-lbl">Category</span><span class="doc-meta-val">Your Money or Your Life</span></div>
     </div>
   </section>
@@ -196,6 +208,7 @@
         <li><a href="#s10">AI-assisted content</a></li>
         <li><a href="#s11">Jurisdictional scope</a></li>
         <li><a href="#s12">Reader responsibility</a></li>
+        <li><a href="#s12a">MetricBase Apps · Financial Tracker</a></li>
         <li><a href="#s13">Contact</a></li>
       </ol>
     </aside>
@@ -370,6 +383,20 @@
         </ul>
       </section>
 
+      <section id="s12a">
+        <span class="section-num">SECTION 12 · APPS</span>
+        <h2>MetricBase Apps · Financial Tracker</h2>
+        <p>This disclaimer extends explicitly to <strong>apps.metricbase.org</strong>, including the Financial Tracker SaaS.</p>
+        <h3>12a.1 — A tool, not advice</h3>
+        <p>The Financial Tracker is a private record-keeping tool. It records what <em>you</em> tell it. It does not verify, audit, reconcile against bank statements, or otherwise validate the accuracy of the data you enter. The reports, charts, budgets, and dashboards it produces are mechanical aggregates of your inputs — nothing more.</p>
+        <h3>12a.2 — Not investment, tax, or accounting advice</h3>
+        <p>Nothing in the Financial Tracker constitutes investment, tax, accounting, or legal advice. P&amp;L statements, balance sheets, and FX conversions are informational summaries. They are not substitutes for advice from a licensed accountant, tax preparer, or financial advisor, and they are not suitable as the sole basis for tax filing, audit response, or any regulated reporting.</p>
+        <h3>12a.3 — FX rates are snapshots</h3>
+        <p>Foreign exchange rates used by the Financial Tracker are sourced from public APIs (Frankfurter / ECB) at the time a transaction is recorded. They are not real-time, are not guaranteed accurate, and may differ from the rate your bank or broker actually applied. Rates from official sources for tax or regulatory purposes should be obtained from those sources, not from this product.</p>
+        <h3>12a.4 — Beta status &amp; data loss risk</h3>
+        <p>The Financial Tracker is in open beta. Schema changes, outages, accidental data loss, or migration issues are possible. <strong>Export your data regularly</strong> using the CSV / PDF export features. We are not liable for losses arising from reliance on the product as a sole system of record.</p>
+      </section>
+
       <section id="s13">
         <span class="section-num">SECTION 13</span>
         <h2>Contact</h2>
@@ -436,6 +463,16 @@
     });
   }, { rootMargin: '-30% 0px -60% 0px' });
   sections.forEach(s => observer.observe(s));
+</script>
+<script>
+  function toggleMobileNav() {
+    var btn = document.getElementById('nav-hamburger-btn');
+    var nav = document.getElementById('nav-mobile');
+    if (!btn || !nav) return;
+    var open = nav.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+  }
 </script>
 </body>
 </html>

@@ -147,7 +147,7 @@
   @media (max-width: 900px) {
     .doc-layout { grid-template-columns: 1fr; gap: 32px; }
     .toc { position: relative; top: 0; padding: 20px; background: var(--bg-elev); border: 1px solid var(--line); }
-    .nav-links { display: none; }
+    .nav-links { display: none; } .nav-hamburger { display: flex; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .principle-grid { grid-template-columns: 1fr; }
   }
@@ -172,16 +172,28 @@
         <span class="brand-tag">Precision growth · No wasted motion</span>
       </span>
     </a>
-        <nav class="nav-links">
-      <a href="https://metricbase.org/privacy">Privacy</a>
-      <a href="https://metricbase.org/terms">Terms</a>
-      <a href="https://metricbase.org/disclaimer">Disclaimer</a>
-      <a href="https://metricbase.org/cookie-policy">Cookies</a>
-      <a href="https://metricbase.org/editorial-standards" class="active">Editorial</a>
-      <a href="https://metricbase.org/contact">Contact</a>
+                <nav class="nav-links" aria-label="Primary">
+      <a href="https://energy.metricbase.org">Energy</a>
+      <a href="https://chain.metricbase.org">Crypto</a>
+      <a href="https://saham.metricbase.org">Saham</a>
+      <a href="https://metricbase.org/journal">Journal</a>
+      <a href="https://metricbase.org/about">About</a>
       <a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a>
+      <a href="https://metricbase.org/contact">Contact</a>
     </nav>
+    <button type="button" class="nav-hamburger" id="nav-hamburger-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="https://energy.metricbase.org">Energy Markets ↗</a>
+    <a href="https://chain.metricbase.org">Crypto &amp; Tech ↗</a>
+    <a href="https://saham.metricbase.org">Pasar Saham ↗</a>
+    <a href="https://metricbase.org/journal">Journal</a>
+    <a href="https://metricbase.org/about">About</a>
+    <a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a>
+    <a href="https://metricbase.org/contact">Contact</a>
+  </nav>
 
   <!-- HERO -->
   <section class="doc-hero">
@@ -190,11 +202,11 @@
     <div class="doc-meta">
       <div class="doc-meta-item">
         <span class="doc-meta-lbl">Effective</span>
-        <span class="doc-meta-val">12 May 2026</span>
+        <span class="doc-meta-val">14 May 2026</span>
       </div>
       <div class="doc-meta-item">
         <span class="doc-meta-lbl">Last Updated</span>
-        <span class="doc-meta-val">12 May 2026</span>
+        <span class="doc-meta-val">14 May 2026</span>
       </div>
       <div class="doc-meta-item">
         <span class="doc-meta-lbl">Applies To</span>
@@ -223,6 +235,7 @@
         <li><a href="#s7">Conflicts of interest</a></li>
         <li><a href="#s8">Corrections policy</a></li>
         <li><a href="#s9">Content types</a></li>
+        <li><a href="#s9a">MetricBase Apps · Financial Tracker</a></li>
         <li><a href="#s10">Contact the editorial team</a></li>
       </ol>
     </aside>
@@ -405,6 +418,14 @@
         <p>A deep-dive into a concept, mechanism, or instrument — how DeFi lending works, what drives crude oil spreads, how margin trading on the IDX operates. Evergreen content that is updated when the underlying mechanics change. Not time-sensitive.</p>
       </section>
 
+      <section id="s9a">
+        <span class="section-num">SECTION 09 · APPS</span>
+        <h2>MetricBase Apps · Financial Tracker</h2>
+        <p>These editorial standards apply to <strong>content we publish</strong> — articles, briefs, journal posts, social posts. They do not govern the Financial Tracker SaaS at <strong>apps.metricbase.org</strong>, which is a private record-keeping product for paying users.</p>
+        <p>For product-related questions about the Financial Tracker (data accuracy, FX sourcing, beta limitations, export formats) see the <a href="https://metricbase.org/disclaimer">Disclaimer</a>, Section 12 · APPS, and the <a href="https://metricbase.org/terms">Terms of Service</a>, Section 16 · APPS.</p>
+        <p>The same independence and honest-framing principles in this document do guide our public communications <em>about</em> the product: launch notes, changelogs, and beta disclosures will state what works, what doesn&apos;t, and what data we collect. We will not characterise the Financial Tracker as something it isn&apos;t (e.g. an accounting system of record, regulatory tool, or source of investment advice).</p>
+      </section>
+
       <section id="s10">
         <span class="section-num">SECTION 10</span>
         <h2>Contact the editorial team</h2>
@@ -475,6 +496,16 @@
     });
   }, { rootMargin: '-30% 0px -60% 0px' });
   sections.forEach(s => observer.observe(s));
+</script>
+<script>
+  function toggleMobileNav() {
+    var btn = document.getElementById('nav-hamburger-btn');
+    var nav = document.getElementById('nav-mobile');
+    if (!btn || !nav) return;
+    var open = nav.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+  }
 </script>
 </body>
 </html>
