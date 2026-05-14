@@ -1577,6 +1577,7 @@
   function toggleMobileNav() {
     var btn = document.getElementById('nav-hamburger-btn');
     var nav = document.getElementById('nav-mobile');
+    if (!btn || !nav) return;
     var isOpen = nav.classList.contains('open');
     nav.classList.toggle('open', !isOpen);
     btn.classList.toggle('open', !isOpen);
@@ -1584,9 +1585,13 @@
   }
 
   function closeMobileNav() {
-    document.getElementById('nav-mobile').classList.remove('open');
-    document.getElementById('nav-hamburger-btn').classList.remove('open');
-    document.getElementById('nav-hamburger-btn').setAttribute('aria-expanded', 'false');
+    var nav = document.getElementById('nav-mobile');
+    var btn = document.getElementById('nav-hamburger-btn');
+    if (nav) nav.classList.remove('open');
+    if (btn) {
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
   }
 
   /* Close mobile nav on outside click */
@@ -1608,8 +1613,12 @@
     var doc     = document.documentElement;
     var scrolled = doc.scrollTop || document.body.scrollTop;
     var total   = doc.scrollHeight - doc.clientHeight;
-    progress.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
-    backTop.classList.toggle('visible', scrolled > 400);
+    if (progress) {
+      progress.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+    }
+    if (backTop) {
+      backTop.classList.toggle('visible', scrolled > 400);
+    }
   }, { passive: true });
 
   /* Scroll reveal */
@@ -1630,10 +1639,13 @@
   /* Cookie consent */
   (function() {
     var banner = document.getElementById('mb-cookie');
+    var accept = document.getElementById('cookie-accept');
+    var reject = document.getElementById('cookie-reject');
+    if (!banner || !accept || !reject) return;
     if (!localStorage.getItem('mb_cookie_consent')) {
       setTimeout(function() { banner.classList.remove('hidden'); }, 900);
     }
-    document.getElementById('cookie-accept').addEventListener('click', function() {
+    accept.addEventListener('click', function() {
       localStorage.setItem('mb_cookie_consent', 'accepted');
       if (typeof gtag === 'function') {
         gtag('consent', 'update', {
@@ -1647,7 +1659,7 @@
       }
       banner.classList.add('hidden');
     });
-    document.getElementById('cookie-reject').addEventListener('click', function() {
+    reject.addEventListener('click', function() {
       localStorage.setItem('mb_cookie_consent', 'rejected');
       // Consent already denied by default — nothing to revoke
       banner.classList.add('hidden');

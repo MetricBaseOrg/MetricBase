@@ -2932,6 +2932,7 @@
     function toggleMobileNav() {
       var btn = document.getElementById('mb-ham-btn');
       var nav = document.getElementById('mb-nav-mobile');
+      if (!btn || !nav) return;
       var isOpen = nav.classList.contains('open');
       nav.classList.toggle('open', !isOpen);
       btn.classList.toggle('active', !isOpen);
@@ -2974,14 +2975,35 @@
       } else if (platform === 'linkedin') {
         window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + url, '_blank');
       } else if (platform === 'copy') {
-        navigator.clipboard.writeText(window.location.href).then(function() {
+        var showCopied = function() {
           document.querySelectorAll('.mb-share-btn').forEach(function(b) {
             if (b.textContent === 'Copy Link') {
               b.textContent = 'Copied';
               setTimeout(function() { b.textContent = 'Copy Link'; }, 2000);
             }
           });
-        });
+        };
+        var copyFallback = function() {
+          try {
+            var ta = document.createElement('textarea');
+            ta.value = window.location.href;
+            ta.readOnly = true;
+            ta.style.cssText = 'position:fixed;left:-9999px;top:0';
+            document.body.appendChild(ta);
+            ta.focus();
+            ta.select();
+            var ok = document.execCommand('copy');
+            document.body.removeChild(ta);
+            return ok;
+          } catch (err) { return false; }
+        };
+        if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+          navigator.clipboard.writeText(window.location.href).then(showCopied).catch(function() {
+            if (copyFallback()) showCopied();
+          });
+        } else if (copyFallback()) {
+          showCopied();
+        }
       }
     }
 

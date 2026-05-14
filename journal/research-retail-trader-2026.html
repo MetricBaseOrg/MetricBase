@@ -847,8 +847,11 @@
       if (s.offsetTop <= scrollY) current = s.id;
     });
     tocItems.forEach(function(item) {
-      var href = item.querySelector('a').getAttribute('href').slice(1);
-      item.classList.toggle('active', href === current);
+      var a = item.querySelector('a');
+      if (!a) return;
+      var hrefAttr = a.getAttribute('href');
+      if (!hrefAttr || hrefAttr.charAt(0) !== '#') return;
+      item.classList.toggle('active', hrefAttr.slice(1) === current);
     });
   }
 
@@ -858,6 +861,7 @@
   function toggleMobileNav() {
     var btn = document.getElementById('nav-hamburger-btn');
     var nav = document.getElementById('nav-mobile');
+    if (!btn || !nav) return;
     var isOpen = nav.classList.contains('open');
     nav.classList.toggle('open', !isOpen);
     btn.classList.toggle('open', !isOpen);
@@ -865,9 +869,13 @@
   }
   document.addEventListener('click', function(e) {
     if (!e.target.closest('.app-header')) {
-      document.getElementById('nav-mobile').classList.remove('open');
-      document.getElementById('nav-hamburger-btn').classList.remove('open');
-      document.getElementById('nav-hamburger-btn').setAttribute('aria-expanded', 'false');
+      var nav = document.getElementById('nav-mobile');
+      var btn = document.getElementById('nav-hamburger-btn');
+      if (nav) nav.classList.remove('open');
+      if (btn) {
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
     }
   });
 </script>

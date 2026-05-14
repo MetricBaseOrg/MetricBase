@@ -445,13 +445,14 @@
         if (match) visible++;
       });
 
-      emptyState.classList.toggle('visible', visible === 0);
+      if (emptyState) emptyState.classList.toggle('visible', visible === 0);
     });
   });
 
   function toggleMobileNav() {
     var btn = document.getElementById('nav-hamburger-btn');
     var nav = document.getElementById('nav-mobile');
+    if (!btn || !nav) return;
     var isOpen = nav.classList.contains('open');
     nav.classList.toggle('open', !isOpen);
     btn.classList.toggle('open', !isOpen);
@@ -459,9 +460,13 @@
   }
   document.addEventListener('click', function(e) {
     if (!e.target.closest('.app-header') && !e.target.closest('.nav-mobile')) {
-      document.getElementById('nav-mobile').classList.remove('open');
-      document.getElementById('nav-hamburger-btn').classList.remove('open');
-      document.getElementById('nav-hamburger-btn').setAttribute('aria-expanded', 'false');
+      var nav = document.getElementById('nav-mobile');
+      var btn = document.getElementById('nav-hamburger-btn');
+      if (nav) nav.classList.remove('open');
+      if (btn) {
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
     }
   });
 </script>
