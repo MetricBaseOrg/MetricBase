@@ -170,8 +170,18 @@
     padding: 28px 0 24px;
     border-bottom: 1px solid var(--line);
     margin-bottom: 0;
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 100;
+    background: rgba(10, 10, 10, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+
+  .app-header.scrolled {
+    background: rgba(10, 10, 10, 0.96);
+    box-shadow: 0 1px 0 var(--line), 0 8px 32px rgba(0, 0, 0, 0.45);
   }
 
   .header-inner {
@@ -1611,9 +1621,10 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  /* Progress bar + back-to-top visibility */
-  var progress = document.getElementById('mb-progress');
-  var backTop  = document.getElementById('mb-back-top');
+  /* Progress bar + back-to-top visibility + sticky header state */
+  var progress   = document.getElementById('mb-progress');
+  var backTop    = document.getElementById('mb-back-top');
+  var appHeader  = document.querySelector('.app-header');
 
   window.addEventListener('scroll', function() {
     var doc     = document.documentElement;
@@ -1624,6 +1635,9 @@
     }
     if (backTop) {
       backTop.classList.toggle('visible', scrolled > 400);
+    }
+    if (appHeader) {
+      appHeader.classList.toggle('scrolled', scrolled > 40);
     }
   }, { passive: true });
 
