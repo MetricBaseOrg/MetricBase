@@ -108,7 +108,7 @@
   a:hover { color: var(--gold-bright); border-bottom-style: solid; }
 
   /* ── HEADER ── */
-  .app-header { padding: 24px 32px; border-bottom: 1px solid var(--line); position: relative; z-index: 10; }
+  .app-header { padding: 24px 32px; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 100; background: rgba(10, 10, 10, 0.85); -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%); transition: background 0.25s, box-shadow 0.25s; }
   .header-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; }
   .brand { display: flex; align-items: center; gap: 14px; border: none; }
   .brand-mark { width: 34px; height: 34px; border: 1.5px solid var(--gold); transform: rotate(45deg); display: grid; place-items: center; position: relative; flex-shrink: 0; }

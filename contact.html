@@ -62,7 +62,17 @@
   a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); transition: all 0.15s; }
   a:hover { color: var(--gold-bright); border-bottom-style: solid; }
 
-  header.app-header { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; padding-bottom: 28px; border-bottom: 1px solid var(--line); margin-bottom: 56px; }
+  header.app-header { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; padding: 4px 0; }
+  .mb-topbar { position: sticky; top: 0; z-index: 100; margin: 0 0 56px; padding: 12px 0; background: rgba(10, 10, 10, 0.88); -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%); border-bottom: 1px solid var(--line); }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; -webkit-tap-highlight-color: transparent; }
+  .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--gray-1); transition: 0.22s; transform-origin: center; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-mobile { display: none; flex-direction: column; margin: 0 -24px; border-top: 1px solid var(--line); background: var(--bg-elev); position: relative; z-index: 9; }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gray-2); padding: 14px 24px; border-bottom: 1px solid var(--line); transition: color 0.15s; border-right: none; border-left: none; }
+  .nav-mobile a:hover { color: var(--gold); }
   .brand-mark { width: 38px; height: 38px; border: 1.5px solid var(--gold); transform: rotate(45deg); display: grid; place-items: center; position: relative; }
   .brand-mark::after { content: ''; position: absolute; inset: 6px; background: var(--gold); opacity: 0.4; }
   .brand-text { display: flex; flex-direction: column; }
@@ -162,6 +172,7 @@
   @media (max-width: 900px) {
     .contact-layout { grid-template-columns: 1fr; gap: 40px; }
     .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .email-row { grid-template-columns: 1fr; gap: 4px; }
   }
@@ -178,6 +189,7 @@
 
 <div class="container">
 
+  <div class="mb-topbar">
   <header class="app-header">
     <a href="https://metricbase.org" class="brand-name" style="display: flex; align-items: center; gap: 14px;">
       <span class="brand-mark"></span>
@@ -195,7 +207,20 @@
       <a href="https://metricbase.org/contact" class="active">Contact</a>
       <a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a>
     </nav>
+    <button type="button" class="nav-hamburger" id="nav-hamburger-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="https://metricbase.org/privacy">Privacy</a>
+    <a href="https://metricbase.org/terms">Terms</a>
+    <a href="https://metricbase.org/disclaimer">Disclaimer</a>
+    <a href="https://metricbase.org/cookie-policy">Cookies</a>
+    <a href="https://metricbase.org/editorial-standards">Editorial</a>
+    <a href="https://metricbase.org/contact">Contact</a>
+    <a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a>
+  </nav>
+  </div>
 
   <section class="doc-hero">
     <div class="doc-id">DOCUMENT · CONT-001 · GET IN TOUCH</div>
@@ -381,5 +406,24 @@
   </footer>
 
 </div>
+<script>
+  function toggleMobileNav() {
+    var btn = document.getElementById('nav-hamburger-btn');
+    var nav = document.getElementById('nav-mobile');
+    if (!btn || !nav) return;
+    var isOpen = nav.classList.contains('open');
+    nav.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  }
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.app-header') && !e.target.closest('.nav-mobile')) {
+      var nav = document.getElementById('nav-mobile');
+      var btn = document.getElementById('nav-hamburger-btn');
+      if (nav) nav.classList.remove('open');
+      if (btn) { btn.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    }
+  });
+</script>
 </body>
 </html>
