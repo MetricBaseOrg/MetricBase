@@ -31,6 +31,21 @@ Pushing to `main` triggers `.github/workflows/jekyll-gh-pages.yml`, which builds
 
 To preview locally: open `index.html` directly in a browser. Blog templates (`blogs/*.html`) are Blogger XML and must be uploaded to the Blogger admin panel — they cannot be previewed locally.
 
+## Weekly Brief workflow (recurring — keep it current)
+
+The Journal publishes a **Weekly Brief** every week, and it must not be allowed to lapse. This is a standing instruction from the site owner, not a one-off (see the wiki memory `MetricBase-wiki/memory/metricbase/project-weekly-brief-workflow.md`). At session start, check whether the latest `journal/weekly-brief-<N>.html` is current for today's date; if it has fallen behind, write the missing edition(s) to catch up.
+
+**Cadence & dating:** one numbered edition per week, **published Monday**, covering market data **through the prior Friday close**. Editions are strictly sequential (`#1` 5 May 2026 → `#7` 15 Jun 2026 → `#8` ~22 Jun …). Each edition spans the same three verticals in order: **01 Energy Markets · 02 Crypto & Technology · 03 Pasar Saham Indonesia (IDX)**.
+
+**Continuity is the point.** Before writing edition `N`, read edition `N-1`: each brief must resolve the previous "Watch Next Week" items and carry the running cross-vertical narrative (price levels, theses, call-backs) forward consistently. Figures are illustrative house-style commentary under the standing "educational, not financial advice" disclaimer; if the owner supplies real data for the week, use it.
+
+**To add an edition** (all in this repo):
+1. Copy the structure of the most recent `journal/weekly-brief-<N>.html` — every brief shares an identical `<style>` block, header, footer, and script; only the `<head>` meta/JSON-LD, hero, data-flash, three verticals, watch-list, and related cards change. Keep the brand tokens (`#0a0a0a` / `#c9a84c` gold / Manrope + JetBrains Mono) untouched.
+2. Update the new file's edition number (`WB-00N`), `weekly-brief-<N>` canonical/OG/breadcrumb URLs, published + data dates, and the "Related" grid (link the immediately previous brief + the research report).
+3. In `journal.html`: add a new `<a class="article-card" … data-category="weekly-brief">` card at the **top** of the brief list (newest first), and bump both `#count-all` and `#count-weekly-brief`.
+4. In `sitemap.xml`: add a `<url>` for `/journal/weekly-brief-<N>` (lastmod = publish date) and bump the `/journal` `lastmod`.
+5. Verify: no stray non-ASCII, well-formed `sitemap.xml`, card counts match the number of cards.
+
 ## Architecture
 
 ### `index.html` — Content Portal (~1200 lines)
