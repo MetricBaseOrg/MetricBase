@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anatomy of a War Premium · Research Report May 2026 · MetricBase Journal</title>
+<meta name="description" content="How the spring 2026 energy shock moves through the Indonesian portfolio. Tracing the single transmission chain — crude to US inflation to the dollar to the rupiah to the IDX and crypto — that now governs retail outcomes across all three verticals.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://metricbase.org/journal/research-war-premium-2026">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://metricbase.org/journal/research-war-premium-2026">
+<meta property="og:title" content="Anatomy of a War Premium · MetricBase Research">
+<meta property="og:description" content="How the spring 2026 energy shock transmits through Indonesian markets — crude, inflation, the rupiah, the IDX, and crypto, traced as a single chain.">
+<meta property="og:image" content="https://metricbase.org/assets/og-image.webp">
+<meta property="article:published_time" content="2026-05-29">
+<meta property="article:author" content="Bun">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@MetricBase">
+<meta name="twitter:title" content="Anatomy of a War Premium · MetricBase Research">
+<meta name="twitter:description" content="How the spring 2026 energy shock transmits through Indonesian markets — crude, inflation, the rupiah, the IDX, and crypto.">
+<meta name="twitter:image" content="https://metricbase.org/assets/og-image.webp">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Anatomy of a War Premium: How an Energy Shock Moves Through the Indonesian Portfolio",
+  "description": "How the spring 2026 energy shock transmits through Indonesian markets — crude, inflation, the rupiah, the IDX, and crypto, traced as a single chain.",
+  "url": "https://metricbase.org/journal/research-war-premium-2026",
+  "image": "https://metricbase.org/assets/og-image.webp",
+  "datePublished": "2026-05-29",
+  "dateModified": "2026-05-29",
+  "author": {
+    "@type": "Person",
+    "name": "Bun",
+    "url": "https://metricbase.org/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://metricbase.org/#organization",
+    "name": "MetricBase",
+    "url": "https://metricbase.org/",
+    "logo": { "@type": "ImageObject", "url": "https://metricbase.org/assets/MetricBase.webp" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://metricbase.org/journal/research-war-premium-2026" },
+  "articleSection": "Research Report",
+  "keywords": "war premium, crude oil, WTI Brent, Iran Israel conflict, US CPI, rupiah, USD/IDR, IDX, Bitcoin, energy shock, Indonesia markets"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "MetricBase", "item": "https://metricbase.org/" },
+    { "@type": "ListItem", "position": 2, "name": "Journal", "item": "https://metricbase.org/journal" },
+    { "@type": "ListItem", "position": 3, "name": "Anatomy of a War Premium" }
+  ]
+}
+</script>
+<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+<style>
+  :root {
+    --bg:          #0A0A0A;
+    --bg-elev:     #131313;
+    --bg-card:     #161616;
+    --bg-hover:    #1c1c1c;
+    --gold:        #C9A84C;
+    --gold-bright: #E5C168;
+    --gold-dim:    #8a7434;
+    --gold-glow:   rgba(201, 168, 76, 0.12);
+    --white:       #ffffff;
+    --gray-1:      #e5e5e5;
+    --gray-2:      #999999;
+    --gray-3:      #555555;
+    --gray-4:      #2a2a2a;
+    --red:         #e85a4f;
+    --green:       #5fa86c;
+    --amber:       #d9a441;
+    --line:        rgba(255,255,255,0.06);
+    --line-strong: rgba(201, 168, 76, 0.3);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  html, body {
+    background: var(--bg);
+    color: var(--gray-1);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background:
+      radial-gradient(ellipse 900px 600px at 20% 0%,  rgba(201,168,76,0.05), transparent 60%),
+      radial-gradient(ellipse 600px 400px at 80% 100%, rgba(201,168,76,0.03), transparent 70%),
+      var(--bg);
+    min-height: 100vh;
+  }
+
+  .grid-bg { position: fixed; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; z-index: 0; }
+
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); transition: color 0.15s; }
+  a:hover { color: var(--gold-bright); border-bottom-style: solid; }
+
+  /* ── HEADER ── */
+  .app-header { padding: 24px 32px; border-bottom: 1px solid var(--line); position: relative; z-index: 10; }
+  .header-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; }
+  .brand { display: flex; align-items: center; gap: 14px; border: none; }
+  .brand-mark { width: 34px; height: 34px; border: 1.5px solid var(--gold); transform: rotate(45deg); display: grid; place-items: center; position: relative; flex-shrink: 0; }
+  .brand-mark::after { content: ''; position: absolute; inset: 5px; background: var(--gold); opacity: 0.4; }
+  .brand-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.02em; color: var(--white); }
+  .brand-name .gold { color: var(--gold); }
+  .brand-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gray-3); margin-top: 3px; }
+  .nav-links { display: flex; gap: 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; }
+  .nav-links a { color: var(--gray-2); border: none; }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── LAYOUT ── */
+  .page-wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+
+  /* ── DISCLAIMER BANNER ── */
+  .risk-banner {
+    background: var(--bg-card);
+    border: 1px solid var(--gray-4);
+    border-left: 3px solid var(--amber);
+    padding: 14px 20px;
+    margin: 36px 0 0;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .risk-banner-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--amber); font-weight: 700; flex-shrink: 0; }
+  .risk-banner p { font-size: 12px; color: var(--gray-2); line-height: 1.55; }
+  .risk-banner a { color: var(--gray-2); border-bottom-color: var(--gray-4); }
+
+  /* ── ARTICLE HERO ── */
+  .article-hero { padding: 52px 0 44px; border-bottom: 1px solid var(--line); }
+  .article-breadcrumb { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gray-3); margin-bottom: 22px; display: flex; align-items: center; gap: 8px; }
+  .article-breadcrumb a { color: var(--gray-3); border: none; }
+  .article-breadcrumb a:hover { color: var(--gold); }
+  .article-breadcrumb span { color: var(--gray-4); }
+  .article-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+  .article-tag::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+  h1.article-title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: clamp(32px, 5vw, 56px); letter-spacing: -0.025em; line-height: 1.05; color: var(--white); margin-bottom: 22px; }
+  .article-deck { font-size: 17px; color: var(--gray-2); line-height: 1.65; max-width: 680px; margin-bottom: 36px; }
+  .article-meta-bar { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid var(--line); }
+  .meta-author { display: flex; align-items: center; gap: 12px; }
+  .author-avatar { width: 40px; height: 40px; background: var(--bg-card); border: 1px solid var(--line-strong); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gold); font-weight: 700; flex-shrink: 0; overflow: hidden; }
+  .author-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .author-info { display: flex; flex-direction: column; }
+  .author-name { font-weight: 700; font-size: 13px; color: var(--white); }
+  .author-role { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gray-3); margin-top: 2px; }
+  .meta-divider { width: 1px; height: 32px; background: var(--gray-4); }
+  .meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .meta-lbl { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gray-3); }
+  .meta-val { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gray-2); font-weight: 500; }
+  .meta-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; padding: 4px 10px; border: 1px solid var(--gray-4); color: var(--gray-2); background: var(--bg-card); }
+
+  /* ── ARTICLE BODY ── */
+  .article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 64px; padding: 56px 0; align-items: flex-start; }
+
+  /* Table of contents */
+  .toc { position: sticky; top: 32px; }
+  .toc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 16px; display: block; font-weight: 500; }
+  .toc-list { list-style: none; display: flex; flex-direction: column; gap: 0; border-left: 1px solid var(--line); }
+  .toc-item a { display: block; padding: 8px 14px; font-size: 12px; color: var(--gray-3); border: none; line-height: 1.4; transition: color 0.15s, border-left-color 0.15s; border-left: 2px solid transparent; margin-left: -1px; }
+  .toc-item a:hover { color: var(--gold); border-left-color: var(--gold); }
+  .toc-item.active a { color: var(--gold); border-left-color: var(--gold); }
+  .toc-divider { height: 1px; background: var(--line); margin: 8px 0; }
+  .toc-share { margin-top: 28px; padding: 20px; background: var(--bg-card); border: 1px solid var(--line); }
+  .toc-share-lbl { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gray-3); margin-bottom: 12px; display: block; }
+  .share-links { display: flex; flex-direction: column; gap: 8px; }
+  .share-link { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-2); border: none; letter-spacing: 0.08em; transition: color 0.15s; }
+  .share-link:hover { color: var(--gold); }
+
+  /* Article prose */
+  .article-prose { min-width: 0; }
+  .article-prose h2 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em; color: var(--white); margin: 52px 0 16px; padding-top: 8px; line-height: 1.2; }
+  .article-prose h2:first-child { margin-top: 0; }
+  .article-prose h3 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; color: var(--white); margin: 32px 0 12px; }
+  .article-prose p { font-size: 15px; color: var(--gray-1); line-height: 1.8; margin-bottom: 18px; }
+  .article-prose p:last-child { margin-bottom: 0; }
+  .article-prose strong { color: var(--white); font-weight: 700; }
+  .article-prose ul, .article-prose ol { padding-left: 20px; margin-bottom: 18px; }
+  .article-prose li { font-size: 15px; color: var(--gray-1); line-height: 1.75; margin-bottom: 6px; }
+  .article-prose li::marker { color: var(--gold-dim); }
+  .article-prose a { color: var(--gold); border-bottom: 1px dotted var(--gold-dim); }
+  .article-prose a:hover { color: var(--gold-bright); }
+
+  /* Section anchor */
+  .section-anchor { display: block; position: relative; top: -32px; visibility: hidden; }
+
+  /* Section label */
+  .prose-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gold); margin-bottom: 8px; display: block; }
+
+  /* Key finding callout */
+  .finding {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--gold-dim);
+    padding: 24px 28px;
+    margin: 28px 0;
+    position: relative;
+  }
+  .finding::before { content: 'KEY FINDING'; position: absolute; top: -8px; left: 20px; background: var(--bg); padding: 0 8px; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.25em; color: var(--gold); font-weight: 500; }
+  .finding p { font-size: 15px; color: var(--gray-1); line-height: 1.7; margin: 0; }
+  .finding strong { color: var(--gold); }
+
+  /* Stat row */
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 28px 0; }
+  .stat-box { background: var(--bg-card); padding: 22px 20px; }
+  .stat-box-lbl { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gray-3); margin-bottom: 8px; display: block; }
+  .stat-box-val { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 32px; color: var(--white); line-height: 1; margin-bottom: 4px; }
+  .stat-box-val.gold { color: var(--gold); }
+  .stat-box-val.green { color: var(--green); }
+  .stat-box-val.red { color: var(--red); }
+  .stat-box-sub { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-3); }
+
+  /* Data table */
+  .data-table-wrap { margin: 28px 0; overflow-x: auto; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .data-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--gray-3); font-weight: 500; padding: 10px 16px; border-bottom: 1px solid var(--line-strong); text-align: left; background: var(--bg-elev); white-space: nowrap; }
+  .data-table tbody td { padding: 12px 16px; border-bottom: 1px solid var(--line); color: var(--gray-1); vertical-align: top; line-height: 1.5; }
+  .data-table tbody tr:last-child td { border-bottom: none; }
+  .data-table tbody tr:hover td { background: var(--bg-card); }
+  .td-gold { color: var(--gold); font-weight: 600; }
+  .td-green { color: var(--green); }
+  .td-red { color: var(--red); }
+  .td-mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+
+  /* Bar chart */
+  .bar-chart { margin: 28px 0; display: flex; flex-direction: column; gap: 10px; }
+  .bar-row { display: grid; grid-template-columns: 160px 1fr 48px; align-items: center; gap: 12px; }
+  .bar-lbl { font-size: 12px; color: var(--gray-2); text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bar-track { height: 8px; background: var(--gray-4); position: relative; }
+  .bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold-dim), var(--gold)); }
+  .bar-fill.green { background: linear-gradient(90deg, #3d7a47, var(--green)); }
+  .bar-fill.dim { background: var(--gray-4); opacity: 0.6; }
+  .bar-pct { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gold); font-weight: 500; }
+
+  /* Blockquote */
+  blockquote { border-left: 2px solid var(--gold-dim); padding: 18px 24px; margin: 28px 0; background: var(--bg-card); }
+  blockquote p { font-size: 16px; color: var(--gray-1); font-style: italic; line-height: 1.7; margin: 0; }
+  blockquote cite { display: block; margin-top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-3); font-style: normal; letter-spacing: 0.08em; }
+
+  /* Divider */
+  .prose-divider { border: none; border-top: 1px solid var(--line); margin: 44px 0; }
+
+  /* Author bio */
+  .author-bio-card { background: var(--bg-elev); border: 1px solid var(--line); padding: 32px; display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: flex-start; margin: 56px 0 0; position: relative; }
+  .author-bio-card::before { content: 'ABOUT THE AUTHOR'; position: absolute; top: -8px; left: 24px; background: var(--bg); padding: 0 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; color: var(--gold); font-weight: 500; }
+  .bio-avatar { width: 72px; height: 72px; background: var(--bg-card); border: 1px solid var(--line-strong); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 16px; color: var(--gold); font-weight: 700; flex-shrink: 0; overflow: hidden; }
+  .bio-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .bio-name { font-weight: 800; font-size: 17px; color: var(--white); margin-bottom: 4px; }
+  .bio-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 12px; display: block; }
+  .bio-text { font-size: 13px; color: var(--gray-2); line-height: 1.65; margin-bottom: 14px; }
+  .bio-links { display: flex; gap: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; }
+  .bio-links a { color: var(--gray-3); border: none; }
+  .bio-links a:hover { color: var(--gold); }
+
+  /* Related articles */
+  .related { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--line); }
+  .related-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 24px; display: block; font-weight: 500; }
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .related-card { background: var(--bg-card); padding: 24px; display: flex; flex-direction: column; transition: background 0.18s; }
+  .related-card:hover { background: var(--bg-hover); }
+  .related-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--gold); margin-bottom: 10px; display: block; }
+  .related-title { font-size: 15px; font-weight: 700; color: var(--white); line-height: 1.3; margin-bottom: 8px; }
+  .related-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-3); margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; }
+  .related-arrow { color: var(--gold); }
+
+  /* Footer */
+  footer.doc-footer { background: var(--bg-elev); border-top: 1px solid var(--line); padding: 48px 0 0; margin-top: 80px; }
+  .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; max-width: 1240px; margin: 0 auto; padding: 0 32px; margin-bottom: 32px; }
+  .footer-col h4 { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gray-3); margin-bottom: 14px; font-weight: 500; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer-col a { font-size: 13px; color: var(--gray-3); border: none; transition: color 0.15s; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom { border-top: 1px solid var(--line); padding: 20px 32px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); letter-spacing: 0.1em; text-transform: uppercase; max-width: 1240px; margin: 0 auto; }
+
+  /* Disclaimer strip */
+  .disclaimer-strip { background: var(--bg); border-top: 1px solid var(--line); padding: 16px 32px; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); line-height: 1.7; letter-spacing: 0.03em; }
+  .disclaimer-strip a { color: var(--gold); border-bottom: 1px dotted var(--gold-dim); font-size: 10px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .article-layout { grid-template-columns: 1fr; gap: 40px; }
+    .toc { position: static; display: none; }
+  }
+  /* MOBILE NAV */
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; -webkit-tap-highlight-color: transparent; }
+  .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--gray-1); transition: 0.22s; transform-origin: center; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-mobile { display: none; flex-direction: column; border-top: 1px solid var(--line); background: var(--bg-elev); position: relative; z-index: 9; }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gray-2); padding: 14px 32px; border-bottom: 1px solid var(--line); transition: color 0.15s; border-left: none; border-right: none; }
+  .nav-mobile a:hover { color: var(--gold); }
+  .nav-mobile a:last-child { border-bottom: none; }
+
+  @media (max-width: 768px) {
+    .app-header { padding: 20px 16px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .page-wrap { padding: 0 16px; }
+    .article-meta-bar { gap: 16px; }
+    .meta-divider { display: none; }
+    .stat-row { grid-template-columns: 1fr 1fr; }
+    .bar-row { grid-template-columns: 100px 1fr 44px; }
+    .related-grid { grid-template-columns: 1fr; }
+    .author-bio-card { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; padding: 0 16px; }
+    .footer-bottom { padding: 20px 16px; }
+    .disclaimer-strip { padding: 16px; }
+  }
+  @media (max-width: 480px) {
+    h1.article-title { font-size: 30px; }
+    .stat-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<!-- HEADER -->
+<header class="app-header">
+  <div class="header-inner">
+    <a href="https://metricbase.org" class="brand">
+      <span class="brand-mark"></span>
+      <span>
+        <div class="brand-name">Metric<span class="gold">BASE</span></div>
+        <div class="brand-tag">Precision growth · No wasted motion</div>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="https://metricbase.org/journal">Journal</a>
+      <a href="https://metricbase.org/about">About</a>
+      <a href="https://metricbase.org/contact">Contact</a>
+      <a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a>
+    </nav>
+    <button type="button" class="nav-hamburger" id="nav-hamburger-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="https://metricbase.org/journal">Journal</a>
+    <a href="https://metricbase.org/about">About</a>
+    <a href="https://metricbase.org/contact">Contact</a>
+      <a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a>
+  </nav>
+</header>
+
+<div class="page-wrap">
+
+  <!-- RISK DISCLAIMER BANNER -->
+  <div class="risk-banner">
+    <span class="risk-banner-label">Disclaimer</span>
+    <p>This is educational and research content, not financial advice. All data is sourced from public disclosures. Trading and investing involve substantial risk of loss. See our full <a href="https://metricbase.org/disclaimer">Disclaimer</a>.</p>
+  </div>
+
+  <!-- ARTICLE HERO -->
+  <article>
+  <header class="article-hero">
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <a href="https://metricbase.org">MetricBase</a>
+      <span>›</span>
+      <a href="https://metricbase.org/journal">Journal</a>
+      <span>›</span>
+      Research Report
+    </nav>
+    <div class="article-tag">Research Report · Energy · May 2026</div>
+    <h1 class="article-title">Anatomy of a<br>War Premium</h1>
+    <p class="article-deck">How the spring 2026 energy shock moves through the Indonesian portfolio. We trace the single transmission chain — crude to US inflation to the dollar to the rupiah to the IDX and crypto — that now governs retail outcomes across all three verticals, and ask which links break first.</p>
+    <div class="article-meta-bar">
+      <div class="meta-author">
+        <div class="author-avatar"><img src="../assets/pfp.webp" alt="Bun" loading="lazy" decoding="async"></div>
+        <div class="author-info">
+          <span class="author-name">Bun</span>
+          <span class="author-role">Lead Analyst · MetricBase</span>
+        </div>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="meta-lbl">Published</span>
+        <span class="meta-val">29 May 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-lbl">Read time</span>
+        <span class="meta-val">~16 min</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-lbl">Words</span>
+        <span class="meta-val">~3,600</span>
+      </div>
+      <span class="meta-tag">Energy</span>
+      <span class="meta-tag">Macro</span>
+      <span class="meta-tag">Cross-Vertical</span>
+    </div>
+  </header>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-layout">
+
+    <!-- MAIN PROSE -->
+    <div class="article-prose">
+
+      <!-- EXECUTIVE SUMMARY -->
+      <span class="section-anchor" id="exec-summary"></span>
+      <span class="prose-label">Section 01</span>
+      <h2>Executive Summary</h2>
+
+      <p>One variable has dominated every market MetricBase tracks since April: the price of crude. The Iran–Israel conflict and the periodic threat to the Strait of Hormuz drove WTI to a 2026 high near $119 a barrel before it settled into the high-$80s to mid-$90s through May. That single move — the "war premium" — is not an energy story confined to one vertical. It is the input to a transmission chain that ends in the rupiah, the IDX, and the Bitcoin balance of every Indonesian retail trader.</p>
+
+      <p>This report traces that chain link by link. The thesis is simple and, by late May, well-evidenced: a sustained oil shock raises US inflation, which keeps the Federal Reserve on hold, which keeps the dollar bid, which pressures the rupiah, which forces Bank Indonesia to defend the currency rather than support growth — and the IDX and crypto sit at the end of that line as the assets retail can actually sell. Understanding the order of the dominoes is the difference between reacting to each headline and positioning for the next one.</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <span class="stat-box-lbl">WTI 2026 High (April)</span>
+          <div class="stat-box-val red">~$119</div>
+          <span class="stat-box-sub">Strait of Hormuz premium</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">USD/IDR (late May)</span>
+          <div class="stat-box-val gold">~17,839</div>
+          <span class="stat-box-sub">Near record lows</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">JCI Week to 22 May</span>
+          <div class="stat-box-val red">−8.35%</div>
+          <span class="stat-box-sub">Close 6,162 · foreign outflows</span>
+        </div>
+      </div>
+
+      <div class="finding">
+        <p>The most actionable finding in this report: <strong>the war premium is not symmetric for Indonesia.</strong> High crude is, on paper, good for a commodity exporter — but in 2026 the inflation-and-rupiah channel is winning over the export-earnings channel. The oil that lifts coal and CPO names is the same oil that weakens the currency and corners the central bank, and retail is feeling the second effect faster than the first.</p>
+      </div>
+
+      <!-- THE SHOCK -->
+      <span class="section-anchor" id="shock"></span>
+      <span class="prose-label">Section 02</span>
+      <h2>The Shock: What a War Premium Actually Is</h2>
+
+      <p>A war premium is the gap between what oil costs because of supply and demand, and what it costs because of fear. In the spring of 2026 that gap became the larger half of the price. Strikes between Iran and Israel, the recurring threat to close the Strait of Hormuz — the chokepoint through which roughly a fifth of seaborne crude moves — and elevated tanker insurance rates pushed WTI to a 2026 high near $119 a barrel in April before it settled into a volatile high-$80s-to-mid-$90s range through May.</p>
+
+      <p>The defining feature of this premium is asymmetry. It gaps in on a headline within hours and leaks out slowly over days, because traders price the tail risk of a Hormuz closure immediately but only unwind it once a de-escalation looks durable. That asymmetry is why a single news cycle can move every Indonesian retail portfolio before the local market has even opened.</p>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Driver</th>
+              <th>Behaviour</th>
+              <th>Status (late May)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Fundamental price</td>
+              <td>Supply / demand balance</td>
+              <td>Slow-moving</td>
+              <td class="td-mono">~$70s base</td>
+            </tr>
+            <tr>
+              <td>War premium</td>
+              <td>Hormuz / strike risk</td>
+              <td>Gaps in, leaks out</td>
+              <td class="td-gold">$15–45 on top</td>
+            </tr>
+            <tr>
+              <td>OPEC+ supply signal</td>
+              <td>Quota policy</td>
+              <td>Symbolic, gradual</td>
+              <td class="td-green">+188k bpd (June)</td>
+            </tr>
+            <tr>
+              <td>Insurance / freight</td>
+              <td>Transit risk</td>
+              <td>Sticky once elevated</td>
+              <td class="td-red">Elevated</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>OPEC+ added a deliberately modest counterweight. On 3 May, seven members — Saudi Arabia, Russia, Iraq, Kuwait, Kazakhstan, Algeria and Oman — agreed to lift output by a combined 188,000 barrels per day effective June, the first such move since the UAE stepped away from the voluntary-cut group. Saudi Arabia and Russia took the largest shares at roughly 62,000 bpd each. The increase was symbolic relative to the size of the premium: it signalled willingness to stabilise the market without committing real barrels into a conflict whose supply risk no quota can offset. Crude stayed elevated because the bid was geopolitical, not fundamental — and a geopolitical bid does not respond to a 188k-bpd quota tweak.</p>
+
+      <!-- TRANSMISSION CHAIN -->
+      <span class="section-anchor" id="chain"></span>
+      <span class="prose-label">Section 03</span>
+      <h2>The Transmission Chain</h2>
+
+      <p>The reason an oil price set in the Gulf moves a Jakarta retail portfolio is a five-link chain. Each link is mechanical; none of it requires the Indonesian trader to follow Middle East news at all. By late May, the first three links were already visible in the data, and the last two were the live risk.</p>
+
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-lbl">1 · Crude rises</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
+          <span class="bar-pct">In</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">2 · US inflation up</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 84%;"></div></div>
+          <span class="bar-pct">In</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">3 · Fed stays on hold</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 70%;"></div></div>
+          <span class="bar-pct">In</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">4 · Dollar bid / rupiah weak</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 58%;"></div></div>
+          <span class="bar-pct">Live</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">5 · IDX + crypto pressured</span>
+          <div class="bar-track"><div class="bar-fill dim" style="width: 44%;"></div></div>
+          <span class="bar-pct">Live</span>
+        </div>
+      </div>
+
+      <p><strong>Link one to two: crude into US inflation.</strong> Energy feeds directly into headline CPI and indirectly into nearly every goods category through freight and input costs. The April US inflation read already showed the spring premium leaking into the index, and by late May the consensus question was no longer whether the May print (due mid-June) would accelerate, but by how much — with gasoline at the pump the single most visible driver. A 4%-handle CPI print was no longer a tail scenario; it was the base case the rates market was being forced to price.</p>
+
+      <p><strong>Link two to three: inflation into the Fed.</strong> An energy-driven inflation spike is exactly the kind a central bank is reluctant to "look through" when it has spent two years restoring credibility. The practical effect is that the rate cuts the market had penciled in for 2026 kept sliding further out. That matters to Indonesia twice over — once through the dollar, and once through the risk appetite that funds emerging-market and crypto inflows.</p>
+
+      <div class="finding">
+        <p>The chain's cruel mechanic for Indonesia: <strong>the same shock pushes the dollar up and pushes the assets retail owns down — at the same time.</strong> A higher-for-longer Fed keeps the dollar bid, which drains the rupiah; and a higher discount rate compresses the valuation of long-duration risk assets, which is what IDX growth names and crypto both are. There is no link in the chain where the Indonesian retail trader is the beneficiary.</p>
+      </div>
+
+      <!-- RUPIAH -->
+      <span class="section-anchor" id="rupiah"></span>
+      <span class="prose-label">Section 04</span>
+      <h2>The Rupiah: Where the Chain Bites First</h2>
+
+      <p>The rupiah is the pressure point that an Indonesian retail trader feels before any other. It is the link in the chain that converts a foreign event into a domestic loss, and by late May it was under sustained strain. USD/IDR weakened to around 17,839 — pressing against record-low territory — as the war premium, a firm dollar, and steady foreign equity outflows combined. For a country that imports a large share of its refined fuel, a high oil price and a weak currency are the same wound applied twice: the import bill rises in dollars and each of those dollars costs more rupiah.</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <span class="stat-box-lbl">USD/IDR (late May)</span>
+          <div class="stat-box-val red">~17,839</div>
+          <span class="stat-box-sub">Near record lows</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">BI Policy Rate</span>
+          <div class="stat-box-val gold">5.25%</div>
+          <span class="stat-box-sub">Defending, not easing</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">Fuel Import Exposure</span>
+          <div class="stat-box-val">High</div>
+          <span class="stat-box-sub">Net refined-product importer</span>
+        </div>
+      </div>
+
+      <p>This is the heart of the asymmetry. The textbook says a weak currency helps a commodity exporter, because coal and palm oil are sold in dollars and converted back into more rupiah. That channel is real and it does support exporter earnings. But it is slow, it accrues to companies rather than households, and it is swamped in the near term by the inflation-and-confidence channel: a fast-falling rupiah lifts the price of fuel and imported goods for everyone, erodes the real value of every rupiah-denominated savings balance, and triggers the policy response that does the most direct damage to retail risk assets.</p>
+
+      <blockquote>
+        <p>"For the household, a weak rupiah during an oil shock is not an export story. It is a fuel-price story and a savings story. The export benefit is on a corporate balance sheet they do not own; the import cost is in a fuel tank they fill every week."</p>
+        <cite>— MetricBase macro desk note, May 2026</cite>
+      </blockquote>
+
+      <p>Bank Indonesia entered the period with its policy rate already elevated, focused on defending the currency rather than supporting growth. That posture is itself a cost: every basis point held to protect the rupiah is a basis point not available to support the equity market or domestic demand. By late May the central bank was visibly cornered — unable to cut without risking a disorderly slide in the currency, and unable to stand still without ceding ground to the dollar. The market understood that the next leg of the rupiah would likely force its hand.</p>
+
+      <!-- IDX -->
+      <span class="section-anchor" id="idx"></span>
+      <span class="prose-label">Section 05</span>
+      <h2>The IDX Under the Premium</h2>
+
+      <p>The equity market is where the chain becomes a number on a retail trading screen. The week to 22 May was the clearest signal of the period: the JCI fell 8.35% to close near 6,162, dragged by persistent foreign outflows as global investors trimmed emerging-market exposure into a stronger dollar and a higher-for-longer rate path. This is the textbook EM-under-an-oil-shock response — capital leaves the periphery for dollar safety, and Indonesia, despite being a commodity exporter, trades as the periphery.</p>
+
+      <p>Underneath the index, the split is exactly what the asymmetry predicts. Commodity exporters — coal, CPO, nickel — are the structural beneficiaries of high crude and a weak rupiah, and the macro-literate retail cohort identified in our April flagship has stayed positioned in those names. But that single bid cannot hold up a market when banks, consumer, and growth names are absorbing the rate-and-currency hit and foreigners are selling the index wholesale.</p>
+
+      <div class="finding">
+        <p>The April flagship documented that Indonesian retail had crowded into commodity names — 31% of estimated retail IDX allocation. The war premium is the live test of that thesis, and it cuts both ways: <strong>the exporter bid is real, but it is being overwhelmed by the index-level damage the same shock inflicts through the rupiah and rates.</strong> Owning the right sector has not protected retail from owning the wrong currency.</p>
+      </div>
+
+      <p>The foreign-versus-domestic divergence flagged in April persisted into May: foreigners net sellers of the index, domestic retail still net buyers of the commodity complex. Historically that standoff resolves in favour of whoever has the better read on domestic conditions. But in an externally-driven shock — where the binding variable is the dollar and the Fed, not Indonesian fundamentals — the foreign flow is reading the right macro. The lesson of late May is that a domestic information edge does not help when the shock is imported.</p>
+
+      <p>Sentiment was not helped by credit-watch noise: Moody's flagged a Danantara-linked unit even as the JCI was printing 2026 lows, the kind of headline that, in a fragile tape, accelerates the foreign exit rather than causes it. The index was already heavy; the rating commentary simply gave the outflow a reason to move faster.</p>
+
+      <!-- CRYPTO -->
+      <span class="section-anchor" id="crypto"></span>
+      <span class="prose-label">Section 06</span>
+      <h2>Crypto: The Dollar Hedge That Has a Rate Problem</h2>
+
+      <p>Crypto sits at the end of the chain, and it plays a dual role for Indonesian retail that the April flagship first identified: it is both a risk asset that sells off in a global de-risking, and a dollar-denominated store of value that some traders reach for when the rupiah is falling. Through May, the first role dominated. Bitcoin spent the month in a high range — roughly $73,000 to $78,000, closing late May near $73,700 — holding up better than the IDX but unable to push higher into a rising-rate, strong-dollar backdrop.</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <span class="stat-box-lbl">BTC (late May close)</span>
+          <div class="stat-box-val gold">~$73,700</div>
+          <span class="stat-box-sub">Range-bound $73k–78k</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">ETH (late May)</span>
+          <div class="stat-box-val">~$2,000</div>
+          <span class="stat-box-sub">Lagging BTC</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">ETH/BTC</span>
+          <div class="stat-box-val red">~0.027</div>
+          <span class="stat-box-sub">Defensive, BTC-led tape</span>
+        </div>
+      </div>
+
+      <p>The internals were already defensive before the June break. Ether lagged, holding near $2,000 and leaving ETH/BTC pinned near the lows — the classic signature of a flight-to-quality tape where capital that stays in crypto concentrates in Bitcoin and abandons the speculative curve. This is the same BTC-dominance shift our flagship documented as a structural feature of the surviving 2026 cohort; the war premium reinforced it. When the macro is hostile, retail does not leave crypto so much as retreat to its safest corner.</p>
+
+      <div class="finding">
+        <p>The hedge has a catch. Holding dollar-denominated BTC does protect an Indonesian trader against rupiah weakness — that part works. <strong>But the same oil-driven inflation that weakens the rupiah also keeps the Fed on hold, and a higher-for-longer rate path is precisely what caps Bitcoin's upside.</strong> The currency hedge and the rate headwind are the two ends of the same chain. Retail gets the protection and the ceiling in one position.</p>
+      </div>
+
+      <p>This is why crypto held its range in May rather than breaking out as a "war hedge." The narrative that geopolitical stress is bullish for Bitcoin runs straight into the rates wall: any flight-to-hard-money bid was offset by the disappearance of the cheap-money tailwind that powered the 2024–25 advance. A range, not a rally, was the honest read of that standoff — and the range was the calm before June.</p>
+
+      <!-- RETAIL RESPONSE -->
+      <span class="section-anchor" id="response"></span>
+      <span class="prose-label">Section 07</span>
+      <h2>How Retail Read the Chain</h2>
+
+      <p>The most interesting finding of the period is that Indonesian retail responded to the war premium as a single macro event across all three verticals, not as three separate market stories. MetricBase platform and search tracking shows the same trigger — a crude move of more than ~3% on a Hormuz headline — producing a coordinated 48-to-72-hour response: a spike in searches for coal and CPO tickers, a bump in net buying of those exporter names, and, in parallel, increased Bitcoin activity as a currency hedge. The Indonesian retail base reads oil as the master variable, even when it cannot articulate the chain that connects it to a Jakarta-listed coal stock.</p>
+
+      <p>That intuition is half-right in a way that matters. Retail correctly identifies oil as the signal and correctly buys the exporters that benefit from it. What the intuition misses is the second-order rupiah-and-rates damage — the part of the chain that arrives later and hits the broad index and the long-duration crypto position. The trader who bought coal on the oil spike was reading the first link; the loss on the rest of the portfolio came from the links he did not price.</p>
+
+      <div class="finding">
+        <p>The behavioural risk our April flagship flagged becomes acute under an energy shock: a cohort that exits winners early and holds losers waiting for "recovery," combined with thin stop-loss discipline (~22% of equity, ~14% of crypto retail), is structurally exposed to a slow grind lower. <strong>A war premium does not produce one clean crash to react to — it produces a weeks-long bleed, which is precisely the environment that punishes "wait for recovery" the most.</strong></p>
+      </div>
+
+      <p>The cross-vertical correlation thesis from the flagship — that Indonesian retail behaves as a single risk-appetite switch in volatile regimes, with an estimated 0.72 flow correlation across verticals — held visibly through May. There was no diversification benefit on offer: equities, crypto, and the currency-sensitive parts of the portfolio all leaned the same way at the same time, because they were all downstream of the same barrel of oil.</p>
+
+      <!-- OUTLOOK -->
+      <span class="section-anchor" id="outlook"></span>
+      <span class="prose-label">Section 08</span>
+      <h2>What Breaks Next: The Links to Watch</h2>
+
+      <p>The transmission chain is a forecasting tool as much as an explanation. By tracing which links are already "in" and which are "live," you get a watch-list ordered by what happens first. These are structural observations, not predictions or investment recommendations.</p>
+
+      <h3>The May CPI print (mid-June)</h3>
+      <p>This is the next domino and the single most important number for every MetricBase vertical. Gasoline at the pump is the most visible channel for the war premium, and a 4%-handle US CPI — well above target and the highest in years — would confirm link two and effectively lock in link three, pushing Fed cuts further out. A hot print is the bearish case for the rupiah, the IDX, and crypto simultaneously; a surprise cool print is the only clean way the chain loosens from the top.</p>
+
+      <h3>The rupiah and Bank Indonesia</h3>
+      <p>USD/IDR near 17,839 is the cleanest single gauge of stress. The level to watch is the record-low zone toward 18,000: a decisive break there would likely force Bank Indonesia off the sidelines, and an emergency or off-schedule hike is the visible signal that the currency link has reached its limit. A defensive hike stabilises the rupiah but tightens domestic financial conditions — relief for the currency, fresh pressure on equities.</p>
+
+      <h3>The ceasefire</h3>
+      <p>Every link in this chain originates with the war premium, so the durability of any Iran–Israel de-escalation is the master switch. Because the premium leaks out faster than it gaps in, a credible, lasting halt would unwind the chain from the top — crude lower, inflation pressure easing, the dollar softening, the rupiah recovering, and risk assets repricing higher. The asymmetry that punished retail on the way in would work in their favour on the way out.</p>
+
+      <div class="finding">
+        <p>The single most important signal for the weeks ahead: <strong>watch the links in order — crude, then CPI, then the rupiah's distance from its record low.</strong> When one link gives, the next tends to follow within days. The mistake is to trade each vertical's headline in isolation; the edge is to recognise that in a war-premium regime, the IDX, the rupiah, and Bitcoin are not three markets but three readings of the same barrel.</p>
+      </div>
+
+      <hr class="prose-divider">
+
+      <h3>Sources &amp; Data Methodology</h3>
+      <p>Crude oil levels (WTI 2026 high near $119; high-$80s-to-mid-$90s range) and the OPEC+ 3 May decision (+188,000 bpd effective June, first without the UAE) are from public market data and OPEC+ reporting. JCI (−8.35% week to ~6,162 close, 22 May) and USD/IDR (~17,839, late May) are from IDX and FX market data and Indonesian financial press. Bitcoin and Ether levels are sourced live via the Crypto.com exchange API (daily candles, late May 2026). Indonesian retail structure, allocation, and behavioural figures carry forward from the MetricBase April 2026 flagship, <a href="https://metricbase.org/journal/research-retail-trader-2026">State of the Indonesian Retail Trader 2026</a>, and its underlying OJK/KSEI/IDX sources.</p>
+      <p>The transmission-chain framework is analytical: the links are mechanically established, but the magnitude and timing of each are estimates subject to the limits of public data and should be read as indicative, not precise. Forward-looking items (the May CPI print, central-bank response, ceasefire path) were open questions as of publication. Corrections and source challenges are welcome at <a href="https://metricbase.org/contact">support@metricbase.org</a>.</p>
+
+      <!-- AUTHOR BIO -->
+      <div class="author-bio-card">
+        <div class="bio-avatar"><img src="../assets/pfp.webp" alt="Bun" loading="lazy" decoding="async"></div>
+        <div>
+          <div class="bio-name">Bun</div>
+          <span class="bio-title">Lead Analyst · MetricBase</span>
+          <p class="bio-text">MetricBase's chibi penguin mascot and lead analyst — curious, reactive, and unafraid to call a divergence when the data says so. Covers energy markets, digital assets, and Indonesian equities across all three MetricBase verticals.</p>
+          <div class="bio-links">
+            <a href="https://x.com/MetricBase" target="_blank" rel="noopener">X / Twitter ↗</a>
+            <a href="https://metricbase.org/about">About ↗</a>
+            <a href="https://metricbase.org/contact">Contact ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RELATED -->
+      <div class="related">
+        <span class="related-label">More from the Journal</span>
+        <div class="related-grid">
+          <a class="related-card" href="/journal/research-retail-trader-2026">
+            <span class="related-tag">Research Report · Flagship</span>
+            <div class="related-title">State of the Indonesian Retail Trader 2026</div>
+            <div class="related-meta">
+              <span>Apr 28, 2026</span>
+              <span class="related-arrow">↗</span>
+            </div>
+          </a>
+          <a class="related-card" href="/journal/weekly-brief-4">
+            <span class="related-tag">Weekly Brief — #4</span>
+            <div class="related-title">The Latest Cross-Vertical Read — Oil, Bitcoin, and the IDX</div>
+            <div class="related-meta">
+              <span>May 25, 2026</span>
+              <span class="related-arrow">↗</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /.article-prose -->
+
+    <!-- TABLE OF CONTENTS (sidebar) -->
+    <aside class="toc" aria-label="Table of contents">
+      <span class="toc-label">Contents</span>
+      <ol class="toc-list">
+        <li class="toc-item"><a href="#exec-summary">01 · Executive Summary</a></li>
+        <li class="toc-item"><a href="#shock">02 · The Shock</a></li>
+        <li class="toc-item"><a href="#chain">03 · Transmission Chain</a></li>
+        <li class="toc-item"><a href="#rupiah">04 · The Rupiah</a></li>
+        <li class="toc-item"><a href="#idx">05 · IDX Under the Premium</a></li>
+        <li class="toc-item"><a href="#crypto">06 · Crypto &amp; the Rate Problem</a></li>
+        <li class="toc-item"><a href="#response">07 · How Retail Read It</a></li>
+        <li class="toc-item"><a href="#outlook">08 · Links to Watch</a></li>
+      </ol>
+      <div class="toc-divider"></div>
+      <div class="toc-share">
+        <span class="toc-share-lbl">Share this report</span>
+        <div class="share-links">
+          <a class="share-link" href="https://x.com/intent/post?text=Anatomy+of+a+War+Premium+%E2%80%94+%40MetricBase&url=https%3A%2F%2Fmetricbase.org%2Fjournal%2Fresearch-war-premium-2026" target="_blank" rel="noopener">Share on X ↗</a>
+          <a class="share-link" href="https://metricbase.org/journal">Back to Journal →</a>
+        </div>
+      </div>
+    </aside>
+
+  </div><!-- /.article-layout -->
+  </article>
+
+</div><!-- /.page-wrap -->
+
+<!-- FOOTER -->
+<footer class="doc-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>MetricBase</h4>
+      <ul>
+        <li><a href="https://metricbase.org">Portal</a></li>
+        <li><a href="https://metricbase.org/journal">Journal</a></li>
+        <li><a href="https://metricbase.org/about">About</a></li>
+        <li><a href="https://metricbase.org/contact">Contact</a></li>
+          <li><a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Verticals</h4>
+      <ul>
+        <li><a href="https://energy.metricbase.org">Energy Markets</a></li>
+        <li><a href="https://chain.metricbase.org">Crypto &amp; Tech</a></li>
+        <li><a href="https://saham.metricbase.org">Pasar Saham</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+              <h4>Legal</h4>
+        <ul>
+          <li><a href="https://metricbase.org/privacy">Privacy Policy</a></li>
+          <li><a href="https://metricbase.org/terms">Terms of Service</a></li>
+          <li><a href="https://metricbase.org/disclaimer">Disclaimer</a></li>
+          <li><a href="https://metricbase.org/cookie-policy">Cookie Policy</a></li>
+          <li><a href="https://metricbase.org/editorial-standards">Editorial Standards</a></li>
+          <li><a href="https://metricbase.org/contact">Contact</a></li>
+        </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 MetricBase · Precision growth · No wasted motion</div>
+    <div>Research · JOUR-R002 · Published May 29 2026</div>
+  </div>
+</footer>
+
+<div class="disclaimer-strip">
+  MetricBase publishes for informational and educational purposes only. Nothing in this report constitutes financial, investment, legal, or tax advice.
+  All data cited is from publicly available sources; MetricBase makes no warranty as to its accuracy or completeness.
+  &nbsp;·&nbsp; <a href="https://metricbase.org/disclaimer">Full Disclaimer</a>
+  &nbsp;·&nbsp; <a href="https://metricbase.org/privacy">Privacy Policy</a>
+</div>
+
+<script>
+  /* Active TOC highlight on scroll */
+  var sections = document.querySelectorAll('.section-anchor');
+  var tocItems = document.querySelectorAll('.toc-item');
+
+  function onScroll() {
+    var scrollY = window.scrollY + 80;
+    var current = '';
+    sections.forEach(function(s) {
+      if (s.offsetTop <= scrollY) current = s.id;
+    });
+    tocItems.forEach(function(item) {
+      var a = item.querySelector('a');
+      if (!a) return;
+      var hrefAttr = a.getAttribute('href');
+      if (!hrefAttr || hrefAttr.charAt(0) !== '#') return;
+      item.classList.toggle('active', hrefAttr.slice(1) === current);
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  function toggleMobileNav() {
+    var btn = document.getElementById('nav-hamburger-btn');
+    var nav = document.getElementById('nav-mobile');
+    if (!btn || !nav) return;
+    var isOpen = nav.classList.contains('open');
+    nav.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  }
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.app-header')) {
+      var nav = document.getElementById('nav-mobile');
+      var btn = document.getElementById('nav-hamburger-btn');
+      if (nav) nav.classList.remove('open');
+      if (btn) {
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    }
+  });
+</script>
+</body>
+</html>
