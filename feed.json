@@ -1,0 +1,273 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "MetricBase Journal",
+  "home_page_url": "https://metricbase.org/journal",
+  "feed_url": "https://metricbase.org/feed.json",
+  "description": "Cross-vertical research, editorials, and weekly market briefs across energy, crypto, and Indonesian equities.",
+  "icon": "https://metricbase.org/assets/MetricBase.webp",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Bun",
+      "url": "https://metricbase.org/about"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://metricbase.org/journal/research-capitulation-correlation-2026",
+      "url": "https://metricbase.org/journal/research-capitulation-correlation-2026",
+      "title": "Capitulation and Correlation",
+      "summary": "June 2026's synchronized cross-asset selloff — Bitcoin, the IDX, and the rupiah moving as one. The live stress test of MetricBase's correlation thesis.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-06-15T08:00:00+07:00",
+      "tags": [
+        "Research Report"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-7",
+      "url": "https://metricbase.org/journal/weekly-brief-7",
+      "title": "Weekly Brief #7 — An Iran Shock, a Record-Low Rupiah, and a Friday Relief Rally",
+      "summary": "Oil premium deflates on de-escalation, CPI 4.2%, BTC bounces off a capitulation low, JCI rips off six-year lows — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-06-15T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/editorial-one-bet-portfolio",
+      "url": "https://metricbase.org/journal/editorial-one-bet-portfolio",
+      "title": "Your Three-Asset Portfolio Is One Bet",
+      "summary": "Why Indonesian retail's IDX, crypto, and rupiah holdings are one trade in a drawdown — and what June 2026 proved.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-06-13T08:00:00+07:00",
+      "tags": [
+        "Editorial"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/editorial-emergency-hike-confession",
+      "url": "https://metricbase.org/journal/editorial-emergency-hike-confession",
+      "title": "An Emergency Hike Is a Confession",
+      "summary": "Why Bank Indonesia's off-schedule hike to 5.50% was a confession that the rupiah is now setting policy.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-06-10T08:00:00+07:00",
+      "tags": [
+        "Editorial"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-6",
+      "url": "https://metricbase.org/journal/weekly-brief-6",
+      "title": "Weekly Brief #6 — Capitulation — Six-Year Low on the IDX, a Record-Low Rupiah, Bitcoin Breaks $61k",
+      "summary": "Renewed Iran strikes, BTC capitulates 17%, IDX six-year low, rupiah record, emergency BI hike — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-06-08T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/editorial-foreigners-might-be-right",
+      "url": "https://metricbase.org/journal/editorial-foreigners-might-be-right",
+      "title": "Foreigners Are Selling. They Might Be Right.",
+      "summary": "Why the foreign exit from the IDX was the smarter flow when the 2026 shock was imported, not domestic.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-06-05T08:00:00+07:00",
+      "tags": [
+        "Editorial"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/editorial-bitcoin-not-a-war-hedge",
+      "url": "https://metricbase.org/journal/editorial-bitcoin-not-a-war-hedge",
+      "title": "Bitcoin Is Not a War Hedge",
+      "summary": "Why Bitcoin fell with the 2026 war instead of hedging it — and what that says about crypto in a portfolio.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-06-02T08:00:00+07:00",
+      "tags": [
+        "Editorial"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-5",
+      "url": "https://metricbase.org/journal/weekly-brief-5",
+      "title": "Weekly Brief #5 — A Grind Lower as the Rupiah Nears Records",
+      "summary": "Crude slides on demand worry, BTC bleeds a fifth week, rupiah nears records as BI is cornered — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-06-01T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/research-war-premium-2026",
+      "url": "https://metricbase.org/journal/research-war-premium-2026",
+      "title": "Anatomy of a War Premium",
+      "summary": "How the spring 2026 energy shock transmits through Indonesian markets — crude, inflation, the rupiah, the IDX, and crypto, traced as a single chain.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-05-29T08:00:00+07:00",
+      "tags": [
+        "Research Report"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-4",
+      "url": "https://metricbase.org/journal/weekly-brief-4",
+      "title": "Weekly Brief #4 — Crude Rolls Over, Bitcoin Cracks, the IDX Bleeds",
+      "summary": "Crude whipsaws lower but risk keeps falling — BTC breaks $78k, IDX bleeds, rupiah weak despite hikes — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-05-26T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/editorial-not-a-commodity-play",
+      "url": "https://metricbase.org/journal/editorial-not-a-commodity-play",
+      "title": "Stop Calling Indonesia a Commodity Play",
+      "summary": "Why the inflation-and-rupiah channel beats the export-earnings story for Indonesia during an oil shock.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-05-22T08:00:00+07:00",
+      "tags": [
+        "Editorial"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-3",
+      "url": "https://metricbase.org/journal/weekly-brief-3",
+      "title": "Weekly Brief #3 — Crude Spikes to $105, Risk Wobbles, the Rupiah Weakens",
+      "summary": "Iran blockade flare gaps WTI to $105, BTC slips, rupiah weakens as BI hikes to 5.25% — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-05-19T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-2",
+      "url": "https://metricbase.org/journal/weekly-brief-2",
+      "title": "Weekly Brief #2 — Oil Cools, Bitcoin Tags $80k, the IDX Slips",
+      "summary": "Crude eases below $100, BTC spring high at $80k, IDX below 7,000 ahead of a BI hike — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-05-12T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/editorial-20-million-investor-myth",
+      "url": "https://metricbase.org/journal/editorial-20-million-investor-myth",
+      "title": "The 20-Million-Investor Myth",
+      "summary": "Why Indonesia's 20 million account headline overstates real retail participation — dormancy is the story.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-05-08T08:00:00+07:00",
+      "tags": [
+        "Editorial"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-1",
+      "url": "https://metricbase.org/journal/weekly-brief-1",
+      "title": "Weekly Brief #1 — War Premium, a Firm Bitcoin, and a Grinding Rupiah",
+      "summary": "Crude above $100 on the Iran blockade, BTC firm near $78k, rupiah grinding weaker — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-05-05T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/research-retail-trader-2026",
+      "url": "https://metricbase.org/journal/research-retail-trader-2026",
+      "title": "State of the Indonesian Retail Trader 2026",
+      "summary": "Original data analysis on trading patterns, asset allocation, and market access among Indonesian retail investors.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-04-28T08:00:00+07:00",
+      "tags": [
+        "Research Report"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    }
+  ]
+}
