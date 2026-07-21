@@ -119,6 +119,11 @@
     --gray-4:     #2a2a2a;
     --line:       rgba(255,255,255,0.06);
     --line-strong:rgba(201, 168, 76, 0.3);
+    /* MetricBase World — additive accent, scoped to #world-teaser only.
+       --gold stays the site's brand color everywhere else. */
+    --world-accent: #4FB8A8;
+    --world-accent-bright: #6FD4C2;
+    --world-line: rgba(79, 168, 168, 0.28);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -557,6 +562,78 @@
 
   .vertical-card:hover .vertical-link { color: var(--gold); }
   .vertical-link-arrow { font-size: 14px; color: var(--gold); }
+
+  /* ── WORLD TEASER ──────────────────────────────── */
+  #world-teaser { padding: 80px 0; border-bottom: 1px solid var(--line); }
+
+  .world-teaser-panel {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    border: 1px solid var(--world-line);
+    background: var(--bg-elev);
+    padding: 40px;
+    position: relative;
+  }
+
+  .world-teaser-panel::before {
+    content: 'FROM THE METRICBASE NETWORK';
+    position: absolute;
+    top: -8px;
+    left: 28px;
+    background: var(--bg);
+    padding: 0 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--world-accent-bright);
+    font-weight: 500;
+  }
+
+  .world-teaser-art img { width: 100%; border: 1px solid var(--world-line); display: block; }
+
+  .world-teaser-copy .section-label { color: var(--world-accent-bright); }
+
+  .world-teaser-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+
+  .world-teaser-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 26px;
+    background: var(--world-accent);
+    color: var(--bg) !important;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background 0.15s;
+  }
+
+  .world-teaser-cta:hover { background: var(--world-accent-bright); }
+
+  .world-teaser-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--gray-2);
+    transition: color 0.15s;
+  }
+
+  .world-teaser-link:hover { color: var(--world-accent-bright); }
+
+  @media (max-width: 900px) {
+    .world-teaser-panel { grid-template-columns: 1fr; }
+  }
 
   /* ── JOURNAL PREVIEW ───────────────────────────── */
   #journal-preview { padding: 80px 0; border-bottom: 1px solid var(--line); }
@@ -1215,6 +1292,7 @@
         <a href="https://chain.metricbase.org">Crypto</a>
         <a href="https://saham.metricbase.org">Stocks</a>
         <a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a>
+        <a href="https://world.metricbase.org" target="_blank" rel="noopener">Play</a>
         <a href="/journal">Journal</a>
         <a href="/about">About</a>
         <a href="#subscribe" class="nav-cta">Subscribe</a>
@@ -1228,6 +1306,7 @@
       <a href="https://chain.metricbase.org">Crypto &amp; Tech ↗</a>
       <a href="https://saham.metricbase.org">Pasar Saham ↗</a>
       <a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a>
+      <a href="https://world.metricbase.org" target="_blank" rel="noopener">Play</a>
       <a href="/journal">Journal</a>
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
@@ -1306,6 +1385,26 @@
           saham.metricbase.org <span class="vertical-link-arrow">↗</span>
         </div>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── WORLD TEASER ─────────────────────────────────── -->
+<section id="world-teaser">
+  <div class="container">
+    <div class="world-teaser-panel reveal">
+      <div class="world-teaser-art">
+        <img src="assets/world-banner.webp" alt="MetricBase World — browser isometric MMO" loading="lazy" decoding="async">
+      </div>
+      <div class="world-teaser-copy">
+        <span class="section-label">A different kind of product</span>
+        <h2 class="section-title">MetricBase World.<br>An economy you can play.</h2>
+        <p class="section-sub">A browser-native isometric MMO — gather, craft, trade, build player-owned worlds, and fight for territory. Runs entirely in your browser. No download.</p>
+        <div class="world-teaser-actions">
+          <a class="world-teaser-cta" href="https://world.metricbase.org" target="_blank" rel="noopener">Play Now ↗</a>
+          <a class="world-teaser-link" href="/world">Learn more →</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1540,6 +1639,7 @@
         <ul>
           <li><a href="/journal">Journal</a></li>
           <li><a href="/about">About</a></li>
+          <li><a href="https://world.metricbase.org" target="_blank" rel="noopener">World ↗</a></li>
           <li><a href="https://og.metricbase.org">OG-tools</a></li>
           <li><a href="/privacy">Privacy Policy</a></li>
           <li><a href="/terms">Terms of Service</a></li>
