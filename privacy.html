@@ -216,7 +216,7 @@
       </div>
       <div class="doc-meta-item">
         <span class="doc-meta-lbl">Last Updated</span>
-        <span class="doc-meta-val">14 May 2026</span>
+        <span class="doc-meta-val">13 September 2026</span>
       </div>
       <div class="doc-meta-item">
         <span class="doc-meta-lbl">Applies To</span>
@@ -248,6 +248,7 @@
         <li><a href="#s10">Children's privacy</a></li>
         <li><a href="#s11">Security</a></li>
         <li><a href="#s12a">MetricBase Apps · Financial Tracker</a></li>
+        <li><a href="#s12b">World, Portabase, Bingkai &amp; PumpBid</a></li>
         <li><a href="#s12">Changes to this policy</a></li>
         <li><a href="#s14">Contact us</a></li>
       </ol>
@@ -270,7 +271,12 @@
           <li><strong>subs.metricbase.org</strong> — newsletter subscription</li>
           <li><strong>og.metricbase.org</strong> — utility tools</li>
           <li><strong>apps.metricbase.org</strong> — MetricBase Apps, including the Financial Tracker SaaS</li>
+          <li><strong>world.metricbase.org</strong> — MetricBase World, a browser-based game</li>
+          <li><strong>portabase.metricbase.org</strong> — Portabase downloads and sponsor board</li>
+          <li><strong>bingkai.metricbase.org</strong> — Bingkai, a twibbon campaign frame tool</li>
+          <li><strong>bid.metricbase.org</strong> — PumpBid, the @metricbase X header seat auction</li>
         </ul>
+        <p>Product-specific practices for World, Portabase, Bingkai, and PumpBid are described in <a href="#s12b">Section 12 · Products</a>.</p>
       </section>
 
       <section id="s2">
@@ -441,6 +447,42 @@
         <p>Your data is retained for as long as your account remains active. You can request export or deletion at any time by contacting us at <a href="mailto:support@metricbase.org">support@metricbase.org</a>; deletion removes your user record, workspaces you own, and all associated transactions, accounts, categories, and budgets within 30 days, subject to legal retention obligations.</p>
         <h3>12.5 — No financial advice</h3>
         <p>The Financial Tracker is a record-keeping tool. It does not provide investment, tax, accounting, or legal advice. See the <a href="https://metricbase.org/disclaimer">Disclaimer</a> and the in-product Terms.</p>
+      </section>
+
+      <section id="s12b">
+        <span class="section-num">SECTION 12 · PRODUCTS</span>
+        <h2>MetricBase World, Portabase, Bingkai &amp; PumpBid</h2>
+        <p>This section covers our other products. It applies in addition to — not instead of — the rest of this policy.</p>
+        <h3>12.6 — MetricBase World (world.metricbase.org)</h3>
+        <ul>
+          <li><strong>Identity</strong> — you sign in with a Solana wallet address or a Telegram account ID. Spectators are not identified. We do not ask for your name or email address to play.</li>
+          <li><strong>Game data</strong> — your character, inventory, progress, in-game messages and mail, and trades are stored to run the game.</li>
+          <li><strong>On-chain activity</strong> — token deposits, payouts, and any reward wallet you set involve the Solana blockchain, which is public and which we cannot alter or erase.</li>
+        </ul>
+        <h3>12.7 — Portabase (portabase.metricbase.org)</h3>
+        <ul>
+          <li><strong>Downloads</strong> — we count downloads per day and version. No personal information is stored with the count.</li>
+          <li><strong>The desktop app</strong> — Portabase runs on your own PC and tablet over your local network. Your keystrokes, pointer input, and deck settings stay on your devices. The app fetches the sponsor feed from our server to display ads.</li>
+        </ul>
+        <h3>12.8 — Bingkai (bingkai.metricbase.org)</h3>
+        <ul>
+          <li><strong>Your photo never leaves your device.</strong> Frames are composited in your browser; the photo is not uploaded to our servers.</li>
+          <li><strong>Campaigns</strong> — organisers upload a frame image, a title, an organiser name, and optional text fields. There are no accounts; a campaign is managed through a private link. Open campaigns appear in the public directory unless the organiser opts out.</li>
+          <li><strong>Campaign statistics</strong> — views and downloads are stored as counts per hour, with the referring site reduced to its host name (for example, instagram.com). No IP address, cookie, or device identifier is stored with them.</li>
+        </ul>
+        <h3>12.9 — PumpBid (bid.metricbase.org)</h3>
+        <ul>
+          <li><strong>Accounts</strong> — if you sign in, we store your email address, display name, and the details of the sign-in provider you used (such as Google or X), plus the session records needed to keep you signed in.</li>
+          <li><strong>Bids</strong> — bids are Solana transfers to a public wallet with a memo. The sending wallet, amount, and memo are public on the blockchain, and the bid counts toward the public leaderboard.</li>
+        </ul>
+        <h3>12.10 — Sponsor auctions, tips &amp; ad reports (Portabase and Bingkai)</h3>
+        <ul>
+          <li><strong>Sponsors</strong> — a sponsor submits a name, link, logo, and ad text, and pays in USDC on Solana. The sending wallet and payment memo are public on the blockchain and are used to credit the bid.</li>
+          <li><strong>Ad reports</strong> — when you report an ad, we store a salted one-way hash of your IP address so each person is counted once. The IP address itself is not stored.</li>
+          <li><strong>Blockchain data is permanent.</strong> We cannot delete or change transactions recorded on a public blockchain. Deletion requests apply to the data we hold on our own servers.</li>
+        </ul>
+        <h3>12.11 — Where it lives</h3>
+        <p>Portabase, Bingkai, and PumpBid are hosted on Vercel with managed Neon Postgres databases. MetricBase World runs on Vercel (client) and Railway (game server) with a Neon database. Blockchain data is read through Solana RPC providers. None of these products uses Google Analytics or advertising cookies.</p>
       </section>
 
       <section id="s12">

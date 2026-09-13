@@ -101,7 +101,7 @@
   .doc-meta-val { color: var(--white); font-weight: 500; }
 
   /* LAYOUT */
-  .doc-layout { display: grid; grid-template-columns: 260px 1fr; gap: 64px; align-items: flex-start; }
+  .doc-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 64px; align-items: flex-start; }
 
   /* TOC */
   .toc { position: sticky; top: 32px; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
@@ -156,7 +156,8 @@
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
-    .doc-layout { grid-template-columns: 1fr; gap: 32px; }
+    .doc-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+    .data-table { display: block; overflow-x: auto; }
     .toc { position: relative; top: 0; padding: 20px; background: var(--bg-elev); border: 1px solid var(--line); }
     .nav-links { display: none; } .nav-hamburger { display: flex; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -220,7 +221,7 @@
       </div>
       <div class="doc-meta-item">
         <span class="doc-meta-lbl">Last Updated</span>
-        <span class="doc-meta-val">14 May 2026</span>
+        <span class="doc-meta-val">13 September 2026</span>
       </div>
       <div class="doc-meta-item">
         <span class="doc-meta-lbl">Applies To</span>
@@ -301,6 +302,7 @@
         <li><a href="#s8">Do Not Track</a></li>
         <li><a href="#s9">Changes to this policy</a></li>
         <li><a href="#s9a">Cookies on apps.metricbase.org</a></li>
+        <li><a href="#s9b">World, Portabase, Bingkai &amp; PumpBid</a></li>
         <li><a href="#s10">Contact us</a></li>
       </ol>
     </aside>
@@ -319,6 +321,11 @@
           <li><strong>chain.metricbase.org</strong> — Crypto &amp; Technology vertical</li>
           <li><strong>saham.metricbase.org</strong> — Pasar Saham Indonesia vertical</li>
           <li><strong>subs.metricbase.org</strong> — newsletter subscription</li>
+          <li><strong>apps.metricbase.org</strong> — MetricBase Apps (see Section 09 · Apps)</li>
+          <li><strong>world.metricbase.org</strong> — MetricBase World, a browser-based game</li>
+          <li><strong>portabase.metricbase.org</strong> — Portabase downloads and sponsor board</li>
+          <li><strong>bingkai.metricbase.org</strong> — Bingkai, a twibbon campaign frame tool</li>
+          <li><strong>bid.metricbase.org</strong> — PumpBid, the @metricbase X header seat auction</li>
         </ul>
         <p>This Cookie Policy should be read alongside our <a href="https://metricbase.org/privacy">Privacy Policy</a>, which provides broader context about how we handle personal data.</p>
       </section>
@@ -581,6 +588,19 @@
         </table>
         <p>All cookies on apps.metricbase.org are strictly necessary for the service to function. No analytics, advertising, or social-media cookies are loaded. If you reject these cookies you will not be able to sign in.</p>
         <p>The Financial Tracker also stores a small amount of state in <strong>localStorage</strong> (UI preferences such as the open/closed state of the mobile drawer). This is not a cookie and is not transmitted to our servers.</p>
+      </section>
+
+      <section id="s9b">
+        <span class="section-num">SECTION 09 · PRODUCTS</span>
+        <h2>Cookies on World, Portabase, Bingkai &amp; PumpBid</h2>
+        <p>None of these products uses Google Analytics, Google AdSense, or any other analytics or advertising cookies. The ads shown on Portabase and Bingkai are served from our own sponsor board and do not track you.</p>
+        <ul>
+          <li><strong>bingkai.metricbase.org</strong> — sets no cookies for visitors, organisers, or supporters.</li>
+          <li><strong>portabase.metricbase.org</strong> — sets no cookies for visitors.</li>
+          <li><strong>bid.metricbase.org</strong> — sets strictly necessary session cookies only when you sign in, to keep you signed in and to protect sign-in against forgery.</li>
+          <li><strong>world.metricbase.org</strong> — stores game settings (such as sound and zoom) and records of in-progress transactions in your browser's local storage. It sets no tracking cookies.</li>
+        </ul>
+        <p>Operator-only admin pages on these products set a secure, HTTP-only session cookie for staff who sign in. Visitors never receive it.</p>
       </section>
 
       <section id="s10">
