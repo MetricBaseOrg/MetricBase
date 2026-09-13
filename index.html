@@ -40,7 +40,7 @@
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6244083942838780" crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MetricBase — Bridging Data and Digital Logic</title>
+<title>MetricBase — Tools and a Game You Can Use Today</title>
 <meta name="description" content="MetricBase is a data-first content brand covering energy markets, crypto, and Indonesian stocks. Precision growth. No wasted motion.">
 <meta name="google-adsense-account" content="ca-pub-6244083942838780">
 <meta name="robots" content="index, follow">
@@ -52,13 +52,13 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://metricbase.org/">
 <meta property="og:site_name" content="MetricBase">
-<meta property="og:title" content="MetricBase — Bridging Data and Digital Logic">
+<meta property="og:title" content="MetricBase — Tools and a Game You Can Use Today">
 <meta property="og:description" content="MetricBase is a data-first content brand covering energy markets, crypto, and Indonesian stocks. Precision growth. No wasted motion.">
 <meta property="og:image" content="https://metricbase.org/assets/og-image.webp">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@MetricBase">
-<meta name="twitter:title" content="MetricBase — Bridging Data and Digital Logic">
+<meta name="twitter:title" content="MetricBase — Tools and a Game You Can Use Today">
 <meta name="twitter:description" content="MetricBase is a data-first content brand covering energy markets, crypto, and Indonesian stocks. Precision growth. No wasted motion.">
 <meta name="twitter:image" content="https://metricbase.org/assets/og-image.webp">
 
@@ -458,6 +458,29 @@
   }
 
   .hero-pill-arrow { color: var(--gold); }
+
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 28px; }
+  .hero-cta-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--black); background: var(--gold); border: 1px solid var(--gold);
+    padding: 16px 26px; transition: background 0.18s, border-color 0.18s;
+  }
+  .hero-cta-primary:hover { background: var(--gold-bright); border-color: var(--gold-bright); color: var(--black); }
+  .hero-cta-secondary {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gray-1); border: 1px solid var(--line-strong); padding: 15px 22px;
+    transition: border-color 0.18s, color 0.18s;
+  }
+  .hero-cta-secondary:hover { border-color: var(--gold); color: var(--white); }
+  .hero-note { font-size: 14px; color: var(--gray-2); }
+  .hero-note a { color: var(--gold); }
+  @media (max-width: 640px) {
+    .hero-cta-primary, .hero-cta-secondary { width: 100%; justify-content: center; }
+  }
 
   /* ── STRIP ─────────────────────────────────────── */
   #strip {
@@ -1323,27 +1346,72 @@
 <!-- ── HERO ────────────────────────────────────────── -->
 <section id="hero">
   <div class="container">
-    <div class="hero-doc-id reveal">METRICBASE · CONTENT PORTAL · EST. 2020</div>
-    <h1 class="hero-title reveal reveal-d1">Bridging data<br>and <span class="accent">digital logic.</span></h1>
-    <p class="hero-sub reveal reveal-d2">Three verticals. Six products. One standard — original analysis across energy markets, crypto, and Indonesian equities, and the tools we build alongside it.</p>
-    <div class="hero-pills reveal reveal-d3">
-      <a class="hero-pill" href="https://energy.metricbase.org" target="_blank" rel="noopener">
-        Energy Markets <span class="hero-pill-arrow">↗</span>
+    <div class="hero-doc-id">MetricBase · 6 live products</div>
+    <h1 class="hero-title">Tools and a game<br>you can <span class="accent">use today.</span></h1>
+    <p class="hero-sub">A Solana MMO, an app platform for finance and field ops, a free oilfield calculator, a tablet touchpad for Windows, and a twibbon maker. Built by MetricBase, and most run right in your browser.</p>
+    <div class="hero-actions">
+      <a class="hero-cta-primary" href="https://world.metricbase.org" target="_blank" rel="noopener" data-track="world" data-placement="hero">Play MetricBase World · Free <span aria-hidden="true">↗</span></a>
+      <a class="hero-cta-secondary" href="#products" data-track="all_products" data-placement="hero">See all 6 products <span aria-hidden="true">↓</span></a>
+    </div>
+    <p class="hero-note">Also from MetricBase: <a href="/journal">market research and weekly briefs</a> across energy, crypto, and Indonesian stocks.</p>
+  </div>
+</section>
+
+<!-- ── PRODUCTS ─────────────────────────────────────── -->
+<section id="products">
+  <div class="container">
+    <span class="section-label reveal">What We Build</span>
+    <h2 class="section-title reveal reveal-d1">Six products.<br>All live.</h2>
+    <p class="section-sub reveal reveal-d2">Tools, a game, and an ad board built by the MetricBase team. Each runs on its own subdomain.</p>
+
+    <div class="verticals-grid">
+      <a class="vertical-card reveal" href="https://world.metricbase.org" target="_blank" rel="noopener" data-track="world" data-placement="products_grid">
+        <span class="vertical-num">Product 01 — Game</span>
+        <div class="vertical-name">MetricBase World</div>
+        <p class="vertical-desc">A browser-based Solana MMO and economic sim powered by $BASE. Gather, craft, fight, build your own World, and trade. No download.</p>
+        <div class="vertical-link">
+          world.metricbase.org <span class="vertical-link-arrow">↗</span>
+        </div>
       </a>
-      <a class="hero-pill" href="https://chain.metricbase.org" target="_blank" rel="noopener">
-        Crypto &amp; Tech <span class="hero-pill-arrow">↗</span>
+      <a class="vertical-card reveal reveal-d1" href="https://apps.metricbase.org" target="_blank" rel="noopener" data-track="apps" data-placement="products_grid">
+        <span class="vertical-num">Product 02 — Platform</span>
+        <div class="vertical-name">MetricBase Apps</div>
+        <p class="vertical-desc">Projects, finance, and field operations on one platform. Includes the open-beta Financial Tracker.</p>
+        <div class="vertical-link">
+          apps.metricbase.org <span class="vertical-link-arrow">↗</span>
+        </div>
       </a>
-      <a class="hero-pill" href="https://saham.metricbase.org" target="_blank" rel="noopener">
-        Pasar Saham <span class="hero-pill-arrow">↗</span>
+      <a class="vertical-card reveal reveal-d2" href="https://og.metricbase.org" target="_blank" rel="noopener" data-track="og_tools" data-placement="products_grid">
+        <span class="vertical-num">Product 03 — Energy</span>
+        <div class="vertical-name">OG-tools</div>
+        <p class="vertical-desc">Free oilfield unit converter and field calculator for drilling, production, reservoir, and gas. Works offline. No signup.</p>
+        <div class="vertical-link">
+          og.metricbase.org <span class="vertical-link-arrow">↗</span>
+        </div>
       </a>
-      <a class="hero-pill" href="/journal">
-        Journal <span class="hero-pill-arrow">→</span>
+      <a class="vertical-card reveal" href="https://portabase.metricbase.org" target="_blank" rel="noopener" data-track="portabase" data-placement="products_grid">
+        <span class="vertical-num">Product 04 — Desktop</span>
+        <div class="vertical-name">Portabase</div>
+        <p class="vertical-desc">Turn any tablet or phone into a wireless touchpad, keyboard, stream deck, and gamepad for your Windows PC. Free, no premium tier.</p>
+        <div class="vertical-link">
+          portabase.metricbase.org <span class="vertical-link-arrow">↗</span>
+        </div>
       </a>
-      <a class="hero-pill" href="#products">
-        Products <span class="hero-pill-arrow">→</span>
+      <a class="vertical-card reveal reveal-d1" href="https://bingkai.metricbase.org" target="_blank" rel="noopener" data-track="bingkai" data-placement="products_grid">
+        <span class="vertical-num">Product 05 — Creator</span>
+        <div class="vertical-name">Bingkai</div>
+        <p class="vertical-desc">Create, find, and use twibbon campaign frames. No account, no watermark, and your photo never leaves your device.</p>
+        <div class="vertical-link">
+          bingkai.metricbase.org <span class="vertical-link-arrow">↗</span>
+        </div>
       </a>
-      <a class="hero-pill" href="https://apps.metricbase.org" target="_blank" rel="noopener">
-        Financial Tracker <span class="hero-pill-arrow">↗</span>
+      <a class="vertical-card reveal reveal-d2" href="https://bid.metricbase.org" target="_blank" rel="noopener" data-track="pumpbid" data-placement="products_grid">
+        <span class="vertical-num">Product 06 — Advertising</span>
+        <div class="vertical-name">PumpBid</div>
+        <p class="vertical-desc">Bid any Solana token onto the @metricbase X header. Ten sticker seats, priced in USDC.</p>
+        <div class="vertical-link">
+          bid.metricbase.org <span class="vertical-link-arrow">↗</span>
+        </div>
       </a>
     </div>
   </div>
@@ -1402,14 +1470,14 @@
   <div class="container">
     <div class="world-teaser-panel reveal">
       <div class="world-teaser-art">
-        <img src="assets/world-banner.webp" alt="MetricBase World — browser isometric MMO" loading="lazy" decoding="async">
+        <img src="assets/world-banner.webp" alt="MetricBase World — browser isometric MMO" width="1600" height="800" loading="lazy" decoding="async">
       </div>
       <div class="world-teaser-copy">
         <span class="section-label">A different kind of product</span>
         <h2 class="section-title">MetricBase World.<br>An economy you can play.</h2>
         <p class="section-sub">A browser-native isometric MMO — gather, craft, trade, build player-owned worlds, and fight for territory. Runs entirely in your browser. No download.</p>
         <div class="world-teaser-actions">
-          <a class="world-teaser-cta" href="https://world.metricbase.org" target="_blank" rel="noopener">Play Now ↗</a>
+          <a class="world-teaser-cta" href="https://world.metricbase.org" target="_blank" rel="noopener" data-track="world" data-placement="world_teaser">Play Now ↗</a>
           <a class="world-teaser-link" href="/world">Learn more →</a>
         </div>
       </div>
@@ -1417,65 +1485,6 @@
   </div>
 </section>
 
-<!-- ── PRODUCTS ─────────────────────────────────────── -->
-<section id="products">
-  <div class="container">
-    <span class="section-label reveal">What We Build</span>
-    <h2 class="section-title reveal reveal-d1">Six products.<br>All live.</h2>
-    <p class="section-sub reveal reveal-d2">Tools, a game, and an ad board built by the MetricBase team. Each runs on its own subdomain.</p>
-
-    <div class="verticals-grid">
-      <a class="vertical-card reveal" href="https://world.metricbase.org" target="_blank" rel="noopener">
-        <span class="vertical-num">Product 01 — Game</span>
-        <div class="vertical-name">MetricBase World</div>
-        <p class="vertical-desc">A browser-based Solana MMO and economic sim powered by $BASE. Gather, craft, fight, build your own World, and trade. No download.</p>
-        <div class="vertical-link">
-          world.metricbase.org <span class="vertical-link-arrow">↗</span>
-        </div>
-      </a>
-      <a class="vertical-card reveal reveal-d1" href="https://apps.metricbase.org" target="_blank" rel="noopener">
-        <span class="vertical-num">Product 02 — Platform</span>
-        <div class="vertical-name">MetricBase Apps</div>
-        <p class="vertical-desc">Projects, finance, and field operations on one platform. Includes the open-beta Financial Tracker.</p>
-        <div class="vertical-link">
-          apps.metricbase.org <span class="vertical-link-arrow">↗</span>
-        </div>
-      </a>
-      <a class="vertical-card reveal reveal-d2" href="https://og.metricbase.org" target="_blank" rel="noopener">
-        <span class="vertical-num">Product 03 — Energy</span>
-        <div class="vertical-name">OG-tools</div>
-        <p class="vertical-desc">Free oilfield unit converter and field calculator for drilling, production, reservoir, and gas. Works offline. No signup.</p>
-        <div class="vertical-link">
-          og.metricbase.org <span class="vertical-link-arrow">↗</span>
-        </div>
-      </a>
-      <a class="vertical-card reveal" href="https://portabase.metricbase.org" target="_blank" rel="noopener">
-        <span class="vertical-num">Product 04 — Desktop</span>
-        <div class="vertical-name">Portabase</div>
-        <p class="vertical-desc">Turn any tablet or phone into a wireless touchpad, keyboard, stream deck, and gamepad for your Windows PC. Free, no premium tier.</p>
-        <div class="vertical-link">
-          portabase.metricbase.org <span class="vertical-link-arrow">↗</span>
-        </div>
-      </a>
-      <a class="vertical-card reveal reveal-d1" href="https://bingkai.metricbase.org" target="_blank" rel="noopener">
-        <span class="vertical-num">Product 05 — Creator</span>
-        <div class="vertical-name">Bingkai</div>
-        <p class="vertical-desc">Create, find, and use twibbon campaign frames. No account, no watermark, and your photo never leaves your device.</p>
-        <div class="vertical-link">
-          bingkai.metricbase.org <span class="vertical-link-arrow">↗</span>
-        </div>
-      </a>
-      <a class="vertical-card reveal reveal-d2" href="https://bid.metricbase.org" target="_blank" rel="noopener">
-        <span class="vertical-num">Product 06 — Advertising</span>
-        <div class="vertical-name">PumpBid</div>
-        <p class="vertical-desc">Bid any Solana token onto the @metricbase X header. Ten sticker seats, priced in USDC.</p>
-        <div class="vertical-link">
-          bid.metricbase.org <span class="vertical-link-arrow">↗</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
 
 <!-- ── JOURNAL PREVIEW ───────────────────────────────── -->
 <section id="journal-preview">
@@ -1824,8 +1833,18 @@
 
   document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
 
-  /* Hero visible immediately */
-  document.querySelectorAll('#hero .reveal').forEach(function(el) { el.classList.add('visible'); });
+  /* Product click tracking: one GA4 event per product entry point */
+  document.querySelectorAll('[data-track]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'select_product', {
+          product: el.getAttribute('data-track'),
+          placement: el.getAttribute('data-placement') || 'unknown',
+          transport_type: 'beacon'
+        });
+      }
+    });
+  });
 
   /* Cookie consent */
   (function() {
