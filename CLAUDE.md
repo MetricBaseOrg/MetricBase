@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-MetricBase is a data-driven content brand. The site is a content portal linking visitors to three blog verticals and four social platforms.
+MetricBase is a data-driven content brand. metricbase.org is a static portal that links out to six products on their own subdomains (World, apps, og, Portabase, Bingkai, PumpBid/bid), three Blogger verticals, and four social platforms, and hosts the native **Journal** (weekly briefs, research reports, editorials).
 
 - **Audience:** Tech enthusiasts, professionals, students, traders, and investors (mostly male, 25–34) who want informative, data-driven content.
 - **Tone:** Sharp, intelligent, slightly contrarian. No hype. No fluff.
@@ -25,7 +25,9 @@ MetricBase is a data-driven content brand. The site is a content portal linking 
 
 ## Deployment
 
-No build system, package manager, tests, or linters. Development is editing files directly.
+No build system, package manager, tests, or linters. Development is editing files directly. The one script is `node scripts/build-feed.mjs`, which regenerates `feed.json` (JSON Feed 1.1) from the `<head>` meta of every `journal/*.html` (canonical, `og:title`, `og:description`, `article:published_time`; category comes from the filename prefix `weekly-brief-` / `research-` / `editorial-`). Re-run it and commit `feed.json` whenever a journal page is added or its meta changes: apps.metricbase.org reads this feed to email subscribers about new content.
+
+URLs are extensionless (`https://metricbase.org/journal/weekly-brief-7` → `journal/weekly-brief-7.html`); GitHub Pages resolves them. Use that form in canonicals, OG tags, the sitemap, and internal links.
 
 Pushing to `main` triggers `.github/workflows/jekyll-gh-pages.yml`, which builds with Jekyll and deploys to GitHub Pages at metricbase.org. Jekyll only serves static files here — there is no `_config.yml`, no Liquid templates, and no Jekyll-specific features in use. The workflow treats the repo root as the source.
 
@@ -46,53 +48,37 @@ The Journal publishes a **Weekly Brief** every week, and it must not be allowed 
 2. Update the new file's edition number (`WB-00N`), `weekly-brief-<N>` canonical/OG/breadcrumb URLs, published + data dates, and the "Related" grid (link the immediately previous brief + the research report).
 3. In `journal.html`: add a new `<a class="article-card" … data-category="weekly-brief">` card at the **top** of the brief list (newest first), and bump both `#count-all` and `#count-weekly-brief`.
 4. In `sitemap.xml`: add a `<url>` for `/journal/weekly-brief-<N>` (lastmod = publish date) and bump the `/journal` `lastmod`.
-5. Verify: no stray non-ASCII, well-formed `sitemap.xml`, card counts match the number of cards.
+5. Run `node scripts/build-feed.mjs` to regenerate `feed.json`, and update the `#journal-preview` cards in `index.html` if the brief should appear there.
+6. Verify: no stray non-ASCII, well-formed `sitemap.xml`, card counts match the number of cards.
 
 ## Architecture
 
-### `index.html` — Content Portal (~1200 lines)
+Every page is a self-contained HTML file: its own inline `<style>` (with its own `:root` tokens) and inline `<script>` before `</body>`. There are no shared CSS/JS files and no includes, so **the header nav, mobile drawer, and footer are duplicated in every page**. A site-wide change to nav/footer links (e.g. adding a product) means editing every `*.html`, `journal/*.html`, and `authors/bun.html` and keeping them in sync.
 
-Single-file HTML/CSS/JS. All styles are inline in a `<style>` block; all JS is inline before `</body>`. No external CSS or JS files.
-
-CSS custom properties are defined once at the top of the `<style>` block under `:root` and must be used for all color/typography values — never hardcode hex values outside `:root`.
-
-**Page sections (in order):**
-1. `#portal-hero` — brand mark, tagline, sub-copy, pill links to verticals
-2. `#strip` — credibility strip with four positioning statements
-3. `#verticals` — three content vertical cards (Energy, Crypto, Stocks)
-4. `#social` — four social platform cards (X, Instagram, TikTok, Email)
-5. `#subscribe` — Kit.com email capture form
-
-**JavaScript responsibilities (inline, ~80 lines):** mobile drawer toggle, footer accordion, back-to-top scroll, scroll-progress bar, Intersection Observer for `.reveal` animations, localStorage-based cookie consent.
-
-### Blog Templates — Blogger XML
-
-`blogs/energy.html`, `blogs/chain.html`, `blogs/saham.html` are Blogger XML templates. They use Blogger template syntax: `<b:if>`, `<b:loop>`, `data:blog.*` variables, and `<b:skin><![CDATA[...]]></b:skin>` for styles.
-
-Each template shares the same structure: OG + Twitter Card meta, TradingView ticker widget, navigation drawer linking to all three verticals, and footer with social links. CSS inside `<b:skin>` uses the same `:root` custom properties as `index.html`.
-
-OG image falls back to `https://metricbase.org/assets/MetricBase.png` when no post thumbnail is available — this pattern is consistent across all three templates.
+- `index.html` (~1900 lines) — homepage. Sections in order: `#hero`, `#products` (six product cards), `#verticals`, `#world-teaser`, `#journal-preview` (hand-maintained cards for the latest Journal pieces), `#social`, `#subscribe` (Kit.com form), `#featured-blogs`. Product links carry `data-track="<product>" data-placement="<slot>"`; inline JS sends these as GA `select_product` events. Only `index.html` loads GA and AdSense.
+- `journal.html` — Journal index. Cards are `<a class="article-card" data-category="weekly-brief|research|editorial">`; a JS filter bar uses them, and `#count-all` / `#count-<category>` are hardcoded numbers that must match the card counts.
+- `journal/*.html` — articles. Filename prefix sets the category (used by `journal.html` and `scripts/build-feed.mjs`). Each carries full OG/Twitter meta, `article:published_time`, and JSON-LD.
+- `world.html`, `about.html`, `contact.html`, `authors/bun.html`, and legal pages (`privacy`, `terms`, `cookie-policy`, `disclaimer`, `editorial-standards`) — standalone pages sharing the same look.
+- `sitemap.xml`, `robots.txt`, `ads.txt`, `feed.json` — hand-maintained (except `feed.json`, generated). Add a `<url>` to the sitemap for any new page.
+- `blogs/energy.html`, `blogs/chain.html`, `blogs/saham.html` — **Blogger XML templates**, not site pages. They use `<b:if>`, `<b:loop>`, `data:blog.*`, and `<b:skin><![CDATA[...]]></b:skin>`; they must be pasted into the Blogger admin and cannot be previewed locally. All three share one structure (OG/Twitter meta with fallback image `https://metricbase.org/assets/MetricBase.webp`, TradingView ticker widget, drawer linking all three verticals, social footer), so a change to one usually belongs in all three.
 
 ## Style Guidelines
 
 See `assets/branding-style.md` for the full brand spec.
 
-- Strict color palette (no additions): `#0a0a0a` background, `#c9a84c` gold accents, white (`#f5f5f5`) for contrast, subtle grays (`#111`, `#1a1a1a`, `#222`, `#555`, `#888`, `#ccc`)
-- Font: Inter (Google Fonts), weights 300/400/500/600/700
-- CSS class prefix `mb-` for all component classes in `index.html`
+- Palette: `#0a0a0a` background, `#c9a84c` gold accents, white for contrast, grays only. Use the page's `:root` tokens (`--bg`, `--bg-card`, `--gold`, `--gold-bright`, `--gray-1..4`, `--line`, ...) instead of hardcoding hex values. The one sanctioned exception is the teal `--world-accent*` tokens, scoped to MetricBase World (`#world-teaser`, `world.html`).
+- Fonts: Manrope (text) + JetBrains Mono (labels, numbers, data) from Google Fonts, used on every page and in the Blogger templates.
+- Class names are plain descriptive (`container`, `section-label`, `section-title`, `vertical-card`, ...); there is no prefix convention.
 - No emojis. No corporate tone. Max 2–3 lines per paragraph.
-- Mobile-first; breakpoints at 640px and 900px
+- Mobile-first; main breakpoints 640px and 900px (index also uses 1024px and 400px).
 
 ## Key Conventions
 
-- **Scroll animations:** Add class `reveal` to any element. Optionally add `reveal-delay-1` through `reveal-delay-4` for staggered entry. The Intersection Observer adds `visible` on viewport entry. Never trigger animations via JS directly — always use this class pattern.
-- **Section containers:** Use `<div class="mb-container">` inside every `<section>` in `index.html`.
-- **Financial disclaimer and cookie consent** are legally required — do not remove them.
-- **Google Analytics** ID: `G-HQ2SCQZ3KT` (in `index.html` head)
-- **AdSense** publisher ID: `pub-6244083942838780` (in `index.html`, blog templates, and `ads.txt`)
-- **Kit.com** form endpoint: `https://app.kit.com/forms/9390641/subscriptions`
-- **TradingView** ticker widget is embedded in all three blog templates
+- **Scroll animations:** add class `reveal`, optionally `reveal-d1` … `reveal-d4` for stagger. An IntersectionObserver adds `visible`; don't animate from JS directly.
+- **Financial disclaimer and cookie consent banner** (every page; consent stored in `localStorage` key `mb_cookie_consent`; `index.html` sets Google Consent Mode to default-denied before gtag loads and upgrades it on acceptance) are legally required. Do not remove them.
+- **Google Analytics** `G-HQ2SCQZ3KT` and **AdSense** `pub-6244083942838780` (index, blog templates, `ads.txt`).
+- **Kit.com** form endpoint: `https://app.kit.com/forms/9390641/subscriptions`.
 
 ## Brand Character
 
-The mascot is "Bun" — a chibi anthropomorphic penguin with a manbun and white-frame 3D glasses (red/blue lenses). Character assets are in `assets/`. Use these for thumbnails and social content. Every visual must derive from the brand's dark-fintech aesthetic: think Bloomberg terminal, not lifestyle blog.
+The mascot is "Bun" — a chibi anthropomorphic penguin with a manbun and white-frame 3D glasses (red/blue lenses). Character assets (PNG + WebP pairs) are in `assets/`. Use these for thumbnails and social content. Every visual must derive from the brand's dark-fintech aesthetic: think Bloomberg terminal, not lifestyle blog.
