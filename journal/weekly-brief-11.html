@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ceasefire Breaks, Oil Reprices, and the Rupiah Crosses 18,000 — What the Data Says · MetricBase Journal</title>
+<meta name="description" content="Tanker attacks and two rounds of US strikes end the US–Iran ceasefire and push Brent up ~5% to $76.01, Bitcoin shrugs it off to finish +4.2% near $64,000, and the JCI edges up 0.83% to 5,924 while the rupiah weakens past 18,000. Week of July 13, 2026.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://metricbase.org/journal/weekly-brief-11">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://metricbase.org/journal/weekly-brief-11">
+<meta property="og:title" content="Weekly Brief #11 — The Ceasefire Breaks, Oil Reprices, and the Rupiah Crosses 18,000 · MetricBase">
+<meta property="og:description" content="US–Iran ceasefire collapses, Brent +5% to $76, BTC +4.2% near $64k, JCI 5,924 as the rupiah crosses 18,000 — MetricBase cross-vertical weekly.">
+<meta property="og:image" content="https://metricbase.org/assets/og-image.webp">
+<meta property="article:published_time" content="2026-07-13">
+<meta property="article:author" content="Bun">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@MetricBase">
+<meta name="twitter:title" content="Weekly Brief #11 — MetricBase Journal">
+<meta name="twitter:description" content="The ceasefire breaks, oil reprices, and the rupiah crosses 18,000 — MetricBase cross-vertical weekly brief, July 13 2026.">
+<meta name="twitter:image" content="https://metricbase.org/assets/og-image.webp">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Ceasefire Breaks, Oil Reprices, and the Rupiah Crosses 18,000 — What the Data Says",
+  "description": "Cross-vertical weekly brief covering energy markets, crypto, and IDX equities. Week of July 13, 2026.",
+  "url": "https://metricbase.org/journal/weekly-brief-11",
+  "image": "https://metricbase.org/assets/og-image.webp",
+  "datePublished": "2026-07-13",
+  "dateModified": "2026-07-13",
+  "author": { "@type": "Person", "name": "Bun", "url": "https://metricbase.org/about" },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://metricbase.org/#organization",
+    "name": "MetricBase",
+    "url": "https://metricbase.org/",
+    "logo": { "@type": "ImageObject", "url": "https://metricbase.org/assets/MetricBase.webp" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://metricbase.org/journal/weekly-brief-11" },
+  "articleSection": "Weekly Brief",
+  "keywords": "US Iran ceasefire collapse, Strait of Hormuz tanker attacks, Brent crude $76, WTI $71.41, EIA crude build, Fed minutes June 2026, Bitcoin 64000, IDX Composite 5924, JCI, rupiah 18065, USD/IDR, weekly brief"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "MetricBase", "item": "https://metricbase.org/" },
+    { "@type": "ListItem", "position": 2, "name": "Journal", "item": "https://metricbase.org/journal" },
+    { "@type": "ListItem", "position": 3, "name": "Weekly Brief #11" }
+  ]
+}
+</script>
+<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+<style>
+  :root {
+    --bg:          #0A0A0A;
+    --bg-elev:     #131313;
+    --bg-card:     #161616;
+    --bg-hover:    #1c1c1c;
+    --gold:        #C9A84C;
+    --gold-bright: #E5C168;
+    --gold-dim:    #8a7434;
+    --white:       #ffffff;
+    --gray-1:      #e5e5e5;
+    --gray-2:      #999999;
+    --gray-3:      #555555;
+    --gray-4:      #2a2a2a;
+    --red:         #e85a4f;
+    --green:       #5fa86c;
+    --amber:       #d9a441;
+    --line:        rgba(255,255,255,0.06);
+    --line-strong: rgba(201,168,76,0.3);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  html, body { background: var(--bg); color: var(--gray-1); font-family: 'Manrope', sans-serif; font-weight: 400; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  body {
+    background:
+      radial-gradient(ellipse 900px 600px at 20% 0%,  rgba(201,168,76,0.05), transparent 60%),
+      radial-gradient(ellipse 600px 400px at 80% 100%, rgba(201,168,76,0.03), transparent 70%),
+      var(--bg);
+    min-height: 100vh;
+  }
+  .grid-bg { position: fixed; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; z-index: 0; }
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); transition: color 0.15s; }
+  a:hover { color: var(--gold-bright); border-bottom-style: solid; }
+
+  /* HEADER */
+  .app-header { padding: 24px 32px; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 100; background: rgba(10, 10, 10, 0.85); -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%); transition: background 0.25s, box-shadow 0.25s; }
+  .header-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; }
+  .brand { display: flex; align-items: center; gap: 14px; border: none; }
+  .brand-mark { width: 34px; height: 34px; border: 1.5px solid var(--gold); transform: rotate(45deg); display: grid; place-items: center; position: relative; flex-shrink: 0; }
+  .brand-mark::after { content: ''; position: absolute; inset: 5px; background: var(--gold); opacity: 0.4; }
+  .brand-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.02em; color: var(--white); }
+  .brand-name .gold { color: var(--gold); }
+  .brand-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gray-3); margin-top: 3px; }
+  .nav-links { display: flex; gap: 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; }
+  .nav-links a { color: var(--gray-2); border: none; }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* PAGE WRAP — narrow for article reading */
+  .page-wrap { max-width: 800px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+
+  /* RISK BANNER */
+  .risk-banner { background: var(--bg-card); border: 1px solid var(--gray-4); border-left: 3px solid var(--amber); padding: 14px 20px; margin: 36px 0 0; display: flex; align-items: baseline; gap: 12px; }
+  .risk-banner-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--amber); font-weight: 700; flex-shrink: 0; }
+  .risk-banner p { font-size: 12px; color: var(--gray-2); line-height: 1.55; }
+  .risk-banner a { color: var(--gray-2); border-bottom-color: var(--gray-4); }
+
+  /* ARTICLE HERO */
+  .article-hero { padding: 48px 0 36px; border-bottom: 1px solid var(--line); }
+  .article-breadcrumb { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gray-3); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .article-breadcrumb a { color: var(--gray-3); border: none; }
+  .article-breadcrumb a:hover { color: var(--gold); }
+  .article-breadcrumb span { color: var(--gray-4); }
+  .article-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+  .article-tag::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+  h1.article-title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: clamp(28px, 5vw, 48px); letter-spacing: -0.025em; line-height: 1.08; color: var(--white); margin-bottom: 20px; }
+  .article-deck { font-size: 16px; color: var(--gray-2); line-height: 1.65; margin-bottom: 32px; }
+  .article-meta-bar { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; padding-top: 22px; border-top: 1px solid var(--line); }
+  .meta-author { display: flex; align-items: center; gap: 12px; }
+  .author-avatar { width: 38px; height: 38px; background: var(--bg-card); border: 1px solid var(--line-strong); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); font-weight: 700; flex-shrink: 0; overflow: hidden; }
+  .author-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .author-info { display: flex; flex-direction: column; }
+  .author-name { font-weight: 700; font-size: 13px; color: var(--white); }
+  .author-role { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gray-3); margin-top: 2px; }
+  .meta-divider { width: 1px; height: 28px; background: var(--gray-4); }
+  .meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .meta-lbl { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gray-3); }
+  .meta-val { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gray-2); font-weight: 500; }
+
+  /* DATA FLASH STRIP */
+  .data-flash { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 44px 0; }
+  .flash-cell { background: var(--bg-card); padding: 18px 20px; }
+  .flash-lbl { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gray-3); margin-bottom: 8px; display: block; }
+  .flash-val { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 26px; line-height: 1; margin-bottom: 4px; color: var(--white); }
+  .flash-val.gold { color: var(--gold); }
+  .flash-val.green { color: var(--green); }
+  .flash-val.red { color: var(--red); }
+  .flash-chg { font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .chg-up { color: var(--green); }
+  .chg-dn { color: var(--red); }
+  .chg-flat { color: var(--gray-3); }
+
+  /* PROSE */
+  .article-body { padding: 44px 0 0; }
+  .vertical-header { display: flex; align-items: center; gap: 16px; margin: 52px 0 20px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+  .vertical-header:first-child { margin-top: 0; }
+  .vertical-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gray-3); flex-shrink: 0; }
+  .vertical-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: -0.02em; color: var(--white); }
+  .vertical-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; padding: 4px 10px; border: 1px solid; margin-left: auto; flex-shrink: 0; }
+  .tag-energy { color: var(--amber); border-color: rgba(217,164,65,0.4); background: rgba(217,164,65,0.06); }
+  .tag-crypto { color: var(--gold); border-color: var(--line-strong); background: var(--gold-glow, rgba(201,168,76,0.08)); }
+  .tag-idx { color: var(--green); border-color: rgba(95,168,108,0.4); background: rgba(95,168,108,0.06); }
+
+  h3.prose-h3 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: -0.01em; color: var(--white); margin: 28px 0 12px; }
+  p.prose-p { font-size: 15px; color: var(--gray-1); line-height: 1.8; margin-bottom: 16px; }
+  p.prose-p:last-of-type { margin-bottom: 0; }
+  strong { color: var(--white); font-weight: 700; }
+
+  /* SIGNAL CALLOUT */
+  .signal {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--gold-dim);
+    padding: 20px 24px;
+    margin: 24px 0;
+    position: relative;
+  }
+  .signal::before { content: 'SIGNAL'; position: absolute; top: -8px; left: 18px; background: var(--bg); padding: 0 8px; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.25em; color: var(--gold); font-weight: 500; }
+  .signal p { font-size: 14px; color: var(--gray-1); line-height: 1.7; margin: 0; }
+  .signal strong { color: var(--gold); }
+
+  /* INLINE DATA ROW */
+  .inline-data { display: flex; flex-wrap: wrap; gap: 0; border: 1px solid var(--line); margin: 20px 0; }
+  .inline-cell { padding: 12px 18px; border-right: 1px solid var(--line); flex: 1; min-width: 120px; }
+  .inline-cell:last-child { border-right: none; }
+  .inline-lbl { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--gray-3); display: block; margin-bottom: 5px; }
+  .inline-val { font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700; color: var(--white); }
+  .inline-val.up { color: var(--green); }
+  .inline-val.dn { color: var(--red); }
+  .inline-val.gold { color: var(--gold); }
+
+  /* WATCH LIST */
+  .watchlist { background: var(--bg-elev); border: 1px solid var(--line); border-top: 2px solid var(--gold-dim); padding: 28px 28px; margin: 52px 0 0; position: relative; }
+  .watchlist::before { content: 'WATCH NEXT WEEK'; position: absolute; top: -8px; left: 24px; background: var(--bg); padding: 0 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; color: var(--gold); font-weight: 500; }
+  .watchlist-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 8px; }
+  .watch-item { display: flex; flex-direction: column; gap: 6px; }
+  .watch-vertical { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); }
+  .watch-text { font-size: 13px; color: var(--gray-1); line-height: 1.55; }
+
+  /* AUTHOR BIO */
+  .author-bio-card { background: var(--bg-elev); border: 1px solid var(--line); padding: 28px; display: grid; grid-template-columns: 64px 1fr; gap: 20px; align-items: flex-start; margin: 52px 0 0; position: relative; }
+  .author-bio-card::before { content: 'ABOUT THE AUTHOR'; position: absolute; top: -8px; left: 24px; background: var(--bg); padding: 0 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; color: var(--gold); font-weight: 500; }
+  .bio-avatar { width: 64px; height: 64px; background: var(--bg-card); border: 1px solid var(--line-strong); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--gold); font-weight: 700; flex-shrink: 0; overflow: hidden; }
+  .bio-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .bio-name { font-weight: 800; font-size: 16px; color: var(--white); margin-bottom: 3px; }
+  .bio-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 10px; display: block; }
+  .bio-text { font-size: 13px; color: var(--gray-2); line-height: 1.6; margin-bottom: 12px; }
+  .bio-links { display: flex; gap: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; }
+  .bio-links a { color: var(--gray-3); border: none; }
+  .bio-links a:hover { color: var(--gold); }
+
+  /* RELATED */
+  .related { margin-top: 52px; padding-top: 36px; border-top: 1px solid var(--line); }
+  .related-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 20px; display: block; font-weight: 500; }
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .related-card { background: var(--bg-card); padding: 22px; display: flex; flex-direction: column; transition: background 0.18s; }
+  .related-card:hover { background: var(--bg-hover); }
+  .related-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--gold); margin-bottom: 8px; display: block; }
+  .related-title { font-size: 14px; font-weight: 700; color: var(--white); line-height: 1.3; margin-bottom: 8px; }
+  .related-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-3); margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; }
+  .related-arrow { color: var(--gold); }
+
+  /* FOOTER */
+  footer.doc-footer { background: var(--bg-elev); border-top: 1px solid var(--line); padding: 44px 0 0; margin-top: 80px; }
+  .footer-inner { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+  .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-bottom: 32px; }
+  .footer-col h4 { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gray-3); margin-bottom: 14px; font-weight: 500; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer-col a { font-size: 13px; color: var(--gray-3); border: none; transition: color 0.15s; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom { border-top: 1px solid var(--line); padding: 20px 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); letter-spacing: 0.1em; text-transform: uppercase; }
+  .disclaimer-strip { background: var(--bg); border-top: 1px solid var(--line); padding: 16px 32px; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); line-height: 1.7; letter-spacing: 0.03em; }
+  .disclaimer-strip a { color: var(--gold); border-bottom: 1px dotted var(--gold-dim); font-size: 10px; }
+
+  /* MOBILE NAV */
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; -webkit-tap-highlight-color: transparent; }
+  .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--gray-1); transition: 0.22s; transform-origin: center; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-mobile { display: none; flex-direction: column; border-top: 1px solid var(--line); background: var(--bg-elev); position: relative; z-index: 9; }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gray-2); padding: 14px 32px; border-bottom: 1px solid var(--line); transition: color 0.15s; border-left: none; border-right: none; }
+  .nav-mobile a:hover { color: var(--gold); }
+  .nav-mobile a:last-child { border-bottom: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .app-header { padding: 20px 16px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .page-wrap { padding: 0 16px; }
+    .data-flash { grid-template-columns: 1fr 1fr; }
+    .watchlist-grid { grid-template-columns: 1fr; gap: 16px; }
+    .related-grid { grid-template-columns: 1fr; }
+    .author-bio-card { grid-template-columns: 1fr; }
+    .footer-inner { padding: 0 16px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .disclaimer-strip { padding: 16px; }
+    .meta-divider { display: none; }
+  }
+  @media (max-width: 480px) {
+    h1.article-title { font-size: 26px; }
+    .data-flash { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .inline-data { flex-direction: column; }
+    .inline-cell { border-right: none; border-bottom: 1px solid var(--line); }
+    .inline-cell:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<header class="app-header">
+  <div class="header-inner">
+    <a href="https://metricbase.org" class="brand">
+      <span class="brand-mark"></span>
+      <span>
+        <div class="brand-name">Metric<span class="gold">BASE</span></div>
+        <div class="brand-tag">Precision growth · No wasted motion</div>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="https://world.metricbase.org" target="_blank" rel="noopener">Play</a>
+      <a href="https://metricbase.org/journal">Journal</a>
+      <a href="https://metricbase.org/about">About</a>
+      <a href="https://metricbase.org/contact">Contact</a>
+      <a href="https://metricbase.org/#products">Products</a>
+      <a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a>
+    </nav>
+    <button type="button" class="nav-hamburger" id="nav-hamburger-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="https://world.metricbase.org" target="_blank" rel="noopener">Play</a>
+    <a href="https://metricbase.org/journal">Journal</a>
+    <a href="https://metricbase.org/about">About</a>
+    <a href="https://metricbase.org/contact">Contact</a>
+      <a href="https://metricbase.org/#products">Products</a>
+      <a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a>
+  </nav>
+</header>
+
+<div class="page-wrap">
+
+  <div class="risk-banner">
+    <span class="risk-banner-label">Disclaimer</span>
+    <p>Educational content only — not financial advice. Figures are as of Friday close, July 10, 2026, unless a cell states otherwise. See our full <a href="https://metricbase.org/disclaimer">Disclaimer</a>.</p>
+  </div>
+
+  <article>
+  <header class="article-hero">
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <a href="https://metricbase.org">MetricBase</a>
+      <span>›</span>
+      <a href="https://metricbase.org/journal">Journal</a>
+      <span>›</span>
+      Weekly Brief
+    </nav>
+    <div class="article-tag">Weekly Brief — #11 · Week of July 13, 2026</div>
+    <h1 class="article-title">The Ceasefire Breaks, Oil Reprices, and the Rupiah Crosses 18,000 — What the Data Says</h1>
+    <p class="article-deck">Last week we called the pre-war oil price asymmetric. This week showed why. Iran attacked tankers in Hormuz, the US answered with two rounds of strikes on more than 170 targets, Iran hit US bases in Kuwait and Bahrain, and Trump declared the ceasefire "over". Brent rose about 5% to $76.01. Bitcoin absorbed all of it and finished up 4.2% near $64,000. The JCI edged up 0.83% to 5,924 as the rupiah slid past 18,000.</p>
+    <div class="article-meta-bar">
+      <div class="meta-author">
+        <div class="author-avatar"><img src="../assets/pfp.webp" alt="Bun" loading="lazy" decoding="async"></div>
+        <div class="author-info">
+          <span class="author-name">Bun</span>
+          <span class="author-role">Lead Analyst · MetricBase</span>
+        </div>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="meta-lbl">Published</span>
+        <span class="meta-val">13 July 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-lbl">Read time</span>
+        <span class="meta-val">~6 min</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-lbl">Edition</span>
+        <span class="meta-val">WB-011</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-body">
+
+    <div class="data-flash">
+      <div class="flash-cell">
+        <span class="flash-lbl">Brent Crude (Friday close)</span>
+        <div class="flash-val gold">$76.01</div>
+        <span class="flash-chg chg-up">▲ ~+5% on week</span>
+      </div>
+      <div class="flash-cell">
+        <span class="flash-lbl">BTC / USD (Friday)</span>
+        <div class="flash-val white">~$64,000</div>
+        <span class="flash-chg chg-up">▲ +4.2% on week</span>
+      </div>
+      <div class="flash-cell">
+        <span class="flash-lbl">IDX Composite (Friday close)</span>
+        <div class="flash-val green">5,924</div>
+        <span class="flash-chg chg-up">▲ +0.83% on week</span>
+      </div>
+    </div>
+
+    <div class="vertical-header">
+      <span class="vertical-num">01</span>
+      <span class="vertical-name">Energy Markets</span>
+      <span class="vertical-tag tag-energy">Energy</span>
+    </div>
+
+    <p class="prose-p">The talks we said were unfinished did not finish. Iran attacked commercial tankers in the Strait of Hormuz and the US answered on July 8 with two waves of strikes on more than 170 Iranian military targets, from Bandar Abbas to Chabahar and Bushehr. On Thursday the Revolutionary Guards struck two US bases in Kuwait and two in Bahrain. Trump called the ceasefire "over". Hormuz transits fell back to a near-standstill.</p>
+
+    <p class="prose-p">Crude repriced, but only partly. Brent gained about 5% on the week and WTI about 4%, with Friday's settle at $76.01 for Brent (−0.4%) and $71.41 for WTI after both backed off midweek highs. That is roughly $4 of premium back into a market that was trading at pre-war levels a week ago. It is nowhere near the spring's $100-plus, which suggests traders are treating this as a breakdown to be renegotiated rather than a return to full war. EIA reported a 3 million barrel crude build, the first after ten consecutive draws, helped by slower exports and SPR barrels moving into commercial stocks.</p>
+
+    <div class="inline-data">
+      <div class="inline-cell">
+        <span class="inline-lbl">Brent Close</span>
+        <span class="inline-val up">$76.01</span>
+      </div>
+      <div class="inline-cell">
+        <span class="inline-lbl">WTI Close</span>
+        <span class="inline-val up">$71.41</span>
+      </div>
+      <div class="inline-cell">
+        <span class="inline-lbl">Brent Wk</span>
+        <span class="inline-val up">~+5%</span>
+      </div>
+      <div class="inline-cell">
+        <span class="inline-lbl">EIA Crude</span>
+        <span class="inline-val dn">+3.0M bbl</span>
+      </div>
+      <div class="inline-cell">
+        <span class="inline-lbl">US Stocks</span>
+        <span class="inline-val gold">411.4M bbl</span>
+      </div>
+    </div>
+
+    <div class="signal">
+      <p>The ceasefire broke and <strong>Brent added only ~5% to $76.01</strong>: the market is pricing a <strong>breakdown to be renegotiated, not a return to full war.</strong> With Hormuz transits back near a standstill, that is a generous assumption. <strong>The EIA build (+3.0M bbl) is SPR-assisted and does not fix the tightness.</strong></p>
+    </div>
+
+    <div class="vertical-header">
+      <span class="vertical-num">02</span>
+      <span class="vertical-name">Crypto &amp; Technology</span>
+      <span class="vertical-tag tag-crypto">Crypto</span>
+    </div>
+
+    <p class="prose-p">The $60k line held, and the week became a test of how much geopolitical risk Bitcoin now ignores. BTC dipped on Trump's Iran warnings, then rebounded 3.5% on Friday to nearly $64,000, ending the week up 4.2%. CoinDesk's summary: it absorbed an oil shock, a global bond selloff, a hawkish repricing of Fed expectations and two rounds of US strikes on Iran, and still rose, carried by a chip-sector rally and a weaker dollar.</p>
+
+    <p class="prose-p">The rates backdrop did not get easier. The June FOMC minutes, released Wednesday, showed a committee split between "many" who see rates within or slightly below the current 3.50–3.75% range at year-end and "many other" participants who see them above it. Kalshi traders put the odds of a 2026 hike at about 54%. Bitcoin rising through a war escalation and a hawkish Fed is a real sign of strength. A move that depends on chip stocks is also a sign of what it is correlated with now.</p>
+
+    <div class="inline-data">
+      <div class="inline-cell">
+        <span class="inline-lbl">BTC (Fri)</span>
+        <span class="inline-val up">~$64,000</span>
+      </div>
+      <div class="inline-cell">
+        <span class="inline-lbl">Wk Change</span>
+        <span class="inline-val up">+4.2%</span>
+      </div>
+      <div class="inline-cell">
+        <span class="inline-lbl">Fri Move</span>
+        <span class="inline-val up">+3.5%</span>
+      </div>
+      <div class="inline-cell">
+        <span class="inline-lbl">Fed Funds</span>
+        <span class="inline-val gold">3.50–3.75%</span>
+      </div>
+      <div class="inline-cell">
+        <span class="inline-lbl">2026 Hike Odds</span>
+        <span class="inline-val dn">~54%</span>
+      </div>
+    </div>
+
+    <div class="signal">
+      <p>BTC <strong>+4.2% to ~$64k through a ceasefire collapse and a hawkish set of Fed minutes</strong>. That is resilience, but <strong>the driver was chip stocks and a softer dollar, not crypto demand.</strong> Hold quality; watch whether the move survives if the tech rally cools.</p>
+    </div>
+
+    <div class="vertical-header">
+      <span class="vertical-num">03</span>
+      <span class="vertical-name">Pasar Saham Indonesia</span>
+      <span class="vertical-tag tag-idx">IDX</span>
+    </div>
+
+    <p class="prose-p">The JCI barely noticed the war. The index rose 0.83% on the week to 5,924.36, with a high of 5,986 on Tuesday and a low of 5,873 on Wednesday, and closed Friday up 0.20%. Six new listings debuted during the week. After a 35% drawdown this year, the market is doing what exhausted markets do: moving sideways on thin conviction, while last week's 5,643 low sets the floor.</p>
+
+    <p class="prose-p">The currency is where the stress shows. The rupiah weakened 0.56% on the week to close Friday at 18,065 spot, after touching 18,128 on Thursday. It is back above 18,000, and Thursday's level came within about 60 points of the June 8 record low of 18,190. Higher oil feeds straight into Indonesia's import bill and fuel-subsidy costs, and June CPI is already 3.34%. With the BI-Rate at 5.75%, a third hike is back on the table if the rupiah breaks its record.</p>
+
+    <div class="inline-data">
+      <div class="inline-cell">
+        <span class="inline-lbl">IDX Composite</span>
+        <span class="inline-val up">5,924</span>
+      </div>
+      <div class="inline-cell">
+        <span class="inline-lbl">USD/IDR</span>
+        <span class="inline-val dn">18,065</span>
+      </div>
+      <div class="inline-cell">
+        <span class="inline-lbl">Thu High</span>
+        <span class="inline-val dn">18,128</span>
+      </div>
+      <div class="inline-cell">
+        <span class="inline-lbl">Record low</span>
+        <span class="inline-val dn">18,190</span>
+      </div>
+      <div class="inline-cell">
+        <span class="inline-lbl">Wk Change</span>
+        <span class="inline-val up">+0.83%</span>
+      </div>
+    </div>
+
+    <div class="signal">
+      <p>The JCI edged <strong>+0.83% to 5,924</strong> through the ceasefire collapse, but the <strong>rupiah slipped 0.56% to 18,065 after testing 18,128, near its 18,190 record.</strong> <strong>Oil is now a currency problem for Indonesia before it is an equity problem.</strong> Watch BI this week.</p>
+    </div>
+
+    <div class="watchlist">
+      <div class="watchlist-grid">
+        <div class="watch-item">
+          <span class="watch-vertical">Energy</span>
+          <span class="watch-text">Whether US–Iran strikes escalate or pause. Hormuz transits. Brent back towards $80, or the premium fading again. US June CPI on the energy line.</span>
+        </div>
+        <div class="watch-item">
+          <span class="watch-vertical">Crypto</span>
+          <span class="watch-text">BTC holding ~$64k if the chip rally fades. June CPI, with Kalshi at ~54% odds of a 2026 hike. Spot ETF flows.</span>
+        </div>
+        <div class="watch-item">
+          <span class="watch-vertical">IDX</span>
+          <span class="watch-text">Bank Indonesia's July meeting with the rupiah near its record. The 18,190 level. Foreign flows into the JCI's sideways range.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="risk-banner">
+      <span class="risk-banner-label">Sources</span>
+      <p><a href="https://www.aljazeera.com/news/2026/7/8/us-says-conducting-new-wave-of-strikes-on-iran-as-ceasefire-falters-2" target="_blank" rel="noopener">Al Jazeera: US strikes resume (Jul 8)</a> · <a href="https://www.cnn.com/2026/07/09/world/live-news/iran-war-trump" target="_blank" rel="noopener">CNN: ceasefire crumbles (Jul 9)</a> · <a href="https://www.cnbc.com/2026/07/10/oil-edges-lower-but-heads-for-weekly-gain-as-middle-east-supply-risks-persist.html" target="_blank" rel="noopener">CNBC: oil, Jul 10</a> · <a href="https://boereport.com/2026/07/08/us-crude-stocks-rise-gasoline-and-distillate-inventories-fall-eia-says-5/" target="_blank" rel="noopener">BOE Report: EIA Jul 8</a> · <a href="https://www.coindesk.com/markets/2026/07/10/bitcoin-zips-to-nearly-usd64-000-as-chip-rally-and-yen-strength-drive-gains" target="_blank" rel="noopener">CoinDesk: BTC, Jul 10</a> · <a href="https://www.cnbc.com/2026/07/08/fed-minutes-june-2026-.html" target="_blank" rel="noopener">CNBC: Fed minutes</a> · <a href="https://www.cnbc.com/2026/07/09/kalshi-traders-see-roughly-50percent-odds-of-a-rate-hike-in-2026-as-fed-is-split-on-policy.html" target="_blank" rel="noopener">CNBC: Kalshi hike odds</a> · <a href="https://databoks.katadata.co.id/datapublish/2026/07/10/ihsg-ditutup-menguat-tipis-020-ke-level-5924-jumat-10-juli-2026" target="_blank" rel="noopener">Databoks: IHSG Jul 10</a> · <a href="https://periskop.id/saham/20260711/ihsg-enam-ipo-bursa-juli-2026" target="_blank" rel="noopener">Periskop: IHSG week</a> · <a href="https://investasi.kontan.co.id/news/rupiah-spot-ditutup-menguat-035-ke-rp-18065-per-dolar-as-pada-jumat-107" target="_blank" rel="noopener">Kontan: rupiah Jul 10</a></p>
+    </div>
+
+    <div class="author-bio-card">
+      <div class="bio-avatar"><img src="../assets/pfp.webp" alt="Bun" loading="lazy" decoding="async"></div>
+      <div>
+        <div class="bio-name">Bun</div>
+        <span class="bio-title">Lead Analyst · MetricBase</span>
+        <p class="bio-text">MetricBase's chibi penguin mascot and lead analyst — curious, reactive, and unafraid to call a divergence when the data says so. Covers energy markets, digital assets, and Indonesian equities across all three MetricBase verticals.</p>
+        <div class="bio-links">
+          <a href="https://x.com/MetricBase" target="_blank" rel="noopener">X / Twitter ↗</a>
+          <a href="https://metricbase.org/about">About ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="related">
+      <span class="related-label">More from the Journal</span>
+      <div class="related-grid">
+        <a class="related-card" href="/journal/weekly-brief-10">
+          <span class="related-tag">Weekly Brief — #10</span>
+          <div class="related-title">Oil Goes Flat, a Weak Payrolls Print Rescues Bitcoin, and the JCI Round-Trips 4% — What the Data Says</div>
+          <div class="related-meta">
+            <span>July 6, 2026</span>
+            <span class="related-arrow">↗</span>
+          </div>
+        </a>
+        <a class="related-card" href="/journal/research-war-premium-2026">
+          <span class="related-tag">Research Report</span>
+          <div class="related-title">Anatomy of a War Premium: How an Energy Shock Moves Through the Indonesian Portfolio</div>
+          <div class="related-meta">
+            <span>May 29, 2026</span>
+            <span class="related-arrow">↗</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /.article-body -->
+  </article>
+
+</div><!-- /.page-wrap -->
+
+<footer class="doc-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>MetricBase</h4>
+        <ul>
+          <li><a href="https://metricbase.org">Portal</a></li>
+          <li><a href="https://metricbase.org/journal">Journal</a></li>
+          <li><a href="https://metricbase.org/about">About</a></li>
+          <li><a href="https://metricbase.org/contact">Contact</a></li>
+          <li><a href="https://world.metricbase.org" target="_blank" rel="noopener">World ↗</a></li>
+          <li><a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Verticals</h4>
+        <ul>
+          <li><a href="https://energy.metricbase.org">Energy Markets</a></li>
+          <li><a href="https://chain.metricbase.org">Crypto &amp; Tech</a></li>
+          <li><a href="https://saham.metricbase.org">Pasar Saham</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="https://world.metricbase.org" target="_blank" rel="noopener">World ↗</a></li>
+          <li><a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a></li>
+          <li><a href="https://og.metricbase.org" target="_blank" rel="noopener">OG-tools ↗</a></li>
+          <li><a href="https://portabase.metricbase.org" target="_blank" rel="noopener">Portabase ↗</a></li>
+          <li><a href="https://bingkai.metricbase.org" target="_blank" rel="noopener">Bingkai ↗</a></li>
+          <li><a href="https://bid.metricbase.org" target="_blank" rel="noopener">PumpBid ↗</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+                <h4>Legal</h4>
+        <ul>
+          <li><a href="https://metricbase.org/privacy">Privacy Policy</a></li>
+          <li><a href="https://metricbase.org/terms">Terms of Service</a></li>
+          <li><a href="https://metricbase.org/disclaimer">Disclaimer</a></li>
+          <li><a href="https://metricbase.org/cookie-policy">Cookie Policy</a></li>
+          <li><a href="https://metricbase.org/editorial-standards">Editorial Standards</a></li>
+          <li><a href="https://metricbase.org/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 MetricBase · Precision growth · No wasted motion</div>
+      <div>Weekly Brief · WB-011 · Published July 13 2026</div>
+    </div>
+  </div>
+</footer>
+<div class="disclaimer-strip">
+  MetricBase publishes for informational and educational purposes only. Nothing here constitutes financial, investment, legal, or tax advice.
+  &nbsp;·&nbsp; <a href="https://metricbase.org/disclaimer">Full Disclaimer</a>
+  &nbsp;·&nbsp; <a href="https://metricbase.org/privacy">Privacy Policy</a>
+</div>
+
+<script>
+  function toggleMobileNav() {
+    var btn = document.getElementById('nav-hamburger-btn');
+    var nav = document.getElementById('nav-mobile');
+    if (!btn || !nav) return;
+    var isOpen = nav.classList.contains('open');
+    nav.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  }
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.app-header')) {
+      var nav = document.getElementById('nav-mobile');
+      var btn = document.getElementById('nav-hamburger-btn');
+      if (nav) nav.classList.remove('open');
+      if (btn) {
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    }
+  });
+</script>
+</body>
+</html>

@@ -14,6 +14,230 @@
   ],
   "items": [
     {
+      "id": "https://metricbase.org/journal/weekly-brief-21",
+      "url": "https://metricbase.org/journal/weekly-brief-21",
+      "title": "Weekly Brief #21 — The Fed Hikes, the Clarity Act Fails, and Bitcoin Reclaims $80k Anyway",
+      "summary": "First Fed hike since 2023, Clarity Act fails 49–50, BTC still +4.8% to $80,895, JCI −1.53% to 6,441 — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-09-21T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-20",
+      "url": "https://metricbase.org/journal/weekly-brief-20",
+      "title": "Weekly Brief #20 — WTI Crosses $100, the Saudi Bypass Shuts, and a Fed Hike Gets Fully Priced",
+      "summary": "WTI above $100, Saudi East-West pipeline shut, a Fed hike fully priced, BTC $77,216, JCI 6,541 — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-09-14T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-19",
+      "url": "https://metricbase.org/journal/weekly-brief-19",
+      "title": "Weekly Brief #19 — The Tanker War Resumes, Payrolls Rebound, and the JCI Clears 6,600",
+      "summary": "WTI +9.7% as the tanker war resumes, payrolls +162K push BTC back under $80k, JCI +1.82% to 6,636 — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-09-07T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-18",
+      "url": "https://metricbase.org/journal/weekly-brief-18",
+      "title": "Weekly Brief #18 — A Temporary Hormuz Lane, Warsh Leans Toward a Hike, and Bitcoin Holds Its Breakout",
+      "summary": "Iran–Oman Hormuz lane cuts Brent 5.4%, Warsh lifts hike odds to ~60%, BTC holds ~$78k, JCI flat at 6,518 — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-08-31T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-17",
+      "url": "https://metricbase.org/journal/weekly-brief-17",
+      "title": "Weekly Brief #17 — Bitcoin Breaks Out 24%, the MoU Expires, and the JCI Makes New Highs",
+      "summary": "BTC +24% to $78,335 on the Clarity Act push, Brent +6.6% to $94.39 as the MoU expires, JCI +1.93% to 6,526 — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-08-24T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-16",
+      "url": "https://metricbase.org/journal/weekly-brief-16",
+      "title": "Weekly Brief #16 — The Deal Dies, the Blockade Goes &quot;Indefinite&quot;, and MSCI Trims Indonesia",
+      "summary": "No Hormuz deal, blockade &quot;indefinite&quot;, Brent +6% to $88.52, BTC $62,993, JCI flat after MSCI drops CPIN and GOTO — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-08-17T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-15",
+      "url": "https://metricbase.org/journal/weekly-brief-15",
+      "title": "Weekly Brief #15 — A Hormuz Deal That Isn&#x27;t Signed, Payrolls Turn Negative, and the JCI Hits a Three-Month High",
+      "summary": "WTI −7.7% on Hormuz deal hopes, payrolls −23K lift BTC above $65k, JCI +2.78% to a three-month high — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-08-10T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-14",
+      "url": "https://metricbase.org/journal/weekly-brief-14",
+      "title": "Weekly Brief #14 — Three Fed Dissents, a 24% Month for Brent, and the Rupiah&#x27;s Ninth Straight Loss",
+      "summary": "Fed holds with three dissents, Brent +24% in July, BTC ~$64k, JCI 6,236 as the rupiah posts a ninth monthly loss — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-08-03T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-13",
+      "url": "https://metricbase.org/journal/weekly-brief-13",
+      "title": "Weekly Brief #13 — Brent Back Above $100, Bitcoin Decouples, and BI Holds the Line",
+      "summary": "Brent tops $100, BTC holds $65k through an oil spike and a Mag 7 rout, BI holds at 5.75% — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-07-27T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-12",
+      "url": "https://metricbase.org/journal/weekly-brief-12",
+      "title": "Weekly Brief #12 — Oil Jumps 16%, US Inflation Cracks, and the JCI Rips 4% on Earnings",
+      "summary": "Brent +16% to $88.10 on Iran escalation, CPI 3.5% lifts then fades BTC, JCI +4.24% to 6,176 — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-07-20T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-11",
+      "url": "https://metricbase.org/journal/weekly-brief-11",
+      "title": "Weekly Brief #11 — The Ceasefire Breaks, Oil Reprices, and the Rupiah Crosses 18,000",
+      "summary": "US–Iran ceasefire collapses, Brent +5% to $76, BTC +4.2% near $64k, JCI 5,924 as the rupiah crosses 18,000 — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-07-13T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-10",
+      "url": "https://metricbase.org/journal/weekly-brief-10",
+      "title": "Weekly Brief #10 — Oil Goes Flat, a Weak Payrolls Print Rescues Bitcoin, and the JCI Round-Trips 4%",
+      "summary": "Oil flat near pre-war levels, weak payrolls lift BTC back above $61k, JCI round-trips to 5,876 — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-07-06T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-9",
+      "url": "https://metricbase.org/journal/weekly-brief-9",
+      "title": "Weekly Brief #9 — Tankers Move, Bitcoin Breaks $60k, and MSCI Puts Indonesia on Notice",
+      "summary": "Brent −10.9% as Hormuz reopens, BTC below $60k, JCI −4.55% after MSCI&#x27;s frontier warning — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-06-29T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/weekly-brief-8",
+      "url": "https://metricbase.org/journal/weekly-brief-8",
+      "title": "Weekly Brief #8 — A Signed Deal, a Second BI Hike, and a Market Waiting on MSCI",
+      "summary": "US–Iran deal deflates crude, BTC range-bound in the mid-$60ks, JCI +2.8% into the MSCI review as BI hikes to 5.75% — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-06-22T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
       "id": "https://metricbase.org/journal/research-capitulation-correlation-2026",
       "url": "https://metricbase.org/journal/research-capitulation-correlation-2026",
       "title": "Capitulation and Correlation",
