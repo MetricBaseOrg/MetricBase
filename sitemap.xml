@@ -32,7 +32,7 @@
   <!-- Journal -->
   <url>
     <loc>https://metricbase.org/journal</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -217,6 +217,18 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://metricbase.org/journal/research-two-oil-prices-2026</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://metricbase.org/journal/editorial-rupiah-is-an-oil-trade</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- Legal / trust pages -->
   <url>
     <loc>https://metricbase.org/privacy</loc>
