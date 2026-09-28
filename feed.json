@@ -14,6 +14,38 @@
   ],
   "items": [
     {
+      "id": "https://metricbase.org/journal/editorial-rupiah-is-an-oil-trade",
+      "url": "https://metricbase.org/journal/editorial-rupiah-is-an-oil-trade",
+      "title": "The Rupiah Is an Oil Trade",
+      "summary": "BI held at 5.75% and subsidised hedging instead of hiking. The rupiah still slid toward 18,000, and only oil moved it. Why the currency is an oil trade.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-09-28T08:00:00+07:00",
+      "tags": [
+        "Editorial"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
+      "id": "https://metricbase.org/journal/research-two-oil-prices-2026",
+      "url": "https://metricbase.org/journal/research-two-oil-prices-2026",
+      "title": "Two Oil Prices",
+      "summary": "WTI −7.9%, Brent +0.4% in one week. The Brent–WTI split, and why Indonesia's oil bill follows the expensive barrel.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-09-28T08:00:00+07:00",
+      "tags": [
+        "Research Report"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
       "id": "https://metricbase.org/journal/weekly-brief-21",
       "url": "https://metricbase.org/journal/weekly-brief-21",
       "title": "Weekly Brief #21 — The Fed Hikes, the Clarity Act Fails, and Bitcoin Reclaims $80k Anyway",
