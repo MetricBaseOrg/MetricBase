@@ -14,6 +14,22 @@
   ],
   "items": [
     {
+      "id": "https://metricbase.org/journal/weekly-brief-26",
+      "url": "https://metricbase.org/journal/weekly-brief-26",
+      "title": "Weekly Brief #26 — The JCI Rebounds 4.9%, Brent Climbs to $116.72, and Bitcoin Holds $81k Into the Fed — What the Data Says",
+      "summary": "JCI +4.90% to 5,439, Brent +6.2% to $116.72, BTC −0.5% to $81,096, rupiah 18,080 — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-10-26T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
       "id": "https://metricbase.org/journal/weekly-brief-25",
       "url": "https://metricbase.org/journal/weekly-brief-25",
       "title": "Weekly Brief #25 — The MSCI Shock Sends the JCI Down 14.9%, Brent Hits $110, and Bitcoin Holds $80k",
