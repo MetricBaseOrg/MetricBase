@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Standalone Test · Research Report October 2026 · MetricBase Journal</title>
+<meta name="description" content="MSCI has proposed moving Indonesia from Emerging to Standalone status. Analysts put the passive outflow at roughly $3 billion to $6 billion. This report sizes the flow against reserves, traces the JCI and rupiah response, and explains why the free float, not the index, is the real issue.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://metricbase.org/journal/research-standalone-test-2026">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://metricbase.org/journal/research-standalone-test-2026">
+<meta property="og:title" content="The Standalone Test · MetricBase Research">
+<meta property="og:description" content="MSCI's proposal, sized: $3B to $6B of passive outflow, the JCI at 5,439, the rupiah at 18,080, and a free float problem that no rate decision fixes.">
+<meta property="og:image" content="https://metricbase.org/assets/og-image.webp">
+<meta property="article:published_time" content="2026-10-26">
+<meta property="article:author" content="Bun">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@MetricBase">
+<meta name="twitter:title" content="The Standalone Test · MetricBase Research">
+<meta name="twitter:description" content="MSCI's Standalone proposal sized against reserves, the JCI, and the rupiah.">
+<meta name="twitter:image" content="https://metricbase.org/assets/og-image.webp">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Standalone Test: What an MSCI Downgrade Would Move in Indonesia",
+  "description": "MSCI's October 2026 proposal to move Indonesia from Emerging to Standalone status, the analyst estimates of passive outflow, the response of the JCI and the rupiah through 23 October, and the free float reforms behind it.",
+  "url": "https://metricbase.org/journal/research-standalone-test-2026",
+  "image": "https://metricbase.org/assets/og-image.webp",
+  "datePublished": "2026-10-26",
+  "dateModified": "2026-10-26",
+  "author": {
+    "@type": "Person",
+    "name": "Bun",
+    "url": "https://metricbase.org/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://metricbase.org/#organization",
+    "name": "MetricBase",
+    "url": "https://metricbase.org/",
+    "logo": { "@type": "ImageObject", "url": "https://metricbase.org/assets/MetricBase.webp" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://metricbase.org/journal/research-standalone-test-2026" },
+  "articleSection": "Research Report",
+  "keywords": "MSCI, Indonesia, Standalone Market, Emerging Market, JCI, IHSG, free float, High Shareholding Concentration, passive outflow, rupiah, Bank Indonesia, DNDF"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "MetricBase", "item": "https://metricbase.org/" },
+    { "@type": "ListItem", "position": 2, "name": "Journal", "item": "https://metricbase.org/journal" },
+    { "@type": "ListItem", "position": 3, "name": "The Standalone Test" }
+  ]
+}
+</script>
+<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+<style>
+  :root {
+    --bg:          #0A0A0A;
+    --bg-elev:     #131313;
+    --bg-card:     #161616;
+    --bg-hover:    #1c1c1c;
+    --gold:        #C9A84C;
+    --gold-bright: #E5C168;
+    --gold-dim:    #8a7434;
+    --gold-glow:   rgba(201, 168, 76, 0.12);
+    --white:       #ffffff;
+    --gray-1:      #e5e5e5;
+    --gray-2:      #999999;
+    --gray-3:      #555555;
+    --gray-4:      #2a2a2a;
+    --red:         #e85a4f;
+    --green:       #5fa86c;
+    --amber:       #d9a441;
+    --line:        rgba(255,255,255,0.06);
+    --line-strong: rgba(201, 168, 76, 0.3);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  html, body {
+    background: var(--bg);
+    color: var(--gray-1);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background:
+      radial-gradient(ellipse 900px 600px at 20% 0%,  rgba(201,168,76,0.05), transparent 60%),
+      radial-gradient(ellipse 600px 400px at 80% 100%, rgba(201,168,76,0.03), transparent 70%),
+      var(--bg);
+    min-height: 100vh;
+  }
+
+  .grid-bg { position: fixed; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; z-index: 0; }
+
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); transition: color 0.15s; }
+  a:hover { color: var(--gold-bright); border-bottom-style: solid; }
+
+  /* ── HEADER ── */
+  .app-header { padding: 24px 32px; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 100; background: rgba(10, 10, 10, 0.85); -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%); transition: background 0.25s, box-shadow 0.25s; }
+  .header-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; }
+  .brand { display: flex; align-items: center; gap: 14px; border: none; }
+  .brand-mark { width: 34px; height: 34px; border: 1.5px solid var(--gold); transform: rotate(45deg); display: grid; place-items: center; position: relative; flex-shrink: 0; }
+  .brand-mark::after { content: ''; position: absolute; inset: 5px; background: var(--gold); opacity: 0.4; }
+  .brand-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.02em; color: var(--white); }
+  .brand-name .gold { color: var(--gold); }
+  .brand-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gray-3); margin-top: 3px; }
+  .nav-links { display: flex; gap: 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; }
+  .nav-links a { color: var(--gray-2); border: none; }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── LAYOUT ── */
+  .page-wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+
+  /* ── DISCLAIMER BANNER ── */
+  .risk-banner {
+    background: var(--bg-card);
+    border: 1px solid var(--gray-4);
+    border-left: 3px solid var(--amber);
+    padding: 14px 20px;
+    margin: 36px 0 0;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .risk-banner-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--amber); font-weight: 700; flex-shrink: 0; }
+  .risk-banner p { font-size: 12px; color: var(--gray-2); line-height: 1.55; }
+  .risk-banner a { color: var(--gray-2); border-bottom-color: var(--gray-4); }
+
+  /* ── ARTICLE HERO ── */
+  .article-hero { padding: 52px 0 44px; border-bottom: 1px solid var(--line); }
+  .article-breadcrumb { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gray-3); margin-bottom: 22px; display: flex; align-items: center; gap: 8px; }
+  .article-breadcrumb a { color: var(--gray-3); border: none; }
+  .article-breadcrumb a:hover { color: var(--gold); }
+  .article-breadcrumb span { color: var(--gray-4); }
+  .article-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+  .article-tag::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+  h1.article-title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: clamp(32px, 5vw, 56px); letter-spacing: -0.025em; line-height: 1.05; color: var(--white); margin-bottom: 22px; }
+  .article-deck { font-size: 17px; color: var(--gray-2); line-height: 1.65; max-width: 680px; margin-bottom: 36px; }
+  .article-meta-bar { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid var(--line); }
+  .meta-author { display: flex; align-items: center; gap: 12px; }
+  .author-avatar { width: 40px; height: 40px; background: var(--bg-card); border: 1px solid var(--line-strong); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gold); font-weight: 700; flex-shrink: 0; overflow: hidden; }
+  .author-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .author-info { display: flex; flex-direction: column; }
+  .author-name { font-weight: 700; font-size: 13px; color: var(--white); }
+  .author-role { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gray-3); margin-top: 2px; }
+  .meta-divider { width: 1px; height: 32px; background: var(--gray-4); }
+  .meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .meta-lbl { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gray-3); }
+  .meta-val { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gray-2); font-weight: 500; }
+  .meta-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; padding: 4px 10px; border: 1px solid var(--gray-4); color: var(--gray-2); background: var(--bg-card); }
+
+  /* ── ARTICLE BODY ── */
+  .article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 64px; padding: 56px 0; align-items: flex-start; }
+
+  /* Table of contents */
+  .toc { position: sticky; top: 32px; }
+  .toc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 16px; display: block; font-weight: 500; }
+  .toc-list { list-style: none; display: flex; flex-direction: column; gap: 0; border-left: 1px solid var(--line); }
+  .toc-item a { display: block; padding: 8px 14px; font-size: 12px; color: var(--gray-3); border: none; line-height: 1.4; transition: color 0.15s, border-left-color 0.15s; border-left: 2px solid transparent; margin-left: -1px; }
+  .toc-item a:hover { color: var(--gold); border-left-color: var(--gold); }
+  .toc-item.active a { color: var(--gold); border-left-color: var(--gold); }
+  .toc-divider { height: 1px; background: var(--line); margin: 8px 0; }
+  .toc-share { margin-top: 28px; padding: 20px; background: var(--bg-card); border: 1px solid var(--line); }
+  .toc-share-lbl { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gray-3); margin-bottom: 12px; display: block; }
+  .share-links { display: flex; flex-direction: column; gap: 8px; }
+  .share-link { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-2); border: none; letter-spacing: 0.08em; transition: color 0.15s; }
+  .share-link:hover { color: var(--gold); }
+
+  /* Article prose */
+  .article-prose { min-width: 0; }
+  .article-prose h2 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em; color: var(--white); margin: 52px 0 16px; padding-top: 8px; line-height: 1.2; }
+  .article-prose h2:first-child { margin-top: 0; }
+  .article-prose h3 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; color: var(--white); margin: 32px 0 12px; }
+  .article-prose p { font-size: 15px; color: var(--gray-1); line-height: 1.8; margin-bottom: 18px; }
+  .article-prose p:last-child { margin-bottom: 0; }
+  .article-prose strong { color: var(--white); font-weight: 700; }
+  .article-prose ul, .article-prose ol { padding-left: 20px; margin-bottom: 18px; }
+  .article-prose li { font-size: 15px; color: var(--gray-1); line-height: 1.75; margin-bottom: 6px; }
+  .article-prose li::marker { color: var(--gold-dim); }
+  .article-prose a { color: var(--gold); border-bottom: 1px dotted var(--gold-dim); }
+  .article-prose a:hover { color: var(--gold-bright); }
+
+  /* Section anchor */
+  .section-anchor { display: block; position: relative; top: -32px; visibility: hidden; }
+
+  /* Section label */
+  .prose-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gold); margin-bottom: 8px; display: block; }
+
+  /* Key finding callout */
+  .finding {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--gold-dim);
+    padding: 24px 28px;
+    margin: 28px 0;
+    position: relative;
+  }
+  .finding::before { content: 'KEY FINDING'; position: absolute; top: -8px; left: 20px; background: var(--bg); padding: 0 8px; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.25em; color: var(--gold); font-weight: 500; }
+  .finding p { font-size: 15px; color: var(--gray-1); line-height: 1.7; margin: 0; }
+  .finding strong { color: var(--gold); }
+
+  /* Stat row */
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 28px 0; }
+  .stat-box { background: var(--bg-card); padding: 22px 20px; }
+  .stat-box-lbl { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gray-3); margin-bottom: 8px; display: block; }
+  .stat-box-val { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 32px; color: var(--white); line-height: 1; margin-bottom: 4px; }
+  .stat-box-val.gold { color: var(--gold); }
+  .stat-box-val.green { color: var(--green); }
+  .stat-box-val.red { color: var(--red); }
+  .stat-box-sub { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-3); }
+
+  /* Data table */
+  .data-table-wrap { margin: 28px 0; overflow-x: auto; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .data-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--gray-3); font-weight: 500; padding: 10px 16px; border-bottom: 1px solid var(--line-strong); text-align: left; background: var(--bg-elev); white-space: nowrap; }
+  .data-table tbody td { padding: 12px 16px; border-bottom: 1px solid var(--line); color: var(--gray-1); vertical-align: top; line-height: 1.5; }
+  .data-table tbody tr:last-child td { border-bottom: none; }
+  .data-table tbody tr:hover td { background: var(--bg-card); }
+  .td-gold { color: var(--gold); font-weight: 600; }
+  .td-green { color: var(--green); }
+  .td-red { color: var(--red); }
+  .td-mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+
+  /* Bar chart */
+  .bar-chart { margin: 28px 0; display: flex; flex-direction: column; gap: 10px; }
+  .bar-row { display: grid; grid-template-columns: 160px 1fr 48px; align-items: center; gap: 12px; }
+  .bar-lbl { font-size: 12px; color: var(--gray-2); text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bar-track { height: 8px; background: var(--gray-4); position: relative; }
+  .bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold-dim), var(--gold)); }
+  .bar-fill.green { background: linear-gradient(90deg, #3d7a47, var(--green)); }
+  .bar-fill.dim { background: var(--gray-4); opacity: 0.6; }
+  .bar-pct { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gold); font-weight: 500; }
+
+  /* Blockquote */
+  blockquote { border-left: 2px solid var(--gold-dim); padding: 18px 24px; margin: 28px 0; background: var(--bg-card); }
+  blockquote p { font-size: 16px; color: var(--gray-1); font-style: italic; line-height: 1.7; margin: 0; }
+  blockquote cite { display: block; margin-top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-3); font-style: normal; letter-spacing: 0.08em; }
+
+  /* Divider */
+  .prose-divider { border: none; border-top: 1px solid var(--line); margin: 44px 0; }
+
+  /* Author bio */
+  .author-bio-card { background: var(--bg-elev); border: 1px solid var(--line); padding: 32px; display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: flex-start; margin: 56px 0 0; position: relative; }
+  .author-bio-card::before { content: 'ABOUT THE AUTHOR'; position: absolute; top: -8px; left: 24px; background: var(--bg); padding: 0 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; color: var(--gold); font-weight: 500; }
+  .bio-avatar { width: 72px; height: 72px; background: var(--bg-card); border: 1px solid var(--line-strong); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 16px; color: var(--gold); font-weight: 700; flex-shrink: 0; overflow: hidden; }
+  .bio-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .bio-name { font-weight: 800; font-size: 17px; color: var(--white); margin-bottom: 4px; }
+  .bio-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 12px; display: block; }
+  .bio-text { font-size: 13px; color: var(--gray-2); line-height: 1.65; margin-bottom: 14px; }
+  .bio-links { display: flex; gap: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; }
+  .bio-links a { color: var(--gray-3); border: none; }
+  .bio-links a:hover { color: var(--gold); }
+
+  /* Related articles */
+  .related { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--line); }
+  .related-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 24px; display: block; font-weight: 500; }
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .related-card { background: var(--bg-card); padding: 24px; display: flex; flex-direction: column; transition: background 0.18s; }
+  .related-card:hover { background: var(--bg-hover); }
+  .related-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--gold); margin-bottom: 10px; display: block; }
+  .related-title { font-size: 15px; font-weight: 700; color: var(--white); line-height: 1.3; margin-bottom: 8px; }
+  .related-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-3); margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; }
+  .related-arrow { color: var(--gold); }
+
+  /* Footer */
+  footer.doc-footer { background: var(--bg-elev); border-top: 1px solid var(--line); padding: 48px 0 0; margin-top: 80px; }
+  .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; max-width: 1240px; margin: 0 auto; padding: 0 32px; margin-bottom: 32px; }
+  .footer-col h4 { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gray-3); margin-bottom: 14px; font-weight: 500; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer-col a { font-size: 13px; color: var(--gray-3); border: none; transition: color 0.15s; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom { border-top: 1px solid var(--line); padding: 20px 32px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); letter-spacing: 0.1em; text-transform: uppercase; max-width: 1240px; margin: 0 auto; }
+
+  /* Disclaimer strip */
+  .disclaimer-strip { background: var(--bg); border-top: 1px solid var(--line); padding: 16px 32px; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); line-height: 1.7; letter-spacing: 0.03em; }
+  .disclaimer-strip a { color: var(--gold); border-bottom: 1px dotted var(--gold-dim); font-size: 10px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .article-layout { grid-template-columns: 1fr; gap: 40px; }
+    .toc { position: static; display: none; }
+  }
+  /* MOBILE NAV */
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; -webkit-tap-highlight-color: transparent; }
+  .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--gray-1); transition: 0.22s; transform-origin: center; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-mobile { display: none; flex-direction: column; border-top: 1px solid var(--line); background: var(--bg-elev); position: relative; z-index: 9; }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gray-2); padding: 14px 32px; border-bottom: 1px solid var(--line); transition: color 0.15s; border-left: none; border-right: none; }
+  .nav-mobile a:hover { color: var(--gold); }
+  .nav-mobile a:last-child { border-bottom: none; }
+
+  @media (max-width: 768px) {
+    .app-header { padding: 20px 16px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .page-wrap { padding: 0 16px; }
+    .article-meta-bar { gap: 16px; }
+    .meta-divider { display: none; }
+    .stat-row { grid-template-columns: 1fr 1fr; }
+    .bar-row { grid-template-columns: 100px 1fr 44px; }
+    .related-grid { grid-template-columns: 1fr; }
+    .author-bio-card { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; padding: 0 16px; }
+    .footer-bottom { padding: 20px 16px; }
+    .disclaimer-strip { padding: 16px; }
+  }
+  @media (max-width: 480px) {
+    h1.article-title { font-size: 30px; }
+    .stat-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<!-- HEADER -->
+<header class="app-header">
+  <div class="header-inner">
+    <a href="https://metricbase.org" class="brand">
+      <span class="brand-mark"></span>
+      <span>
+        <div class="brand-name">Metric<span class="gold">BASE</span></div>
+        <div class="brand-tag">Precision growth · No wasted motion</div>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="https://world.metricbase.org" target="_blank" rel="noopener">Play</a>
+      <a href="https://metricbase.org/journal">Journal</a>
+      <a href="https://metricbase.org/about">About</a>
+      <a href="https://metricbase.org/contact">Contact</a>
+      <a href="https://metricbase.org/#products">Products</a>
+      <a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a>
+    </nav>
+    <button type="button" class="nav-hamburger" id="nav-hamburger-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="https://world.metricbase.org" target="_blank" rel="noopener">Play</a>
+    <a href="https://metricbase.org/journal">Journal</a>
+    <a href="https://metricbase.org/about">About</a>
+    <a href="https://metricbase.org/contact">Contact</a>
+      <a href="https://metricbase.org/#products">Products</a>
+      <a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a>
+  </nav>
+</header>
+
+<div class="page-wrap">
+
+  <!-- RISK DISCLAIMER BANNER -->
+  <div class="risk-banner">
+    <span class="risk-banner-label">Disclaimer</span>
+    <p>This is educational and research content, not financial advice. All data is sourced from public disclosures. Trading and investing involve substantial risk of loss. See our full <a href="https://metricbase.org/disclaimer">Disclaimer</a>.</p>
+  </div>
+
+  <!-- ARTICLE HERO -->
+  <article>
+  <header class="article-hero">
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <a href="https://metricbase.org">MetricBase</a>
+      <span>›</span>
+      <a href="https://metricbase.org/journal">Journal</a>
+      <span>›</span>
+      Research Report
+    </nav>
+    <div class="article-tag">Research Report · IDX × Rupiah × Rates · October 2026</div>
+    <h1 class="article-title">The Standalone<br>Test</h1>
+    <p class="article-deck">On 16 October MSCI proposed moving Indonesia out of the Emerging Market index family to Standalone status. The JCI lost 14.9% in a week, then regained 4.9%. The rupiah broke 18,000 and has not come back. This report sizes the flow, traces the transmission to the currency, and explains why the free float, not the index, is the real issue.</p>
+    <div class="article-meta-bar">
+      <div class="meta-author">
+        <div class="author-avatar"><img src="../assets/pfp.webp" alt="Bun" loading="lazy" decoding="async"></div>
+        <div class="author-info">
+          <span class="author-name">Bun</span>
+          <span class="author-role">Lead Analyst · MetricBase</span>
+        </div>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="meta-lbl">Published</span>
+        <span class="meta-val">26 Oct 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-lbl">Read time</span>
+        <span class="meta-val">~10 min</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-lbl">Data as of</span>
+        <span class="meta-val">23 Oct 2026</span>
+      </div>
+      <span class="meta-tag">IDX</span>
+      <span class="meta-tag">Rupiah</span>
+      <span class="meta-tag">Rates</span>
+    </div>
+  </header>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-layout">
+
+    <!-- MAIN PROSE -->
+    <div class="article-prose">
+
+      <span class="section-anchor" id="exec-summary"></span>
+      <span class="prose-label">Section 01</span>
+      <h2>Executive Summary</h2>
+
+      <p>On Friday 16 October MSCI opened a consultation on moving Indonesia from Emerging Market to Standalone Market status. Nothing has been decided. Feedback is open until 30 April 2027, with a final decision expected by 30 June 2027. The market treated the proposal as a verdict anyway: the JCI fell 14.91% in five sessions, 11.57% of it on the Friday.</p>
+
+      <p>A week later the JCI had regained 4.90% to 5,439. Foreigners were still selling and the rupiah closed at 18,080, its weakest close in our briefs. The analyst estimates of the passive outflow are $3 billion to $6 billion, small against $146.3 billion of reserves. The harm is in what the proposal says about ownership, not in the arithmetic of one index.</p>
+      <div class="stat-row">
+        <div class="stat-box">
+          <span class="stat-box-lbl">JCI (23 Oct)</span>
+          <div class="stat-box-val">5,439</div>
+          <span class="stat-box-sub">+4.90% on the week</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">Foreign net sell, 2026 YTD</span>
+          <div class="stat-box-val red">Rp94.87T</div>
+          <span class="stat-box-sub">About $5.2B (MetricBase calc.)</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">USD/IDR (23 Oct)</span>
+          <div class="stat-box-val red">18,080</div>
+          <span class="stat-box-sub">Weakest close in our briefs</span>
+        </div>
+      </div>
+      <div class="finding">
+        <p>The passive-flow estimates are a rounding error against reserves. <strong>What MSCI is questioning is who owns Indonesian shares, and no policy rate answers that.</strong> That is why the equity market and the rupiah are now moving on the same variable.</p>
+      </div>
+
+      <span class="section-anchor" id="proposal"></span>
+      <span class="prose-label">Section 02</span>
+      <h2>What MSCI Actually Proposed</h2>
+
+      <p>MSCI said Indonesia no longer merits Emerging Market status and proposed Standalone, a category below Frontier. It cited shareholding opacity, suspected coordinated trading and insufficient enforcement. It also froze several Indonesia index changes, including increases to foreign inclusion factors.</p>
+
+      <p>This did not come from nowhere. MSCI froze Indonesian index changes in February 2026 over limited ownership transparency, and said in June it could consider a Frontier consultation if progress was not evident by its November review.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Event</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-mono">Feb 2026</td>
+              <td>MSCI freezes foreign inclusion factors and new additions; cites ownership transparency</td>
+              <td>Freeze still in place</td>
+            </tr>
+            <tr>
+              <td class="td-mono">Jun 2026</td>
+              <td>MSCI keeps Emerging status; says a Frontier consultation is possible if no progress by November review</td>
+              <td>Superseded</td>
+            </tr>
+            <tr>
+              <td class="td-mono">16 Oct</td>
+              <td class="td-red">MSCI opens Standalone consultation; JCI falls 11.57% in one session</td>
+              <td>Open</td>
+            </tr>
+            <tr>
+              <td class="td-mono">19&ndash;20 Oct</td>
+              <td>IDX meets MSCI online, then asks it for clarification; says status is unchanged</td>
+              <td>No MSCI reply found</td>
+            </tr>
+            <tr>
+              <td class="td-mono">30 Apr 2027</td>
+              <td class="td-gold">Consultation feedback closes</td>
+              <td>Scheduled</td>
+            </tr>
+            <tr>
+              <td class="td-mono">30 Jun 2027</td>
+              <td class="td-gold">Final decision expected</td>
+              <td>Scheduled</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The timeline matters for how to read the rest of this report. Every figure below is a reaction to a proposal. The decision is eight months away, and the exchange and regulator have until then to change the facts MSCI is judging.</p>
+
+      <span class="section-anchor" id="flow"></span>
+      <span class="prose-label">Section 03</span>
+      <h2>The Size of the Flow</h2>
+
+      <p>Analyst estimates of what a full removal from the MSCI Emerging Markets indices would pull out of Indonesia vary, but they cluster. We report them as published and did not check the underlying bank research.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Source</th>
+              <th>Estimate</th>
+              <th>What it covers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mirae Asset</td>
+              <td class="td-mono">~$3B</td>
+              <td>Passive outflow if reclassified</td>
+            </tr>
+            <tr>
+              <td>JPMorgan</td>
+              <td class="td-mono">$4.8B</td>
+              <td>Passive outflow</td>
+            </tr>
+            <tr>
+              <td>UBS</td>
+              <td class="td-mono">~$4B + up to $15B</td>
+              <td>Passive, plus possible active withdrawals</td>
+            </tr>
+            <tr>
+              <td>Goldman Sachs</td>
+              <td class="td-mono">~$5.6B + ~$2.7B</td>
+              <td>Passive on full removal, plus FTSE Russell if it follows</td>
+            </tr>
+            <tr>
+              <td>Other outlook</td>
+              <td class="td-mono">$4&ndash;6B; $12&ndash;16B severe</td>
+              <td>Passive alone; severe case adds active funds</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Set against reserves of $146.3 billion at end-September, the passive estimates are small. The severe cases are not.</p>
+
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-lbl">JPMorgan passive</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 25%;"></div></div>
+          <span class="bar-pct">3.3%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">Goldman passive</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 29%;"></div></div>
+          <span class="bar-pct">3.8%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">Goldman + FTSE</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 44%;"></div></div>
+          <span class="bar-pct">5.7%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">UBS passive + active</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
+          <span class="bar-pct">13.0%</span>
+        </div>
+      </div>
+
+      <p>Bars show each estimate as a share of $146.3 billion of reserves (MetricBase calculation; the UBS bar adds the ~$4 billion passive figure to the $15 billion active upper bound). Active withdrawals are a ceiling, not a forecast.</p>
+      <div class="finding">
+        <p>Foreigners have already sold Rp94.87 trillion of Indonesian equities this year, roughly $5.2 billion at 18,080 (MetricBase calculation). <strong>That is already the size of the passive estimates.</strong> The flows are not the same money, but it shows the market has been paying for the ownership concern for months, not days.</p>
+      </div>
+
+      <span class="section-anchor" id="market"></span>
+      <span class="prose-label">Section 04</span>
+      <h2>The Market Has Already Moved</h2>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Close</th>
+              <th>JCI</th>
+              <th>Week</th>
+              <th>Detail</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-mono">Fri 9 Oct</td>
+              <td class="td-mono">6,093.76</td>
+              <td class="td-green">+0.94%</td>
+              <td>Pre-shock level; first weekly gain in five</td>
+            </tr>
+            <tr>
+              <td class="td-mono">Fri 16 Oct</td>
+              <td class="td-mono">5,185.10</td>
+              <td class="td-red">−14.91%</td>
+              <td>Friday alone −678.67 pts (−11.57%); halt at 08:58 WIB; LQ45 −13.82%</td>
+            </tr>
+            <tr>
+              <td class="td-mono">Fri 23 Oct</td>
+              <td class="td-mono">5,439.26</td>
+              <td class="td-green">+4.90%</td>
+              <td>All 11 sectors up Friday; big banks led; foreigners sold</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Market capitalisation fell by about Rp1,544 trillion in the shock week to Rp9,157 trillion, then recovered to Rp9,583 trillion. That leaves it about Rp1,118 trillion below the pre-shock level, and the index 10.7% below 6,094 (MetricBase calculations from the reported figures). Year to date the JCI is down about 38%.</p>
+
+      <p>The bounce was domestic. Foreigners sold Rp3.34 trillion net on the Friday of the shock and Rp6.67 trillion over the following week by Katadata's count, or Rp8.72 trillion by other outlets. The 2026 total rose from Rp88.19 trillion to Rp94.87 trillion.</p>
+      <div class="stat-row">
+        <div class="stat-box">
+          <span class="stat-box-lbl">Pre-shock JCI (9 Oct)</span>
+          <div class="stat-box-val">6,094</div>
+          <span class="stat-box-sub">Now 10.7% below</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">Shock week</span>
+          <div class="stat-box-val red">−14.91%</div>
+          <span class="stat-box-sub">5,185 on 16 Oct</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">Rebound week</span>
+          <div class="stat-box-val green">+4.90%</div>
+          <span class="stat-box-sub">Foreigners net sold Rp6.7T&ndash;8.7T</span>
+        </div>
+      </div>
+      <div class="finding">
+        <p>A rebound that foreigners did not join is liquidity, not resolution. <strong>Domestic money bought the dip; the foreign bid, which MSCI membership exists to attract, did not return.</strong></p>
+      </div>
+
+      <span class="section-anchor" id="float"></span>
+      <span class="prose-label">Section 05</span>
+      <h2>Why the Float Is the Real Issue</h2>
+
+      <p>MSCI's complaint is structural. Many Indonesian companies have a small public float and concentrated, opaque ownership, which makes prices easier to move and harder to trust. Regulators and the exchange know this and have moved on three fronts.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Measure</th>
+              <th>Detail</th>
+              <th>What we could not confirm</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Minimum free float</td>
+              <td class="td-mono">7.5% to 15%</td>
+              <td>Announced 29 Jan; 327 issuers affected; reporting conflicts on when it binds</td>
+            </tr>
+            <tr>
+              <td>HSC stocks out of the JCI</td>
+              <td class="td-mono">80 stocks, ~18% weight</td>
+              <td>Press reports say from 2 Nov; no IDX notice found</td>
+            </tr>
+            <tr>
+              <td>Shareholder disclosure</td>
+              <td class="td-mono">Holdings above 1%</td>
+              <td>Single-source report; start date unclear</td>
+            </tr>
+            <tr>
+              <td>IDX talks with MSCI</td>
+              <td class="td-mono">19&ndash;20 Oct</td>
+              <td>No MSCI reply published</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The HSC step deserves a careful reading. IDX says it is not a delisting: the stocks keep trading, but their prices stop moving the JCI. The list is reviewed every three months. It changes what the local benchmark shows. Our reading is that it does not change who owns the shares, which is what MSCI is judging.</p>
+      <div class="finding">
+        <p>Raising the float is the reform that would change the facts. <strong>Excluding HSC stocks from the JCI changes the headline number, and 327 issuers still need to sell down or issue.</strong> That is slow, and a thin market has to absorb it.</p>
+      </div>
+
+      <span class="section-anchor" id="rupiah"></span>
+      <span class="prose-label">Section 06</span>
+      <h2>The Rupiah Channel</h2>
+
+      <p>Equity outflows are dollar demand. Bank Indonesia met on 20&ndash;21 October with the rupiah at the edge of 18,000, and held the BI-Rate at 5.75% for a fourth straight meeting. It raised the Deposit Facility rate 25 bp to 5.00%, left the Lending Facility at 6.50%, and announced phased cuts to rupiah reserve requirements from 1 November and 1 December.</p>
+
+      <p>The hold was not a clean surprise. Economists split: 15 of 29 in Reuters' poll expected no change, and about half of Bloomberg's 38. Sources disagree on the new reserve ratios, so we do not quote them.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>USD/IDR</th>
+              <th>Context</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-mono">Fri 9 Oct</td>
+              <td class="td-mono">17,899</td>
+              <td>Below 18,000 before MSCI</td>
+            </tr>
+            <tr>
+              <td class="td-mono">Fri 16 Oct</td>
+              <td class="td-mono">~18,027</td>
+              <td>Broke 18,000 (outlets reported 18,021 to 18,063)</td>
+            </tr>
+            <tr>
+              <td class="td-mono">Wed 21 Oct</td>
+              <td class="td-mono">18,005</td>
+              <td>Domestic close on BI decision day</td>
+            </tr>
+            <tr>
+              <td class="td-mono">Fri 23 Oct</td>
+              <td class="td-red">18,080</td>
+              <td>Weakest close in our briefs; +0.29% weaker on the week</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="stat-row">
+        <div class="stat-box">
+          <span class="stat-box-lbl">BI-Rate</span>
+          <div class="stat-box-val gold">5.75%</div>
+          <span class="stat-box-sub">Held; Deposit Facility 5.00%</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">BI over Fed (top)</span>
+          <div class="stat-box-val">175 bp</div>
+          <span class="stat-box-sub">5.75% vs 4.00% (MetricBase calc.)</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-lbl">DNDF/swap inflows</span>
+          <div class="stat-box-val green">~$9.9B</div>
+          <span class="stat-box-sub">Since June, per a 20 Oct report</span>
+        </div>
+      </div>
+
+      <p>BI says its hedging incentives (swaps and domestic non-deliverable forwards) have brought in about $8 billion to $9 billion, and a 20 October report puts the cumulative figure at $9.9 billion. The rupiah has still fallen about 7.9% this year. MUFG's 19 October forecast is 18,350 for Q4 2026 and 18,500 for Q1 2027, with a depreciation bias.</p>
+      <div class="finding">
+        <p>BI is running a policy mix: hold the rate, lift the floor of the corridor, add liquidity, subsidise hedging. <strong>That manages the pace of the rupiah's fall. It does not give a foreign fund a reason to own Indonesian equities that MSCI says it cannot see into.</strong></p>
+      </div>
+
+      <span class="section-anchor" id="backdrop"></span>
+      <span class="prose-label">Section 07</span>
+      <h2>The Backdrop MSCI Landed On</h2>
+
+      <p>The proposal arrived into a week when every external gauge was already stressed. Oil kept rising, US yields sat near their highest since 2002, and risk assets were holding on rates relief rather than demand.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Gauge</th>
+              <th>Reading</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Brent settle</td>
+              <td class="td-mono">$116.72 (+6.2% on week)</td>
+              <td class="td-mono">23 Oct</td>
+            </tr>
+            <tr>
+              <td>WTI settle</td>
+              <td class="td-mono">$103.27 (+1.8% on week)</td>
+              <td class="td-mono">23 Oct</td>
+            </tr>
+            <tr>
+              <td>Indonesian Crude Price, September</td>
+              <td class="td-mono">$112.81 (August $89.43)</td>
+              <td class="td-mono">Reported 14 Oct</td>
+            </tr>
+            <tr>
+              <td>ESDM October ICP projection</td>
+              <td class="td-mono">$98&ndash;103</td>
+              <td class="td-mono">Projection</td>
+            </tr>
+            <tr>
+              <td>US 10-year yield</td>
+              <td class="td-mono">~5.0% (peak 5.31% earlier in Oct)</td>
+              <td class="td-mono">23 Oct</td>
+            </tr>
+            <tr>
+              <td>Fed meeting 27&ndash;28 Oct</td>
+              <td class="td-mono">Hold ~85%; Dec hike ~75%</td>
+              <td class="td-mono">Priced as of 21 Oct</td>
+            </tr>
+            <tr>
+              <td>BTC/USD</td>
+              <td class="td-mono">~$81.1k close; weekend low ~$79.1k</td>
+              <td class="td-mono">23&ndash;25 Oct</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>We could not find an October read on Indonesia's 10-year government bond yield. The last figures we found, about 7% on 24 September against a 5.195% US 10-year, are too old to use for a spread. This is a gap in this report.</p>
+      <div class="finding">
+        <p>Oil at $116 widens the current account deficit that the rupiah already carries, and the US 10-year at 5% raises the return foreign money can earn elsewhere. <strong>MSCI did not create the squeeze on Indonesian assets. It removed the argument that the equity market was a reason to stay.</strong></p>
+      </div>
+
+      <span class="section-anchor" id="outlook"></span>
+      <span class="prose-label">Section 08</span>
+      <h2>What to Watch</h2>
+
+      <p>These are structural markers, not predictions or investment recommendations.</p>
+
+      <h3>The ownership data</h3>
+      <p>Whether the 15% float requirement gets a dated calendar for the 327 affected issuers, and whether 1% ownership disclosure is live. These are the facts MSCI is judging.</p>
+
+      <h3>Foreign flow on up days</h3>
+      <p>The JCI rose on Friday with foreigners selling Rp1.28 trillion. A rally with a foreign net buy would be the first real sign that the market treats the proposal as reversible.</p>
+
+      <h3>Fed and rupiah levels</h3>
+      <p>The 27&ndash;28 October Fed decision, then the rupiah against 18,100 and MUFG's 18,350 Q4 forecast. A December US hike narrows BI's 175 bp cushion unless BI moves.</p>
+
+      <h3>Calendar</h3>
+      <p>The 1 November reserve requirement cut, the reported 2 November HSC exclusion, MSCI's November index review, and the consultation close on 30 April 2027. Our <a href="/journal/editorial-clarification-is-not-reform">editorial this week</a> argues that Indonesia is currently answering the wrong question.</p>
+      <div class="finding">
+        <p>Read the ownership data, not the index level. <strong>The JCI can recover without the reform, and the rupiah will not.</strong></p>
+      </div>
+
+      <hr class="prose-divider">
+
+      <h3>Sources &amp; Data Methodology</h3>
+      <p>MSCI proposal and reaction: <a href="https://www.cnbc.com/2026/10/19/indonesian-stocks-msci-downgrade-fears-mount.html" target="_blank" rel="noopener">CNBC (19 Oct)</a>, <a href="https://jakartaglobe.id/business/indonesian-stocks-plunge-8-as-msci-weighs-standalone-market-downgrade" target="_blank" rel="noopener">Jakarta Globe</a>, <a href="https://www.investing.com/news/stock-market-news/indonesia-gets-wakeup-call-as-msci-prepares-to-expel-it-from-global-indexes-4956194" target="_blank" rel="noopener">Reuters via Investing.com</a>, <a href="https://theedgemalaysia.com/node/822052" target="_blank" rel="noopener">The Edge Malaysia</a>. February 2026 freeze: <a href="https://investortrust.id/market/100712/msci-freezes-indonesia-weightings-as-jakarta-scrambles-to-save-emerging-market-status" target="_blank" rel="noopener">Investortrust</a>.</p>
+      <p>Passive and active outflow estimates (as published by the outlets; underlying research not checked): <a href="https://serrarigroup.com/indonesia-risks-msci-exclusion-and-billions-in-outflows/" target="_blank" rel="noopener">Serrari Group</a>, <a href="https://wealthinsights.metrobank.com.ph/wealth/indonesia-msci-downgrade-investor-impact" target="_blank" rel="noopener">Metrobank Wealth Insights</a>, <a href="https://jakartaglobe.id/business/indonesian-stocks-plunge-8-as-msci-weighs-standalone-market-downgrade" target="_blank" rel="noopener">Jakarta Globe</a>.</p>
+      <p>JCI, market capitalisation and foreign flows: <a href="https://market.bisnis.com/read/20261017/7/2013375/ihsg-sepekan-anjlok-1491-kapitalisasi-pasar-bursa-menguap-rp1544-triliun" target="_blank" rel="noopener">Bisnis (week to 16 Oct)</a>, <a href="https://www.liputan6.com/saham/read/8315120/ihsg-anjlok-1157-usai-pengumuman-msci-saham-indonesia-masih-menarik" target="_blank" rel="noopener">Liputan6</a>, <a href="https://money.kompas.com/read/2026/10/25/072543126/ihsg-melonjak-49-persen-sepekan-asing-justru-jual-saham-rp-128-triliun" target="_blank" rel="noopener">Kompas (week to 23 Oct)</a>, <a href="https://www.cnbcindonesia.com/market/20261023160756-17-778973/ihsg-ditutup-menguat-095-ke-level-5439" target="_blank" rel="noopener">CNBC Indonesia</a>, <a href="https://katadata.co.id/finansial/bursa/6add60c38abe2/net-sell-asing-tembus-rp-6-67-t-sepekan-bbca-hingga-bbri-ramai-ditransaksikan" target="_blank" rel="noopener">Katadata</a>, <a href="https://www.inews.id/news/nasional/bei-catat-aksi-jual-investor-asing-tembus-rp9487-triliun-sepanjang-2026" target="_blank" rel="noopener">iNews</a>, <a href="https://beritamoneter.com/ihsg-anjlok-1491-sepekan-net-foreign-sell-tembus-rp8819-triliun/" target="_blank" rel="noopener">Berita Moneter</a>. Earlier weeks from our <a href="/journal/weekly-brief-24" target="_blank" rel="noopener">Weekly Brief #24</a>, <a href="/journal/weekly-brief-25" target="_blank" rel="noopener">#25</a> and <a href="/journal/weekly-brief-26" target="_blank" rel="noopener">#26</a>.</p>
+      <p>Float and HSC reforms: <a href="https://market.bisnis.com/read/20260129/7/1948355/free-float-saham-naik-jadi-15-demi-msci-327-emiten-bakal-terdampak" target="_blank" rel="noopener">Bisnis (free float, 327 issuers)</a>, <a href="https://market.bisnis.com/read/20261019/7/2013856/bei-keluarkan-saham-hsc-dari-perhitungan-ihsg-usai-bertemu-msci" target="_blank" rel="noopener">Bisnis (HSC exclusion)</a>, <a href="https://market.bisnis.com/read/20261019/7/2013861/saham-hsc-keluar-dari-ihsg-bei-porsinya-hanya-18" target="_blank" rel="noopener">Bisnis (HSC ~18% weight)</a>, <a href="https://beritamoneter.com/ojk-tegaskan-komitmen-reformasi-pasar-modal-kepercayaan-investor-global/" target="_blank" rel="noopener">Berita Moneter (1% disclosure)</a>, <a href="https://www.bareksa.com/berita/saham/2026-10-20/bei-minta-klarifikasi-msci-status-pasar-indonesia-belum-berubah/amp" target="_blank" rel="noopener">Bareksa (IDX asks MSCI)</a>.</p>
+      <p>Bank Indonesia and the rupiah: <a href="https://www.investing.com/news/economy-news/indonesias-central-bank-keeps-main-rate-unchanged-hikes-deposit-facility-rate-4961822" target="_blank" rel="noopener">Reuters via Investing.com (poll)</a>, <a href="https://www.idnfinancials.com/news/70614/bank-indonesia-holds-rate-at-5-75-raises-deposit-facility-rate-to-5" target="_blank" rel="noopener">IDN Financials</a>, <a href="https://rri.co.id/en/business/2664084/bi-holds-benchmark-rate-at-575-percent-amid-rupiah-pressure-global-uncertainty" target="_blank" rel="noopener">RRI</a>, <a href="https://investortrust.id/macro/120009/jaga-stabilitas-rupiah-bi-perkuat-kebijakan-insentif-dndf-swap-lindung-nilai-dan-lct" target="_blank" rel="noopener">Investortrust (DNDF inflows)</a>, <a href="https://www.fxstreet.com/news/indonesian-rupiah-msci-risks-reinforce-upside-bias-mufg-202610192148" target="_blank" rel="noopener">FXStreet (MUFG)</a>, <a href="https://investor.id/market/458281/rupiah-makin-terpuruk-imbas-sentimen-soal-msci" target="_blank" rel="noopener">Investor.id (16 Oct)</a>, <a href="https://investasi.kontan.co.id/news/rupiah-spot-ditutup-melemah-011-ke-rp-18080-per-dolar-as-pada-jumat-2310" target="_blank" rel="noopener">Kontan (23 Oct)</a>, <a href="https://economy.okezone.com/read/2026/10/23/320/3249791/rupiah-ditutup-melemah-ke-rp18-080-per-dolar-as" target="_blank" rel="noopener">Okezone</a>. Reserves: <a href="https://pasardana.id/news/2026/10/7/cadangan-devisa-capai-usd-146-3-miliar-per-september-2026" target="_blank" rel="noopener">Pasardana</a>. Fed range: our <a href="/journal/editorial-rupiah-is-an-oil-trade" target="_blank" rel="noopener">September editorial</a>.</p>
+      <p>Oil, rates and crypto: <a href="https://www.cnbc.com/2026/10/23/oil-price-brent-wti-iran-war-saudi-arabia.html" target="_blank" rel="noopener">CNBC (23 Oct)</a>, <a href="https://www.riotimesonline.com/oil-markets-latam-friday-october-23-2026" target="_blank" rel="noopener">Rio Times</a>, <a href="https://migas.esdm.go.id/post/Tensi-Geopolitik-Memanas-ICP-September-2026-Melonjak-ke-Angka-US-112-81-per-Barel" target="_blank" rel="noopener">ESDM (September ICP)</a>, <a href="https://tradingeconomics.com/united-states/government-bond-yield" target="_blank" rel="noopener">Trading Economics (US 10-year)</a>. Bitcoin: Crypto.com Exchange BTCUSD-PERP daily candles (23 Oct close $81,090; weekend low $79,118; 25 Oct close $80,053); Weekly Brief #26 quotes about $81,096 for the Friday close.</p>
+      <p>Estimates of passive outflow are analyst projections and differ in scope and date. Reported figures conflict in places: foreign net selling for the week to 23 October is Rp6.67 trillion (Katadata) to Rp8.72 trillion (other outlets); the new reserve requirement ratios are reported inconsistently; the HSC exclusion date and the free float effective date are not confirmed by an exchange notice. We quote ranges and flag the gaps. Calculations marked MetricBase (dollar conversions, reserve shares, spreads, percentage gaps) are ours and use rounded inputs. Corrections and source challenges are welcome at <a href="https://metricbase.org/contact">support@metricbase.org</a>.</p>
+
+      <!-- AUTHOR BIO -->
+      <div class="author-bio-card">
+        <div class="bio-avatar"><img src="../assets/pfp.webp" alt="Bun" loading="lazy" decoding="async"></div>
+        <div>
+          <div class="bio-name">Bun</div>
+          <span class="bio-title">Lead Analyst · MetricBase</span>
+          <p class="bio-text">MetricBase's chibi penguin mascot and lead analyst — curious, reactive, and unafraid to call a divergence when the data says so. Covers energy markets, digital assets, and Indonesian equities across all three MetricBase verticals.</p>
+          <div class="bio-links">
+            <a href="https://x.com/MetricBase" target="_blank" rel="noopener">X / Twitter ↗</a>
+            <a href="https://metricbase.org/about">About ↗</a>
+            <a href="https://metricbase.org/contact">Contact ↗</a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- RELATED -->
+      <div class="related">
+        <span class="related-label">More from the Journal</span>
+        <div class="related-grid">
+          <a class="related-card" href="/journal/editorial-clarification-is-not-reform">
+            <span class="related-tag">Editorial · October</span>
+            <div class="related-title">Clarification Is Not a Reform</div>
+            <div class="related-meta">
+              <span>Oct 26, 2026</span>
+              <span class="related-arrow">↗</span>
+            </div>
+          </a>
+          <a class="related-card" href="/journal/research-two-oil-prices-2026">
+            <span class="related-tag">Research Report · September</span>
+            <div class="related-title">Two Oil Prices: The Brent&ndash;WTI Split and the Barrel Indonesia Pays For</div>
+            <div class="related-meta">
+              <span>Sep 28, 2026</span>
+              <span class="related-arrow">↗</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /.article-prose -->
+
+    <!-- TABLE OF CONTENTS (sidebar) -->
+    <aside class="toc" aria-label="Table of contents">
+      <span class="toc-label">Contents</span>
+      <ol class="toc-list">
+        <li class="toc-item"><a href="#exec-summary">01 · Executive Summary</a></li>
+        <li class="toc-item"><a href="#proposal">02 · The Proposal</a></li>
+        <li class="toc-item"><a href="#flow">03 · Size of the Flow</a></li>
+        <li class="toc-item"><a href="#market">04 · The Market Moved</a></li>
+        <li class="toc-item"><a href="#float">05 · The Float</a></li>
+        <li class="toc-item"><a href="#rupiah">06 · The Rupiah Channel</a></li>
+        <li class="toc-item"><a href="#backdrop">07 · The Backdrop</a></li>
+        <li class="toc-item"><a href="#outlook">08 · What to Watch</a></li>
+      </ol>
+      <div class="toc-divider"></div>
+      <div class="toc-share">
+        <span class="toc-share-lbl">Share this report</span>
+        <div class="share-links">
+          <a class="share-link" href="https://x.com/intent/post?text=The+Standalone+Test+%E2%80%94+%40MetricBase&url=https%3A%2F%2Fmetricbase.org%2Fjournal%2Fresearch-standalone-test-2026" target="_blank" rel="noopener">Share on X ↗</a>
+          <a class="share-link" href="https://metricbase.org/journal">Back to Journal →</a>
+        </div>
+      </div>
+    </aside>
+
+  </div><!-- /.article-layout -->
+  </article>
+
+</div><!-- /.page-wrap -->
+
+<!-- FOOTER -->
+<footer class="doc-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>MetricBase</h4>
+      <ul>
+        <li><a href="https://metricbase.org">Portal</a></li>
+        <li><a href="https://metricbase.org/journal">Journal</a></li>
+        <li><a href="https://metricbase.org/about">About</a></li>
+        <li><a href="https://metricbase.org/contact">Contact</a></li>
+          <li><a href="https://world.metricbase.org" target="_blank" rel="noopener">World ↗</a></li>
+          <li><a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Verticals</h4>
+      <ul>
+        <li><a href="https://energy.metricbase.org">Energy Markets</a></li>
+        <li><a href="https://chain.metricbase.org">Crypto &amp; Tech</a></li>
+        <li><a href="https://saham.metricbase.org">Pasar Saham</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="https://world.metricbase.org" target="_blank" rel="noopener">World ↗</a></li>
+        <li><a href="https://apps.metricbase.org" target="_blank" rel="noopener">Apps ↗</a></li>
+        <li><a href="https://og.metricbase.org" target="_blank" rel="noopener">OG-tools ↗</a></li>
+        <li><a href="https://portabase.metricbase.org" target="_blank" rel="noopener">Portabase ↗</a></li>
+        <li><a href="https://bingkai.metricbase.org" target="_blank" rel="noopener">Bingkai ↗</a></li>
+        <li><a href="https://bid.metricbase.org" target="_blank" rel="noopener">PumpBid ↗</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+              <h4>Legal</h4>
+        <ul>
+          <li><a href="https://metricbase.org/privacy">Privacy Policy</a></li>
+          <li><a href="https://metricbase.org/terms">Terms of Service</a></li>
+          <li><a href="https://metricbase.org/disclaimer">Disclaimer</a></li>
+          <li><a href="https://metricbase.org/cookie-policy">Cookie Policy</a></li>
+          <li><a href="https://metricbase.org/editorial-standards">Editorial Standards</a></li>
+          <li><a href="https://metricbase.org/contact">Contact</a></li>
+        </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 MetricBase · Precision growth · No wasted motion</div>
+    <div>Research · JOUR-R005 · Published Oct 26 2026</div>
+  </div>
+</footer>
+
+<div class="disclaimer-strip">
+  MetricBase publishes for informational and educational purposes only. Nothing in this report constitutes financial, investment, legal, or tax advice.
+  All data cited is from publicly available sources; MetricBase makes no warranty as to its accuracy or completeness.
+  &nbsp;·&nbsp; <a href="https://metricbase.org/disclaimer">Full Disclaimer</a>
+  &nbsp;·&nbsp; <a href="https://metricbase.org/privacy">Privacy Policy</a>
+</div>
+
+<script>
+  /* Active TOC highlight on scroll */
+  var sections = document.querySelectorAll('.section-anchor');
+  var tocItems = document.querySelectorAll('.toc-item');
+
+  function onScroll() {
+    var scrollY = window.scrollY + 80;
+    var current = '';
+    sections.forEach(function(s) {
+      if (s.offsetTop <= scrollY) current = s.id;
+    });
+    tocItems.forEach(function(item) {
+      var a = item.querySelector('a');
+      if (!a) return;
+      var hrefAttr = a.getAttribute('href');
+      if (!hrefAttr || hrefAttr.charAt(0) !== '#') return;
+      item.classList.toggle('active', hrefAttr.slice(1) === current);
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  function toggleMobileNav() {
+    var btn = document.getElementById('nav-hamburger-btn');
+    var nav = document.getElementById('nav-mobile');
+    if (!btn || !nav) return;
+    var isOpen = nav.classList.contains('open');
+    nav.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  }
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.app-header')) {
+      var nav = document.getElementById('nav-mobile');
+      var btn = document.getElementById('nav-hamburger-btn');
+      if (nav) nav.classList.remove('open');
+      if (btn) {
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    }
+  });
+</script>
+</body>
+</html>
