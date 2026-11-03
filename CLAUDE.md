@@ -29,7 +29,7 @@ No build system, package manager, tests, or linters. Development is editing file
 
 URLs are extensionless (`https://metricbase.org/journal/weekly-brief-7` → `journal/weekly-brief-7.html`); GitHub Pages resolves them. Use that form in canonicals, OG tags, the sitemap, and internal links.
 
-Pushing to `main` triggers `.github/workflows/jekyll-gh-pages.yml`, which builds with Jekyll and deploys to GitHub Pages at metricbase.org. Jekyll only serves static files here — there is no `_config.yml`, no Liquid templates, and no Jekyll-specific features in use. The workflow treats the repo root as the source.
+Pushing to `main` triggers `.github/workflows/jekyll-gh-pages.yml`, which builds with Jekyll and deploys to GitHub Pages at metricbase.org. Jekyll only serves static files here — no Liquid templates or Jekyll-specific features. `_config.yml` exists only to `exclude` repo-internal files (`blogs/`, `scripts/`, `CLAUDE.md`, `README.md`) from the public site; add any new internal file there. The workflow treats the repo root as the source.
 
 To preview locally: open `index.html` directly in a browser. Blog templates (`blogs/*.html`) are Blogger XML and must be uploaded to the Blogger admin panel — they cannot be previewed locally.
 

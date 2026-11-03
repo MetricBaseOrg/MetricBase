@@ -1,0 +1,8 @@
+# Jekyll only copies static files here. Keep repo-internal files off metricbase.org:
+# blogs/ holds Blogger XML themes (pasted into the Blogger admin), not site pages.
+exclude:
+  - blogs/
+  - scripts/
+  - CLAUDE.md
+  - README.md
+  - .gitignore
