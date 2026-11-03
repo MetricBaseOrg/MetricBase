@@ -25,7 +25,7 @@ MetricBase is a data-driven content brand. metricbase.org is a static portal tha
 
 ## Deployment
 
-No build system, package manager, tests, or linters. Development is editing files directly. The one script is `node scripts/build-feed.mjs`, which regenerates `feed.json` (JSON Feed 1.1) from the `<head>` meta of every `journal/*.html` (canonical, `og:title`, `og:description`, `article:published_time`; category comes from the filename prefix `weekly-brief-` / `research-` / `editorial-`). Re-run it and commit `feed.json` whenever a journal page is added or its meta changes: apps.metricbase.org reads this feed to email subscribers about new content.
+No build system, package manager, tests, or linters. Development is editing files directly. The one script is `node scripts/build-feed.mjs`, which regenerates `feed.json` (JSON Feed 1.1) from the `<head>` meta of every `journal/*.html` (canonical, `og:title`, `og:description`, `article:published_time`; category comes from the filename prefix `weekly-brief-` / `research-` / `editorial-`). It also rewrites the article list on `authors/bun.html` (between the `AUTHOR-ARTICLES` markers). Re-run it and commit `feed.json` + `authors/bun.html` whenever a journal page is added or its meta changes: apps.metricbase.org reads this feed to email subscribers about new content.
 
 URLs are extensionless (`https://metricbase.org/journal/weekly-brief-7` → `journal/weekly-brief-7.html`); GitHub Pages resolves them. Use that form in canonicals, OG tags, the sitemap, and internal links.
 

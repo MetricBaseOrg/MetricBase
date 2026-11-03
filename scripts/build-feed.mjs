@@ -80,3 +80,43 @@ const feed = {
 
 await writeFile(join(ROOT, 'feed.json'), JSON.stringify(feed, null, 2) + '\n')
 console.log(`feed.json written — ${items.length} items (newest: ${items[0]?.title ?? 'none'})`)
+
+// The author page lists every Journal piece, grouped by category, between
+// the AUTHOR-ARTICLES markers. Titles come from og:title, already HTML-escaped.
+const AUTHOR_PAGE = join(ROOT, 'authors', 'bun.html')
+const START = /<!-- AUTHOR-ARTICLES:START[^>]*-->/
+const END = '<!-- AUTHOR-ARTICLES:END -->'
+const fmtDate = (d) =>
+  new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Asia/Jakarta' })
+
+const groups = ['Research Report', 'Editorial', 'Weekly Brief'].map((tag) => {
+  const cards = items
+    .filter((i) => i.tags[0] === tag)
+    .map(
+      (i) => `          <a class="article-card" href="${i.url.replace(SITE, '')}">
+            <div class="article-content">
+              <span class="article-badge">${tag}</span>
+              <div class="article-title">${i.title}</div>
+              <div class="article-date">${fmtDate(i.date_published)}</div>
+            </div>
+          </a>`,
+    )
+  return `      <div>
+        <h3 style="font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 20px; color: var(--white); margin: 0 0 20px;">${tag}s <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gray-3);">${cards.length}</span></h3>
+        <div class="articles-grid">
+${cards.join('\n')}
+        </div>
+      </div>`
+})
+
+const authorHtml = await readFile(AUTHOR_PAGE, 'utf8')
+const m = authorHtml.match(START)
+const endAt = authorHtml.indexOf(END)
+if (!m || endAt < 0) throw new Error('authors/bun.html: AUTHOR-ARTICLES markers not found')
+const block = `${m[0]}
+    <div style="display: grid; gap: 56px; margin-bottom: 32px;">
+${groups.join('\n')}
+    </div>
+    `
+await writeFile(AUTHOR_PAGE, authorHtml.slice(0, m.index) + block + authorHtml.slice(endAt))
+console.log(`authors/bun.html article list written — ${items.length} items`)
