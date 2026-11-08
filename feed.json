@@ -14,6 +14,22 @@
   ],
   "items": [
     {
+      "id": "https://metricbase.org/journal/weekly-brief-28",
+      "url": "https://metricbase.org/journal/weekly-brief-28",
+      "title": "Weekly Brief #28 — Oil Falls 13% on Iran Peace Hopes, Bitcoin Slips to $75,760 After a Midterm Shock, and the JCI Ends Flat at 5,050 — What the Data Says",
+      "summary": "WTI $90.83, Brent $98.32, BTC −1.9% to $75,760, JCI −0.13% to 5,050, rupiah 18,089 — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-11-09T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
       "id": "https://metricbase.org/journal/weekly-brief-27",
       "url": "https://metricbase.org/journal/weekly-brief-27",
       "title": "Weekly Brief #27 — The JCI Falls 7.0% to 5,057, Bitcoin Loses $80k After a Hawkish Fed, and Brent Holds $117 — What the Data Says",
