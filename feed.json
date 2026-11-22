@@ -14,6 +14,22 @@
   ],
   "items": [
     {
+      "id": "https://metricbase.org/journal/weekly-brief-30",
+      "url": "https://metricbase.org/journal/weekly-brief-30",
+      "title": "Weekly Brief #30 — Bitcoin Falls 13.8% to $58,824, the Nasdaq Drops 10%, and a Bank Indonesia Hike Fails to Hold the Rupiah at 18,270 — What the Data Says",
+      "summary": "BTC −13.8% to $58,824, Nasdaq −10%, JCI −3.71% to 5,146, BI-Rate 6.00%, rupiah 18,270, Brent $92.57, WTI $83.98 — MetricBase cross-vertical weekly.",
+      "image": "https://metricbase.org/assets/og-image.webp",
+      "date_published": "2026-11-23T08:00:00+07:00",
+      "tags": [
+        "Weekly Brief"
+      ],
+      "authors": [
+        {
+          "name": "Bun"
+        }
+      ]
+    },
+    {
       "id": "https://metricbase.org/journal/weekly-brief-29",
       "url": "https://metricbase.org/journal/weekly-brief-29",
       "title": "Weekly Brief #29 — Bitcoin Falls 9.9% to $68,258, the JCI Jumps 5.8% to 5,344 After MSCI, and Brent Slips to $95.84 — What the Data Says",
